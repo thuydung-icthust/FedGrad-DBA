@@ -71,7 +71,7 @@ resumed_model_path: mnist_pretrain/
 
 vis_train: false
 vis_train_batch_loss: false
-vis_trigger_split_test: true
+vis_trigger_split_test: false
 track_distance: false
 batch_track_distance: false
 log_interval: 2

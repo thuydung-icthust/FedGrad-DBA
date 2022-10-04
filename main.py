@@ -31,7 +31,7 @@ os.environ['KMP_DUPLICATE_LIB_OK'] = 'True'
 logger = logging.getLogger("logger")
 # logger.setLevel("ERROR")
 
-vis = visdom.Visdom(port=8098)
+# vis = visdom.Visdom(port=8098)
 criterion = torch.nn.CrossEntropyLoss()
 torch.manual_seed(1)
 torch.cuda.manual_seed(1)
@@ -57,6 +57,7 @@ def trigger_test_byname(helper, agent_name_key, vis, epoch):
         helper.target_model.trigger_agent_test_vis(vis=vis, epoch=epoch, acc=epoch_acc, loss=None,
                                                    eid=helper.params['environment_name'],
                                                    name="global_in_" + str(agent_name_key) + "_trigger")
+    
 def vis_agg_weight(helper,names,weights,epoch,vis,adversarial_name_keys):
     print(names)
     print(adversarial_name_keys)
@@ -89,7 +90,8 @@ if __name__ == '__main__':
     parser.add_argument('--params', dest='params')
     args = parser.parse_args()
     with open(f'./{args.params}', 'r') as f:
-        params_loaded = yaml.load(f)
+        print(f"F here: {f}")
+        params_loaded = yaml.safe_load(f)
     current_time = datetime.datetime.now().strftime('%b.%d_%H.%M.%S')
     if params_loaded['type'] == config.TYPE_LOAN:
         helper = LoanHelper(current_time=current_time, params=params_loaded,
@@ -218,10 +220,10 @@ if __name__ == '__main__':
             # test on local triggers
             csv_record.poisontriggertest_result.append(
                 ["global", "combine", "", temp_global_epoch, epoch_loss, epoch_acc_p, epoch_corret, epoch_total])
-            if helper.params['vis_trigger_split_test']:
-                helper.target_model.trigger_agent_test_vis(vis=vis, epoch=epoch, acc=epoch_acc_p, loss=None,
-                                                           eid=helper.params['environment_name'],
-                                                           name="global_combine")
+            # if helper.params['vis_trigger_split_test']:
+            #     helper.target_model.trigger_agent_test_vis(vis=vis, epoch=epoch, acc=epoch_acc_p, loss=None,
+            #                                                eid=helper.params['environment_name'],
+            #                                                name="global_combine")
             if len(helper.params['adversary_list']) == 1:  # centralized attack
                 if helper.params['centralized_test_trigger'] == True:  # centralized attack test on local triggers
                     for j in range(0, helper.params['trigger_num']):
