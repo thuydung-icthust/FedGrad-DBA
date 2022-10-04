@@ -106,7 +106,7 @@ class SimpleNet(nn.Module):
                                title=f"Backdoor Trigger Test Loss_{self.created_time}",
                                width=700, height=400))
 
-    def trigger_agent_test_vis(self, vis, epoch, acc, loss, eid, name):
+    def trigger_agent_test_vis(self, epoch, acc, loss, eid, name, vis=None):
         vis.line(Y=np.array([acc]), X=np.array([epoch]),
                  win=f"poison_state_trigger_acc_{self.created_time}",
                  env=eid,
@@ -132,25 +132,25 @@ class SimpleNet(nn.Module):
         name= agent_name_key
         # name= f'Model_{name}'
 
-        vis.line(Y=np.array([acc]), X=np.array([epoch]),
-                 win=f"poison_test_acc_{self.created_time}",
-                 env=eid,
-                 name=name,
-                 update='append' if vis.win_exists(f"poison_test_acc_{self.created_time}",
-                                                   env=eid) else None,
-                 opts=dict(showlegend=True,
-                           title=f"Backdoor Task Accuracy_{self.created_time}",
-                           width=700, height=400))
-        if loss is not None:
-            vis.line(Y=np.array([loss]), X=np.array([epoch]),
-                     win=f"poison_loss_acc_{self.created_time}",
-                     env=eid,
-                     name=name,
-                     update='append' if vis.win_exists(f"poison_loss_acc_{self.created_time}",
-                                                       env=eid) else None,
-                     opts=dict(showlegend=True,
-                               title=f"Backdoor Task Test Loss_{self.created_time}",
-                               width=700, height=400))
+        # vis.line(Y=np.array([acc]), X=np.array([epoch]),
+        #          win=f"poison_test_acc_{self.created_time}",
+        #          env=eid,
+        #          name=name,
+        #          update='append' if vis.win_exists(f"poison_test_acc_{self.created_time}",
+        #                                            env=eid) else None,
+        #          opts=dict(showlegend=True,
+        #                    title=f"Backdoor Task Accuracy_{self.created_time}",
+        #                    width=700, height=400))
+        # if loss is not None:
+        #     vis.line(Y=np.array([loss]), X=np.array([epoch]),
+        #              win=f"poison_loss_acc_{self.created_time}",
+        #              env=eid,
+        #              name=name,
+        #              update='append' if vis.win_exists(f"poison_loss_acc_{self.created_time}",
+        #                                                env=eid) else None,
+        #              opts=dict(showlegend=True,
+        #                        title=f"Backdoor Task Test Loss_{self.created_time}",
+        #                        width=700, height=400))
 
     def additional_test_vis(self, vis, epoch, acc, loss, eid, agent_name_key):
         name = agent_name_key

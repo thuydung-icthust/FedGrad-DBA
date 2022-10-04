@@ -1,0 +1,952 @@
+current path: saved_models/model_mnist_Oct.04_16.13.18
+Loading data
+build_classes_dict done
+train loaders done
+get poison test loader
+load data done
+Loaded parameters from saved model: LR is 0.1 and current epoch is 11
+create model done
+Poisoned following participants: [41, 73, 51, 74]
+We use following environment for graphs:  mnist_DBA
+Server Epoch:11 choose agents : [23, 76, 63, 11, 75, 43, 46, 37, 21, 35].
+___Train Local_Simple,  epoch  11, local model 23, internal_epoch   1,  Average loss: 0.0008, Accuracy: 289/293 (98.6348%)
+___Test Local_Simple poisoned: False, epoch: 11: Average loss: 0.1700, Accuracy: 9437/10000 (94.3700%)
+___Train Local_Simple,  epoch  11, local model 76, internal_epoch   1,  Average loss: 0.0016, Accuracy: 76/78 (97.4359%)
+___Test Local_Simple poisoned: False, epoch: 11: Average loss: 0.0849, Accuracy: 9744/10000 (97.4400%)
+___Train Local_Simple,  epoch  11, local model 63, internal_epoch   1,  Average loss: 0.0022, Accuracy: 856/889 (96.2880%)
+___Test Local_Simple poisoned: False, epoch: 11: Average loss: 0.1828, Accuracy: 9433/10000 (94.3300%)
+___Train Local_Simple,  epoch  11, local model 11, internal_epoch   1,  Average loss: 0.0015, Accuracy: 626/645 (97.0543%)
+___Test Local_Simple poisoned: False, epoch: 11: Average loss: 0.3060, Accuracy: 9027/10000 (90.2700%)
+___Train Local_Simple,  epoch  11, local model 75, internal_epoch   1,  Average loss: 0.0012, Accuracy: 666/686 (97.0845%)
+___Test Local_Simple poisoned: False, epoch: 11: Average loss: 0.1533, Accuracy: 9549/10000 (95.4900%)
+___Train Local_Simple,  epoch  11, local model 43, internal_epoch   1,  Average loss: 0.0014, Accuracy: 395/408 (96.8137%)
+___Test Local_Simple poisoned: False, epoch: 11: Average loss: 0.1541, Accuracy: 9534/10000 (95.3400%)
+___Train Local_Simple,  epoch  11, local model 46, internal_epoch   1,  Average loss: 0.0027, Accuracy: 690/710 (97.1831%)
+___Test Local_Simple poisoned: False, epoch: 11: Average loss: 0.5499, Accuracy: 8233/10000 (82.3300%)
+___Train Local_Simple,  epoch  11, local model 37, internal_epoch   1,  Average loss: 0.0015, Accuracy: 839/860 (97.5581%)
+___Test Local_Simple poisoned: False, epoch: 11: Average loss: 0.4313, Accuracy: 8707/10000 (87.0700%)
+___Train Local_Simple,  epoch  11, local model 21, internal_epoch   1,  Average loss: 0.0012, Accuracy: 305/312 (97.7564%)
+___Test Local_Simple poisoned: False, epoch: 11: Average loss: 0.2238, Accuracy: 9319/10000 (93.1900%)
+___Train Local_Simple,  epoch  11, local model 35, internal_epoch   1,  Average loss: 0.0006, Accuracy: 493/499 (98.7976%)
+___Test Local_Simple poisoned: False, epoch: 11: Average loss: 0.1856, Accuracy: 9458/10000 (94.5800%)
+time spent on training: 17.612703323364258
+___Test Target_Simple poisoned: False, epoch: 11: Average loss: 0.0827, Accuracy: 9730/10000 (97.3000%)
+___Test Target_Simple poisoned: True, epoch: 11: Average loss: 12.2114, Accuracy: 41/8968 (0.4572%)
+Done in 26.58522129058838 sec.
+Server Epoch:12 choose agents : [41, 11, 61, 64, 28, 67, 22, 82, 60, 42].
+poison local model 41 index 0 
+poison_now
+Current lr: [0.05]
+___PoisonTrain Local_Simple ,  epoch  12, local model 41, internal_epoch   1,  Average loss: 0.0230, Accuracy: 367/606 (60.5611%), train_poison_data_count: 200
+Current lr: [0.0005000000000000001]
+___PoisonTrain Local_Simple ,  epoch  12, local model 41, internal_epoch   2,  Average loss: 0.0171, Accuracy: 343/606 (56.6007%), train_poison_data_count: 200
+Current lr: [0.005000000000000001]
+___PoisonTrain Local_Simple ,  epoch  12, local model 41, internal_epoch   3,  Average loss: 0.0146, Accuracy: 374/606 (61.7162%), train_poison_data_count: 200
+Current lr: [0.005000000000000001]
+___PoisonTrain Local_Simple ,  epoch  12, local model 41, internal_epoch   4,  Average loss: 0.0130, Accuracy: 384/606 (63.3663%), train_poison_data_count: 200
+Current lr: [0.005000000000000001]
+___PoisonTrain Local_Simple ,  epoch  12, local model 41, internal_epoch   5,  Average loss: 0.0120, Accuracy: 404/606 (66.6667%), train_poison_data_count: 200
+Current lr: [0.005000000000000001]
+___PoisonTrain Local_Simple ,  epoch  12, local model 41, internal_epoch   6,  Average loss: 0.0118, Accuracy: 400/606 (66.0066%), train_poison_data_count: 200
+Current lr: [0.005000000000000001]
+___PoisonTrain Local_Simple ,  epoch  12, local model 41, internal_epoch   7,  Average loss: 0.0111, Accuracy: 415/606 (68.4818%), train_poison_data_count: 200
+Current lr: [5.0000000000000016e-05]
+___PoisonTrain Local_Simple ,  epoch  12, local model 41, internal_epoch   8,  Average loss: 0.0113, Accuracy: 391/606 (64.5215%), train_poison_data_count: 200
+Current lr: [0.0005000000000000001]
+___PoisonTrain Local_Simple ,  epoch  12, local model 41, internal_epoch   9,  Average loss: 0.0110, Accuracy: 421/606 (69.4719%), train_poison_data_count: 200
+Current lr: [0.0005000000000000001]
+___PoisonTrain Local_Simple ,  epoch  12, local model 41, internal_epoch  10,  Average loss: 0.0107, Accuracy: 410/606 (67.6568%), train_poison_data_count: 200
+Global model norm: 16.536201298035188.
+Norm before scaling: 16.670839829917558. Distance: 4.383808532793975
+will scale.
+___Test Local_Simple poisoned: False, epoch: 12: Average loss: 1.6677, Accuracy: 3888/10000 (38.8800%)
+___Test Local_Simple poisoned: True, epoch: 12: Average loss: 0.8088, Accuracy: 6140/8968 (68.4657%)
+Scaling by  100
+Scaled Norm after poisoning: 437.0086347831127, distance: 438.38086323424295
+Total norm for 1 adversaries is: 437.0086347831127. distance: 438.38086323424295
+___Test Local_Simple poisoned: True, epoch: 12: Average loss: 114424.4800, Accuracy: 3140/8968 (35.0134%)
+___Train Local_Simple,  epoch  12, local model 11, internal_epoch   1,  Average loss: 0.0013, Accuracy: 631/645 (97.8295%)
+___Test Local_Simple poisoned: False, epoch: 12: Average loss: 0.2689, Accuracy: 9090/10000 (90.9000%)
+___Train Local_Simple,  epoch  12, local model 61, internal_epoch   1,  Average loss: 0.0015, Accuracy: 679/699 (97.1388%)
+___Test Local_Simple poisoned: False, epoch: 12: Average loss: 0.2399, Accuracy: 9224/10000 (92.2400%)
+___Train Local_Simple,  epoch  12, local model 64, internal_epoch   1,  Average loss: 0.0017, Accuracy: 789/813 (97.0480%)
+___Test Local_Simple poisoned: False, epoch: 12: Average loss: 0.3941, Accuracy: 8685/10000 (86.8500%)
+___Train Local_Simple,  epoch  12, local model 28, internal_epoch   1,  Average loss: 0.0014, Accuracy: 486/501 (97.0060%)
+___Test Local_Simple poisoned: False, epoch: 12: Average loss: 0.1044, Accuracy: 9664/10000 (96.6400%)
+___Train Local_Simple,  epoch  12, local model 67, internal_epoch   1,  Average loss: 0.0013, Accuracy: 972/998 (97.3948%)
+___Test Local_Simple poisoned: False, epoch: 12: Average loss: 0.2052, Accuracy: 9361/10000 (93.6100%)
+___Train Local_Simple,  epoch  12, local model 22, internal_epoch   1,  Average loss: 0.0013, Accuracy: 570/583 (97.7702%)
+___Test Local_Simple poisoned: False, epoch: 12: Average loss: 0.2139, Accuracy: 9311/10000 (93.1100%)
+___Train Local_Simple,  epoch  12, local model 82, internal_epoch   1,  Average loss: 0.0026, Accuracy: 694/713 (97.3352%)
+___Test Local_Simple poisoned: False, epoch: 12: Average loss: 0.9577, Accuracy: 7029/10000 (70.2900%)
+___Train Local_Simple,  epoch  12, local model 60, internal_epoch   1,  Average loss: 0.0020, Accuracy: 327/338 (96.7456%)
+___Test Local_Simple poisoned: False, epoch: 12: Average loss: 0.1482, Accuracy: 9546/10000 (95.4600%)
+___Train Local_Simple,  epoch  12, local model 42, internal_epoch   1,  Average loss: 0.0010, Accuracy: 231/236 (97.8814%)
+___Test Local_Simple poisoned: False, epoch: 12: Average loss: 0.1092, Accuracy: 9655/10000 (96.5500%)
+time spent on training: 28.93998956680298
+___Test Target_Simple poisoned: False, epoch: 12: Average loss: 1.6621, Accuracy: 3879/10000 (38.7900%)
+___Test Target_Simple poisoned: True, epoch: 12: Average loss: 0.8128, Accuracy: 6134/8968 (68.3988%)
+Done in 37.91097569465637 sec.
+Server Epoch:13 choose agents : [85, 56, 57, 63, 77, 18, 43, 91, 42, 52].
+___Train Local_Simple,  epoch  13, local model 85, internal_epoch   1,  Average loss: 0.0123, Accuracy: 325/431 (75.4060%)
+___Test Local_Simple poisoned: False, epoch: 13: Average loss: 0.9679, Accuracy: 7445/10000 (74.4500%)
+___Train Local_Simple,  epoch  13, local model 56, internal_epoch   1,  Average loss: 0.0090, Accuracy: 753/880 (85.5682%)
+___Test Local_Simple poisoned: False, epoch: 13: Average loss: 0.6596, Accuracy: 8484/10000 (84.8400%)
+___Train Local_Simple,  epoch  13, local model 57, internal_epoch   1,  Average loss: 0.0121, Accuracy: 250/343 (72.8863%)
+___Test Local_Simple poisoned: False, epoch: 13: Average loss: 0.7634, Accuracy: 7263/10000 (72.6300%)
+___Train Local_Simple,  epoch  13, local model 63, internal_epoch   1,  Average loss: 0.0091, Accuracy: 717/889 (80.6524%)
+___Test Local_Simple poisoned: False, epoch: 13: Average loss: 0.2940, Accuracy: 9156/10000 (91.5600%)
+___Train Local_Simple,  epoch  13, local model 77, internal_epoch   1,  Average loss: 0.0108, Accuracy: 472/589 (80.1358%)
+___Test Local_Simple poisoned: False, epoch: 13: Average loss: 0.3990, Accuracy: 8859/10000 (88.5900%)
+___Train Local_Simple,  epoch  13, local model 18, internal_epoch   1,  Average loss: 0.0142, Accuracy: 337/459 (73.4205%)
+___Test Local_Simple poisoned: False, epoch: 13: Average loss: 1.6020, Accuracy: 6911/10000 (69.1100%)
+___Train Local_Simple,  epoch  13, local model 43, internal_epoch   1,  Average loss: 0.0117, Accuracy: 315/408 (77.2059%)
+___Test Local_Simple poisoned: False, epoch: 13: Average loss: 0.6837, Accuracy: 8122/10000 (81.2200%)
+___Train Local_Simple,  epoch  13, local model 91, internal_epoch   1,  Average loss: 0.0129, Accuracy: 181/256 (70.7031%)
+___Test Local_Simple poisoned: False, epoch: 13: Average loss: 1.3722, Accuracy: 6097/10000 (60.9700%)
+___Train Local_Simple,  epoch  13, local model 42, internal_epoch   1,  Average loss: 0.0181, Accuracy: 142/236 (60.1695%)
+___Test Local_Simple poisoned: False, epoch: 13: Average loss: 1.2336, Accuracy: 5275/10000 (52.7500%)
+___Train Local_Simple,  epoch  13, local model 52, internal_epoch   1,  Average loss: 0.0165, Accuracy: 164/253 (64.8221%)
+___Test Local_Simple poisoned: False, epoch: 13: Average loss: 1.5012, Accuracy: 4604/10000 (46.0400%)
+time spent on training: 15.749576330184937
+___Test Target_Simple poisoned: False, epoch: 13: Average loss: 1.3087, Accuracy: 5153/10000 (51.5300%)
+___Test Target_Simple poisoned: True, epoch: 13: Average loss: 1.1060, Accuracy: 4608/8968 (51.3827%)
+Done in 24.87799048423767 sec.
+Server Epoch:14 choose agents : [73, 28, 37, 96, 99, 80, 13, 98, 78, 46].
+poison local model 73 index 1 
+poison_now
+Current lr: [0.05]
+___PoisonTrain Local_Simple ,  epoch  14, local model 73, internal_epoch   1,  Average loss: 0.0154, Accuracy: 354/591 (59.8985%), train_poison_data_count: 195
+Current lr: [0.0005000000000000001]
+___PoisonTrain Local_Simple ,  epoch  14, local model 73, internal_epoch   2,  Average loss: 0.0220, Accuracy: 318/591 (53.8071%), train_poison_data_count: 195
+Current lr: [0.005000000000000001]
+___PoisonTrain Local_Simple ,  epoch  14, local model 73, internal_epoch   3,  Average loss: 0.0179, Accuracy: 355/591 (60.0677%), train_poison_data_count: 195
+Current lr: [0.005000000000000001]
+___PoisonTrain Local_Simple ,  epoch  14, local model 73, internal_epoch   4,  Average loss: 0.0146, Accuracy: 356/591 (60.2369%), train_poison_data_count: 195
+Current lr: [0.005000000000000001]
+___PoisonTrain Local_Simple ,  epoch  14, local model 73, internal_epoch   5,  Average loss: 0.0142, Accuracy: 323/591 (54.6531%), train_poison_data_count: 195
+Current lr: [0.005000000000000001]
+___PoisonTrain Local_Simple ,  epoch  14, local model 73, internal_epoch   6,  Average loss: 0.0139, Accuracy: 352/591 (59.5601%), train_poison_data_count: 195
+Current lr: [0.005000000000000001]
+___PoisonTrain Local_Simple ,  epoch  14, local model 73, internal_epoch   7,  Average loss: 0.0132, Accuracy: 349/591 (59.0525%), train_poison_data_count: 195
+Current lr: [5.0000000000000016e-05]
+___PoisonTrain Local_Simple ,  epoch  14, local model 73, internal_epoch   8,  Average loss: 0.0131, Accuracy: 373/591 (63.1134%), train_poison_data_count: 195
+Current lr: [0.0005000000000000001]
+___PoisonTrain Local_Simple ,  epoch  14, local model 73, internal_epoch   9,  Average loss: 0.0128, Accuracy: 362/591 (61.2521%), train_poison_data_count: 195
+Current lr: [0.0005000000000000001]
+___PoisonTrain Local_Simple ,  epoch  14, local model 73, internal_epoch  10,  Average loss: 0.0123, Accuracy: 379/591 (64.1286%), train_poison_data_count: 195
+Global model norm: 16.678425010768965.
+Norm before scaling: 16.87126875705133. Distance: 2.407974714970195
+will scale.
+___Test Local_Simple poisoned: False, epoch: 14: Average loss: 0.8121, Accuracy: 6418/10000 (64.1800%)
+___Test Local_Simple poisoned: True, epoch: 14: Average loss: 0.9114, Accuracy: 4048/8968 (45.1383%)
+Scaling by  100
+Scaled Norm after poisoning: 241.51342483390027, distance: 240.79744632418758
+Total norm for 1 adversaries is: 241.51342483390027. distance: 240.79744632418758
+___Test Local_Simple poisoned: True, epoch: 14: Average loss: 0.0000, Accuracy: 8968/8968 (100.0000%)
+___Train Local_Simple,  epoch  14, local model 28, internal_epoch   1,  Average loss: 0.0114, Accuracy: 393/501 (78.4431%)
+___Test Local_Simple poisoned: False, epoch: 14: Average loss: 0.4222, Accuracy: 8653/10000 (86.5300%)
+___Train Local_Simple,  epoch  14, local model 37, internal_epoch   1,  Average loss: 0.0033, Accuracy: 814/860 (94.6512%)
+___Test Local_Simple poisoned: False, epoch: 14: Average loss: 0.5115, Accuracy: 8583/10000 (85.8300%)
+___Train Local_Simple,  epoch  14, local model 96, internal_epoch   1,  Average loss: 0.0075, Accuracy: 562/672 (83.6310%)
+___Test Local_Simple poisoned: False, epoch: 14: Average loss: 1.1490, Accuracy: 7731/10000 (77.3100%)
+___Train Local_Simple,  epoch  14, local model 99, internal_epoch   1,  Average loss: 0.0119, Accuracy: 271/377 (71.8833%)
+___Test Local_Simple poisoned: False, epoch: 14: Average loss: 2.4850, Accuracy: 5764/10000 (57.6400%)
+___Train Local_Simple,  epoch  14, local model 80, internal_epoch   1,  Average loss: 0.0113, Accuracy: 335/431 (77.7262%)
+___Test Local_Simple poisoned: False, epoch: 14: Average loss: 1.2083, Accuracy: 6380/10000 (63.8000%)
+___Train Local_Simple,  epoch  14, local model 13, internal_epoch   1,  Average loss: 0.0072, Accuracy: 627/734 (85.4223%)
+___Test Local_Simple poisoned: False, epoch: 14: Average loss: 0.9025, Accuracy: 7109/10000 (71.0900%)
+___Train Local_Simple,  epoch  14, local model 98, internal_epoch   1,  Average loss: 0.0064, Accuracy: 700/818 (85.5746%)
+___Test Local_Simple poisoned: False, epoch: 14: Average loss: 1.1319, Accuracy: 7168/10000 (71.6800%)
+___Train Local_Simple,  epoch  14, local model 78, internal_epoch   1,  Average loss: 0.0098, Accuracy: 245/303 (80.8581%)
+___Test Local_Simple poisoned: False, epoch: 14: Average loss: 1.7200, Accuracy: 5376/10000 (53.7600%)
+___Train Local_Simple,  epoch  14, local model 46, internal_epoch   1,  Average loss: 0.0109, Accuracy: 566/710 (79.7183%)
+___Test Local_Simple poisoned: False, epoch: 14: Average loss: 1.7762, Accuracy: 5846/10000 (58.4600%)
+time spent on training: 29.81775999069214
+___Test Target_Simple poisoned: False, epoch: 14: Average loss: 0.6512, Accuracy: 7337/10000 (73.3700%)
+___Test Target_Simple poisoned: True, epoch: 14: Average loss: 1.2350, Accuracy: 2854/8968 (31.8243%)
+Done in 41.087594985961914 sec.
+Server Epoch:15 choose agents : [45, 62, 50, 67, 14, 36, 24, 7, 4, 80].
+___Train Local_Simple,  epoch  15, local model 45, internal_epoch   1,  Average loss: 0.0052, Accuracy: 570/628 (90.7643%)
+___Test Local_Simple poisoned: False, epoch: 15: Average loss: 0.7153, Accuracy: 8076/10000 (80.7600%)
+___Train Local_Simple,  epoch  15, local model 62, internal_epoch   1,  Average loss: 0.0044, Accuracy: 387/423 (91.4894%)
+___Test Local_Simple poisoned: False, epoch: 15: Average loss: 0.2516, Accuracy: 9285/10000 (92.8500%)
+___Train Local_Simple,  epoch  15, local model 50, internal_epoch   1,  Average loss: 0.0046, Accuracy: 431/474 (90.9283%)
+___Test Local_Simple poisoned: False, epoch: 15: Average loss: 0.6306, Accuracy: 8250/10000 (82.5000%)
+___Train Local_Simple,  epoch  15, local model 67, internal_epoch   1,  Average loss: 0.0040, Accuracy: 918/998 (91.9840%)
+___Test Local_Simple poisoned: False, epoch: 15: Average loss: 0.6631, Accuracy: 7721/10000 (77.2100%)
+___Train Local_Simple,  epoch  15, local model 14, internal_epoch   1,  Average loss: 0.0043, Accuracy: 345/376 (91.7553%)
+___Test Local_Simple poisoned: False, epoch: 15: Average loss: 0.6315, Accuracy: 7376/10000 (73.7600%)
+___Train Local_Simple,  epoch  15, local model 36, internal_epoch   1,  Average loss: 0.0043, Accuracy: 930/1005 (92.5373%)
+___Test Local_Simple poisoned: False, epoch: 15: Average loss: 0.9201, Accuracy: 7788/10000 (77.8800%)
+___Train Local_Simple,  epoch  15, local model 24, internal_epoch   1,  Average loss: 0.0055, Accuracy: 332/379 (87.5989%)
+___Test Local_Simple poisoned: False, epoch: 15: Average loss: 0.5747, Accuracy: 8313/10000 (83.1300%)
+___Train Local_Simple,  epoch  15, local model 7, internal_epoch   1,  Average loss: 0.0047, Accuracy: 379/418 (90.6699%)
+___Test Local_Simple poisoned: False, epoch: 15: Average loss: 0.5519, Accuracy: 8415/10000 (84.1500%)
+___Train Local_Simple,  epoch  15, local model 4, internal_epoch   1,  Average loss: 0.0054, Accuracy: 593/658 (90.1216%)
+___Test Local_Simple poisoned: False, epoch: 15: Average loss: 1.1340, Accuracy: 7584/10000 (75.8400%)
+___Train Local_Simple,  epoch  15, local model 80, internal_epoch   1,  Average loss: 0.0036, Accuracy: 403/431 (93.5035%)
+___Test Local_Simple poisoned: False, epoch: 15: Average loss: 0.7339, Accuracy: 7957/10000 (79.5700%)
+time spent on training: 16.366124391555786
+___Test Target_Simple poisoned: False, epoch: 15: Average loss: 0.4876, Accuracy: 8446/10000 (84.4600%)
+___Test Target_Simple poisoned: True, epoch: 15: Average loss: 1.6633, Accuracy: 1697/8968 (18.9228%)
+Done in 25.440954446792603 sec.
+Server Epoch:16 choose agents : [51, 39, 26, 29, 4, 42, 69, 95, 80, 8].
+poison local model 51 index 2 
+poison_now
+Current lr: [0.05]
+___PoisonTrain Local_Simple ,  epoch  16, local model 51, internal_epoch   1,  Average loss: 0.0105, Accuracy: 384/568 (67.6056%), train_poison_data_count: 180
+Current lr: [0.0005000000000000001]
+___PoisonTrain Local_Simple ,  epoch  16, local model 51, internal_epoch   2,  Average loss: 0.0095, Accuracy: 386/568 (67.9577%), train_poison_data_count: 180
+Current lr: [0.005000000000000001]
+___PoisonTrain Local_Simple ,  epoch  16, local model 51, internal_epoch   3,  Average loss: 0.0081, Accuracy: 434/568 (76.4085%), train_poison_data_count: 180
+Current lr: [0.005000000000000001]
+___PoisonTrain Local_Simple ,  epoch  16, local model 51, internal_epoch   4,  Average loss: 0.0078, Accuracy: 438/568 (77.1127%), train_poison_data_count: 180
+Current lr: [0.005000000000000001]
+___PoisonTrain Local_Simple ,  epoch  16, local model 51, internal_epoch   5,  Average loss: 0.0072, Accuracy: 457/568 (80.4577%), train_poison_data_count: 180
+Current lr: [0.005000000000000001]
+___PoisonTrain Local_Simple ,  epoch  16, local model 51, internal_epoch   6,  Average loss: 0.0066, Accuracy: 480/568 (84.5070%), train_poison_data_count: 180
+Current lr: [0.005000000000000001]
+___PoisonTrain Local_Simple ,  epoch  16, local model 51, internal_epoch   7,  Average loss: 0.0057, Accuracy: 506/568 (89.0845%), train_poison_data_count: 180
+Current lr: [5.0000000000000016e-05]
+___PoisonTrain Local_Simple ,  epoch  16, local model 51, internal_epoch   8,  Average loss: 0.0044, Accuracy: 528/568 (92.9577%), train_poison_data_count: 180
+Current lr: [0.0005000000000000001]
+___PoisonTrain Local_Simple ,  epoch  16, local model 51, internal_epoch   9,  Average loss: 0.0039, Accuracy: 523/568 (92.0775%), train_poison_data_count: 180
+Current lr: [0.0005000000000000001]
+___PoisonTrain Local_Simple ,  epoch  16, local model 51, internal_epoch  10,  Average loss: 0.0037, Accuracy: 533/568 (93.8380%), train_poison_data_count: 180
+Global model norm: 16.901506417756174.
+Norm before scaling: 16.971713599398264. Distance: 1.5770897821910168
+will scale.
+___Test Local_Simple poisoned: False, epoch: 16: Average loss: 0.7175, Accuracy: 7445/10000 (74.4500%)
+___Test Local_Simple poisoned: True, epoch: 16: Average loss: 0.2403, Accuracy: 8054/8968 (89.8082%)
+Scaling by  100
+Scaled Norm after poisoning: 158.57766236138053, distance: 157.70898213759102
+Total norm for 1 adversaries is: 158.57766236138053. distance: 157.70898213759102
+___Test Local_Simple poisoned: True, epoch: 16: Average loss: 0.0000, Accuracy: 8968/8968 (100.0000%)
+___Train Local_Simple,  epoch  16, local model 39, internal_epoch   1,  Average loss: 0.0060, Accuracy: 236/257 (91.8288%)
+___Test Local_Simple poisoned: False, epoch: 16: Average loss: 0.5663, Accuracy: 8471/10000 (84.7100%)
+___Train Local_Simple,  epoch  16, local model 26, internal_epoch   1,  Average loss: 0.0032, Accuracy: 522/554 (94.2238%)
+___Test Local_Simple poisoned: False, epoch: 16: Average loss: 0.2624, Accuracy: 9276/10000 (92.7600%)
+___Train Local_Simple,  epoch  16, local model 29, internal_epoch   1,  Average loss: 0.0028, Accuracy: 950/1002 (94.8104%)
+___Test Local_Simple poisoned: False, epoch: 16: Average loss: 0.4811, Accuracy: 8286/10000 (82.8600%)
+___Train Local_Simple,  epoch  16, local model 4, internal_epoch   1,  Average loss: 0.0044, Accuracy: 607/658 (92.2492%)
+___Test Local_Simple poisoned: False, epoch: 16: Average loss: 1.0413, Accuracy: 7892/10000 (78.9200%)
+___Train Local_Simple,  epoch  16, local model 42, internal_epoch   1,  Average loss: 0.0053, Accuracy: 218/236 (92.3729%)
+___Test Local_Simple poisoned: False, epoch: 16: Average loss: 0.4387, Accuracy: 8567/10000 (85.6700%)
+___Train Local_Simple,  epoch  16, local model 69, internal_epoch   1,  Average loss: 0.0048, Accuracy: 231/256 (90.2344%)
+___Test Local_Simple poisoned: False, epoch: 16: Average loss: 0.6470, Accuracy: 7807/10000 (78.0700%)
+___Train Local_Simple,  epoch  16, local model 95, internal_epoch   1,  Average loss: 0.0019, Accuracy: 585/602 (97.1761%)
+___Test Local_Simple poisoned: False, epoch: 16: Average loss: 2.9590, Accuracy: 6163/10000 (61.6300%)
+___Train Local_Simple,  epoch  16, local model 80, internal_epoch   1,  Average loss: 0.0028, Accuracy: 414/431 (96.0557%)
+___Test Local_Simple poisoned: False, epoch: 16: Average loss: 0.8291, Accuracy: 7906/10000 (79.0600%)
+___Train Local_Simple,  epoch  16, local model 8, internal_epoch   1,  Average loss: 0.0040, Accuracy: 595/633 (93.9968%)
+___Test Local_Simple poisoned: False, epoch: 16: Average loss: 0.3419, Accuracy: 8997/10000 (89.9700%)
+time spent on training: 29.282842874526978
+___Test Target_Simple poisoned: False, epoch: 16: Average loss: 0.6173, Accuracy: 7878/10000 (78.7800%)
+___Test Target_Simple poisoned: True, epoch: 16: Average loss: 0.3281, Accuracy: 7629/8968 (85.0691%)
+Done in 38.24743890762329 sec.
+Server Epoch:17 choose agents : [25, 68, 70, 61, 64, 31, 10, 23, 7, 74].
+___Train Local_Simple,  epoch  17, local model 25, internal_epoch   1,  Average loss: 0.0035, Accuracy: 602/647 (93.0448%)
+___Test Local_Simple poisoned: False, epoch: 17: Average loss: 0.6389, Accuracy: 7962/10000 (79.6200%)
+___Train Local_Simple,  epoch  17, local model 68, internal_epoch   1,  Average loss: 0.0035, Accuracy: 461/494 (93.3198%)
+___Test Local_Simple poisoned: False, epoch: 17: Average loss: 0.5000, Accuracy: 8326/10000 (83.2600%)
+___Train Local_Simple,  epoch  17, local model 70, internal_epoch   1,  Average loss: 0.0060, Accuracy: 635/724 (87.7072%)
+___Test Local_Simple poisoned: False, epoch: 17: Average loss: 0.8924, Accuracy: 7382/10000 (73.8200%)
+___Train Local_Simple,  epoch  17, local model 61, internal_epoch   1,  Average loss: 0.0034, Accuracy: 655/699 (93.7053%)
+___Test Local_Simple poisoned: False, epoch: 17: Average loss: 0.5901, Accuracy: 8333/10000 (83.3300%)
+___Train Local_Simple,  epoch  17, local model 64, internal_epoch   1,  Average loss: 0.0048, Accuracy: 738/813 (90.7749%)
+___Test Local_Simple poisoned: False, epoch: 17: Average loss: 0.8880, Accuracy: 8007/10000 (80.0700%)
+___Train Local_Simple,  epoch  17, local model 31, internal_epoch   1,  Average loss: 0.0034, Accuracy: 780/835 (93.4132%)
+___Test Local_Simple poisoned: False, epoch: 17: Average loss: 0.3970, Accuracy: 8799/10000 (87.9900%)
+___Train Local_Simple,  epoch  17, local model 10, internal_epoch   1,  Average loss: 0.0029, Accuracy: 850/892 (95.2915%)
+___Test Local_Simple poisoned: False, epoch: 17: Average loss: 0.7372, Accuracy: 7665/10000 (76.6500%)
+___Train Local_Simple,  epoch  17, local model 23, internal_epoch   1,  Average loss: 0.0039, Accuracy: 268/293 (91.4676%)
+___Test Local_Simple poisoned: False, epoch: 17: Average loss: 0.3377, Accuracy: 8926/10000 (89.2600%)
+___Train Local_Simple,  epoch  17, local model 7, internal_epoch   1,  Average loss: 0.0058, Accuracy: 372/418 (88.9952%)
+___Test Local_Simple poisoned: False, epoch: 17: Average loss: 0.4961, Accuracy: 8505/10000 (85.0500%)
+poison local model 74 index 3 
+___Train Local_Simple,  epoch  17, local model 74, internal_epoch   1,  Average loss: 0.0035, Accuracy: 518/557 (92.9982%)
+___Test Local_Simple poisoned: False, epoch: 17: Average loss: 0.2473, Accuracy: 9277/10000 (92.7700%)
+time spent on training: 17.79651165008545
+___Test Target_Simple poisoned: False, epoch: 17: Average loss: 0.4220, Accuracy: 8721/10000 (87.2100%)
+___Test Target_Simple poisoned: True, epoch: 17: Average loss: 0.6738, Accuracy: 6238/8968 (69.5584%)
+Done in 26.705069541931152 sec.
+Server Epoch:18 choose agents : [74, 46, 65, 57, 83, 9, 64, 58, 41, 12].
+poison local model 74 index 3 
+poison_now
+Current lr: [0.05]
+___PoisonTrain Local_Simple ,  epoch  18, local model 74, internal_epoch   1,  Average loss: 0.0066, Accuracy: 458/557 (82.2262%), train_poison_data_count: 180
+Current lr: [0.0005000000000000001]
+___PoisonTrain Local_Simple ,  epoch  18, local model 74, internal_epoch   2,  Average loss: 0.0035, Accuracy: 522/557 (93.7163%), train_poison_data_count: 180
+Current lr: [0.005000000000000001]
+___PoisonTrain Local_Simple ,  epoch  18, local model 74, internal_epoch   3,  Average loss: 0.0019, Accuracy: 530/557 (95.1526%), train_poison_data_count: 180
+Current lr: [0.005000000000000001]
+___PoisonTrain Local_Simple ,  epoch  18, local model 74, internal_epoch   4,  Average loss: 0.0018, Accuracy: 537/557 (96.4093%), train_poison_data_count: 180
+Current lr: [0.005000000000000001]
+___PoisonTrain Local_Simple ,  epoch  18, local model 74, internal_epoch   5,  Average loss: 0.0014, Accuracy: 541/557 (97.1275%), train_poison_data_count: 180
+Current lr: [0.005000000000000001]
+___PoisonTrain Local_Simple ,  epoch  18, local model 74, internal_epoch   6,  Average loss: 0.0014, Accuracy: 543/557 (97.4865%), train_poison_data_count: 180
+Current lr: [0.005000000000000001]
+___PoisonTrain Local_Simple ,  epoch  18, local model 74, internal_epoch   7,  Average loss: 0.0010, Accuracy: 547/557 (98.2047%), train_poison_data_count: 180
+Current lr: [5.0000000000000016e-05]
+___PoisonTrain Local_Simple ,  epoch  18, local model 74, internal_epoch   8,  Average loss: 0.0011, Accuracy: 546/557 (98.0251%), train_poison_data_count: 180
+Current lr: [0.0005000000000000001]
+___PoisonTrain Local_Simple ,  epoch  18, local model 74, internal_epoch   9,  Average loss: 0.0010, Accuracy: 545/557 (97.8456%), train_poison_data_count: 180
+Current lr: [0.0005000000000000001]
+___PoisonTrain Local_Simple ,  epoch  18, local model 74, internal_epoch  10,  Average loss: 0.0011, Accuracy: 544/557 (97.6661%), train_poison_data_count: 180
+Global model norm: 16.98701609525088.
+Norm before scaling: 17.145005173302753. Distance: 1.9472979482648274
+will scale.
+___Test Local_Simple poisoned: False, epoch: 18: Average loss: 0.3613, Accuracy: 8929/10000 (89.2900%)
+___Test Local_Simple poisoned: True, epoch: 18: Average loss: 0.0145, Accuracy: 8919/8968 (99.4536%)
+Scaling by  100
+Scaled Norm after poisoning: 195.878280524539, distance: 194.72979075182616
+Total norm for 2 adversaries is: 195.878280524539. distance: 194.72979075182616
+___Test Local_Simple poisoned: True, epoch: 18: Average loss: 0.0000, Accuracy: 8968/8968 (100.0000%)
+___Train Local_Simple,  epoch  18, local model 46, internal_epoch   1,  Average loss: 0.0042, Accuracy: 663/710 (93.3803%)
+___Test Local_Simple poisoned: False, epoch: 18: Average loss: 1.0732, Accuracy: 7165/10000 (71.6500%)
+___Train Local_Simple,  epoch  18, local model 65, internal_epoch   1,  Average loss: 0.0040, Accuracy: 347/371 (93.5310%)
+___Test Local_Simple poisoned: False, epoch: 18: Average loss: 0.6514, Accuracy: 8024/10000 (80.2400%)
+___Train Local_Simple,  epoch  18, local model 57, internal_epoch   1,  Average loss: 0.0040, Accuracy: 317/343 (92.4198%)
+___Test Local_Simple poisoned: False, epoch: 18: Average loss: 0.2371, Accuracy: 9271/10000 (92.7100%)
+___Train Local_Simple,  epoch  18, local model 83, internal_epoch   1,  Average loss: 0.0045, Accuracy: 396/433 (91.4550%)
+___Test Local_Simple poisoned: False, epoch: 18: Average loss: 0.1930, Accuracy: 9374/10000 (93.7400%)
+___Train Local_Simple,  epoch  18, local model 9, internal_epoch   1,  Average loss: 0.0033, Accuracy: 413/436 (94.7248%)
+___Test Local_Simple poisoned: False, epoch: 18: Average loss: 0.3190, Accuracy: 9032/10000 (90.3200%)
+___Train Local_Simple,  epoch  18, local model 64, internal_epoch   1,  Average loss: 0.0040, Accuracy: 754/813 (92.7429%)
+___Test Local_Simple poisoned: False, epoch: 18: Average loss: 0.7426, Accuracy: 8318/10000 (83.1800%)
+___Train Local_Simple,  epoch  18, local model 58, internal_epoch   1,  Average loss: 0.0055, Accuracy: 252/276 (91.3043%)
+___Test Local_Simple poisoned: False, epoch: 18: Average loss: 0.3679, Accuracy: 8934/10000 (89.3400%)
+poison local model 41 index 0 
+___Train Local_Simple,  epoch  18, local model 41, internal_epoch   1,  Average loss: 0.0033, Accuracy: 573/606 (94.5545%)
+___Test Local_Simple poisoned: False, epoch: 18: Average loss: 0.3124, Accuracy: 9001/10000 (90.0100%)
+___Train Local_Simple,  epoch  18, local model 12, internal_epoch   1,  Average loss: 0.0036, Accuracy: 1077/1160 (92.8448%)
+___Test Local_Simple poisoned: False, epoch: 18: Average loss: 0.5496, Accuracy: 8315/10000 (83.1500%)
+time spent on training: 31.192062377929688
+___Test Target_Simple poisoned: False, epoch: 18: Average loss: 0.3027, Accuracy: 9120/10000 (91.2000%)
+___Test Target_Simple poisoned: True, epoch: 18: Average loss: 0.0297, Accuracy: 8844/8968 (98.6173%)
+Done in 42.990631341934204 sec.
+Server Epoch:19 choose agents : [83, 96, 90, 28, 65, 33, 75, 13, 32, 80].
+___Train Local_Simple,  epoch  19, local model 83, internal_epoch   1,  Average loss: 0.0038, Accuracy: 404/433 (93.3025%)
+___Test Local_Simple poisoned: False, epoch: 19: Average loss: 0.2264, Accuracy: 9259/10000 (92.5900%)
+___Train Local_Simple,  epoch  19, local model 96, internal_epoch   1,  Average loss: 0.0034, Accuracy: 624/672 (92.8571%)
+___Test Local_Simple poisoned: False, epoch: 19: Average loss: 0.8658, Accuracy: 7685/10000 (76.8500%)
+___Train Local_Simple,  epoch  19, local model 90, internal_epoch   1,  Average loss: 0.0044, Accuracy: 628/683 (91.9473%)
+___Test Local_Simple poisoned: False, epoch: 19: Average loss: 1.1995, Accuracy: 6825/10000 (68.2500%)
+___Train Local_Simple,  epoch  19, local model 28, internal_epoch   1,  Average loss: 0.0036, Accuracy: 466/501 (93.0140%)
+___Test Local_Simple poisoned: False, epoch: 19: Average loss: 0.2538, Accuracy: 9152/10000 (91.5200%)
+___Train Local_Simple,  epoch  19, local model 65, internal_epoch   1,  Average loss: 0.0041, Accuracy: 343/371 (92.4528%)
+___Test Local_Simple poisoned: False, epoch: 19: Average loss: 0.7224, Accuracy: 7616/10000 (76.1600%)
+___Train Local_Simple,  epoch  19, local model 33, internal_epoch   1,  Average loss: 0.0026, Accuracy: 591/623 (94.8636%)
+___Test Local_Simple poisoned: False, epoch: 19: Average loss: 0.6626, Accuracy: 8351/10000 (83.5100%)
+___Train Local_Simple,  epoch  19, local model 75, internal_epoch   1,  Average loss: 0.0027, Accuracy: 647/686 (94.3149%)
+___Test Local_Simple poisoned: False, epoch: 19: Average loss: 0.3309, Accuracy: 9038/10000 (90.3800%)
+___Train Local_Simple,  epoch  19, local model 13, internal_epoch   1,  Average loss: 0.0019, Accuracy: 711/734 (96.8665%)
+___Test Local_Simple poisoned: False, epoch: 19: Average loss: 0.3540, Accuracy: 8924/10000 (89.2400%)
+___Train Local_Simple,  epoch  19, local model 32, internal_epoch   1,  Average loss: 0.0034, Accuracy: 916/977 (93.7564%)
+___Test Local_Simple poisoned: False, epoch: 19: Average loss: 0.3125, Accuracy: 8979/10000 (89.7900%)
+___Train Local_Simple,  epoch  19, local model 80, internal_epoch   1,  Average loss: 0.0020, Accuracy: 417/431 (96.7517%)
+___Test Local_Simple poisoned: False, epoch: 19: Average loss: 0.7550, Accuracy: 7574/10000 (75.7400%)
+time spent on training: 17.03115940093994
+___Test Target_Simple poisoned: False, epoch: 19: Average loss: 0.2342, Accuracy: 9329/10000 (93.2900%)
+___Test Target_Simple poisoned: True, epoch: 19: Average loss: 0.0767, Accuracy: 8653/8968 (96.4875%)
+Done in 28.76588463783264 sec.
+Server Epoch:20 choose agents : [73, 23, 25, 12, 58, 19, 11, 13, 82, 50].
+poison local model 73 index 1 
+___Train Local_Simple,  epoch  20, local model 73, internal_epoch   1,  Average loss: 0.0023, Accuracy: 568/591 (96.1083%)
+___Test Local_Simple poisoned: False, epoch: 20: Average loss: 0.2907, Accuracy: 9029/10000 (90.2900%)
+___Train Local_Simple,  epoch  20, local model 23, internal_epoch   1,  Average loss: 0.0020, Accuracy: 283/293 (96.5870%)
+___Test Local_Simple poisoned: False, epoch: 20: Average loss: 0.2852, Accuracy: 9120/10000 (91.2000%)
+___Train Local_Simple,  epoch  20, local model 25, internal_epoch   1,  Average loss: 0.0032, Accuracy: 607/647 (93.8176%)
+___Test Local_Simple poisoned: False, epoch: 20: Average loss: 0.3412, Accuracy: 8920/10000 (89.2000%)
+___Train Local_Simple,  epoch  20, local model 12, internal_epoch   1,  Average loss: 0.0025, Accuracy: 1099/1160 (94.7414%)
+___Test Local_Simple poisoned: False, epoch: 20: Average loss: 0.3408, Accuracy: 8896/10000 (88.9600%)
+___Train Local_Simple,  epoch  20, local model 58, internal_epoch   1,  Average loss: 0.0053, Accuracy: 259/276 (93.8406%)
+___Test Local_Simple poisoned: False, epoch: 20: Average loss: 0.3601, Accuracy: 8815/10000 (88.1500%)
+___Train Local_Simple,  epoch  20, local model 19, internal_epoch   1,  Average loss: 0.0035, Accuracy: 196/205 (95.6098%)
+___Test Local_Simple poisoned: False, epoch: 20: Average loss: 0.6209, Accuracy: 8157/10000 (81.5700%)
+___Train Local_Simple,  epoch  20, local model 11, internal_epoch   1,  Average loss: 0.0021, Accuracy: 620/645 (96.1240%)
+___Test Local_Simple poisoned: False, epoch: 20: Average loss: 0.6401, Accuracy: 8449/10000 (84.4900%)
+___Train Local_Simple,  epoch  20, local model 13, internal_epoch   1,  Average loss: 0.0023, Accuracy: 703/734 (95.7766%)
+___Test Local_Simple poisoned: False, epoch: 20: Average loss: 1.0670, Accuracy: 7350/10000 (73.5000%)
+___Train Local_Simple,  epoch  20, local model 82, internal_epoch   1,  Average loss: 0.0028, Accuracy: 676/713 (94.8107%)
+___Test Local_Simple poisoned: False, epoch: 20: Average loss: 1.1485, Accuracy: 6945/10000 (69.4500%)
+___Train Local_Simple,  epoch  20, local model 50, internal_epoch   1,  Average loss: 0.0040, Accuracy: 446/474 (94.0928%)
+___Test Local_Simple poisoned: False, epoch: 20: Average loss: 0.3933, Accuracy: 8693/10000 (86.9300%)
+time spent on training: 18.748780727386475
+___Test Target_Simple poisoned: False, epoch: 20: Average loss: 0.2029, Accuracy: 9412/10000 (94.1200%)
+___Test Target_Simple poisoned: True, epoch: 20: Average loss: 0.1085, Accuracy: 8545/8968 (95.2832%)
+Done in 30.377676486968994 sec.
+Server Epoch:21 choose agents : [34, 14, 74, 55, 58, 53, 36, 6, 47, 92].
+___Train Local_Simple,  epoch  21, local model 34, internal_epoch   1,  Average loss: 0.0019, Accuracy: 397/413 (96.1259%)
+___Test Local_Simple poisoned: False, epoch: 21: Average loss: 0.2591, Accuracy: 9167/10000 (91.6700%)
+___Train Local_Simple,  epoch  21, local model 14, internal_epoch   1,  Average loss: 0.0035, Accuracy: 361/376 (96.0106%)
+___Test Local_Simple poisoned: False, epoch: 21: Average loss: 0.2021, Accuracy: 9432/10000 (94.3200%)
+poison local model 74 index 3 
+___Train Local_Simple,  epoch  21, local model 74, internal_epoch   1,  Average loss: 0.0011, Accuracy: 546/557 (98.0251%)
+___Test Local_Simple poisoned: False, epoch: 21: Average loss: 0.2619, Accuracy: 9235/10000 (92.3500%)
+___Train Local_Simple,  epoch  21, local model 55, internal_epoch   1,  Average loss: 0.0028, Accuracy: 341/354 (96.3277%)
+___Test Local_Simple poisoned: False, epoch: 21: Average loss: 0.8715, Accuracy: 7314/10000 (73.1400%)
+___Train Local_Simple,  epoch  21, local model 58, internal_epoch   1,  Average loss: 0.0047, Accuracy: 256/276 (92.7536%)
+___Test Local_Simple poisoned: False, epoch: 21: Average loss: 0.4081, Accuracy: 8670/10000 (86.7000%)
+___Train Local_Simple,  epoch  21, local model 53, internal_epoch   1,  Average loss: 0.0019, Accuracy: 715/739 (96.7524%)
+___Test Local_Simple poisoned: False, epoch: 21: Average loss: 0.4052, Accuracy: 8774/10000 (87.7400%)
+___Train Local_Simple,  epoch  21, local model 36, internal_epoch   1,  Average loss: 0.0018, Accuracy: 971/1005 (96.6169%)
+___Test Local_Simple poisoned: False, epoch: 21: Average loss: 0.4307, Accuracy: 8705/10000 (87.0500%)
+___Train Local_Simple,  epoch  21, local model 6, internal_epoch   1,  Average loss: 0.0038, Accuracy: 565/615 (91.8699%)
+___Test Local_Simple poisoned: False, epoch: 21: Average loss: 0.2636, Accuracy: 9150/10000 (91.5000%)
+___Train Local_Simple,  epoch  21, local model 47, internal_epoch   1,  Average loss: 0.0021, Accuracy: 745/776 (96.0052%)
+___Test Local_Simple poisoned: False, epoch: 21: Average loss: 0.1485, Accuracy: 9538/10000 (95.3800%)
+___Train Local_Simple,  epoch  21, local model 92, internal_epoch   1,  Average loss: 0.0033, Accuracy: 883/937 (94.2369%)
+___Test Local_Simple poisoned: False, epoch: 21: Average loss: 0.3760, Accuracy: 8842/10000 (88.4200%)
+time spent on training: 17.797056436538696
+___Test Target_Simple poisoned: False, epoch: 21: Average loss: 0.1851, Accuracy: 9464/10000 (94.6400%)
+___Test Target_Simple poisoned: True, epoch: 21: Average loss: 0.1442, Accuracy: 8457/8968 (94.3020%)
+Done in 26.795074939727783 sec.
+Server Epoch:22 choose agents : [37, 43, 17, 2, 66, 6, 38, 45, 81, 4].
+___Train Local_Simple,  epoch  22, local model 37, internal_epoch   1,  Average loss: 0.0017, Accuracy: 831/860 (96.6279%)
+___Test Local_Simple poisoned: False, epoch: 22: Average loss: 0.3537, Accuracy: 8919/10000 (89.1900%)
+___Train Local_Simple,  epoch  22, local model 43, internal_epoch   1,  Average loss: 0.0021, Accuracy: 393/408 (96.3235%)
+___Test Local_Simple poisoned: False, epoch: 22: Average loss: 0.2103, Accuracy: 9341/10000 (93.4100%)
+___Train Local_Simple,  epoch  22, local model 17, internal_epoch   1,  Average loss: 0.0027, Accuracy: 588/620 (94.8387%)
+___Test Local_Simple poisoned: False, epoch: 22: Average loss: 0.3241, Accuracy: 9021/10000 (90.2100%)
+___Train Local_Simple,  epoch  22, local model 2, internal_epoch   1,  Average loss: 0.0024, Accuracy: 524/548 (95.6204%)
+___Test Local_Simple poisoned: False, epoch: 22: Average loss: 0.2675, Accuracy: 9155/10000 (91.5500%)
+___Train Local_Simple,  epoch  22, local model 66, internal_epoch   1,  Average loss: 0.0024, Accuracy: 629/660 (95.3030%)
+___Test Local_Simple poisoned: False, epoch: 22: Average loss: 0.4565, Accuracy: 8567/10000 (85.6700%)
+___Train Local_Simple,  epoch  22, local model 6, internal_epoch   1,  Average loss: 0.0031, Accuracy: 579/615 (94.1463%)
+___Test Local_Simple poisoned: False, epoch: 22: Average loss: 0.2724, Accuracy: 9132/10000 (91.3200%)
+___Train Local_Simple,  epoch  22, local model 38, internal_epoch   1,  Average loss: 0.0031, Accuracy: 843/895 (94.1899%)
+___Test Local_Simple poisoned: False, epoch: 22: Average loss: 0.6143, Accuracy: 7823/10000 (78.2300%)
+___Train Local_Simple,  epoch  22, local model 45, internal_epoch   1,  Average loss: 0.0018, Accuracy: 605/628 (96.3376%)
+___Test Local_Simple poisoned: False, epoch: 22: Average loss: 0.5207, Accuracy: 8261/10000 (82.6100%)
+___Train Local_Simple,  epoch  22, local model 81, internal_epoch   1,  Average loss: 0.0018, Accuracy: 1186/1227 (96.6585%)
+___Test Local_Simple poisoned: False, epoch: 22: Average loss: 0.5851, Accuracy: 8265/10000 (82.6500%)
+___Train Local_Simple,  epoch  22, local model 4, internal_epoch   1,  Average loss: 0.0023, Accuracy: 634/658 (96.3526%)
+___Test Local_Simple poisoned: False, epoch: 22: Average loss: 0.6190, Accuracy: 8007/10000 (80.0700%)
+time spent on training: 15.922596216201782
+___Test Target_Simple poisoned: False, epoch: 22: Average loss: 0.1651, Accuracy: 9525/10000 (95.2500%)
+___Test Target_Simple poisoned: True, epoch: 22: Average loss: 0.1840, Accuracy: 8350/8968 (93.1088%)
+Done in 24.885462760925293 sec.
+Server Epoch:23 choose agents : [24, 38, 54, 10, 11, 80, 73, 7, 72, 14].
+___Train Local_Simple,  epoch  23, local model 24, internal_epoch   1,  Average loss: 0.0025, Accuracy: 359/379 (94.7230%)
+___Test Local_Simple poisoned: False, epoch: 23: Average loss: 0.2762, Accuracy: 9088/10000 (90.8800%)
+___Train Local_Simple,  epoch  23, local model 38, internal_epoch   1,  Average loss: 0.0020, Accuracy: 863/895 (96.4246%)
+___Test Local_Simple poisoned: False, epoch: 23: Average loss: 0.4573, Accuracy: 8539/10000 (85.3900%)
+___Train Local_Simple,  epoch  23, local model 54, internal_epoch   1,  Average loss: 0.0024, Accuracy: 491/519 (94.6050%)
+___Test Local_Simple poisoned: False, epoch: 23: Average loss: 0.3657, Accuracy: 8799/10000 (87.9900%)
+___Train Local_Simple,  epoch  23, local model 10, internal_epoch   1,  Average loss: 0.0021, Accuracy: 858/892 (96.1883%)
+___Test Local_Simple poisoned: False, epoch: 23: Average loss: 1.0093, Accuracy: 7345/10000 (73.4500%)
+___Train Local_Simple,  epoch  23, local model 11, internal_epoch   1,  Average loss: 0.0020, Accuracy: 623/645 (96.5891%)
+___Test Local_Simple poisoned: False, epoch: 23: Average loss: 0.4125, Accuracy: 8698/10000 (86.9800%)
+___Train Local_Simple,  epoch  23, local model 80, internal_epoch   1,  Average loss: 0.0014, Accuracy: 422/431 (97.9118%)
+___Test Local_Simple poisoned: False, epoch: 23: Average loss: 0.4241, Accuracy: 8631/10000 (86.3100%)
+poison local model 73 index 1 
+___Train Local_Simple,  epoch  23, local model 73, internal_epoch   1,  Average loss: 0.0017, Accuracy: 574/591 (97.1235%)
+___Test Local_Simple poisoned: False, epoch: 23: Average loss: 0.4054, Accuracy: 8732/10000 (87.3200%)
+___Train Local_Simple,  epoch  23, local model 7, internal_epoch   1,  Average loss: 0.0034, Accuracy: 391/418 (93.5407%)
+___Test Local_Simple poisoned: False, epoch: 23: Average loss: 0.2018, Accuracy: 9383/10000 (93.8300%)
+___Train Local_Simple,  epoch  23, local model 72, internal_epoch   1,  Average loss: 0.0011, Accuracy: 716/731 (97.9480%)
+___Test Local_Simple poisoned: False, epoch: 23: Average loss: 0.5168, Accuracy: 8315/10000 (83.1500%)
+___Train Local_Simple,  epoch  23, local model 14, internal_epoch   1,  Average loss: 0.0031, Accuracy: 362/376 (96.2766%)
+___Test Local_Simple poisoned: False, epoch: 23: Average loss: 0.2292, Accuracy: 9349/10000 (93.4900%)
+time spent on training: 17.31574058532715
+___Test Target_Simple poisoned: False, epoch: 23: Average loss: 0.1541, Accuracy: 9562/10000 (95.6200%)
+___Test Target_Simple poisoned: True, epoch: 23: Average loss: 0.2243, Accuracy: 8236/8968 (91.8376%)
+Done in 26.201436281204224 sec.
+Server Epoch:24 choose agents : [99, 73, 12, 93, 25, 34, 57, 69, 58, 2].
+___Train Local_Simple,  epoch  24, local model 99, internal_epoch   1,  Average loss: 0.0012, Accuracy: 371/377 (98.4085%)
+___Test Local_Simple poisoned: False, epoch: 24: Average loss: 0.2214, Accuracy: 9325/10000 (93.2500%)
+poison local model 73 index 1 
+___Train Local_Simple,  epoch  24, local model 73, internal_epoch   1,  Average loss: 0.0017, Accuracy: 580/591 (98.1387%)
+___Test Local_Simple poisoned: False, epoch: 24: Average loss: 0.2814, Accuracy: 9093/10000 (90.9300%)
+___Train Local_Simple,  epoch  24, local model 12, internal_epoch   1,  Average loss: 0.0023, Accuracy: 1111/1160 (95.7759%)
+___Test Local_Simple poisoned: False, epoch: 24: Average loss: 0.3430, Accuracy: 8971/10000 (89.7100%)
+___Train Local_Simple,  epoch  24, local model 93, internal_epoch   1,  Average loss: 0.0008, Accuracy: 615/623 (98.7159%)
+___Test Local_Simple poisoned: False, epoch: 24: Average loss: 0.3420, Accuracy: 8904/10000 (89.0400%)
+___Train Local_Simple,  epoch  24, local model 25, internal_epoch   1,  Average loss: 0.0026, Accuracy: 623/647 (96.2906%)
+___Test Local_Simple poisoned: False, epoch: 24: Average loss: 0.6097, Accuracy: 8134/10000 (81.3400%)
+___Train Local_Simple,  epoch  24, local model 34, internal_epoch   1,  Average loss: 0.0016, Accuracy: 406/413 (98.3051%)
+___Test Local_Simple poisoned: False, epoch: 24: Average loss: 0.2689, Accuracy: 9202/10000 (92.0200%)
+___Train Local_Simple,  epoch  24, local model 57, internal_epoch   1,  Average loss: 0.0029, Accuracy: 325/343 (94.7522%)
+___Test Local_Simple poisoned: False, epoch: 24: Average loss: 0.4832, Accuracy: 8661/10000 (86.6100%)
+___Train Local_Simple,  epoch  24, local model 69, internal_epoch   1,  Average loss: 0.0043, Accuracy: 233/256 (91.0156%)
+___Test Local_Simple poisoned: False, epoch: 24: Average loss: 0.4563, Accuracy: 8454/10000 (84.5400%)
+___Train Local_Simple,  epoch  24, local model 58, internal_epoch   1,  Average loss: 0.0040, Accuracy: 264/276 (95.6522%)
+___Test Local_Simple poisoned: False, epoch: 24: Average loss: 0.3442, Accuracy: 8856/10000 (88.5600%)
+___Train Local_Simple,  epoch  24, local model 2, internal_epoch   1,  Average loss: 0.0024, Accuracy: 528/548 (96.3504%)
+___Test Local_Simple poisoned: False, epoch: 24: Average loss: 0.2534, Accuracy: 9225/10000 (92.2500%)
+time spent on training: 17.31259775161743
+___Test Target_Simple poisoned: False, epoch: 24: Average loss: 0.1457, Accuracy: 9589/10000 (95.8900%)
+___Test Target_Simple poisoned: True, epoch: 24: Average loss: 0.2395, Accuracy: 8191/8968 (91.3359%)
+Done in 26.29684543609619 sec.
+Server Epoch:25 choose agents : [4, 1, 20, 49, 57, 51, 27, 43, 0, 45].
+___Train Local_Simple,  epoch  25, local model 4, internal_epoch   1,  Average loss: 0.0019, Accuracy: 638/658 (96.9605%)
+___Test Local_Simple poisoned: False, epoch: 25: Average loss: 0.9503, Accuracy: 7721/10000 (77.2100%)
+___Train Local_Simple,  epoch  25, local model 1, internal_epoch   1,  Average loss: 0.0029, Accuracy: 715/760 (94.0789%)
+___Test Local_Simple poisoned: False, epoch: 25: Average loss: 0.2391, Accuracy: 9241/10000 (92.4100%)
+___Train Local_Simple,  epoch  25, local model 20, internal_epoch   1,  Average loss: 0.0015, Accuracy: 414/429 (96.5035%)
+___Test Local_Simple poisoned: False, epoch: 25: Average loss: 0.2711, Accuracy: 9169/10000 (91.6900%)
+___Train Local_Simple,  epoch  25, local model 49, internal_epoch   1,  Average loss: 0.0015, Accuracy: 493/506 (97.4308%)
+___Test Local_Simple poisoned: False, epoch: 25: Average loss: 0.2865, Accuracy: 9016/10000 (90.1600%)
+___Train Local_Simple,  epoch  25, local model 57, internal_epoch   1,  Average loss: 0.0029, Accuracy: 320/343 (93.2945%)
+___Test Local_Simple poisoned: False, epoch: 25: Average loss: 0.2682, Accuracy: 9108/10000 (91.0800%)
+poison local model 51 index 2 
+___Train Local_Simple,  epoch  25, local model 51, internal_epoch   1,  Average loss: 0.0011, Accuracy: 556/568 (97.8873%)
+___Test Local_Simple poisoned: False, epoch: 25: Average loss: 0.3500, Accuracy: 8893/10000 (88.9300%)
+___Train Local_Simple,  epoch  25, local model 27, internal_epoch   1,  Average loss: 0.0022, Accuracy: 448/471 (95.1168%)
+___Test Local_Simple poisoned: False, epoch: 25: Average loss: 0.3169, Accuracy: 8947/10000 (89.4700%)
+___Train Local_Simple,  epoch  25, local model 43, internal_epoch   1,  Average loss: 0.0017, Accuracy: 395/408 (96.8137%)
+___Test Local_Simple poisoned: False, epoch: 25: Average loss: 0.2891, Accuracy: 9002/10000 (90.0200%)
+___Train Local_Simple,  epoch  25, local model 0, internal_epoch   1,  Average loss: 0.0024, Accuracy: 415/435 (95.4023%)
+___Test Local_Simple poisoned: False, epoch: 25: Average loss: 0.1640, Accuracy: 9499/10000 (94.9900%)
+___Train Local_Simple,  epoch  25, local model 45, internal_epoch   1,  Average loss: 0.0020, Accuracy: 603/628 (96.0191%)
+___Test Local_Simple poisoned: False, epoch: 25: Average loss: 0.4078, Accuracy: 8594/10000 (85.9400%)
+time spent on training: 16.96844458580017
+___Test Target_Simple poisoned: False, epoch: 25: Average loss: 0.1394, Accuracy: 9606/10000 (96.0600%)
+___Test Target_Simple poisoned: True, epoch: 25: Average loss: 0.2625, Accuracy: 8127/8968 (90.6222%)
+Done in 25.928338527679443 sec.
+Server Epoch:26 choose agents : [25, 8, 12, 74, 55, 26, 62, 65, 54, 94].
+___Train Local_Simple,  epoch  26, local model 25, internal_epoch   1,  Average loss: 0.0021, Accuracy: 622/647 (96.1360%)
+___Test Local_Simple poisoned: False, epoch: 26: Average loss: 0.4506, Accuracy: 8545/10000 (85.4500%)
+___Train Local_Simple,  epoch  26, local model 8, internal_epoch   1,  Average loss: 0.0025, Accuracy: 604/633 (95.4186%)
+___Test Local_Simple poisoned: False, epoch: 26: Average loss: 0.1830, Accuracy: 9445/10000 (94.4500%)
+___Train Local_Simple,  epoch  26, local model 12, internal_epoch   1,  Average loss: 0.0021, Accuracy: 1121/1160 (96.6379%)
+___Test Local_Simple poisoned: False, epoch: 26: Average loss: 0.4275, Accuracy: 8454/10000 (84.5400%)
+poison local model 74 index 3 
+___Train Local_Simple,  epoch  26, local model 74, internal_epoch   1,  Average loss: 0.0010, Accuracy: 547/557 (98.2047%)
+___Test Local_Simple poisoned: False, epoch: 26: Average loss: 0.2200, Accuracy: 9348/10000 (93.4800%)
+___Train Local_Simple,  epoch  26, local model 55, internal_epoch   1,  Average loss: 0.0019, Accuracy: 347/354 (98.0226%)
+___Test Local_Simple poisoned: False, epoch: 26: Average loss: 0.4802, Accuracy: 8398/10000 (83.9800%)
+___Train Local_Simple,  epoch  26, local model 26, internal_epoch   1,  Average loss: 0.0019, Accuracy: 534/554 (96.3899%)
+___Test Local_Simple poisoned: False, epoch: 26: Average loss: 0.1818, Accuracy: 9474/10000 (94.7400%)
+___Train Local_Simple,  epoch  26, local model 62, internal_epoch   1,  Average loss: 0.0020, Accuracy: 411/423 (97.1631%)
+___Test Local_Simple poisoned: False, epoch: 26: Average loss: 0.2169, Accuracy: 9308/10000 (93.0800%)
+___Train Local_Simple,  epoch  26, local model 65, internal_epoch   1,  Average loss: 0.0022, Accuracy: 356/371 (95.9569%)
+___Test Local_Simple poisoned: False, epoch: 26: Average loss: 0.4111, Accuracy: 8572/10000 (85.7200%)
+___Train Local_Simple,  epoch  26, local model 54, internal_epoch   1,  Average loss: 0.0031, Accuracy: 488/519 (94.0270%)
+___Test Local_Simple poisoned: False, epoch: 26: Average loss: 0.3233, Accuracy: 9041/10000 (90.4100%)
+___Train Local_Simple,  epoch  26, local model 94, internal_epoch   1,  Average loss: 0.0042, Accuracy: 142/150 (94.6667%)
+___Test Local_Simple poisoned: False, epoch: 26: Average loss: 0.3710, Accuracy: 8769/10000 (87.6900%)
+time spent on training: 17.064289093017578
+___Test Target_Simple poisoned: False, epoch: 26: Average loss: 0.1329, Accuracy: 9621/10000 (96.2100%)
+___Test Target_Simple poisoned: True, epoch: 26: Average loss: 0.2815, Accuracy: 8080/8968 (90.0981%)
+Done in 25.97851872444153 sec.
+Server Epoch:27 choose agents : [68, 33, 58, 73, 10, 13, 81, 37, 94, 61].
+___Train Local_Simple,  epoch  27, local model 68, internal_epoch   1,  Average loss: 0.0012, Accuracy: 484/494 (97.9757%)
+___Test Local_Simple poisoned: False, epoch: 27: Average loss: 0.2578, Accuracy: 9136/10000 (91.3600%)
+___Train Local_Simple,  epoch  27, local model 33, internal_epoch   1,  Average loss: 0.0018, Accuracy: 607/623 (97.4318%)
+___Test Local_Simple poisoned: False, epoch: 27: Average loss: 0.2786, Accuracy: 9027/10000 (90.2700%)
+___Train Local_Simple,  epoch  27, local model 58, internal_epoch   1,  Average loss: 0.0042, Accuracy: 262/276 (94.9275%)
+___Test Local_Simple poisoned: False, epoch: 27: Average loss: 0.2029, Accuracy: 9444/10000 (94.4400%)
+poison local model 73 index 1 
+___Train Local_Simple,  epoch  27, local model 73, internal_epoch   1,  Average loss: 0.0015, Accuracy: 580/591 (98.1387%)
+___Test Local_Simple poisoned: False, epoch: 27: Average loss: 0.2932, Accuracy: 9021/10000 (90.2100%)
+___Train Local_Simple,  epoch  27, local model 10, internal_epoch   1,  Average loss: 0.0021, Accuracy: 854/892 (95.7399%)
+___Test Local_Simple poisoned: False, epoch: 27: Average loss: 0.4404, Accuracy: 8486/10000 (84.8600%)
+___Train Local_Simple,  epoch  27, local model 13, internal_epoch   1,  Average loss: 0.0012, Accuracy: 717/734 (97.6839%)
+___Test Local_Simple poisoned: False, epoch: 27: Average loss: 0.4025, Accuracy: 8906/10000 (89.0600%)
+___Train Local_Simple,  epoch  27, local model 81, internal_epoch   1,  Average loss: 0.0010, Accuracy: 1207/1227 (98.3700%)
+___Test Local_Simple poisoned: False, epoch: 27: Average loss: 0.4938, Accuracy: 8689/10000 (86.8900%)
+___Train Local_Simple,  epoch  27, local model 37, internal_epoch   1,  Average loss: 0.0015, Accuracy: 837/860 (97.3256%)
+___Test Local_Simple poisoned: False, epoch: 27: Average loss: 0.3361, Accuracy: 8919/10000 (89.1900%)
+___Train Local_Simple,  epoch  27, local model 94, internal_epoch   1,  Average loss: 0.0036, Accuracy: 140/150 (93.3333%)
+___Test Local_Simple poisoned: False, epoch: 27: Average loss: 0.2904, Accuracy: 9094/10000 (90.9400%)
+___Train Local_Simple,  epoch  27, local model 61, internal_epoch   1,  Average loss: 0.0020, Accuracy: 671/699 (95.9943%)
+___Test Local_Simple poisoned: False, epoch: 27: Average loss: 0.4200, Accuracy: 8720/10000 (87.2000%)
+time spent on training: 17.600427627563477
+___Test Target_Simple poisoned: False, epoch: 27: Average loss: 0.1286, Accuracy: 9618/10000 (96.1800%)
+___Test Target_Simple poisoned: True, epoch: 27: Average loss: 0.3167, Accuracy: 7977/8968 (88.9496%)
+Done in 29.190473079681396 sec.
+Server Epoch:28 choose agents : [57, 60, 92, 23, 39, 79, 86, 63, 99, 97].
+___Train Local_Simple,  epoch  28, local model 57, internal_epoch   1,  Average loss: 0.0025, Accuracy: 325/343 (94.7522%)
+___Test Local_Simple poisoned: False, epoch: 28: Average loss: 0.3576, Accuracy: 8877/10000 (88.7700%)
+___Train Local_Simple,  epoch  28, local model 60, internal_epoch   1,  Average loss: 0.0024, Accuracy: 322/338 (95.2663%)
+___Test Local_Simple poisoned: False, epoch: 28: Average loss: 0.1784, Accuracy: 9481/10000 (94.8100%)
+___Train Local_Simple,  epoch  28, local model 92, internal_epoch   1,  Average loss: 0.0021, Accuracy: 898/937 (95.8378%)
+___Test Local_Simple poisoned: False, epoch: 28: Average loss: 0.4485, Accuracy: 8567/10000 (85.6700%)
+___Train Local_Simple,  epoch  28, local model 23, internal_epoch   1,  Average loss: 0.0010, Accuracy: 288/293 (98.2935%)
+___Test Local_Simple poisoned: False, epoch: 28: Average loss: 0.2393, Accuracy: 9193/10000 (91.9300%)
+___Train Local_Simple,  epoch  28, local model 39, internal_epoch   1,  Average loss: 0.0011, Accuracy: 252/257 (98.0545%)
+___Test Local_Simple poisoned: False, epoch: 28: Average loss: 0.1589, Accuracy: 9517/10000 (95.1700%)
+___Train Local_Simple,  epoch  28, local model 79, internal_epoch   1,  Average loss: 0.0025, Accuracy: 172/182 (94.5055%)
+___Test Local_Simple poisoned: False, epoch: 28: Average loss: 0.1446, Accuracy: 9564/10000 (95.6400%)
+___Train Local_Simple,  epoch  28, local model 86, internal_epoch   1,  Average loss: 0.0018, Accuracy: 240/250 (96.0000%)
+___Test Local_Simple poisoned: False, epoch: 28: Average loss: 0.1626, Accuracy: 9503/10000 (95.0300%)
+___Train Local_Simple,  epoch  28, local model 63, internal_epoch   1,  Average loss: 0.0025, Accuracy: 849/889 (95.5006%)
+___Test Local_Simple poisoned: False, epoch: 28: Average loss: 0.1326, Accuracy: 9606/10000 (96.0600%)
+___Train Local_Simple,  epoch  28, local model 99, internal_epoch   1,  Average loss: 0.0009, Accuracy: 373/377 (98.9390%)
+___Test Local_Simple poisoned: False, epoch: 28: Average loss: 0.1920, Accuracy: 9403/10000 (94.0300%)
+___Train Local_Simple,  epoch  28, local model 97, internal_epoch   1,  Average loss: 0.0016, Accuracy: 472/487 (96.9199%)
+___Test Local_Simple poisoned: False, epoch: 28: Average loss: 0.4110, Accuracy: 8672/10000 (86.7200%)
+time spent on training: 15.83025074005127
+___Test Target_Simple poisoned: False, epoch: 28: Average loss: 0.1255, Accuracy: 9639/10000 (96.3900%)
+___Test Target_Simple poisoned: True, epoch: 28: Average loss: 0.3363, Accuracy: 7934/8968 (88.4701%)
+Done in 24.794234037399292 sec.
+Server Epoch:29 choose agents : [37, 44, 52, 88, 25, 28, 8, 16, 6, 3].
+___Train Local_Simple,  epoch  29, local model 37, internal_epoch   1,  Average loss: 0.0015, Accuracy: 828/860 (96.2791%)
+___Test Local_Simple poisoned: False, epoch: 29: Average loss: 0.3302, Accuracy: 9025/10000 (90.2500%)
+___Train Local_Simple,  epoch  29, local model 44, internal_epoch   1,  Average loss: 0.0025, Accuracy: 492/517 (95.1644%)
+___Test Local_Simple poisoned: False, epoch: 29: Average loss: 0.1856, Accuracy: 9437/10000 (94.3700%)
+___Train Local_Simple,  epoch  29, local model 52, internal_epoch   1,  Average loss: 0.0014, Accuracy: 247/253 (97.6285%)
+___Test Local_Simple poisoned: False, epoch: 29: Average loss: 0.1991, Accuracy: 9383/10000 (93.8300%)
+___Train Local_Simple,  epoch  29, local model 88, internal_epoch   1,  Average loss: 0.0013, Accuracy: 519/530 (97.9245%)
+___Test Local_Simple poisoned: False, epoch: 29: Average loss: 0.2182, Accuracy: 9334/10000 (93.3400%)
+___Train Local_Simple,  epoch  29, local model 25, internal_epoch   1,  Average loss: 0.0020, Accuracy: 619/647 (95.6723%)
+___Test Local_Simple poisoned: False, epoch: 29: Average loss: 0.4204, Accuracy: 8613/10000 (86.1300%)
+___Train Local_Simple,  epoch  29, local model 28, internal_epoch   1,  Average loss: 0.0019, Accuracy: 483/501 (96.4072%)
+___Test Local_Simple poisoned: False, epoch: 29: Average loss: 0.1999, Accuracy: 9329/10000 (93.2900%)
+___Train Local_Simple,  epoch  29, local model 8, internal_epoch   1,  Average loss: 0.0028, Accuracy: 595/633 (93.9968%)
+___Test Local_Simple poisoned: False, epoch: 29: Average loss: 0.2058, Accuracy: 9358/10000 (93.5800%)
+___Train Local_Simple,  epoch  29, local model 16, internal_epoch   1,  Average loss: 0.0018, Accuracy: 882/915 (96.3934%)
+___Test Local_Simple poisoned: False, epoch: 29: Average loss: 0.1825, Accuracy: 9428/10000 (94.2800%)
+___Train Local_Simple,  epoch  29, local model 6, internal_epoch   1,  Average loss: 0.0025, Accuracy: 584/615 (94.9593%)
+___Test Local_Simple poisoned: False, epoch: 29: Average loss: 0.2372, Accuracy: 9260/10000 (92.6000%)
+___Train Local_Simple,  epoch  29, local model 3, internal_epoch   1,  Average loss: 0.0017, Accuracy: 897/923 (97.1831%)
+___Test Local_Simple poisoned: False, epoch: 29: Average loss: 0.1961, Accuracy: 9349/10000 (93.4900%)
+time spent on training: 15.816225528717041
+___Test Target_Simple poisoned: False, epoch: 29: Average loss: 0.1210, Accuracy: 9655/10000 (96.5500%)
+___Test Target_Simple poisoned: True, epoch: 29: Average loss: 0.3715, Accuracy: 7830/8968 (87.3104%)
+Done in 24.720513105392456 sec.
+Server Epoch:30 choose agents : [23, 44, 27, 86, 37, 35, 29, 48, 11, 43].
+___Train Local_Simple,  epoch  30, local model 23, internal_epoch   1,  Average loss: 0.0010, Accuracy: 287/293 (97.9522%)
+___Test Local_Simple poisoned: False, epoch: 30: Average loss: 0.2059, Accuracy: 9322/10000 (93.2200%)
+___Train Local_Simple,  epoch  30, local model 44, internal_epoch   1,  Average loss: 0.0023, Accuracy: 494/517 (95.5513%)
+___Test Local_Simple poisoned: False, epoch: 30: Average loss: 0.1759, Accuracy: 9488/10000 (94.8800%)
+___Train Local_Simple,  epoch  30, local model 27, internal_epoch   1,  Average loss: 0.0016, Accuracy: 453/471 (96.1783%)
+___Test Local_Simple poisoned: False, epoch: 30: Average loss: 0.4711, Accuracy: 8527/10000 (85.2700%)
+___Train Local_Simple,  epoch  30, local model 86, internal_epoch   1,  Average loss: 0.0017, Accuracy: 242/250 (96.8000%)
+___Test Local_Simple poisoned: False, epoch: 30: Average loss: 0.1563, Accuracy: 9527/10000 (95.2700%)
+___Train Local_Simple,  epoch  30, local model 37, internal_epoch   1,  Average loss: 0.0014, Accuracy: 835/860 (97.0930%)
+___Test Local_Simple poisoned: False, epoch: 30: Average loss: 0.3462, Accuracy: 8959/10000 (89.5900%)
+___Train Local_Simple,  epoch  30, local model 35, internal_epoch   1,  Average loss: 0.0013, Accuracy: 486/499 (97.3948%)
+___Test Local_Simple poisoned: False, epoch: 30: Average loss: 0.2312, Accuracy: 9325/10000 (93.2500%)
+___Train Local_Simple,  epoch  30, local model 29, internal_epoch   1,  Average loss: 0.0011, Accuracy: 979/1002 (97.7046%)
+___Test Local_Simple poisoned: False, epoch: 30: Average loss: 0.5608, Accuracy: 8070/10000 (80.7000%)
+___Train Local_Simple,  epoch  30, local model 48, internal_epoch   1,  Average loss: 0.0013, Accuracy: 438/448 (97.7679%)
+___Test Local_Simple poisoned: False, epoch: 30: Average loss: 0.1432, Accuracy: 9566/10000 (95.6600%)
+___Train Local_Simple,  epoch  30, local model 11, internal_epoch   1,  Average loss: 0.0017, Accuracy: 626/645 (97.0543%)
+___Test Local_Simple poisoned: False, epoch: 30: Average loss: 0.5027, Accuracy: 8537/10000 (85.3700%)
+___Train Local_Simple,  epoch  30, local model 43, internal_epoch   1,  Average loss: 0.0015, Accuracy: 398/408 (97.5490%)
+___Test Local_Simple poisoned: False, epoch: 30: Average loss: 0.3392, Accuracy: 8859/10000 (88.5900%)
+time spent on training: 16.427449464797974
+___Test Target_Simple poisoned: False, epoch: 30: Average loss: 0.1172, Accuracy: 9666/10000 (96.6600%)
+___Test Target_Simple poisoned: True, epoch: 30: Average loss: 0.3990, Accuracy: 7745/8968 (86.3626%)
+Done in 25.58137011528015 sec.
+Server Epoch:31 choose agents : [33, 12, 97, 15, 42, 73, 20, 90, 56, 54].
+___Train Local_Simple,  epoch  31, local model 33, internal_epoch   1,  Average loss: 0.0018, Accuracy: 602/623 (96.6292%)
+___Test Local_Simple poisoned: False, epoch: 31: Average loss: 0.3446, Accuracy: 8843/10000 (88.4300%)
+___Train Local_Simple,  epoch  31, local model 12, internal_epoch   1,  Average loss: 0.0020, Accuracy: 1121/1160 (96.6379%)
+___Test Local_Simple poisoned: False, epoch: 31: Average loss: 0.4855, Accuracy: 8812/10000 (88.1200%)
+___Train Local_Simple,  epoch  31, local model 97, internal_epoch   1,  Average loss: 0.0016, Accuracy: 472/487 (96.9199%)
+___Test Local_Simple poisoned: False, epoch: 31: Average loss: 0.3978, Accuracy: 8683/10000 (86.8300%)
+___Train Local_Simple,  epoch  31, local model 15, internal_epoch   1,  Average loss: 0.0019, Accuracy: 390/401 (97.2569%)
+___Test Local_Simple poisoned: False, epoch: 31: Average loss: 0.2108, Accuracy: 9339/10000 (93.3900%)
+___Train Local_Simple,  epoch  31, local model 42, internal_epoch   1,  Average loss: 0.0021, Accuracy: 228/236 (96.6102%)
+___Test Local_Simple poisoned: False, epoch: 31: Average loss: 0.2310, Accuracy: 9236/10000 (92.3600%)
+poison local model 73 index 1 
+___Train Local_Simple,  epoch  31, local model 73, internal_epoch   1,  Average loss: 0.0010, Accuracy: 582/591 (98.4772%)
+___Test Local_Simple poisoned: False, epoch: 31: Average loss: 0.3552, Accuracy: 8876/10000 (88.7600%)
+___Train Local_Simple,  epoch  31, local model 20, internal_epoch   1,  Average loss: 0.0015, Accuracy: 417/429 (97.2028%)
+___Test Local_Simple poisoned: False, epoch: 31: Average loss: 0.4415, Accuracy: 8779/10000 (87.7900%)
+___Train Local_Simple,  epoch  31, local model 90, internal_epoch   1,  Average loss: 0.0019, Accuracy: 662/683 (96.9253%)
+___Test Local_Simple poisoned: False, epoch: 31: Average loss: 0.3758, Accuracy: 8758/10000 (87.5800%)
+___Train Local_Simple,  epoch  31, local model 56, internal_epoch   1,  Average loss: 0.0019, Accuracy: 846/880 (96.1364%)
+___Test Local_Simple poisoned: False, epoch: 31: Average loss: 0.2797, Accuracy: 9109/10000 (91.0900%)
+___Train Local_Simple,  epoch  31, local model 54, internal_epoch   1,  Average loss: 0.0023, Accuracy: 492/519 (94.7977%)
+___Test Local_Simple poisoned: False, epoch: 31: Average loss: 0.3410, Accuracy: 8915/10000 (89.1500%)
+time spent on training: 17.27428364753723
+___Test Target_Simple poisoned: False, epoch: 31: Average loss: 0.1140, Accuracy: 9665/10000 (96.6500%)
+___Test Target_Simple poisoned: True, epoch: 31: Average loss: 0.4246, Accuracy: 7654/8968 (85.3479%)
+Done in 26.743165969848633 sec.
+Server Epoch:32 choose agents : [24, 38, 43, 32, 62, 8, 35, 96, 27, 41].
+___Train Local_Simple,  epoch  32, local model 24, internal_epoch   1,  Average loss: 0.0020, Accuracy: 364/379 (96.0422%)
+___Test Local_Simple poisoned: False, epoch: 32: Average loss: 0.1928, Accuracy: 9440/10000 (94.4000%)
+___Train Local_Simple,  epoch  32, local model 38, internal_epoch   1,  Average loss: 0.0017, Accuracy: 865/895 (96.6480%)
+___Test Local_Simple poisoned: False, epoch: 32: Average loss: 0.7033, Accuracy: 8098/10000 (80.9800%)
+___Train Local_Simple,  epoch  32, local model 43, internal_epoch   1,  Average loss: 0.0011, Accuracy: 399/408 (97.7941%)
+___Test Local_Simple poisoned: False, epoch: 32: Average loss: 0.3078, Accuracy: 8971/10000 (89.7100%)
+___Train Local_Simple,  epoch  32, local model 32, internal_epoch   1,  Average loss: 0.0025, Accuracy: 929/977 (95.0870%)
+___Test Local_Simple poisoned: False, epoch: 32: Average loss: 0.2452, Accuracy: 9194/10000 (91.9400%)
+___Train Local_Simple,  epoch  32, local model 62, internal_epoch   1,  Average loss: 0.0015, Accuracy: 412/423 (97.3995%)
+___Test Local_Simple poisoned: False, epoch: 32: Average loss: 0.2104, Accuracy: 9345/10000 (93.4500%)
+___Train Local_Simple,  epoch  32, local model 8, internal_epoch   1,  Average loss: 0.0025, Accuracy: 603/633 (95.2607%)
+___Test Local_Simple poisoned: False, epoch: 32: Average loss: 0.1752, Accuracy: 9442/10000 (94.4200%)
+___Train Local_Simple,  epoch  32, local model 35, internal_epoch   1,  Average loss: 0.0011, Accuracy: 488/499 (97.7956%)
+___Test Local_Simple poisoned: False, epoch: 32: Average loss: 0.2926, Accuracy: 9132/10000 (91.3200%)
+___Train Local_Simple,  epoch  32, local model 96, internal_epoch   1,  Average loss: 0.0017, Accuracy: 653/672 (97.1726%)
+___Test Local_Simple poisoned: False, epoch: 32: Average loss: 0.2886, Accuracy: 9126/10000 (91.2600%)
+___Train Local_Simple,  epoch  32, local model 27, internal_epoch   1,  Average loss: 0.0018, Accuracy: 449/471 (95.3291%)
+___Test Local_Simple poisoned: False, epoch: 32: Average loss: 0.2599, Accuracy: 9134/10000 (91.3400%)
+poison local model 41 index 0 
+___Train Local_Simple,  epoch  32, local model 41, internal_epoch   1,  Average loss: 0.0021, Accuracy: 587/606 (96.8647%)
+___Test Local_Simple poisoned: False, epoch: 32: Average loss: 0.2482, Accuracy: 9234/10000 (92.3400%)
+time spent on training: 17.97307586669922
+___Test Target_Simple poisoned: False, epoch: 32: Average loss: 0.1114, Accuracy: 9671/10000 (96.7100%)
+___Test Target_Simple poisoned: True, epoch: 32: Average loss: 0.4651, Accuracy: 7557/8968 (84.2663%)
+Done in 29.514625072479248 sec.
+Server Epoch:33 choose agents : [58, 86, 89, 17, 80, 63, 26, 90, 93, 79].
+___Train Local_Simple,  epoch  33, local model 58, internal_epoch   1,  Average loss: 0.0034, Accuracy: 263/276 (95.2899%)
+___Test Local_Simple poisoned: False, epoch: 33: Average loss: 0.2518, Accuracy: 9200/10000 (92.0000%)
+___Train Local_Simple,  epoch  33, local model 86, internal_epoch   1,  Average loss: 0.0015, Accuracy: 241/250 (96.4000%)
+___Test Local_Simple poisoned: False, epoch: 33: Average loss: 0.1465, Accuracy: 9553/10000 (95.5300%)
+___Train Local_Simple,  epoch  33, local model 89, internal_epoch   1,  Average loss: 0.0011, Accuracy: 484/492 (98.3740%)
+___Test Local_Simple poisoned: False, epoch: 33: Average loss: 0.3543, Accuracy: 8947/10000 (89.4700%)
+___Train Local_Simple,  epoch  33, local model 17, internal_epoch   1,  Average loss: 0.0017, Accuracy: 603/620 (97.2581%)
+___Test Local_Simple poisoned: False, epoch: 33: Average loss: 0.1997, Accuracy: 9371/10000 (93.7100%)
+___Train Local_Simple,  epoch  33, local model 80, internal_epoch   1,  Average loss: 0.0011, Accuracy: 423/431 (98.1439%)
+___Test Local_Simple poisoned: False, epoch: 33: Average loss: 0.3040, Accuracy: 8983/10000 (89.8300%)
+___Train Local_Simple,  epoch  33, local model 63, internal_epoch   1,  Average loss: 0.0026, Accuracy: 852/889 (95.8380%)
+___Test Local_Simple poisoned: False, epoch: 33: Average loss: 0.1394, Accuracy: 9606/10000 (96.0600%)
+___Train Local_Simple,  epoch  33, local model 26, internal_epoch   1,  Average loss: 0.0020, Accuracy: 532/554 (96.0289%)
+___Test Local_Simple poisoned: False, epoch: 33: Average loss: 0.1863, Accuracy: 9423/10000 (94.2300%)
+___Train Local_Simple,  epoch  33, local model 90, internal_epoch   1,  Average loss: 0.0029, Accuracy: 651/683 (95.3148%)
+___Test Local_Simple poisoned: False, epoch: 33: Average loss: 0.5877, Accuracy: 8057/10000 (80.5700%)
+___Train Local_Simple,  epoch  33, local model 93, internal_epoch   1,  Average loss: 0.0006, Accuracy: 616/623 (98.8764%)
+___Test Local_Simple poisoned: False, epoch: 33: Average loss: 0.3607, Accuracy: 8745/10000 (87.4500%)
+___Train Local_Simple,  epoch  33, local model 79, internal_epoch   1,  Average loss: 0.0024, Accuracy: 174/182 (95.6044%)
+___Test Local_Simple poisoned: False, epoch: 33: Average loss: 0.1350, Accuracy: 9592/10000 (95.9200%)
+time spent on training: 18.102689504623413
+___Test Target_Simple poisoned: False, epoch: 33: Average loss: 0.1093, Accuracy: 9674/10000 (96.7400%)
+___Test Target_Simple poisoned: True, epoch: 33: Average loss: 0.4852, Accuracy: 7510/8968 (83.7422%)
+Done in 29.343369483947754 sec.
+Server Epoch:34 choose agents : [36, 67, 41, 87, 65, 30, 98, 25, 54, 52].
+___Train Local_Simple,  epoch  34, local model 36, internal_epoch   1,  Average loss: 0.0014, Accuracy: 979/1005 (97.4129%)
+___Test Local_Simple poisoned: False, epoch: 34: Average loss: 0.6728, Accuracy: 8187/10000 (81.8700%)
+___Train Local_Simple,  epoch  34, local model 67, internal_epoch   1,  Average loss: 0.0017, Accuracy: 967/998 (96.8938%)
+___Test Local_Simple poisoned: False, epoch: 34: Average loss: 0.2745, Accuracy: 9134/10000 (91.3400%)
+poison local model 41 index 0 
+___Train Local_Simple,  epoch  34, local model 41, internal_epoch   1,  Average loss: 0.0021, Accuracy: 579/606 (95.5446%)
+___Test Local_Simple poisoned: False, epoch: 34: Average loss: 0.2231, Accuracy: 9288/10000 (92.8800%)
+___Train Local_Simple,  epoch  34, local model 87, internal_epoch   1,  Average loss: 0.0015, Accuracy: 455/470 (96.8085%)
+___Test Local_Simple poisoned: False, epoch: 34: Average loss: 0.2137, Accuracy: 9345/10000 (93.4500%)
+___Train Local_Simple,  epoch  34, local model 65, internal_epoch   1,  Average loss: 0.0017, Accuracy: 355/371 (95.6873%)
+___Test Local_Simple poisoned: False, epoch: 34: Average loss: 0.2417, Accuracy: 9132/10000 (91.3200%)
+___Train Local_Simple,  epoch  34, local model 30, internal_epoch   1,  Average loss: 0.0022, Accuracy: 383/400 (95.7500%)
+___Test Local_Simple poisoned: False, epoch: 34: Average loss: 0.2583, Accuracy: 9240/10000 (92.4000%)
+___Train Local_Simple,  epoch  34, local model 98, internal_epoch   1,  Average loss: 0.0017, Accuracy: 790/818 (96.5770%)
+___Test Local_Simple poisoned: False, epoch: 34: Average loss: 0.4635, Accuracy: 8549/10000 (85.4900%)
+___Train Local_Simple,  epoch  34, local model 25, internal_epoch   1,  Average loss: 0.0020, Accuracy: 624/647 (96.4451%)
+___Test Local_Simple poisoned: False, epoch: 34: Average loss: 0.3239, Accuracy: 8965/10000 (89.6500%)
+___Train Local_Simple,  epoch  34, local model 54, internal_epoch   1,  Average loss: 0.0021, Accuracy: 494/519 (95.1830%)
+___Test Local_Simple poisoned: False, epoch: 34: Average loss: 0.3531, Accuracy: 8884/10000 (88.8400%)
+___Train Local_Simple,  epoch  34, local model 52, internal_epoch   1,  Average loss: 0.0014, Accuracy: 247/253 (97.6285%)
+___Test Local_Simple poisoned: False, epoch: 34: Average loss: 0.1965, Accuracy: 9407/10000 (94.0700%)
+time spent on training: 19.726669311523438
+___Test Target_Simple poisoned: False, epoch: 34: Average loss: 0.1071, Accuracy: 9682/10000 (96.8200%)
+___Test Target_Simple poisoned: True, epoch: 34: Average loss: 0.5135, Accuracy: 7452/8968 (83.0955%)
+Done in 28.6303653717041 sec.
+Server Epoch:35 choose agents : [46, 6, 35, 17, 20, 77, 44, 8, 78, 3].
+___Train Local_Simple,  epoch  35, local model 46, internal_epoch   1,  Average loss: 0.0036, Accuracy: 686/710 (96.6197%)
+___Test Local_Simple poisoned: False, epoch: 35: Average loss: 0.5747, Accuracy: 8196/10000 (81.9600%)
+___Train Local_Simple,  epoch  35, local model 6, internal_epoch   1,  Average loss: 0.0020, Accuracy: 593/615 (96.4228%)
+___Test Local_Simple poisoned: False, epoch: 35: Average loss: 0.3622, Accuracy: 8943/10000 (89.4300%)
+___Train Local_Simple,  epoch  35, local model 35, internal_epoch   1,  Average loss: 0.0009, Accuracy: 489/499 (97.9960%)
+___Test Local_Simple poisoned: False, epoch: 35: Average loss: 0.2909, Accuracy: 9112/10000 (91.1200%)
+___Train Local_Simple,  epoch  35, local model 17, internal_epoch   1,  Average loss: 0.0018, Accuracy: 604/620 (97.4194%)
+___Test Local_Simple poisoned: False, epoch: 35: Average loss: 0.2516, Accuracy: 9237/10000 (92.3700%)
+___Train Local_Simple,  epoch  35, local model 20, internal_epoch   1,  Average loss: 0.0012, Accuracy: 418/429 (97.4359%)
+___Test Local_Simple poisoned: False, epoch: 35: Average loss: 0.6658, Accuracy: 8166/10000 (81.6600%)
+___Train Local_Simple,  epoch  35, local model 77, internal_epoch   1,  Average loss: 0.0024, Accuracy: 565/589 (95.9253%)
+___Test Local_Simple poisoned: False, epoch: 35: Average loss: 0.1918, Accuracy: 9364/10000 (93.6400%)
+___Train Local_Simple,  epoch  35, local model 44, internal_epoch   1,  Average loss: 0.0020, Accuracy: 496/517 (95.9381%)
+___Test Local_Simple poisoned: False, epoch: 35: Average loss: 0.1954, Accuracy: 9413/10000 (94.1300%)
+___Train Local_Simple,  epoch  35, local model 8, internal_epoch   1,  Average loss: 0.0019, Accuracy: 609/633 (96.2085%)
+___Test Local_Simple poisoned: False, epoch: 35: Average loss: 0.1764, Accuracy: 9480/10000 (94.8000%)
+___Train Local_Simple,  epoch  35, local model 78, internal_epoch   1,  Average loss: 0.0013, Accuracy: 296/303 (97.6898%)
+___Test Local_Simple poisoned: False, epoch: 35: Average loss: 0.4756, Accuracy: 8475/10000 (84.7500%)
+___Train Local_Simple,  epoch  35, local model 3, internal_epoch   1,  Average loss: 0.0017, Accuracy: 898/923 (97.2914%)
+___Test Local_Simple poisoned: False, epoch: 35: Average loss: 0.2596, Accuracy: 9220/10000 (92.2000%)
+time spent on training: 15.379682064056396
+___Test Target_Simple poisoned: False, epoch: 35: Average loss: 0.1043, Accuracy: 9694/10000 (96.9400%)
+___Test Target_Simple poisoned: True, epoch: 35: Average loss: 0.5407, Accuracy: 7398/8968 (82.4933%)
+Done in 24.341760396957397 sec.
+Server Epoch:36 choose agents : [39, 14, 32, 4, 30, 65, 23, 3, 98, 88].
+___Train Local_Simple,  epoch  36, local model 39, internal_epoch   1,  Average loss: 0.0011, Accuracy: 253/257 (98.4436%)
+___Test Local_Simple poisoned: False, epoch: 36: Average loss: 0.1256, Accuracy: 9612/10000 (96.1200%)
+___Train Local_Simple,  epoch  36, local model 14, internal_epoch   1,  Average loss: 0.0024, Accuracy: 362/376 (96.2766%)
+___Test Local_Simple poisoned: False, epoch: 36: Average loss: 0.1861, Accuracy: 9433/10000 (94.3300%)
+___Train Local_Simple,  epoch  36, local model 32, internal_epoch   1,  Average loss: 0.0025, Accuracy: 933/977 (95.4964%)
+___Test Local_Simple poisoned: False, epoch: 36: Average loss: 0.4109, Accuracy: 8669/10000 (86.6900%)
+___Train Local_Simple,  epoch  36, local model 4, internal_epoch   1,  Average loss: 0.0017, Accuracy: 632/658 (96.0486%)
+___Test Local_Simple poisoned: False, epoch: 36: Average loss: 0.2790, Accuracy: 9059/10000 (90.5900%)
+___Train Local_Simple,  epoch  36, local model 30, internal_epoch   1,  Average loss: 0.0017, Accuracy: 385/400 (96.2500%)
+___Test Local_Simple poisoned: False, epoch: 36: Average loss: 0.4236, Accuracy: 8705/10000 (87.0500%)
+___Train Local_Simple,  epoch  36, local model 65, internal_epoch   1,  Average loss: 0.0014, Accuracy: 359/371 (96.7655%)
+___Test Local_Simple poisoned: False, epoch: 36: Average loss: 0.3195, Accuracy: 8868/10000 (88.6800%)
+___Train Local_Simple,  epoch  36, local model 23, internal_epoch   1,  Average loss: 0.0010, Accuracy: 288/293 (98.2935%)
+___Test Local_Simple poisoned: False, epoch: 36: Average loss: 0.1710, Accuracy: 9435/10000 (94.3500%)
+___Train Local_Simple,  epoch  36, local model 3, internal_epoch   1,  Average loss: 0.0020, Accuracy: 890/923 (96.4247%)
+___Test Local_Simple poisoned: False, epoch: 36: Average loss: 0.4771, Accuracy: 8457/10000 (84.5700%)
+___Train Local_Simple,  epoch  36, local model 98, internal_epoch   1,  Average loss: 0.0016, Accuracy: 786/818 (96.0880%)
+___Test Local_Simple poisoned: False, epoch: 36: Average loss: 0.4263, Accuracy: 8628/10000 (86.2800%)
+___Train Local_Simple,  epoch  36, local model 88, internal_epoch   1,  Average loss: 0.0019, Accuracy: 513/530 (96.7925%)
+___Test Local_Simple poisoned: False, epoch: 36: Average loss: 0.2597, Accuracy: 9194/10000 (91.9400%)
+time spent on training: 15.848328113555908
+___Test Target_Simple poisoned: False, epoch: 36: Average loss: 0.1031, Accuracy: 9693/10000 (96.9300%)
+___Test Target_Simple poisoned: True, epoch: 36: Average loss: 0.5870, Accuracy: 7324/8968 (81.6682%)
+Done in 25.023326635360718 sec.
+Server Epoch:37 choose agents : [71, 2, 43, 25, 17, 37, 46, 56, 30, 0].
+___Train Local_Simple,  epoch  37, local model 71, internal_epoch   1,  Average loss: 0.0011, Accuracy: 1353/1384 (97.7601%)
+___Test Local_Simple poisoned: False, epoch: 37: Average loss: 0.6368, Accuracy: 7943/10000 (79.4300%)
+___Train Local_Simple,  epoch  37, local model 2, internal_epoch   1,  Average loss: 0.0021, Accuracy: 530/548 (96.7153%)
+___Test Local_Simple poisoned: False, epoch: 37: Average loss: 0.2138, Accuracy: 9370/10000 (93.7000%)
+___Train Local_Simple,  epoch  37, local model 43, internal_epoch   1,  Average loss: 0.0013, Accuracy: 398/408 (97.5490%)
+___Test Local_Simple poisoned: False, epoch: 37: Average loss: 0.2224, Accuracy: 9289/10000 (92.8900%)
+___Train Local_Simple,  epoch  37, local model 25, internal_epoch   1,  Average loss: 0.0019, Accuracy: 625/647 (96.5997%)
+___Test Local_Simple poisoned: False, epoch: 37: Average loss: 0.8220, Accuracy: 7674/10000 (76.7400%)
+___Train Local_Simple,  epoch  37, local model 17, internal_epoch   1,  Average loss: 0.0017, Accuracy: 601/620 (96.9355%)
+___Test Local_Simple poisoned: False, epoch: 37: Average loss: 0.1992, Accuracy: 9382/10000 (93.8200%)
+___Train Local_Simple,  epoch  37, local model 37, internal_epoch   1,  Average loss: 0.0013, Accuracy: 834/860 (96.9767%)
+___Test Local_Simple poisoned: False, epoch: 37: Average loss: 0.2649, Accuracy: 9168/10000 (91.6800%)
+___Train Local_Simple,  epoch  37, local model 46, internal_epoch   1,  Average loss: 0.0019, Accuracy: 688/710 (96.9014%)
+___Test Local_Simple poisoned: False, epoch: 37: Average loss: 0.4019, Accuracy: 8748/10000 (87.4800%)
+___Train Local_Simple,  epoch  37, local model 56, internal_epoch   1,  Average loss: 0.0017, Accuracy: 852/880 (96.8182%)
+___Test Local_Simple poisoned: False, epoch: 37: Average loss: 0.1783, Accuracy: 9419/10000 (94.1900%)
+___Train Local_Simple,  epoch  37, local model 30, internal_epoch   1,  Average loss: 0.0021, Accuracy: 386/400 (96.5000%)
+___Test Local_Simple poisoned: False, epoch: 37: Average loss: 0.2296, Accuracy: 9312/10000 (93.1200%)
+___Train Local_Simple,  epoch  37, local model 0, internal_epoch   1,  Average loss: 0.0020, Accuracy: 420/435 (96.5517%)
+___Test Local_Simple poisoned: False, epoch: 37: Average loss: 0.1877, Accuracy: 9391/10000 (93.9100%)
+time spent on training: 15.831024646759033
+___Test Target_Simple poisoned: False, epoch: 37: Average loss: 0.1009, Accuracy: 9703/10000 (97.0300%)
+___Test Target_Simple poisoned: True, epoch: 37: Average loss: 0.6037, Accuracy: 7271/8968 (81.0772%)
+Done in 24.724972248077393 sec.
+Server Epoch:38 choose agents : [33, 53, 17, 65, 6, 24, 86, 35, 84, 85].
+___Train Local_Simple,  epoch  38, local model 33, internal_epoch   1,  Average loss: 0.0017, Accuracy: 604/623 (96.9502%)
+___Test Local_Simple poisoned: False, epoch: 38: Average loss: 0.2832, Accuracy: 9031/10000 (90.3100%)
+___Train Local_Simple,  epoch  38, local model 53, internal_epoch   1,  Average loss: 0.0014, Accuracy: 718/739 (97.1583%)
+___Test Local_Simple poisoned: False, epoch: 38: Average loss: 0.3588, Accuracy: 9021/10000 (90.2100%)
+___Train Local_Simple,  epoch  38, local model 17, internal_epoch   1,  Average loss: 0.0018, Accuracy: 601/620 (96.9355%)
+___Test Local_Simple poisoned: False, epoch: 38: Average loss: 0.1595, Accuracy: 9485/10000 (94.8500%)
+___Train Local_Simple,  epoch  38, local model 65, internal_epoch   1,  Average loss: 0.0013, Accuracy: 359/371 (96.7655%)
+___Test Local_Simple poisoned: False, epoch: 38: Average loss: 0.2987, Accuracy: 8933/10000 (89.3300%)
+___Train Local_Simple,  epoch  38, local model 6, internal_epoch   1,  Average loss: 0.0021, Accuracy: 591/615 (96.0976%)
+___Test Local_Simple poisoned: False, epoch: 38: Average loss: 0.2991, Accuracy: 9050/10000 (90.5000%)
+___Train Local_Simple,  epoch  38, local model 24, internal_epoch   1,  Average loss: 0.0017, Accuracy: 364/379 (96.0422%)
+___Test Local_Simple poisoned: False, epoch: 38: Average loss: 0.2152, Accuracy: 9341/10000 (93.4100%)
+___Train Local_Simple,  epoch  38, local model 86, internal_epoch   1,  Average loss: 0.0015, Accuracy: 242/250 (96.8000%)
+___Test Local_Simple poisoned: False, epoch: 38: Average loss: 0.1275, Accuracy: 9612/10000 (96.1200%)
+___Train Local_Simple,  epoch  38, local model 35, internal_epoch   1,  Average loss: 0.0011, Accuracy: 485/499 (97.1944%)
+___Test Local_Simple poisoned: False, epoch: 38: Average loss: 0.2389, Accuracy: 9261/10000 (92.6100%)
+___Train Local_Simple,  epoch  38, local model 84, internal_epoch   1,  Average loss: 0.0015, Accuracy: 1213/1246 (97.3515%)
+___Test Local_Simple poisoned: False, epoch: 38: Average loss: 0.2936, Accuracy: 9071/10000 (90.7100%)
+___Train Local_Simple,  epoch  38, local model 85, internal_epoch   1,  Average loss: 0.0011, Accuracy: 421/431 (97.6798%)
+___Test Local_Simple poisoned: False, epoch: 38: Average loss: 0.2238, Accuracy: 9310/10000 (93.1000%)
+time spent on training: 16.201844215393066
+___Test Target_Simple poisoned: False, epoch: 38: Average loss: 0.0997, Accuracy: 9705/10000 (97.0500%)
+___Test Target_Simple poisoned: True, epoch: 38: Average loss: 0.6517, Accuracy: 7168/8968 (79.9286%)
+Done in 25.447321891784668 sec.
+Server Epoch:39 choose agents : [60, 94, 30, 76, 42, 25, 16, 95, 52, 59].
+___Train Local_Simple,  epoch  39, local model 60, internal_epoch   1,  Average loss: 0.0034, Accuracy: 326/338 (96.4497%)
+___Test Local_Simple poisoned: False, epoch: 39: Average loss: 0.1577, Accuracy: 9518/10000 (95.1800%)
+___Train Local_Simple,  epoch  39, local model 94, internal_epoch   1,  Average loss: 0.0025, Accuracy: 142/150 (94.6667%)
+___Test Local_Simple poisoned: False, epoch: 39: Average loss: 0.2062, Accuracy: 9363/10000 (93.6300%)
+___Train Local_Simple,  epoch  39, local model 30, internal_epoch   1,  Average loss: 0.0017, Accuracy: 388/400 (97.0000%)
+___Test Local_Simple poisoned: False, epoch: 39: Average loss: 0.1880, Accuracy: 9426/10000 (94.2600%)
+___Train Local_Simple,  epoch  39, local model 76, internal_epoch   1,  Average loss: 0.0023, Accuracy: 76/78 (97.4359%)
+___Test Local_Simple poisoned: False, epoch: 39: Average loss: 0.1178, Accuracy: 9647/10000 (96.4700%)
+___Train Local_Simple,  epoch  39, local model 42, internal_epoch   1,  Average loss: 0.0016, Accuracy: 229/236 (97.0339%)
+___Test Local_Simple poisoned: False, epoch: 39: Average loss: 0.1726, Accuracy: 9441/10000 (94.4100%)
+___Train Local_Simple,  epoch  39, local model 25, internal_epoch   1,  Average loss: 0.0028, Accuracy: 622/647 (96.1360%)
+___Test Local_Simple poisoned: False, epoch: 39: Average loss: 0.3751, Accuracy: 8704/10000 (87.0400%)
+___Train Local_Simple,  epoch  39, local model 16, internal_epoch   1,  Average loss: 0.0018, Accuracy: 885/915 (96.7213%)
+___Test Local_Simple poisoned: False, epoch: 39: Average loss: 0.1295, Accuracy: 9597/10000 (95.9700%)
+___Train Local_Simple,  epoch  39, local model 95, internal_epoch   1,  Average loss: 0.0007, Accuracy: 594/602 (98.6711%)
+___Test Local_Simple poisoned: False, epoch: 39: Average loss: 0.9714, Accuracy: 7629/10000 (76.2900%)
+___Train Local_Simple,  epoch  39, local model 52, internal_epoch   1,  Average loss: 0.0011, Accuracy: 248/253 (98.0237%)
+___Test Local_Simple poisoned: False, epoch: 39: Average loss: 0.1963, Accuracy: 9392/10000 (93.9200%)
+___Train Local_Simple,  epoch  39, local model 59, internal_epoch   1,  Average loss: 0.0018, Accuracy: 737/760 (96.9737%)
+___Test Local_Simple poisoned: False, epoch: 39: Average loss: 0.8854, Accuracy: 7291/10000 (72.9100%)
+time spent on training: 15.832647323608398
+___Test Target_Simple poisoned: False, epoch: 39: Average loss: 0.0987, Accuracy: 9710/10000 (97.1000%)
+___Test Target_Simple poisoned: True, epoch: 39: Average loss: 0.6650, Accuracy: 7100/8968 (79.1704%)
+Done in 25.26610231399536 sec.
+Server Epoch:40 choose agents : [52, 81, 77, 21, 10, 8, 40, 54, 46, 30].
+___Train Local_Simple,  epoch  40, local model 52, internal_epoch   1,  Average loss: 0.0011, Accuracy: 249/253 (98.4190%)
+___Test Local_Simple poisoned: False, epoch: 40: Average loss: 0.1908, Accuracy: 9380/10000 (93.8000%)
+___Train Local_Simple,  epoch  40, local model 81, internal_epoch   1,  Average loss: 0.0012, Accuracy: 1194/1227 (97.3105%)
+___Test Local_Simple poisoned: False, epoch: 40: Average loss: 0.5444, Accuracy: 8633/10000 (86.3300%)
+___Train Local_Simple,  epoch  40, local model 77, internal_epoch   1,  Average loss: 0.0020, Accuracy: 565/589 (95.9253%)
+___Test Local_Simple poisoned: False, epoch: 40: Average loss: 0.1510, Accuracy: 9522/10000 (95.2200%)
+___Train Local_Simple,  epoch  40, local model 21, internal_epoch   1,  Average loss: 0.0021, Accuracy: 300/312 (96.1538%)
+___Test Local_Simple poisoned: False, epoch: 40: Average loss: 0.3401, Accuracy: 8947/10000 (89.4700%)
+___Train Local_Simple,  epoch  40, local model 10, internal_epoch   1,  Average loss: 0.0015, Accuracy: 869/892 (97.4215%)
+___Test Local_Simple poisoned: False, epoch: 40: Average loss: 0.6863, Accuracy: 8297/10000 (82.9700%)
+___Train Local_Simple,  epoch  40, local model 8, internal_epoch   1,  Average loss: 0.0018, Accuracy: 614/633 (96.9984%)
+___Test Local_Simple poisoned: False, epoch: 40: Average loss: 0.1792, Accuracy: 9465/10000 (94.6500%)
+___Train Local_Simple,  epoch  40, local model 40, internal_epoch   1,  Average loss: 0.0011, Accuracy: 756/772 (97.9275%)
+___Test Local_Simple poisoned: False, epoch: 40: Average loss: 0.1485, Accuracy: 9548/10000 (95.4800%)
+___Train Local_Simple,  epoch  40, local model 54, internal_epoch   1,  Average loss: 0.0021, Accuracy: 498/519 (95.9538%)
+___Test Local_Simple poisoned: False, epoch: 40: Average loss: 0.2633, Accuracy: 9166/10000 (91.6600%)
+___Train Local_Simple,  epoch  40, local model 46, internal_epoch   1,  Average loss: 0.0029, Accuracy: 676/710 (95.2113%)
+___Test Local_Simple poisoned: False, epoch: 40: Average loss: 0.4674, Accuracy: 8514/10000 (85.1400%)
+___Train Local_Simple,  epoch  40, local model 30, internal_epoch   1,  Average loss: 0.0018, Accuracy: 385/400 (96.2500%)
+___Test Local_Simple poisoned: False, epoch: 40: Average loss: 0.2383, Accuracy: 9297/10000 (92.9700%)
+time spent on training: 15.97813606262207
+___Test Target_Simple poisoned: False, epoch: 40: Average loss: 0.0972, Accuracy: 9715/10000 (97.1500%)
+___Test Target_Simple poisoned: True, epoch: 40: Average loss: 0.6827, Accuracy: 7033/8968 (78.4233%)
+Done in 24.922432899475098 sec.
+Server Epoch:41 choose agents : [78, 9, 74, 89, 4, 11, 24, 43, 23, 25].
+___Train Local_Simple,  epoch  41, local model 78, internal_epoch   1,  Average loss: 0.0015, Accuracy: 294/303 (97.0297%)
+___Test Local_Simple poisoned: False, epoch: 41: Average loss: 0.3976, Accuracy: 8693/10000 (86.9300%)
+___Train Local_Simple,  epoch  41, local model 9, internal_epoch   1,  Average loss: 0.0017, Accuracy: 422/436 (96.7890%)
+___Test Local_Simple poisoned: False, epoch: 41: Average loss: 0.1593, Accuracy: 9500/10000 (95.0000%)
+poison local model 74 index 3 
+___Train Local_Simple,  epoch  41, local model 74, internal_epoch   1,  Average loss: 0.0010, Accuracy: 548/557 (98.3842%)
+___Test Local_Simple poisoned: False, epoch: 41: Average loss: 0.2093, Accuracy: 9374/10000 (93.7400%)
+___Train Local_Simple,  epoch  41, local model 89, internal_epoch   1,  Average loss: 0.0015, Accuracy: 482/492 (97.9675%)
+___Test Local_Simple poisoned: False, epoch: 41: Average loss: 0.2800, Accuracy: 9139/10000 (91.3900%)
+___Train Local_Simple,  epoch  41, local model 4, internal_epoch   1,  Average loss: 0.0014, Accuracy: 643/658 (97.7204%)
+___Test Local_Simple poisoned: False, epoch: 41: Average loss: 0.4406, Accuracy: 8560/10000 (85.6000%)
+___Train Local_Simple,  epoch  41, local model 11, internal_epoch   1,  Average loss: 0.0018, Accuracy: 623/645 (96.5891%)
+___Test Local_Simple poisoned: False, epoch: 41: Average loss: 0.2675, Accuracy: 9169/10000 (91.6900%)
+___Train Local_Simple,  epoch  41, local model 24, internal_epoch   1,  Average loss: 0.0017, Accuracy: 366/379 (96.5699%)
+___Test Local_Simple poisoned: False, epoch: 41: Average loss: 0.1802, Accuracy: 9461/10000 (94.6100%)
+___Train Local_Simple,  epoch  41, local model 43, internal_epoch   1,  Average loss: 0.0013, Accuracy: 397/408 (97.3039%)
+___Test Local_Simple poisoned: False, epoch: 41: Average loss: 0.1683, Accuracy: 9474/10000 (94.7400%)
+___Train Local_Simple,  epoch  41, local model 23, internal_epoch   1,  Average loss: 0.0010, Accuracy: 288/293 (98.2935%)
+___Test Local_Simple poisoned: False, epoch: 41: Average loss: 0.1362, Accuracy: 9552/10000 (95.5200%)
+___Train Local_Simple,  epoch  41, local model 25, internal_epoch   1,  Average loss: 0.0022, Accuracy: 622/647 (96.1360%)
+___Test Local_Simple poisoned: False, epoch: 41: Average loss: 0.3770, Accuracy: 8757/10000 (87.5700%)
+time spent on training: 16.98577308654785
+___Test Target_Simple poisoned: False, epoch: 41: Average loss: 0.0963, Accuracy: 9715/10000 (97.1500%)
+___Test Target_Simple poisoned: True, epoch: 41: Average loss: 0.7004, Accuracy: 7002/8968 (78.0776%)
+Done in 25.9387264251709 sec.
+Server Epoch:42 choose agents : [97, 91, 57, 72, 15, 94, 95, 90, 69, 20].
+___Train Local_Simple,  epoch  42, local model 97, internal_epoch   1,  Average loss: 0.0012, Accuracy: 478/487 (98.1520%)
+___Test Local_Simple poisoned: False, epoch: 42: Average loss: 0.2891, Accuracy: 9044/10000 (90.4400%)
+___Train Local_Simple,  epoch  42, local model 91, internal_epoch   1,  Average loss: 0.0009, Accuracy: 253/256 (98.8281%)
+___Test Local_Simple poisoned: False, epoch: 42: Average loss: 0.1180, Accuracy: 9646/10000 (96.4600%)
+___Train Local_Simple,  epoch  42, local model 57, internal_epoch   1,  Average loss: 0.0020, Accuracy: 328/343 (95.6268%)
+___Test Local_Simple poisoned: False, epoch: 42: Average loss: 0.2446, Accuracy: 9207/10000 (92.0700%)
+___Train Local_Simple,  epoch  42, local model 72, internal_epoch   1,  Average loss: 0.0011, Accuracy: 718/731 (98.2216%)
+___Test Local_Simple poisoned: False, epoch: 42: Average loss: 0.3093, Accuracy: 8984/10000 (89.8400%)
+___Train Local_Simple,  epoch  42, local model 15, internal_epoch   1,  Average loss: 0.0013, Accuracy: 392/401 (97.7556%)
+___Test Local_Simple poisoned: False, epoch: 42: Average loss: 0.1657, Accuracy: 9493/10000 (94.9300%)
+___Train Local_Simple,  epoch  42, local model 94, internal_epoch   1,  Average loss: 0.0023, Accuracy: 143/150 (95.3333%)
+___Test Local_Simple poisoned: False, epoch: 42: Average loss: 0.1847, Accuracy: 9428/10000 (94.2800%)
+___Train Local_Simple,  epoch  42, local model 95, internal_epoch   1,  Average loss: 0.0006, Accuracy: 594/602 (98.6711%)
+___Test Local_Simple poisoned: False, epoch: 42: Average loss: 0.7615, Accuracy: 7727/10000 (77.2700%)
+___Train Local_Simple,  epoch  42, local model 90, internal_epoch   1,  Average loss: 0.0020, Accuracy: 663/683 (97.0717%)
+___Test Local_Simple poisoned: False, epoch: 42: Average loss: 0.6349, Accuracy: 7911/10000 (79.1100%)
+___Train Local_Simple,  epoch  42, local model 69, internal_epoch   1,  Average loss: 0.0020, Accuracy: 246/256 (96.0938%)
+___Test Local_Simple poisoned: False, epoch: 42: Average loss: 0.4606, Accuracy: 8429/10000 (84.2900%)
+___Train Local_Simple,  epoch  42, local model 20, internal_epoch   1,  Average loss: 0.0015, Accuracy: 414/429 (96.5035%)
+___Test Local_Simple poisoned: False, epoch: 42: Average loss: 0.2757, Accuracy: 9129/10000 (91.2900%)
+time spent on training: 16.14310336112976
+___Test Target_Simple poisoned: False, epoch: 42: Average loss: 0.0956, Accuracy: 9722/10000 (97.2200%)
+___Test Target_Simple poisoned: True, epoch: 42: Average loss: 0.7020, Accuracy: 6992/8968 (77.9661%)
+Done in 25.12708806991577 sec.
+Server Epoch:43 choose agents : [81, 59, 21, 69, 14, 73, 28, 22, 72, 97].
+___Train Local_Simple,  epoch  43, local model 81, internal_epoch   1,  Average loss: 0.0011, Accuracy: 1198/1227 (97.6365%)
+___Test Local_Simple poisoned: False, epoch: 43: Average loss: 0.3791, Accuracy: 8853/10000 (88.5300%)
+___Train Local_Simple,  epoch  43, local model 59, internal_epoch   1,  Average loss: 0.0022, Accuracy: 734/760 (96.5789%)
+___Test Local_Simple poisoned: False, epoch: 43: Average loss: 0.5357, Accuracy: 8146/10000 (81.4600%)
+___Train Local_Simple,  epoch  43, local model 21, internal_epoch   1,  Average loss: 0.0018, Accuracy: 300/312 (96.1538%)
+___Test Local_Simple poisoned: False, epoch: 43: Average loss: 0.2891, Accuracy: 9062/10000 (90.6200%)
+___Train Local_Simple,  epoch  43, local model 69, internal_epoch   1,  Average loss: 0.0019, Accuracy: 248/256 (96.8750%)
+___Test Local_Simple poisoned: False, epoch: 43: Average loss: 0.3526, Accuracy: 8778/10000 (87.7800%)
+___Train Local_Simple,  epoch  43, local model 14, internal_epoch   1,  Average loss: 0.0028, Accuracy: 359/376 (95.4787%)
+___Test Local_Simple poisoned: False, epoch: 43: Average loss: 0.1686, Accuracy: 9493/10000 (94.9300%)
+poison local model 73 index 1 
+___Train Local_Simple,  epoch  43, local model 73, internal_epoch   1,  Average loss: 0.0009, Accuracy: 581/591 (98.3080%)

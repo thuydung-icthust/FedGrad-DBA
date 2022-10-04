@@ -1,8 +1,8 @@
 import torch
 import torch.nn as nn
 import config
-
-import main
+# import main
+import dba
 
 def Mytest(helper, epoch,
            model, is_poison=False, visualize=True, agent_name_key=""):
@@ -39,17 +39,16 @@ def Mytest(helper, epoch,
     acc = 100.0 * (float(correct) / float(dataset_size))  if dataset_size!=0 else 0
     total_l = total_loss / dataset_size if dataset_size!=0 else 0
 
-    main.logger.info('___Test {} poisoned: {}, epoch: {}: Average loss: {:.4f}, '
+    dba.logger.info('___Test {} poisoned: {}, epoch: {}: Average loss: {:.4f}, '
                      'Accuracy: {}/{} ({:.4f}%)'.format(model.name, is_poison, epoch,
                                                         total_l, correct, dataset_size,
                                                         acc))
-    if visualize: # loss =total_l
-        model.test_vis(vis=main.vis, epoch=epoch, acc=acc, loss=None,
-                       eid=helper.params['environment_name'],
-                       agent_name_key=str(agent_name_key))
+    # if visualize: # loss =total_l
+    #     model.test_vis(vis=main.vis, epoch=epoch, acc=acc, loss=None,
+    #                    eid=helper.params['environment_name'],
+    #                    agent_name_key=str(agent_name_key))
     model.train()
     return (total_l, acc, correct, dataset_size)
-
 
 def Mytest_poison(helper, epoch,
                   model, is_poison=False, visualize=True, agent_name_key=""):
@@ -104,16 +103,15 @@ def Mytest_poison(helper, epoch,
 
     acc = 100.0 * (float(correct) / float(poison_data_count))  if poison_data_count!=0 else 0
     total_l = total_loss / poison_data_count if poison_data_count!=0 else 0
-    main.logger.info('___Test {} poisoned: {}, epoch: {}: Average loss: {:.4f}, '
+    dba.logger.info('___Test {} poisoned: {}, epoch: {}: Average loss: {:.4f}, '
                      'Accuracy: {}/{} ({:.4f}%)'.format(model.name, is_poison, epoch,
                                                         total_l, correct, poison_data_count,
                                                         acc))
-    if visualize: #loss = total_l
-        model.poison_test_vis(vis=main.vis, epoch=epoch, acc=acc, loss=None, eid=helper.params['environment_name'],agent_name_key=str(agent_name_key))
+    # if visualize: #loss = total_l
+    #     model.poison_test_vis(vis=main.vis, epoch=epoch, acc=acc, loss=None, eid=helper.params['environment_name'],agent_name_key=str(agent_name_key))
 
     model.train()
     return total_l, acc, correct, poison_data_count
-
 
 def Mytest_poison_trigger(helper, model, adver_trigger_index):
     model.eval()
@@ -175,7 +173,6 @@ def Mytest_poison_trigger(helper, model, adver_trigger_index):
 
     model.train()
     return total_l, acc, correct, poison_data_count
-
 
 def Mytest_poison_agent_trigger(helper, model, agent_name_key):
     model.eval()
