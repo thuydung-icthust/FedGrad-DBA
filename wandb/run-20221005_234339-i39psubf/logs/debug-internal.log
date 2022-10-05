@@ -1,0 +1,200 @@
+2022-10-05 23:43:39,454 INFO    StreamThr :637107 [internal.py:wandb_internal():88] W&B internal server running at pid: 637107, started at: 2022-10-05 23:43:39.453198
+2022-10-05 23:43:39,457 DEBUG   HandlerThread:637107 [handler.py:handle_request():138] handle_request: status
+2022-10-05 23:43:39,460 DEBUG   SenderThread:637107 [sender.py:send_request():315] send_request: status
+2022-10-05 23:43:39,462 DEBUG   SenderThread:637107 [sender.py:send():301] send: header
+2022-10-05 23:43:39,463 INFO    WriterThread:637107 [datastore.py:open_for_write():75] open: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_234339-i39psubf/run-i39psubf.wandb
+2022-10-05 23:43:39,488 DEBUG   SenderThread:637107 [sender.py:send():301] send: run
+2022-10-05 23:43:40,182 DEBUG   HandlerThread:637107 [handler.py:handle_request():138] handle_request: check_version
+2022-10-05 23:43:40,184 INFO    SenderThread:637107 [dir_watcher.py:__init__():216] watching files in: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_234339-i39psubf/files
+2022-10-05 23:43:40,185 INFO    SenderThread:637107 [sender.py:_start_run_threads():912] run started: i39psubf with start time 1664984619.449565
+2022-10-05 23:43:40,185 DEBUG   SenderThread:637107 [sender.py:send():301] send: summary
+2022-10-05 23:43:40,185 INFO    SenderThread:637107 [sender.py:_save_file():1155] saving file wandb-summary.json with policy end
+2022-10-05 23:43:40,186 DEBUG   SenderThread:637107 [sender.py:send_request():315] send_request: check_version
+2022-10-05 23:43:40,390 DEBUG   HandlerThread:637107 [handler.py:handle_request():138] handle_request: run_start
+2022-10-05 23:43:40,403 DEBUG   HandlerThread:637107 [meta.py:__init__():34] meta init
+2022-10-05 23:43:40,403 DEBUG   HandlerThread:637107 [meta.py:__init__():49] meta init done
+2022-10-05 23:43:40,403 DEBUG   HandlerThread:637107 [meta.py:probe():215] probe
+2022-10-05 23:43:40,411 DEBUG   HandlerThread:637107 [meta.py:_setup_git():205] setup git
+2022-10-05 23:43:40,442 DEBUG   HandlerThread:637107 [meta.py:_setup_git():212] setup git done
+2022-10-05 23:43:40,442 DEBUG   HandlerThread:637107 [meta.py:_save_pip():53] save pip
+2022-10-05 23:43:40,443 DEBUG   HandlerThread:637107 [meta.py:_save_pip():67] save pip done
+2022-10-05 23:43:40,443 DEBUG   HandlerThread:637107 [meta.py:_save_conda():74] save conda
+2022-10-05 23:43:41,187 INFO    Thread-13 :637107 [dir_watcher.py:_on_file_created():275] file/dir created: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_234339-i39psubf/files/conda-environment.yaml
+2022-10-05 23:43:41,188 INFO    Thread-13 :637107 [dir_watcher.py:_on_file_created():275] file/dir created: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_234339-i39psubf/files/wandb-summary.json
+2022-10-05 23:43:41,188 INFO    Thread-13 :637107 [dir_watcher.py:_on_file_created():275] file/dir created: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_234339-i39psubf/files/requirements.txt
+2022-10-05 23:43:43,187 INFO    Thread-13 :637107 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_234339-i39psubf/files/conda-environment.yaml
+2022-10-05 23:43:43,348 DEBUG   HandlerThread:637107 [meta.py:_save_conda():84] save conda done
+2022-10-05 23:43:43,349 DEBUG   HandlerThread:637107 [meta.py:probe():253] probe done
+2022-10-05 23:43:43,355 DEBUG   SenderThread:637107 [sender.py:send():301] send: files
+2022-10-05 23:43:43,356 INFO    SenderThread:637107 [sender.py:_save_file():1155] saving file wandb-metadata.json with policy now
+2022-10-05 23:43:43,365 DEBUG   HandlerThread:637107 [handler.py:handle_request():138] handle_request: stop_status
+2022-10-05 23:43:43,366 DEBUG   SenderThread:637107 [sender.py:send_request():315] send_request: stop_status
+2022-10-05 23:43:43,694 DEBUG   SenderThread:637107 [sender.py:send():301] send: telemetry
+2022-10-05 23:43:44,187 INFO    Thread-13 :637107 [dir_watcher.py:_on_file_created():275] file/dir created: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_234339-i39psubf/files/wandb-metadata.json
+2022-10-05 23:43:44,187 INFO    Thread-13 :637107 [dir_watcher.py:_on_file_created():275] file/dir created: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_234339-i39psubf/files/output.log
+2022-10-05 23:43:44,296 INFO    Thread-17 :637107 [upload_job.py:push():139] Uploaded file /tmp/tmpxqpn7nkswandb/3g3v03p0-wandb-metadata.json
+2022-10-05 23:43:46,188 INFO    Thread-13 :637107 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_234339-i39psubf/files/output.log
+2022-10-05 23:43:54,193 INFO    Thread-13 :637107 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_234339-i39psubf/files/output.log
+2022-10-05 23:43:56,194 INFO    Thread-13 :637107 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_234339-i39psubf/files/output.log
+2022-10-05 23:43:58,699 DEBUG   HandlerThread:637107 [handler.py:handle_request():138] handle_request: stop_status
+2022-10-05 23:43:58,700 DEBUG   SenderThread:637107 [sender.py:send_request():315] send_request: stop_status
+2022-10-05 23:44:00,196 INFO    Thread-13 :637107 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_234339-i39psubf/files/output.log
+2022-10-05 23:44:04,199 INFO    Thread-13 :637107 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_234339-i39psubf/files/output.log
+2022-10-05 23:44:06,200 INFO    Thread-13 :637107 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_234339-i39psubf/files/output.log
+2022-10-05 23:44:08,201 INFO    Thread-13 :637107 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_234339-i39psubf/files/output.log
+2022-10-05 23:44:08,745 DEBUG   SenderThread:637107 [sender.py:send():301] send: stats
+2022-10-05 23:44:11,202 INFO    Thread-13 :637107 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_234339-i39psubf/files/config.yaml
+2022-10-05 23:44:14,041 DEBUG   HandlerThread:637107 [handler.py:handle_request():138] handle_request: stop_status
+2022-10-05 23:44:14,041 DEBUG   SenderThread:637107 [sender.py:send_request():315] send_request: stop_status
+2022-10-05 23:44:20,207 INFO    Thread-13 :637107 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_234339-i39psubf/files/output.log
+2022-10-05 23:44:24,209 INFO    Thread-13 :637107 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_234339-i39psubf/files/output.log
+2022-10-05 23:44:26,210 INFO    Thread-13 :637107 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_234339-i39psubf/files/output.log
+2022-10-05 23:44:29,363 DEBUG   HandlerThread:637107 [handler.py:handle_request():138] handle_request: stop_status
+2022-10-05 23:44:29,363 DEBUG   SenderThread:637107 [sender.py:send_request():315] send_request: stop_status
+2022-10-05 23:44:30,212 INFO    Thread-13 :637107 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_234339-i39psubf/files/output.log
+2022-10-05 23:44:39,088 DEBUG   SenderThread:637107 [sender.py:send():301] send: stats
+2022-10-05 23:44:40,217 INFO    Thread-13 :637107 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_234339-i39psubf/files/output.log
+2022-10-05 23:44:42,218 INFO    Thread-13 :637107 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_234339-i39psubf/files/output.log
+2022-10-05 23:44:44,220 INFO    Thread-13 :637107 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_234339-i39psubf/files/output.log
+2022-10-05 23:44:44,959 DEBUG   HandlerThread:637107 [handler.py:handle_request():138] handle_request: stop_status
+2022-10-05 23:44:44,959 DEBUG   SenderThread:637107 [sender.py:send_request():315] send_request: stop_status
+2022-10-05 23:45:00,646 DEBUG   HandlerThread:637107 [handler.py:handle_request():138] handle_request: stop_status
+2022-10-05 23:45:00,646 DEBUG   SenderThread:637107 [sender.py:send_request():315] send_request: stop_status
+2022-10-05 23:45:09,396 DEBUG   SenderThread:637107 [sender.py:send():301] send: stats
+2022-10-05 23:45:16,027 DEBUG   HandlerThread:637107 [handler.py:handle_request():138] handle_request: stop_status
+2022-10-05 23:45:16,027 DEBUG   SenderThread:637107 [sender.py:send_request():315] send_request: stop_status
+2022-10-05 23:45:31,354 DEBUG   HandlerThread:637107 [handler.py:handle_request():138] handle_request: stop_status
+2022-10-05 23:45:31,355 DEBUG   SenderThread:637107 [sender.py:send_request():315] send_request: stop_status
+2022-10-05 23:45:39,728 DEBUG   SenderThread:637107 [sender.py:send():301] send: stats
+2022-10-05 23:45:46,688 DEBUG   HandlerThread:637107 [handler.py:handle_request():138] handle_request: stop_status
+2022-10-05 23:45:46,689 DEBUG   SenderThread:637107 [sender.py:send_request():315] send_request: stop_status
+2022-10-05 23:45:46,848 DEBUG   HandlerThread:637107 [handler.py:handle_request():138] handle_request: poll_exit
+2022-10-05 23:45:47,029 DEBUG   SenderThread:637107 [sender.py:send():301] send: exit
+2022-10-05 23:45:47,029 INFO    SenderThread:637107 [sender.py:send_exit():437] handling exit code: 255
+2022-10-05 23:45:47,030 INFO    SenderThread:637107 [sender.py:send_exit():439] handling runtime: 126
+2022-10-05 23:45:47,031 INFO    SenderThread:637107 [sender.py:_save_file():1155] saving file wandb-summary.json with policy end
+2022-10-05 23:45:47,032 INFO    SenderThread:637107 [sender.py:send_exit():445] send defer
+2022-10-05 23:45:47,032 DEBUG   SenderThread:637107 [sender.py:send_request():315] send_request: poll_exit
+2022-10-05 23:45:47,033 DEBUG   HandlerThread:637107 [handler.py:handle_request():138] handle_request: defer
+2022-10-05 23:45:47,034 INFO    HandlerThread:637107 [handler.py:handle_request_defer():161] handle defer: 0
+2022-10-05 23:45:47,034 DEBUG   SenderThread:637107 [sender.py:send_request():315] send_request: defer
+2022-10-05 23:45:47,034 INFO    SenderThread:637107 [sender.py:send_request_defer():454] handle sender defer: 0
+2022-10-05 23:45:47,035 INFO    SenderThread:637107 [sender.py:transition_state():458] send defer: 1
+2022-10-05 23:45:47,035 DEBUG   HandlerThread:637107 [handler.py:handle_request():138] handle_request: defer
+2022-10-05 23:45:47,035 INFO    HandlerThread:637107 [handler.py:handle_request_defer():161] handle defer: 1
+2022-10-05 23:45:47,108 DEBUG   SenderThread:637107 [sender.py:send_request():315] send_request: defer
+2022-10-05 23:45:47,108 INFO    SenderThread:637107 [sender.py:send_request_defer():454] handle sender defer: 1
+2022-10-05 23:45:47,108 INFO    SenderThread:637107 [sender.py:transition_state():458] send defer: 2
+2022-10-05 23:45:47,109 DEBUG   SenderThread:637107 [sender.py:send():301] send: stats
+2022-10-05 23:45:47,110 DEBUG   HandlerThread:637107 [handler.py:handle_request():138] handle_request: defer
+2022-10-05 23:45:47,110 INFO    HandlerThread:637107 [handler.py:handle_request_defer():161] handle defer: 2
+2022-10-05 23:45:47,110 DEBUG   SenderThread:637107 [sender.py:send_request():315] send_request: defer
+2022-10-05 23:45:47,110 INFO    SenderThread:637107 [sender.py:send_request_defer():454] handle sender defer: 2
+2022-10-05 23:45:47,110 INFO    SenderThread:637107 [sender.py:transition_state():458] send defer: 3
+2022-10-05 23:45:47,111 DEBUG   HandlerThread:637107 [handler.py:handle_request():138] handle_request: defer
+2022-10-05 23:45:47,111 INFO    HandlerThread:637107 [handler.py:handle_request_defer():161] handle defer: 3
+2022-10-05 23:45:47,111 DEBUG   SenderThread:637107 [sender.py:send_request():315] send_request: defer
+2022-10-05 23:45:47,112 INFO    SenderThread:637107 [sender.py:send_request_defer():454] handle sender defer: 3
+2022-10-05 23:45:47,112 INFO    SenderThread:637107 [sender.py:transition_state():458] send defer: 4
+2022-10-05 23:45:47,112 DEBUG   HandlerThread:637107 [handler.py:handle_request():138] handle_request: defer
+2022-10-05 23:45:47,112 INFO    HandlerThread:637107 [handler.py:handle_request_defer():161] handle defer: 4
+2022-10-05 23:45:47,112 DEBUG   SenderThread:637107 [sender.py:send():301] send: summary
+2022-10-05 23:45:47,121 INFO    SenderThread:637107 [sender.py:_save_file():1155] saving file wandb-summary.json with policy end
+2022-10-05 23:45:47,121 DEBUG   SenderThread:637107 [sender.py:send_request():315] send_request: defer
+2022-10-05 23:45:47,122 INFO    SenderThread:637107 [sender.py:send_request_defer():454] handle sender defer: 4
+2022-10-05 23:45:47,122 INFO    SenderThread:637107 [sender.py:transition_state():458] send defer: 5
+2022-10-05 23:45:47,122 DEBUG   HandlerThread:637107 [handler.py:handle_request():138] handle_request: defer
+2022-10-05 23:45:47,123 INFO    HandlerThread:637107 [handler.py:handle_request_defer():161] handle defer: 5
+2022-10-05 23:45:47,123 DEBUG   SenderThread:637107 [sender.py:send_request():315] send_request: defer
+2022-10-05 23:45:47,123 INFO    SenderThread:637107 [sender.py:send_request_defer():454] handle sender defer: 5
+2022-10-05 23:45:47,123 INFO    SenderThread:637107 [sender.py:transition_state():458] send defer: 6
+2022-10-05 23:45:47,123 DEBUG   HandlerThread:637107 [handler.py:handle_request():138] handle_request: defer
+2022-10-05 23:45:47,124 INFO    HandlerThread:637107 [handler.py:handle_request_defer():161] handle defer: 6
+2022-10-05 23:45:47,124 DEBUG   SenderThread:637107 [sender.py:send_request():315] send_request: defer
+2022-10-05 23:45:47,124 INFO    SenderThread:637107 [sender.py:send_request_defer():454] handle sender defer: 6
+2022-10-05 23:45:47,135 DEBUG   HandlerThread:637107 [handler.py:handle_request():138] handle_request: poll_exit
+2022-10-05 23:45:47,255 INFO    Thread-13 :637107 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_234339-i39psubf/files/wandb-summary.json
+2022-10-05 23:45:47,965 INFO    SenderThread:637107 [sender.py:transition_state():458] send defer: 7
+2022-10-05 23:45:47,965 DEBUG   SenderThread:637107 [sender.py:send_request():315] send_request: poll_exit
+2022-10-05 23:45:47,967 DEBUG   HandlerThread:637107 [handler.py:handle_request():138] handle_request: defer
+2022-10-05 23:45:47,967 INFO    HandlerThread:637107 [handler.py:handle_request_defer():161] handle defer: 7
+2022-10-05 23:45:47,967 DEBUG   SenderThread:637107 [sender.py:send_request():315] send_request: defer
+2022-10-05 23:45:47,968 INFO    SenderThread:637107 [sender.py:send_request_defer():454] handle sender defer: 7
+2022-10-05 23:45:47,968 INFO    SenderThread:637107 [dir_watcher.py:finish():362] shutting down directory watcher
+2022-10-05 23:45:48,068 DEBUG   HandlerThread:637107 [handler.py:handle_request():138] handle_request: poll_exit
+2022-10-05 23:45:48,256 INFO    Thread-13 :637107 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_234339-i39psubf/files/output.log
+2022-10-05 23:45:48,257 INFO    SenderThread:637107 [dir_watcher.py:finish():392] scan: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_234339-i39psubf/files
+2022-10-05 23:45:48,257 INFO    SenderThread:637107 [dir_watcher.py:finish():406] scan save: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_234339-i39psubf/files/wandb-metadata.json wandb-metadata.json
+2022-10-05 23:45:48,257 INFO    SenderThread:637107 [dir_watcher.py:finish():406] scan save: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_234339-i39psubf/files/requirements.txt requirements.txt
+2022-10-05 23:45:48,257 INFO    SenderThread:637107 [dir_watcher.py:finish():406] scan save: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_234339-i39psubf/files/wandb-summary.json wandb-summary.json
+2022-10-05 23:45:48,263 INFO    SenderThread:637107 [dir_watcher.py:finish():406] scan save: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_234339-i39psubf/files/config.yaml config.yaml
+2022-10-05 23:45:48,269 INFO    SenderThread:637107 [dir_watcher.py:finish():406] scan save: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_234339-i39psubf/files/conda-environment.yaml conda-environment.yaml
+2022-10-05 23:45:48,276 INFO    SenderThread:637107 [dir_watcher.py:finish():406] scan save: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_234339-i39psubf/files/output.log output.log
+2022-10-05 23:45:48,282 INFO    SenderThread:637107 [sender.py:transition_state():458] send defer: 8
+2022-10-05 23:45:48,282 DEBUG   SenderThread:637107 [sender.py:send_request():315] send_request: poll_exit
+2022-10-05 23:45:48,283 DEBUG   HandlerThread:637107 [handler.py:handle_request():138] handle_request: defer
+2022-10-05 23:45:48,285 INFO    HandlerThread:637107 [handler.py:handle_request_defer():161] handle defer: 8
+2022-10-05 23:45:48,294 DEBUG   SenderThread:637107 [sender.py:send_request():315] send_request: defer
+2022-10-05 23:45:48,295 INFO    SenderThread:637107 [sender.py:send_request_defer():454] handle sender defer: 8
+2022-10-05 23:45:48,295 INFO    SenderThread:637107 [file_pusher.py:finish():168] shutting down file pusher
+2022-10-05 23:45:48,396 DEBUG   HandlerThread:637107 [handler.py:handle_request():138] handle_request: poll_exit
+2022-10-05 23:45:48,397 DEBUG   SenderThread:637107 [sender.py:send_request():315] send_request: poll_exit
+2022-10-05 23:45:48,498 DEBUG   HandlerThread:637107 [handler.py:handle_request():138] handle_request: poll_exit
+2022-10-05 23:45:48,498 DEBUG   SenderThread:637107 [sender.py:send_request():315] send_request: poll_exit
+2022-10-05 23:45:48,600 DEBUG   HandlerThread:637107 [handler.py:handle_request():138] handle_request: poll_exit
+2022-10-05 23:45:48,601 DEBUG   SenderThread:637107 [sender.py:send_request():315] send_request: poll_exit
+2022-10-05 23:45:48,702 DEBUG   HandlerThread:637107 [handler.py:handle_request():138] handle_request: poll_exit
+2022-10-05 23:45:48,703 DEBUG   SenderThread:637107 [sender.py:send_request():315] send_request: poll_exit
+2022-10-05 23:45:48,804 DEBUG   HandlerThread:637107 [handler.py:handle_request():138] handle_request: poll_exit
+2022-10-05 23:45:48,805 DEBUG   SenderThread:637107 [sender.py:send_request():315] send_request: poll_exit
+2022-10-05 23:45:48,907 DEBUG   HandlerThread:637107 [handler.py:handle_request():138] handle_request: poll_exit
+2022-10-05 23:45:48,907 DEBUG   SenderThread:637107 [sender.py:send_request():315] send_request: poll_exit
+2022-10-05 23:45:49,009 DEBUG   HandlerThread:637107 [handler.py:handle_request():138] handle_request: poll_exit
+2022-10-05 23:45:49,009 DEBUG   SenderThread:637107 [sender.py:send_request():315] send_request: poll_exit
+2022-10-05 23:45:49,111 DEBUG   HandlerThread:637107 [handler.py:handle_request():138] handle_request: poll_exit
+2022-10-05 23:45:49,111 DEBUG   SenderThread:637107 [sender.py:send_request():315] send_request: poll_exit
+2022-10-05 23:45:49,164 INFO    Thread-19 :637107 [upload_job.py:push():139] Uploaded file /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_234339-i39psubf/files/wandb-summary.json
+2022-10-05 23:45:49,168 INFO    Thread-18 :637107 [upload_job.py:push():139] Uploaded file /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_234339-i39psubf/files/requirements.txt
+2022-10-05 23:45:49,185 INFO    Thread-22 :637107 [upload_job.py:push():139] Uploaded file /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_234339-i39psubf/files/output.log
+2022-10-05 23:45:49,213 DEBUG   HandlerThread:637107 [handler.py:handle_request():138] handle_request: poll_exit
+2022-10-05 23:45:49,224 INFO    Thread-20 :637107 [upload_job.py:push():139] Uploaded file /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_234339-i39psubf/files/config.yaml
+2022-10-05 23:45:49,251 DEBUG   SenderThread:637107 [sender.py:send_request():315] send_request: poll_exit
+2022-10-05 23:45:49,259 INFO    Thread-21 :637107 [upload_job.py:push():139] Uploaded file /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_234339-i39psubf/files/conda-environment.yaml
+2022-10-05 23:45:49,353 DEBUG   HandlerThread:637107 [handler.py:handle_request():138] handle_request: poll_exit
+2022-10-05 23:45:49,354 DEBUG   SenderThread:637107 [sender.py:send_request():315] send_request: poll_exit
+2022-10-05 23:45:49,455 DEBUG   HandlerThread:637107 [handler.py:handle_request():138] handle_request: poll_exit
+2022-10-05 23:45:49,455 DEBUG   SenderThread:637107 [sender.py:send_request():315] send_request: poll_exit
+2022-10-05 23:45:49,461 INFO    Thread-12 :637107 [sender.py:transition_state():458] send defer: 9
+2022-10-05 23:45:49,462 DEBUG   HandlerThread:637107 [handler.py:handle_request():138] handle_request: defer
+2022-10-05 23:45:49,462 INFO    HandlerThread:637107 [handler.py:handle_request_defer():161] handle defer: 9
+2022-10-05 23:45:49,462 DEBUG   SenderThread:637107 [sender.py:send_request():315] send_request: defer
+2022-10-05 23:45:49,462 INFO    SenderThread:637107 [sender.py:send_request_defer():454] handle sender defer: 9
+2022-10-05 23:45:49,557 DEBUG   HandlerThread:637107 [handler.py:handle_request():138] handle_request: poll_exit
+2022-10-05 23:45:50,208 INFO    SenderThread:637107 [sender.py:transition_state():458] send defer: 10
+2022-10-05 23:45:50,209 DEBUG   SenderThread:637107 [sender.py:send_request():315] send_request: poll_exit
+2022-10-05 23:45:50,209 DEBUG   HandlerThread:637107 [handler.py:handle_request():138] handle_request: defer
+2022-10-05 23:45:50,210 INFO    HandlerThread:637107 [handler.py:handle_request_defer():161] handle defer: 10
+2022-10-05 23:45:50,210 DEBUG   SenderThread:637107 [sender.py:send_request():315] send_request: defer
+2022-10-05 23:45:50,211 INFO    SenderThread:637107 [sender.py:send_request_defer():454] handle sender defer: 10
+2022-10-05 23:45:50,211 INFO    SenderThread:637107 [sender.py:transition_state():458] send defer: 11
+2022-10-05 23:45:50,212 DEBUG   HandlerThread:637107 [handler.py:handle_request():138] handle_request: defer
+2022-10-05 23:45:50,212 DEBUG   SenderThread:637107 [sender.py:send():301] send: final
+2022-10-05 23:45:50,212 INFO    HandlerThread:637107 [handler.py:handle_request_defer():161] handle defer: 11
+2022-10-05 23:45:50,213 DEBUG   SenderThread:637107 [sender.py:send():301] send: footer
+2022-10-05 23:45:50,213 DEBUG   SenderThread:637107 [sender.py:send_request():315] send_request: defer
+2022-10-05 23:45:50,213 INFO    SenderThread:637107 [sender.py:send_request_defer():454] handle sender defer: 11
+2022-10-05 23:45:50,312 DEBUG   HandlerThread:637107 [handler.py:handle_request():138] handle_request: poll_exit
+2022-10-05 23:45:50,313 DEBUG   SenderThread:637107 [sender.py:send_request():315] send_request: poll_exit
+2022-10-05 23:45:50,313 INFO    SenderThread:637107 [file_pusher.py:join():173] waiting for file pusher
+2022-10-05 23:45:51,063 DEBUG   HandlerThread:637107 [handler.py:handle_request():138] handle_request: sampled_history
+2022-10-05 23:45:51,065 DEBUG   HandlerThread:637107 [handler.py:handle_request():138] handle_request: get_summary
+2022-10-05 23:45:51,066 INFO    MainThread:637107 [wandb_run.py:_footer_history_summary_info():3321] rendering history
+2022-10-05 23:45:51,066 INFO    MainThread:637107 [wandb_run.py:_footer_history_summary_info():3353] rendering summary
+2022-10-05 23:45:51,066 INFO    MainThread:637107 [wandb_run.py:_footer_sync_info():3277] logging synced files
+2022-10-05 23:45:51,067 DEBUG   HandlerThread:637107 [handler.py:handle_request():138] handle_request: shutdown
+2022-10-05 23:45:51,068 INFO    HandlerThread:637107 [handler.py:finish():807] shutting down handler
+2022-10-05 23:45:51,213 INFO    WriterThread:637107 [datastore.py:close():279] close: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_234339-i39psubf/run-i39psubf.wandb
+2022-10-05 23:45:51,962 INFO    SenderThread:637107 [sender.py:finish():1315] shutting down sender
+2022-10-05 23:45:51,962 INFO    SenderThread:637107 [file_pusher.py:finish():168] shutting down file pusher
+2022-10-05 23:45:51,962 INFO    SenderThread:637107 [file_pusher.py:join():173] waiting for file pusher
+2022-10-05 23:45:52,072 INFO    MainThread:637107 [internal.py:handle_exit():78] Internal process exited

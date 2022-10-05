@@ -1,0 +1,35 @@
+current path: saved_models/model_mnist_Oct.06_00.25.45
+Loading data
+build_classes_dict done
+train loaders done
+get poison test loader
+Starting performing KrMLRFL...
+load data done
+Loaded parameters from saved model: LR is 0.1 and current epoch is 11
+create model done
+Poisoned following participants: [41, 73, 51, 74]
+We use following environment for graphs:  mnist_DBA
+Server Epoch:11 choose agents : [23, 72, 61, 11, 71, 42, 45, 37, 21, 35].
+___Train Local_Simple,  epoch  11, local model 23, internal_epoch   1,  Average loss: 0.0016, Accuracy: 425/440 (96.5909%)
+___Train Local_Simple,  epoch  11, local model 23, internal_epoch   2,  Average loss: 0.0007, Accuracy: 437/440 (99.3182%)
+___Test Local_Simple poisoned: False, epoch: 11: Average loss: 0.1405, Accuracy: 9562/10000 (95.6200%)
+___Train Local_Simple,  epoch  11, local model 72, internal_epoch   1,  Average loss: 0.0011, Accuracy: 513/525 (97.7143%)
+___Train Local_Simple,  epoch  11, local model 72, internal_epoch   2,  Average loss: 0.0010, Accuracy: 516/525 (98.2857%)
+___Test Local_Simple poisoned: False, epoch: 11: Average loss: 0.5771, Accuracy: 8370/10000 (83.7000%)
+___Train Local_Simple,  epoch  11, local model 61, internal_epoch   1,  Average loss: 0.0007, Accuracy: 1010/1025 (98.5366%)
+___Train Local_Simple,  epoch  11, local model 61, internal_epoch   2,  Average loss: 0.0007, Accuracy: 1012/1025 (98.7317%)
+___Test Local_Simple poisoned: False, epoch: 11: Average loss: 0.3132, Accuracy: 9118/10000 (91.1800%)
+___Train Local_Simple,  epoch  11, local model 11, internal_epoch   1,  Average loss: 0.0014, Accuracy: 231/236 (97.8814%)
+___Train Local_Simple,  epoch  11, local model 11, internal_epoch   2,  Average loss: 0.0004, Accuracy: 234/236 (99.1525%)
+___Test Local_Simple poisoned: False, epoch: 11: Average loss: 0.1239, Accuracy: 9609/10000 (96.0900%)
+poison local model 71 index 0
+Traceback (most recent call last):
+  File "dba.py", line 181, in <module>
+    epochs_submit_update_dict, num_samples_dict, net_list = train.train(helper=helper, start_epoch=epoch,
+  File "/home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/train.py", line 23, in train
+    epochs_submit_update_dict, num_samples_dict, net_list = image_train.ImageTrain(helper, start_epoch, local_model,
+  File "/home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/image_train.py", line 97, in ImageTrain
+    class_loss = nn.functional.cross_entropy(output, targets).to(device)
+  File "/home/ubuntu/miniconda3/envs/dungnt/lib/python3.8/site-packages/torch/nn/functional.py", line 3014, in cross_entropy
+    return torch._C._nn.cross_entropy_loss(input, target, weight, _Reduction.get_enum(reduction), ignore_index, label_smoothing)
+RuntimeError: "nll_loss_forward_reduce_cuda_kernel_2d_index" not implemented for 'Float'

@@ -1,0 +1,22 @@
+2022-10-05 00:42:01,583 INFO    MainThread:22148 [wandb_setup.py:_flush():68] Configure stats pid to 22148
+2022-10-05 00:42:01,584 INFO    MainThread:22148 [wandb_setup.py:_flush():68] Loading settings from /home/ubuntu/.config/wandb/settings
+2022-10-05 00:42:01,584 INFO    MainThread:22148 [wandb_setup.py:_flush():68] Loading settings from /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/settings
+2022-10-05 00:42:01,584 INFO    MainThread:22148 [wandb_setup.py:_flush():68] Loading settings from environment variables: {'_require_service': 'True'}
+2022-10-05 00:42:01,584 INFO    MainThread:22148 [wandb_setup.py:_flush():68] Inferring run settings from compute environment: {'program_relpath': 'dba.py', 'program': 'dba.py'}
+2022-10-05 00:42:01,584 INFO    MainThread:22148 [wandb_init.py:_log_setup():476] Logging user logs to /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/offline-run-20221005_004201-7bi2em2q/logs/debug.log
+2022-10-05 00:42:01,584 INFO    MainThread:22148 [wandb_init.py:_log_setup():477] Logging internal logs to /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/offline-run-20221005_004201-7bi2em2q/logs/debug-internal.log
+2022-10-05 00:42:01,584 INFO    MainThread:22148 [wandb_init.py:init():516] calling init triggers
+2022-10-05 00:42:01,584 INFO    MainThread:22148 [wandb_init.py:init():519] wandb.init called with sweep_config: {}
+config: {}
+2022-10-05 00:42:01,584 INFO    MainThread:22148 [wandb_init.py:init():569] starting backend
+2022-10-05 00:42:01,584 INFO    MainThread:22148 [wandb_init.py:init():573] setting up manager
+2022-10-05 00:42:01,591 INFO    MainThread:22148 [backend.py:_multiprocessing_setup():102] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2022-10-05 00:42:01,595 INFO    MainThread:22148 [wandb_init.py:init():580] backend started and connected
+2022-10-05 00:42:01,600 INFO    MainThread:22148 [wandb_init.py:init():658] updated telemetry
+2022-10-05 00:42:01,617 INFO    MainThread:22148 [wandb_init.py:init():727] starting run threads in backend
+2022-10-05 00:42:03,313 INFO    MainThread:22148 [wandb_run.py:_console_start():1954] atexit reg
+2022-10-05 00:42:03,313 INFO    MainThread:22148 [wandb_run.py:_redirect():1812] redirect: SettingsConsole.WRAP_RAW
+2022-10-05 00:42:03,314 INFO    MainThread:22148 [wandb_run.py:_redirect():1877] Wrapping output streams.
+2022-10-05 00:42:03,314 INFO    MainThread:22148 [wandb_run.py:_redirect():1899] Redirects installed.
+2022-10-05 00:42:03,315 INFO    MainThread:22148 [wandb_init.py:init():764] run started, returning control to user process
+2022-10-05 00:42:47,152 WARNING MsgRouterThr:22148 [router.py:message_loop():77] message_loop has been closed

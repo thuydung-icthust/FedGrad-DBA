@@ -15,7 +15,7 @@ from models.MnistNet import MnistNet
 from models.resnet_tinyimagenet import resnet18
 logger = logging.getLogger("logger")
 import config
-from config import device
+# from config import device
 import copy
 import cv2
 
@@ -41,6 +41,7 @@ class ImageHelper(Helper):
         elif self.params['type']==config.TYPE_MNIST:
             local_model = MnistNet(name='Local',
                                    created_time=self.params['current_time'])
+            # print(f"")
             target_model = MnistNet(name='Target',
                                     created_time=self.params['current_time'])
 
@@ -51,8 +52,8 @@ class ImageHelper(Helper):
             target_model = resnet18(name='Target',
                                     created_time=self.params['current_time'])
 
-        local_model=local_model.to(device)
-        target_model=target_model.to(device)
+        local_model=local_model.to(self.device)
+        target_model=target_model.to(self.device)
         if self.params['resumed_model']:
             if torch.cuda.is_available() :
                 loaded_params = torch.load(f"saved_models/{self.params['resumed_model_name']}")
@@ -66,8 +67,8 @@ class ImageHelper(Helper):
         else:
             self.start_epoch = 1
 
-        self.local_model = local_model
-        self.target_model = target_model
+        self.local_model = local_model.to(self.device)
+        self.target_model = target_model.to(self.device)
 
     def build_classes_dict(self):
         cifar_classes = {}
@@ -288,8 +289,8 @@ class ImageHelper(Helper):
 
     def get_batch(self, train_data, bptt, evaluation=False):
         data, target = bptt
-        data = data.to(device)
-        target = target.to(device)
+        data = data.to(self.device)
+        target = target.to(self.device)
         if evaluation:
             data.requires_grad_(False)
             target.requires_grad_(False)
@@ -318,14 +319,14 @@ class ImageHelper(Helper):
                     new_images[index] = images[index]
                     new_targets[index]= targets[index]
 
-        new_images = new_images.to(device)
-        new_targets = new_targets.to(device).long()
+        new_images = new_images.to(self.device)
+        new_targets = new_targets.to(self.device).long()
         if evaluation:
             new_images.requires_grad_(False)
             new_targets.requires_grad_(False)
         return new_images,new_targets,poison_count
 
-    def add_pixel_pattern(self,ori_image,adversarial_index):
+    def add_pixel_pattern(self,ori_image, adversarial_index):
         image = copy.deepcopy(ori_image)
         poison_patterns= []
         if adversarial_index==-1:

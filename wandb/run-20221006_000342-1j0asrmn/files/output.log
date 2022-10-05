@@ -1,0 +1,264 @@
+current path: saved_models/model_cifar_Oct.06_00.03.40
+Loading data
+Files already downloaded and verified
+build_classes_dict done
+train loaders done
+get poison test loader
+Starting performing KrMLRFL...
+load data done
+Loaded parameters from saved model: LR is 0.1 and current epoch is 201
+create model done
+Poisoned following participants: [17, 33, 77, 11]
+We use following environment for graphs:  cifar
+Server Epoch:201 choose agents : [34, 50, 36, 99].
+poison local model 34 index 0
+___Train Local_ResNet_18,  epoch 201, local model 34, internal_epoch   1,  Average loss: 0.0064, Accuracy: 431/490 (87.9592%)
+___Train Local_ResNet_18,  epoch 201, local model 34, internal_epoch   2,  Average loss: 0.0034, Accuracy: 461/490 (94.0816%)
+___Test Local_ResNet_18 poisoned: False, epoch: 201: Average loss: 2.5398, Accuracy: 4716/10000 (47.1600%)
+___Train Local_ResNet_18,  epoch 201, local model 50, internal_epoch   1,  Average loss: 0.0049, Accuracy: 318/346 (91.9075%)
+___Train Local_ResNet_18,  epoch 201, local model 50, internal_epoch   2,  Average loss: 0.0021, Accuracy: 329/346 (95.0867%)
+___Test Local_ResNet_18 poisoned: False, epoch: 201: Average loss: 1.5854, Accuracy: 5540/10000 (55.4000%)
+poison local model 36 index 1
+___Train Local_ResNet_18,  epoch 201, local model 36, internal_epoch   1,  Average loss: 0.0086, Accuracy: 892/1060 (84.1509%)
+___Train Local_ResNet_18,  epoch 201, local model 36, internal_epoch   2,  Average loss: 0.0096, Accuracy: 850/1060 (80.1887%)
+___Test Local_ResNet_18 poisoned: False, epoch: 201: Average loss: 4.7452, Accuracy: 3578/10000 (35.7800%)
+___Train Local_ResNet_18,  epoch 201, local model 99, internal_epoch   1,  Average loss: 0.0035, Accuracy: 339/366 (92.6230%)
+___Train Local_ResNet_18,  epoch 201, local model 99, internal_epoch   2,  Average loss: 0.0014, Accuracy: 357/366 (97.5410%)
+___Test Local_ResNet_18 poisoned: False, epoch: 201: Average loss: 2.5723, Accuracy: 4860/10000 (48.6000%)
+time spent on training: 45.05339574813843
+state_keys[i]: 34
+state_keys[i]: 50
+state_keys[i]: 36
+state_keys[i]: 99
+Starting performing KrMLRFL...
+Num data points: [490, 346, 1060, 366]
+Num selected data points: [366]
+The chosen ones are users: [3], which are global users: [99]
+selected_attackers: [34, 36]
+glob_update: [[-8.3938241e-05 -9.9897385e-05 -6.2212348e-05 ... -1.4600903e-04
+  -6.3821673e-05 -3.4257770e-04]
+ [-2.7656555e-05 -1.9515306e-04 -6.6719949e-05 ... -7.7579170e-05
+  -3.4421682e-05 -5.1356852e-05]
+ [-3.1933188e-05 -2.2462383e-04  4.2721629e-05 ... -6.7688525e-06
+  -3.3769757e-05  1.4647841e-05]
+ ...
+ [ 1.1270493e-04  8.5011125e-06  6.1169267e-05 ...  5.5782497e-05
+   3.8987398e-04  1.9714236e-04]
+ [-9.1927126e-05  6.9588423e-06 -5.9664249e-05 ...  6.8321824e-06
+  -3.6501884e-04  7.5481832e-05]
+ [-1.9374490e-04 -7.8731775e-04 -2.9401865e-04 ... -2.5489368e-04
+  -3.4842640e-04 -3.6036968e-04]]
+t_score: [[0.52499462]
+ [0.97018741]
+ [1.        ]
+ [0.        ]]
+[T_SCORE] attacker_local_idxs is:  [0, 1, 2]
+layer1_inf_time: 4.4580078125
+num_w: 256
+[PAIRWISE] pred_attackers_indx:  [0 1]
+assumed final_attacker_idxs:  [0 1 2]
+final_attacker_idxs is: [0, 1, 2]
+g_attacker_idxs: [34 50 36]
+g_normal_idxs: [99]
+filtered_attacker_idxs: [0, 1, 2]
+final_attacker_idxs are: [0, 1, 2]
+num_dps: [490, 346, 1060, 366]
+state_keys[i]: 99
+___Test Target_ResNet_18 poisoned: False, epoch: 201: Average loss: 0.7250, Accuracy: 7613/10000 (76.1300%)
+epoch_acc: 76.13
+___Test Target_ResNet_18 poisoned: True, epoch: 201: Average loss: 6.5349, Accuracy: 218/9000 (2.4222%)
+Done in 64.15980696678162 sec.
+Server Epoch:202 choose agents : [54, 60, 45, 47].
+___Train Local_ResNet_18,  epoch 202, local model 54, internal_epoch   1,  Average loss: 0.0025, Accuracy: 587/622 (94.3730%)
+___Train Local_ResNet_18,  epoch 202, local model 54, internal_epoch   2,  Average loss: 0.0025, Accuracy: 596/622 (95.8199%)
+___Test Local_ResNet_18 poisoned: False, epoch: 202: Average loss: 4.7185, Accuracy: 2619/10000 (26.1900%)
+poison local model 60 index 0
+___Train Local_ResNet_18,  epoch 202, local model 60, internal_epoch   1,  Average loss: 0.0068, Accuracy: 404/449 (89.9777%)
+___Train Local_ResNet_18,  epoch 202, local model 60, internal_epoch   2,  Average loss: 0.0041, Accuracy: 411/449 (91.5367%)
+___Test Local_ResNet_18 poisoned: False, epoch: 202: Average loss: 3.1918, Accuracy: 4314/10000 (43.1400%)
+___Train Local_ResNet_18,  epoch 202, local model 45, internal_epoch   1,  Average loss: 0.0037, Accuracy: 611/663 (92.1569%)
+___Train Local_ResNet_18,  epoch 202, local model 45, internal_epoch   2,  Average loss: 0.0044, Accuracy: 605/663 (91.2519%)
+___Test Local_ResNet_18 poisoned: False, epoch: 202: Average loss: 4.0840, Accuracy: 3102/10000 (31.0200%)
+poison local model 47 index 1
+___Train Local_ResNet_18,  epoch 202, local model 47, internal_epoch   1,  Average loss: 0.0040, Accuracy: 865/897 (96.4326%)
+___Train Local_ResNet_18,  epoch 202, local model 47, internal_epoch   2,  Average loss: 0.0094, Accuracy: 778/897 (86.7336%)
+___Test Local_ResNet_18 poisoned: False, epoch: 202: Average loss: 4.9958, Accuracy: 2970/10000 (29.7000%)
+state_keys[i]: 54
+time spent on training: 42.75798153877258
+state_keys[i]: 60
+state_keys[i]: 45
+state_keys[i]: 47
+selected_attackers: [60, 47]
+glob_update: [[-2.25156546e-04 -1.79514289e-04 -3.99157405e-04 ... -1.94601715e-04
+  -8.23317096e-04 -3.80009413e-04]
+ [ 1.64434314e-04  3.40290368e-04  4.75056469e-04 ...  2.66388059e-04
+   1.02822483e-03  2.98149884e-04]
+ [-1.29900873e-04 -1.39947981e-04 -8.25822353e-05 ... -1.05306506e-04
+  -1.54629350e-04 -2.27503479e-04]
+ ...
+ [-2.06910074e-04  4.42638993e-05 -2.39104033e-04 ... -1.10298395e-04
+  -6.69121742e-04 -2.87547708e-04]
+ [-1.99519098e-04 -3.49342823e-04 -1.42797828e-04 ... -7.12275505e-05
+  -5.90533018e-04 -2.42568552e-04]
+ [ 2.91019678e-05  9.17762518e-05  1.14577939e-04 ...  6.91991299e-05
+  -8.44001770e-05 -3.23057175e-05]]
+t_score: [[0.16898153]
+ [1.        ]
+ [0.        ]
+ [0.08467862]]
+[T_SCORE] attacker_local_idxs is:  [0, 1]
+layer1_inf_time: 4.468017578125
+num_w: 256
+[PAIRWISE] pred_attackers_indx:  [1 3]
+assumed final_attacker_idxs:  [0 1 3]
+final_attacker_idxs is: [0, 1]
+g_attacker_idxs: [54 60]
+g_normal_idxs: [45 47]
+filtered_attacker_idxs: [0, 1]
+final_attacker_idxs are: [0, 1]
+num_dps: [622, 449, 663, 897]
+state_keys[i]: 45
+Starting performing KrMLRFL...
+Num data points: [622, 449, 663, 897]
+Num selected data points: [663 897]
+The chosen ones are users: [2, 3], which are global users: [45, 47]
+state_keys[i]: 47
+epoch_acc: 76.52
+___Test Target_ResNet_18 poisoned: False, epoch: 202: Average loss: 0.7133, Accuracy: 7652/10000 (76.5200%)
+___Test Target_ResNet_18 poisoned: True, epoch: 202: Average loss: 6.4699, Accuracy: 226/9000 (2.5111%)
+Done in 64.7819390296936 sec.
+Server Epoch:203 choose agents : [36, 69, 84, 68].
+poison local model 36 index 0
+___Train Local_ResNet_18,  epoch 203, local model 36, internal_epoch   1,  Average loss: 0.0073, Accuracy: 933/1060 (88.0189%)
+___Train Local_ResNet_18,  epoch 203, local model 36, internal_epoch   2,  Average loss: 0.0104, Accuracy: 836/1060 (78.8679%)
+___Test Local_ResNet_18 poisoned: False, epoch: 203: Average loss: 5.3501, Accuracy: 2459/10000 (24.5900%)
+___Train Local_ResNet_18,  epoch 203, local model 69, internal_epoch   1,  Average loss: 0.0040, Accuracy: 234/254 (92.1260%)
+___Train Local_ResNet_18,  epoch 203, local model 69, internal_epoch   2,  Average loss: 0.0014, Accuracy: 248/254 (97.6378%)
+___Test Local_ResNet_18 poisoned: False, epoch: 203: Average loss: 2.4697, Accuracy: 5152/10000 (51.5200%)
+___Train Local_ResNet_18,  epoch 203, local model 84, internal_epoch   1,  Average loss: 0.0051, Accuracy: 361/409 (88.2641%)
+___Train Local_ResNet_18,  epoch 203, local model 84, internal_epoch   2,  Average loss: 0.0017, Accuracy: 394/409 (96.3325%)
+___Test Local_ResNet_18 poisoned: False, epoch: 203: Average loss: 4.1593, Accuracy: 3341/10000 (33.4100%)
+___Train Local_ResNet_18,  epoch 203, local model 68, internal_epoch   1,  Average loss: 0.0063, Accuracy: 367/416 (88.2212%)
+___Train Local_ResNet_18,  epoch 203, local model 68, internal_epoch   2,  Average loss: 0.0045, Accuracy: 384/416 (92.3077%)
+state_keys[i]: 36
+___Test Local_ResNet_18 poisoned: False, epoch: 203: Average loss: 3.6184, Accuracy: 3711/10000 (37.1100%)
+time spent on training: 35.61324501037598
+state_keys[i]: 69
+state_keys[i]: 84
+state_keys[i]: 68
+selected_attackers: [36]
+glob_update: [[-8.8259578e-05 -9.0330839e-05 -7.7486038e-06 ... -4.0292740e-05
+  -3.2933243e-04 -2.1955371e-04]
+ [ 2.9921532e-05 -1.0406971e-04  8.3960593e-05 ... -3.8653612e-05
+   1.3419986e-04 -9.6261501e-06]
+ [ 4.2220205e-04  5.0235167e-04  4.0084124e-04 ...  3.9001927e-04
+   1.5945770e-03  5.5300817e-04]
+ ...
+ [ 3.3413619e-04  2.9585510e-04  2.0296872e-04 ...  6.4358115e-05
+   2.1919608e-04 -6.2137842e-06]
+ [-1.5684031e-04  6.9089234e-05 -1.4685094e-04 ...  3.5151839e-05
+  -6.7508221e-04 -4.9024820e-06]
+ [-2.6932359e-04 -9.0628862e-04 -4.4872041e-04 ... -2.7449057e-04
+  -5.6938082e-04 -4.4897199e-04]]
+t_score: [[0.84249994]
+ [0.        ]
+ [0.97546674]
+ [1.        ]]
+[T_SCORE] attacker_local_idxs is:  [0, 2, 3]
+layer1_inf_time: 3.59130859375
+num_w: 256
+[PAIRWISE] pred_attackers_indx:  [0 3]
+assumed final_attacker_idxs:  [0 2 3]
+final_attacker_idxs is: [0, 2, 3]
+g_attacker_idxs: [36 84 68]
+g_normal_idxs: [69]
+filtered_attacker_idxs: [0, 2, 3]
+final_attacker_idxs are: [0, 2, 3]
+num_dps: [1060, 254, 409, 416]
+state_keys[i]: 69
+Starting performing KrMLRFL...
+Num data points: [1060, 254, 409, 416]
+Num selected data points: [254]
+The chosen ones are users: [1], which are global users: [69]
+epoch_acc: 76.79
+___Test Target_ResNet_18 poisoned: False, epoch: 203: Average loss: 0.7031, Accuracy: 7679/10000 (76.7900%)
+___Test Target_ResNet_18 poisoned: True, epoch: 203: Average loss: 6.4160, Accuracy: 236/9000 (2.6222%)
+Done in 55.82987594604492 sec.
+Server Epoch:204 choose agents : [88, 21, 24, 47].
+___Train Local_ResNet_18,  epoch 204, local model 88, internal_epoch   1,  Average loss: 0.0044, Accuracy: 580/636 (91.1950%)
+___Train Local_ResNet_18,  epoch 204, local model 88, internal_epoch   2,  Average loss: 0.0031, Accuracy: 594/636 (93.3962%)
+___Test Local_ResNet_18 poisoned: False, epoch: 204: Average loss: 2.2971, Accuracy: 5031/10000 (50.3100%)
+___Train Local_ResNet_18,  epoch 204, local model 21, internal_epoch   1,  Average loss: 0.0074, Accuracy: 255/297 (85.8586%)
+___Train Local_ResNet_18,  epoch 204, local model 21, internal_epoch   2,  Average loss: 0.0012, Accuracy: 290/297 (97.6431%)
+___Test Local_ResNet_18 poisoned: False, epoch: 204: Average loss: 7.1259, Accuracy: 2058/10000 (20.5800%)
+___Train Local_ResNet_18,  epoch 204, local model 24, internal_epoch   1,  Average loss: 0.0048, Accuracy: 706/778 (90.7455%)
+___Train Local_ResNet_18,  epoch 204, local model 24, internal_epoch   2,  Average loss: 0.0158, Accuracy: 568/778 (73.0077%)
+___Test Local_ResNet_18 poisoned: False, epoch: 204: Average loss: 14.8196, Accuracy: 1490/10000 (14.9000%)
+poison local model 47 index 0
+___Train Local_ResNet_18,  epoch 204, local model 47, internal_epoch   1,  Average loss: 0.0030, Accuracy: 874/897 (97.4359%)
+___Train Local_ResNet_18,  epoch 204, local model 47, internal_epoch   2,  Average loss: 0.0045, Accuracy: 805/897 (89.7436%)
+___Test Local_ResNet_18 poisoned: False, epoch: 204: Average loss: 4.7572, Accuracy: 3837/10000 (38.3700%)
+state_keys[i]: 88
+state_keys[i]: 21
+time spent on training: 35.53087592124939
+state_keys[i]: 24
+state_keys[i]: 47
+selected_attackers: [47]
+glob_update: [[-1.2218952e-05 -1.1457503e-04 -1.0322034e-04 ...  1.0006130e-05
+  -1.0464340e-05 -4.2557716e-05]
+ [ 6.4820051e-06  1.0613352e-04  4.7028065e-05 ...  4.8890710e-05
+  -3.8906932e-05  1.1660159e-05]
+ [-2.7596951e-05 -1.6368926e-05  3.4824014e-05 ...  4.6145171e-05
+   1.0424107e-04 -1.0554865e-04]
+ ...
+ [ 1.0820404e-03  1.3902411e-03  5.8530271e-04 ...  3.4404546e-04
+   1.1311471e-03  4.9754977e-04]
+ [-1.5730411e-04 -1.5845895e-04  1.1131167e-05 ...  1.5512109e-05
+  -3.6522746e-04 -9.4026327e-05]
+ [-1.7409027e-04 -3.8678944e-04 -2.0893314e-04 ... -2.0263344e-04
+  -4.1378289e-04 -3.1620264e-04]]
+t_score: [[0.        ]
+ [0.91331505]
+ [1.        ]
+ [0.11778019]]
+[T_SCORE] attacker_local_idxs is:  [1, 2]
+layer1_inf_time: 4.488525390625
+num_w: 256
+[PAIRWISE] pred_attackers_indx:  [0 3]
+assumed final_attacker_idxs:  [0 1 2 3]
+final_attacker_idxs is: [1, 2]
+g_attacker_idxs: [21 24]
+g_normal_idxs: [88 47]
+filtered_attacker_idxs: [1, 2]
+final_attacker_idxs are: [1, 2]
+num_dps: [636, 297, 778, 897]
+state_keys[i]: 88
+state_keys[i]: 47
+Starting performing KrMLRFL...
+Num data points: [636, 297, 778, 897]
+Num selected data points: [636 897]
+The chosen ones are users: [0, 3], which are global users: [88, 47]
+epoch_acc: 77.12
+___Test Target_ResNet_18 poisoned: False, epoch: 204: Average loss: 0.6910, Accuracy: 7712/10000 (77.1200%)
+Traceback (most recent call last):
+  File "dba.py", line 249, in <module>
+    epoch_loss_p, epoch_acc_p, epoch_corret_p, epoch_total_p = test.Mytest_poison(helper=helper,
+  File "/home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/test.py", line 94, in Mytest_poison
+    data, targets, poison_num = helper.get_poison_batch(batch, adversarial_index=-1, evaluation=True)
+  File "/home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/image_helper.py", line 310, in get_poison_batch
+    new_images[index] = self.add_pixel_pattern(images[index],adversarial_index)
+  File "/home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/image_helper.py", line 330, in add_pixel_pattern
+    image = copy.deepcopy(ori_image)
+  File "/home/ubuntu/miniconda3/envs/dungnt/lib/python3.8/copy.py", line 153, in deepcopy
+    y = copier(memo)
+  File "/home/ubuntu/miniconda3/envs/dungnt/lib/python3.8/site-packages/torch/_tensor.py", line 110, in __deepcopy__
+    new_storage = self.storage().__deepcopy__(memo)
+  File "/home/ubuntu/miniconda3/envs/dungnt/lib/python3.8/site-packages/torch/storage.py", line 565, in __deepcopy__
+    return self._new_wrapped_storage(copy.deepcopy(self._storage, memo))
+  File "/home/ubuntu/miniconda3/envs/dungnt/lib/python3.8/copy.py", line 153, in deepcopy
+    y = copier(memo)
+  File "/home/ubuntu/miniconda3/envs/dungnt/lib/python3.8/site-packages/torch/storage.py", line 88, in __deepcopy__
+    new_storage = self.clone()
+  File "/home/ubuntu/miniconda3/envs/dungnt/lib/python3.8/site-packages/torch/storage.py", line 102, in clone
+    return type(self)(self.nbytes(), device=self.device).copy_(self)
+KeyboardInterrupt

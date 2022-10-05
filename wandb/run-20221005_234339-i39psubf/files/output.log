@@ -1,0 +1,34 @@
+current path: saved_models/model_cifar_Oct.05_23.43.37
+Loading data
+Files already downloaded and verified
+build_classes_dict done
+train loaders done
+get poison test loader
+Starting performing KrMLRFL...
+load data done
+Loaded parameters from saved model: LR is 0.1 and current epoch is 201
+create model done
+Poisoned following participants: [17, 33, 77, 11]
+We use following environment for graphs:  cifar
+Server Epoch:201 choose agents : [34, 50, 36, 99].
+poison local model 34 index 0
+___Train Local_ResNet_18,  epoch 201, local model 34, internal_epoch   1,  Average loss: 0.0064, Accuracy: 433/490 (88.3673%)
+___Train Local_ResNet_18,  epoch 201, local model 34, internal_epoch   2,  Average loss: 0.0033, Accuracy: 461/490 (94.0816%)
+___Test Local_ResNet_18 poisoned: False, epoch: 201: Average loss: 2.5232, Accuracy: 4703/10000 (47.0300%)
+___Train Local_ResNet_18,  epoch 201, local model 50, internal_epoch   1,  Average loss: 0.0049, Accuracy: 318/346 (91.9075%)
+___Train Local_ResNet_18,  epoch 201, local model 50, internal_epoch   2,  Average loss: 0.0021, Accuracy: 329/346 (95.0867%)
+___Test Local_ResNet_18 poisoned: False, epoch: 201: Average loss: 1.6015, Accuracy: 5536/10000 (55.3600%)
+poison local model 36 index 1
+___Train Local_ResNet_18,  epoch 201, local model 36, internal_epoch   1,  Average loss: 0.0086, Accuracy: 891/1060 (84.0566%)
+___Train Local_ResNet_18,  epoch 201, local model 36, internal_epoch   2,  Average loss: 0.0095, Accuracy: 852/1060 (80.3774%)
+___Test Local_ResNet_18 poisoned: False, epoch: 201: Average loss: 8.2438, Accuracy: 2307/10000 (23.0700%)
+___Train Local_ResNet_18,  epoch 201, local model 99, internal_epoch   1,  Average loss: 0.0035, Accuracy: 339/366 (92.6230%)
+___Train Local_ResNet_18,  epoch 201, local model 99, internal_epoch   2,  Average loss: 0.0014, Accuracy: 357/366 (97.5410%)
+___Test Local_ResNet_18 poisoned: False, epoch: 201: Average loss: 2.5481, Accuracy: 4871/10000 (48.7100%)
+time spent on training: 44.44076752662659
+Traceback (most recent call last):
+  File "dba.py", line 192, in <module>
+    print(f"before: epochs_submit_update_dict: {epochs_submit_update_dict}")
+  File "/home/ubuntu/miniconda3/envs/dungnt/lib/python3.8/site-packages/wandb/sdk/lib/redirect.py", line 640, in write
+    self._old_write(data)
+KeyboardInterrupt

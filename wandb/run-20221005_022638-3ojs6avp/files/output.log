@@ -1,0 +1,198 @@
+current path: saved_models/model_mnist_Oct.05_02.26.36
+Loading data
+build_classes_dict done
+train loaders done
+get poison test loader
+Starting performing KrMLRFL...
+load data done
+Loaded parameters from saved model: LR is 0.1 and current epoch is 11
+create model done
+Poisoned following participants: [41, 73, 51, 74]
+We use following environment for graphs:  mnist_DBA
+Server Epoch:11 choose agents : [23, 72, 61, 11, 71, 42, 45, 37, 21, 35].
+___Train Local_Simple,  epoch  11, local model 23, internal_epoch   1,  Average loss: 0.0008, Accuracy: 289/293 (98.6348%)
+___Train Local_Simple,  epoch  11, local model 23, internal_epoch   2,  Average loss: 0.0004, Accuracy: 292/293 (99.6587%)
+___Test Local_Simple poisoned: False, epoch: 11: Average loss: 0.1097, Accuracy: 9646/10000 (96.4600%)
+___Train Local_Simple,  epoch  11, local model 72, internal_epoch   1,  Average loss: 0.0007, Accuracy: 719/731 (98.3584%)
+___Train Local_Simple,  epoch  11, local model 72, internal_epoch   2,  Average loss: 0.0001, Accuracy: 730/731 (99.8632%)
+___Test Local_Simple poisoned: False, epoch: 11: Average loss: 0.2988, Accuracy: 8998/10000 (89.9800%)
+poison local model 61 index 0
+___PoisonTrain Local_Simple ,  epoch  11, local model 61, internal_epoch   1,  Average loss: 0.0211, Accuracy: 427/699 (61.0873%), train_poison_data_count: 220
+class_loss: 3.5104146003723145, distance_loss: 0.0
+class_loss: 1.8648605346679688, distance_loss: 0.3162311911582947
+class_loss: 1.1312787532806396, distance_loss: 0.7744445204734802
+class_loss: 1.1551026105880737, distance_loss: 1.1992974281311035
+class_loss: 1.1223413944244385, distance_loss: 1.5319246053695679
+class_loss: 1.1552973985671997, distance_loss: 1.8200098276138306
+class_loss: 0.9727140665054321, distance_loss: 2.0811071395874023
+class_loss: 0.9655166864395142, distance_loss: 2.3258538246154785
+class_loss: 0.9581470489501953, distance_loss: 2.5514469146728516
+class_loss: 0.8991203904151917, distance_loss: 2.761491060256958
+class_loss: 0.9833215475082397, distance_loss: 2.9537038803100586
+class_loss: 0.7647413611412048, distance_loss: 3.1338162422180176
+class_loss: 0.822985827922821, distance_loss: 3.299034357070923
+class_loss: 0.8584277033805847, distance_loss: 3.4473769664764404
+class_loss: 0.6633390784263611, distance_loss: 3.5703072547912598
+class_loss: 0.7161194086074829, distance_loss: 3.684647560119629
+class_loss: 0.6452230215072632, distance_loss: 3.7905874252319336
+class_loss: 0.8104362487792969, distance_loss: 3.8859505653381348
+class_loss: 0.8298175930976868, distance_loss: 3.972400665283203
+class_loss: 0.6129509806632996, distance_loss: 4.05469274520874
+class_loss: 0.732403039932251, distance_loss: 4.1317219734191895
+class_loss: 0.6955286860466003, distance_loss: 4.202526092529297
+___PoisonTrain Local_Simple ,  epoch  11, local model 61, internal_epoch   2,  Average loss: 0.0117, Accuracy: 456/699 (65.2361%), train_poison_data_count: 220
+Global model norm: 16.539532092117113.
+Norm before scaling: 16.71508246864471. Distance: 4.268344333748208
+Total norm for 5 adversaries is: 16.71508246864471. distance: 4.268344333748208
+___Test Local_Simple poisoned: True, epoch: 11: Average loss: 0.9907, Accuracy: 4928/8968 (54.9509%)
+poison local model 11 index 1
+___PoisonTrain Local_Simple ,  epoch  11, local model 11, internal_epoch   1,  Average loss: 0.0322, Accuracy: 278/645 (43.1008%), train_poison_data_count: 205
+class_loss: 4.539518356323242, distance_loss: 0.0
+class_loss: 2.417982816696167, distance_loss: 0.3524917960166931
+class_loss: 1.4732260704040527, distance_loss: 0.8848463296890259
+class_loss: 1.7820674180984497, distance_loss: 1.4030033349990845
+class_loss: 1.670753002166748, distance_loss: 1.8188773393630981
+class_loss: 1.6887736320495605, distance_loss: 2.178250312805176
+class_loss: 1.69856858253479, distance_loss: 2.496901273727417
+class_loss: 1.6251591444015503, distance_loss: 2.78171706199646
+class_loss: 1.5262686014175415, distance_loss: 3.03717303276062
+class_loss: 1.4118624925613403, distance_loss: 3.267648220062256
+class_loss: 0.958504855632782, distance_loss: 3.4760050773620605
+class_loss: 1.465071439743042, distance_loss: 3.691863536834717
+class_loss: 1.4100289344787598, distance_loss: 3.872204542160034
+class_loss: 1.0932819843292236, distance_loss: 4.016375541687012
+class_loss: 0.9721927046775818, distance_loss: 4.147823810577393
+class_loss: 1.0221662521362305, distance_loss: 4.27739143371582
+class_loss: 1.0412579774856567, distance_loss: 4.401827812194824
+class_loss: 1.0627566576004028, distance_loss: 4.519493103027344
+class_loss: 1.19595468044281, distance_loss: 4.631038665771484
+class_loss: 1.1005120277404785, distance_loss: 4.73669958114624
+class_loss: 0.9711336493492126, distance_loss: 4.836575508117676
+class_loss: 1.1528156995773315, distance_loss: 4.929904460906982
+___PoisonTrain Local_Simple ,  epoch  11, local model 11, internal_epoch   2,  Average loss: 0.0194, Accuracy: 327/645 (50.6977%), train_poison_data_count: 205
+Global model norm: 16.539532092117113.
+Norm before scaling: 16.817764082086036. Distance: 5.0399965825144974
+Total norm for 5 adversaries is: 16.817764082086036. distance: 5.0399965825144974
+___Test Local_Simple poisoned: True, epoch: 11: Average loss: 0.5739, Accuracy: 6676/8968 (74.4425%)
+poison local model 71 index 2
+___PoisonTrain Local_Simple ,  epoch  11, local model 71, internal_epoch   1,  Average loss: 0.0197, Accuracy: 772/1384 (55.7803%), train_poison_data_count: 440
+___PoisonTrain Local_Simple ,  epoch  11, local model 71, internal_epoch   2,  Average loss: 0.0103, Accuracy: 960/1384 (69.3642%), train_poison_data_count: 440
+Global model norm: 16.539532092117113.
+Norm before scaling: 17.15909229074159. Distance: 5.8625001431528165
+Total norm for 5 adversaries is: 17.15909229074159. distance: 5.8625001431528165
+class_loss: 3.6337695121765137, distance_loss: 0.0
+class_loss: 1.7928739786148071, distance_loss: 0.41091495752334595
+class_loss: 1.7432215213775635, distance_loss: 0.9174676537513733
+class_loss: 1.9602717161178589, distance_loss: 1.3058749437332153
+class_loss: 1.6159952878952026, distance_loss: 1.6268266439437866
+class_loss: 1.4152852296829224, distance_loss: 1.9485597610473633
+class_loss: 1.252673864364624, distance_loss: 2.2607614994049072
+class_loss: 1.1137242317199707, distance_loss: 2.5523931980133057
+class_loss: 1.0592970848083496, distance_loss: 2.824854850769043
+class_loss: 0.9669270515441895, distance_loss: 3.0798180103302
+class_loss: 1.0418484210968018, distance_loss: 3.315126419067383
+class_loss: 0.8774325251579285, distance_loss: 3.5317788124084473
+class_loss: 0.9572365880012512, distance_loss: 3.7297279834747314
+class_loss: 0.7480521202087402, distance_loss: 3.912001371383667
+class_loss: 1.210070252418518, distance_loss: 4.08030366897583
+class_loss: 0.8688193559646606, distance_loss: 4.226978778839111
+class_loss: 0.8538863062858582, distance_loss: 4.355586051940918
+class_loss: 0.7134546041488647, distance_loss: 4.472978591918945
+class_loss: 0.7847453355789185, distance_loss: 4.581131458282471
+class_loss: 0.9073823690414429, distance_loss: 4.6792426109313965
+class_loss: 0.8393684029579163, distance_loss: 4.768661975860596
+class_loss: 0.9180275797843933, distance_loss: 4.852058410644531
+class_loss: 0.798882782459259, distance_loss: 4.930307865142822
+class_loss: 0.8729764223098755, distance_loss: 5.001896858215332
+class_loss: 0.7474076151847839, distance_loss: 5.067049503326416
+class_loss: 0.845221221446991, distance_loss: 5.126030921936035
+class_loss: 0.8826795816421509, distance_loss: 5.176770210266113
+class_loss: 0.8133201599121094, distance_loss: 5.221465587615967
+class_loss: 0.587982714176178, distance_loss: 5.261600971221924
+class_loss: 0.6266592741012573, distance_loss: 5.30131196975708
+class_loss: 0.6230564117431641, distance_loss: 5.3381266593933105
+class_loss: 0.6974953413009644, distance_loss: 5.374569892883301
+class_loss: 0.9617809057235718, distance_loss: 5.406975746154785
+class_loss: 0.7907860279083252, distance_loss: 5.437503814697266
+class_loss: 0.7228753566741943, distance_loss: 5.467465877532959
+class_loss: 0.6653075218200684, distance_loss: 5.499258518218994
+class_loss: 0.5617520809173584, distance_loss: 5.528348922729492
+class_loss: 0.703690767288208, distance_loss: 5.558842658996582
+class_loss: 0.5060029029846191, distance_loss: 5.590740203857422
+class_loss: 0.5692665576934814, distance_loss: 5.629275798797607
+class_loss: 0.3370593786239624, distance_loss: 5.671775817871094
+class_loss: 0.3915505111217499, distance_loss: 5.716706275939941
+class_loss: 0.3530811071395874, distance_loss: 5.763001918792725
+class_loss: 0.1761080026626587, distance_loss: 5.810290336608887
+___Test Local_Simple poisoned: True, epoch: 11: Average loss: 0.0654, Accuracy: 8773/8968 (97.8256%)
+poison local model 42 index 3
+class_loss: 2.349877119064331, distance_loss: 0.0
+class_loss: 1.8577362298965454, distance_loss: 0.207455113530159
+class_loss: 1.2086020708084106, distance_loss: 0.5615610480308533
+class_loss: 0.9028346538543701, distance_loss: 0.9584099054336548
+class_loss: 1.4102065563201904, distance_loss: 1.3310359716415405
+class_loss: 1.1734087467193604, distance_loss: 1.6091365814208984
+class_loss: 1.0183321237564087, distance_loss: 1.8585213422775269
+class_loss: 0.9719399809837341, distance_loss: 2.0872256755828857
+___PoisonTrain Local_Simple ,  epoch  11, local model 42, internal_epoch   1,  Average loss: 0.0268, Accuracy: 170/236 (72.0339%), train_poison_data_count: 80
+___PoisonTrain Local_Simple ,  epoch  11, local model 42, internal_epoch   2,  Average loss: 0.0194, Accuracy: 137/236 (58.0508%), train_poison_data_count: 80
+Global model norm: 16.539532092117113.
+Norm before scaling: 16.36239395048951. Distance: 2.296692717708487
+Total norm for 5 adversaries is: 16.36239395048951. distance: 2.296692717708487
+___Test Local_Simple poisoned: True, epoch: 11: Average loss: 1.2262, Accuracy: 5729/8968 (63.8827%)
+poison local model 45 index 0
+___PoisonTrain Local_Simple ,  epoch  11, local model 45, internal_epoch   1,  Average loss: 0.0274, Accuracy: 339/628 (53.9809%), train_poison_data_count: 200
+___PoisonTrain Local_Simple ,  epoch  11, local model 45, internal_epoch   2,  Average loss: 0.0151, Accuracy: 347/628 (55.2548%), train_poison_data_count: 200
+Global model norm: 16.539532092117113.
+Norm before scaling: 16.732984412052275. Distance: 4.3633704248944705
+Total norm for 5 adversaries is: 16.732984412052275. distance: 4.3633704248944705
+class_loss: 3.578488826751709, distance_loss: 0.0
+class_loss: 1.7760286331176758, distance_loss: 0.3494974374771118
+class_loss: 1.6465920209884644, distance_loss: 0.8455685973167419
+class_loss: 1.9029282331466675, distance_loss: 1.2382404804229736
+class_loss: 1.557267665863037, distance_loss: 1.5457655191421509
+class_loss: 1.4604356288909912, distance_loss: 1.8432897329330444
+class_loss: 1.5495814085006714, distance_loss: 2.120497226715088
+class_loss: 1.3632274866104126, distance_loss: 2.3677480220794678
+class_loss: 1.2645349502563477, distance_loss: 2.5944325923919678
+class_loss: 1.1343716382980347, distance_loss: 2.8076863288879395
+class_loss: 1.1030422449111938, distance_loss: 3.0158886909484863
+class_loss: 0.9508678317070007, distance_loss: 3.212510347366333
+class_loss: 0.9224562644958496, distance_loss: 3.397195816040039
+class_loss: 1.1203281879425049, distance_loss: 3.567485809326172
+class_loss: 0.8362345695495605, distance_loss: 3.720590829849243
+class_loss: 1.0340301990509033, distance_loss: 3.855626344680786
+class_loss: 0.9090415239334106, distance_loss: 3.9695332050323486
+class_loss: 0.8226146101951599, distance_loss: 4.075804710388184
+class_loss: 0.8261378407478333, distance_loss: 4.1764373779296875
+class_loss: 0.9350681900978088, distance_loss: 4.271109104156494
+___Test Local_Simple poisoned: True, epoch: 11: Average loss: 1.3247, Accuracy: 2673/8968 (29.8060%)
+___Train Local_Simple,  epoch  11, local model 37, internal_epoch   1,  Average loss: 0.0012, Accuracy: 842/860 (97.9070%)
+___Train Local_Simple,  epoch  11, local model 37, internal_epoch   2,  Average loss: 0.0005, Accuracy: 853/860 (99.1860%)
+___Test Local_Simple poisoned: False, epoch: 11: Average loss: 0.2156, Accuracy: 9342/10000 (93.4200%)
+Traceback (most recent call last):
+  File "dba.py", line 181, in <module>
+    epochs_submit_update_dict, num_samples_dict, net_list = train.train(helper=helper, start_epoch=epoch,
+  File "/home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/train.py", line 23, in train
+    epochs_submit_update_dict, num_samples_dict, net_list = image_train.ImageTrain(helper, start_epoch, local_model,
+  File "/home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/image_train.py", line 214, in ImageTrain
+    for batch_id, batch in enumerate(data_iterator):
+  File "/home/ubuntu/miniconda3/envs/dungnt/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 652, in __next__
+    data = self._next_data()
+  File "/home/ubuntu/miniconda3/envs/dungnt/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1319, in _next_data
+    self._shutdown_workers()
+  File "/home/ubuntu/miniconda3/envs/dungnt/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1440, in _shutdown_workers
+    self._mark_worker_as_unavailable(worker_id, shutdown=True)
+  File "/home/ubuntu/miniconda3/envs/dungnt/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1387, in _mark_worker_as_unavailable
+    q.put(None)
+  File "/home/ubuntu/miniconda3/envs/dungnt/lib/python3.8/multiprocessing/queues.py", line 88, in put
+    self._start_thread()
+  File "/home/ubuntu/miniconda3/envs/dungnt/lib/python3.8/multiprocessing/queues.py", line 173, in _start_thread
+    self._thread.start()
+  File "/home/ubuntu/miniconda3/envs/dungnt/lib/python3.8/threading.py", line 857, in start
+    self._started.wait()
+  File "/home/ubuntu/miniconda3/envs/dungnt/lib/python3.8/threading.py", line 558, in wait
+    signaled = self._cond.wait(timeout)
+  File "/home/ubuntu/miniconda3/envs/dungnt/lib/python3.8/threading.py", line 302, in wait
+    waiter.acquire()
+KeyboardInterrupt

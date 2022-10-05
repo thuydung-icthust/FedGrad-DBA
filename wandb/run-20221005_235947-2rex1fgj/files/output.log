@@ -1,0 +1,72 @@
+current path: saved_models/model_cifar_Oct.05_23.59.45
+Loading data
+Files already downloaded and verified
+build_classes_dict done
+train loaders done
+get poison test loader
+Starting performing KrMLRFL...
+load data done
+Loaded parameters from saved model: LR is 0.1 and current epoch is 201
+create model done
+Poisoned following participants: [17, 33, 77, 11]
+We use following environment for graphs:  cifar
+Server Epoch:201 choose agents : [34, 50, 36, 99].
+poison local model 34 index 0
+___Train Local_ResNet_18,  epoch 201, local model 34, internal_epoch   1,  Average loss: 0.0064, Accuracy: 432/490 (88.1633%)
+___Train Local_ResNet_18,  epoch 201, local model 34, internal_epoch   2,  Average loss: 0.0034, Accuracy: 463/490 (94.4898%)
+___Test Local_ResNet_18 poisoned: False, epoch: 201: Average loss: 2.5942, Accuracy: 4620/10000 (46.2000%)
+___Train Local_ResNet_18,  epoch 201, local model 50, internal_epoch   1,  Average loss: 0.0049, Accuracy: 318/346 (91.9075%)
+___Train Local_ResNet_18,  epoch 201, local model 50, internal_epoch   2,  Average loss: 0.0021, Accuracy: 330/346 (95.3757%)
+___Test Local_ResNet_18 poisoned: False, epoch: 201: Average loss: 1.5751, Accuracy: 5565/10000 (55.6500%)
+poison local model 36 index 1
+___Train Local_ResNet_18,  epoch 201, local model 36, internal_epoch   1,  Average loss: 0.0086, Accuracy: 892/1060 (84.1509%)
+___Train Local_ResNet_18,  epoch 201, local model 36, internal_epoch   2,  Average loss: 0.0093, Accuracy: 852/1060 (80.3774%)
+___Test Local_ResNet_18 poisoned: False, epoch: 201: Average loss: 4.2771, Accuracy: 3640/10000 (36.4000%)
+___Train Local_ResNet_18,  epoch 201, local model 99, internal_epoch   1,  Average loss: 0.0035, Accuracy: 339/366 (92.6230%)
+___Train Local_ResNet_18,  epoch 201, local model 99, internal_epoch   2,  Average loss: 0.0014, Accuracy: 356/366 (97.2678%)
+___Test Local_ResNet_18 poisoned: False, epoch: 201: Average loss: 2.5420, Accuracy: 4865/10000 (48.6500%)
+time spent on training: 46.46616888046265
+state_keys[i]: 34
+state_keys[i]: 50
+state_keys[i]: 36
+Starting performing KrMLRFL...
+state_keys[i]: 99
+Num data points: [490, 346, 1060, 366]
+Num selected data points: [366]
+The chosen ones are users: [3], which are global users: [99]
+Traceback (most recent call last):
+  File "dba.py", line 214, in <module>
+    weight_accumulator, updates = helper.accumulate_weight(old_w_accumulator, cp_epochs_submit_update_dict, agent_name_keys, num_samples_dict, selected_net_indx, reconstructed_freq)
+  File "/home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/helper.py", line 230, in accumulate_weight
+    weight_accumulator[name].add_(local_model_update_dict[name])
+TypeError: 'NoneType' object is not subscriptable
+selected_attackers: [34, 36]
+glob_update: [[-9.1776252e-05 -1.1317432e-04 -5.9679151e-05 ... -1.3418496e-04
+  -1.1199154e-04 -3.5226345e-04]
+ [-3.3557415e-05 -2.2239983e-04 -6.1243773e-05 ... -7.6677650e-05
+  -6.6831708e-05 -4.6096742e-05]
+ [-3.4593046e-05 -2.1691993e-04  3.0457973e-05 ... -1.6186386e-05
+  -1.6771257e-05  2.0813197e-05]
+ ...
+ [ 1.3292581e-04  3.5226345e-05  4.2736530e-05 ...  6.1683357e-05
+   3.7115812e-04  1.8729270e-04]
+ [-5.0945207e-05 -1.5564263e-05 -6.7919493e-05 ...  9.9167228e-06
+  -3.1131506e-04  9.1932714e-05]
+ [-1.9425154e-04 -7.8968704e-04 -2.9782963e-04 ... -2.5604293e-04
+  -3.5234541e-04 -3.6142766e-04]]
+t_score: [[0.54260038]
+ [0.93424234]
+ [1.        ]
+ [0.        ]]
+[T_SCORE] attacker_local_idxs is:  [0, 1, 2]
+layer1_inf_time: 3.34814453125
+num_w: 256
+[PAIRWISE] pred_attackers_indx:  [0 1]
+assumed final_attacker_idxs:  [0 1 2]
+final_attacker_idxs is: [0, 1, 2]
+g_attacker_idxs: [34 50 36]
+g_normal_idxs: [99]
+filtered_attacker_idxs: [0, 1, 2]
+final_attacker_idxs are: [0, 1, 2]
+num_dps: [490, 346, 1060, 366]
+state_keys[i]: 99

@@ -1,0 +1,1 @@
+{"general": {"round": 11, "epoch_loss": 0.10284209201037883, "maintask_acc_epoch": 9696.0, "epoch_corret": 9696, "epoch_total": 10000, "poison_epoch_loss": 11.264264775428465, "backdoor_acc_epoch": 92.55129348795718, "poison_epoch_corret": 83, "poison_epoch_total": 10000}, "_timestamp": 1664938712.7030013, "_runtime": 433.8710391521454, "_step": 0, "_wandb": {"runtime": 554}}

@@ -1,14 +1,301 @@
 import torch 
 import dba
+import time
+import numpy as np
+from numpy import dot
+from numpy.linalg import norm
+
+import torch
+import torch.optim as optim
+import torch.nn as nn
+import logging
+import torchvision
+import torch.utils.data as data
+import torch.nn.functional as F
+from torch.autograd import Variable
+from torchvision import datasets, transforms
+from sklearn.metrics.pairwise import cosine_similarity
+# from geometric_median import geometric_median
+from sklearn.preprocessing import normalize
+from sklearn.preprocessing import MinMaxScaler
+import sklearn.metrics.pairwise as smp
+
+import matplotlib.pyplot as plt
+from sklearn import preprocessing
+min_max_scaler = preprocessing.MinMaxScaler()
+from itertools import product
+import math
+import copy
 
 def vectorize_net(net):
     return torch.cat([p.view(-1) for p in net.parameters()])
+
+def min_max_scale(data_r):
+    data_r = np.asarray(data_r)
+    v = data_r[:].reshape((-1,1))
+    v_scaled = min_max_scaler.fit_transform(v)
+    data_r = v_scaled
+    return data_r
 
 def load_model_weight(net, weight):
     index_bias = 0
     for p_index, p in enumerate(net.parameters()):
         p.data =  weight[index_bias:index_bias+p.numel()].view(p.size())
         index_bias += p.numel()
+
+def get_logging_items(net_list, additional_net, custom_net_2, selected_node_indices, avg_net_prev, avg_net, attackers_idxs, fl_round):
+    logging_list = []
+    recorded_w_list = []
+    recorded_w_list.append(vectorize_net(additional_net))
+    
+    for cm in net_list:
+        recorded_w_list.append(vectorize_net(cm))    
+    
+    for i,param in enumerate(additional_net.classifier.parameters()):
+        if i == 0:
+            with open('logging/w_benchmark_01_200.csv', 'a+') as w_f:
+                write = csv.writer(w_f)
+                write.writerow(param.data.cpu().numpy())
+    additional_item = [fl_round, 0, -3, list(additional_net.classifier.parameters())[1].data.cpu().numpy()]
+    logging_list.append(additional_item)
+    
+    #CUSTOM NET 2
+    for i,param in enumerate(custom_net_2.classifier.parameters()):
+        if i == 0:
+            with open('logging/w_benchmark_01_200.csv', 'a+') as w_f:
+                write = csv.writer(w_f)
+                write.writerow(param.data.cpu().numpy())
+    additional_item_2 = [fl_round, 0, -4, list(custom_net_2.classifier.parameters())[1].data.cpu().numpy()]
+    logging_list.append(additional_item_2)
+    
+    for net_idx, global_user_idx in enumerate(selected_node_indices):
+        #round id weights bias is-attacker
+        net = net_list[net_idx]
+        is_attacker = 0
+        # bias = list(net.classifier.parameters())[0].data.cpu().numpy()
+        # weights = list(net.classifier.parameters())[-1].data.cpu().numpy()
+
+        for idx, param in enumerate(net.classifier.parameters()):
+            if idx:
+                bias = param.data.cpu().numpy()
+            else:
+                weights = param.data.cpu().numpy()
+        # with open('logging/bias_benchmark.csv', 'a+') as bias_f:
+        #     write = csv.writer(bias_f)
+        #     write.writerow([bias])
+        with open('logging/w_benchmark_01_200.csv', 'a+') as w_f:
+            write = csv.writer(w_f)
+            write.writerow(weights)        
+            # write.writerow([weight])
+        if global_user_idx in attackers_idxs:
+            is_attacker = 1
+        item = [fl_round, is_attacker, global_user_idx, bias]
+        logging_list.append(item)
+    
+    prev_avg_item = [fl_round, 0, -2, list(avg_net_prev.classifier.parameters())[1].data.cpu().numpy()] if avg_net_prev else [fl_round, 0, -2, None]
+    avg_item = [fl_round, 0, -1, list(avg_net.classifier.parameters())[1].data.cpu().numpy()]
+    
+    recorded_w_list.append(vectorize_net(avg_net_prev))
+    recorded_w_list.append(vectorize_net(avg_net))
+
+    # with open('logging/flatten_w_benchmark.csv', 'a+') as w_f:
+    #     write = csv.writer(w_f)
+    #     for item_w in recorded_w_list:
+    #         write.writerow(item_w)    
+                
+    for i,param in enumerate(avg_net_prev.classifier.parameters()):
+        if i == 0:
+            with open('logging/w_benchmark_01_200.csv', 'a+') as w_f:
+                write = csv.writer(w_f)
+                write.writerow(param.data.cpu().numpy())    
+    for i,param in enumerate(avg_net.classifier.parameters()):
+        if i == 0:
+            with open('logging/w_benchmark_01_200.csv', 'a+') as w_f:
+                write = csv.writer(w_f)
+                write.writerow(param.data.cpu().numpy())        
+    logging_list.append(prev_avg_item)
+    logging_list.append(avg_item)
+    return logging_list
+
+
+def get_logging_items_full_w(net_list, additional_net, custom_net_2, selected_node_indices, avg_net_prev, avg_net, attackers_idxs, fl_round):
+    logging_list = []
+    recorded_w_list = []
+    print(f'[Dung] net_list_len: {len(net_list)}')
+    recorded_w_list.append(additional_net.state_dict())
+    recorded_w_list.append(custom_net_2.state_dict())
+    for cm in net_list:
+        recorded_w_list.append(cm.state_dict())
+    recorded_w_list.append(avg_net_prev.state_dict())
+    recorded_w_list.append(avg_net.state_dict())
+
+    ids = [-3, -4, *selected_node_indices, -2, -1]
+
+    if not os.path.exists('logging/eps10_400'):
+        os.makedirs('logging/eps10_400')
+    for i, idx in enumerate(ids):
+        torch.save(recorded_w_list[i], open(f'logging/eps10_400/{idx}_net.pth', 'wb'))
+    # for i,param in enumerate(additional_net.classifier.parameters()):
+    #     if i == 0:
+    #         with open('logging/weight_benchmark_01.csv', 'a+') as w_f:
+    #             write = csv.writer(w_f)
+    #             write.writerow(param.data.cpu().numpy())
+    additional_item = [fl_round, 0, -3, list(additional_net.classifier.parameters())[1].data.cpu().numpy()]
+    logging_list.append(additional_item)
+    additional_item_2 = [fl_round, 0, -4, list(custom_net_2.classifier.parameters())[1].data.cpu().numpy()]
+    logging_list.append(additional_item_2)
+    for net_idx, global_user_idx in enumerate(selected_node_indices):
+        #round id weights bias is-attacker
+        net = net_list[net_idx]
+        is_attacker = 0
+        # bias = list(net.classifier.parameters())[0].data.cpu().numpy()
+        # weights = list(net.classifier.parameters())[-1].data.cpu().numpy()
+
+        for idx, param in enumerate(net.classifier.parameters()):
+            if idx:
+                bias = param.data.cpu().numpy()
+            else:
+                weights = param.data.cpu().numpy()
+        # with open('logging/bias_benchmark.csv', 'a+') as bias_f:
+        #     write = csv.writer(bias_f)
+        #     write.writerow([bias])
+        # with open('logging/weight_benchmark_01.csv', 'a+') as w_f:
+        #     write = csv.writer(w_f)
+        #     write.writerow(weights)        
+            # write.writerow([weight])
+        if global_user_idx in attackers_idxs:
+            is_attacker = 1
+        item = [fl_round, is_attacker, global_user_idx, bias]
+        logging_list.append(item)
+    
+    prev_avg_item = [fl_round, 0, -2, list(avg_net_prev.classifier.parameters())[1].data.cpu().numpy()] if avg_net_prev else [fl_round, 0, -2, None]
+    avg_item = [fl_round, 0, -1, list(avg_net.classifier.parameters())[1].data.cpu().numpy()]
+    
+    
+
+    # with open('logging/flatten_w_benchmark.csv', 'a+') as w_f:
+    #     write = csv.writer(w_f)
+    #     for item_w in recorded_w_list:
+    #         write.writerow(item_w)    
+                
+    # for i,param in enumerate(avg_net_prev.classifier.parameters()):
+    #     if i == 0:
+    #         with open('logging/weight_benchmark_01.csv', 'a+') as w_f:
+    #             write = csv.writer(w_f)
+    #             write.writerow(param.data.cpu().numpy())    
+    # for i,param in enumerate(avg_net.classifier.parameters()):
+    #     if i == 0:
+    #         with open('logging/weight_benchmark_01.csv', 'a+') as w_f:
+    #             write = csv.writer(w_f)
+    #             write.writerow(param.data.cpu().numpy())        
+    logging_list.append(prev_avg_item)
+    logging_list.append(avg_item)
+    return logging_list
+         
+def get_logging_items_new(net_list, selected_node_indices, avg_net_prev, avg_net, exploration_net, g_attackers_idxs, fl_round):
+    logging_list = []
+    
+    for net_idx, global_user_idx in enumerate(selected_node_indices):
+        net = net_list[net_idx]
+        is_attacker = 0
+        w_log_file_name = 'logging/attacker_weight.csv' if global_user_idx in g_attackers_idxs else 'logging/normal_weight.csv'
+        
+        # Different log for attackers
+        bias, weight = None, None
+        for idx, param in enumerate(net.classifier.parameters()):
+            if idx:
+                bias = param.data.cpu().numpy()
+            else:
+                weight = param.data.cpu().numpy()
+        with open(w_log_file_name, 'a+') as w_f:
+            write = csv.writer(w_f)
+            write.writerow(weight)   
+        
+        #round id weights bias is-attacker
+        if global_user_idx in g_attackers_idxs:
+            is_attacker = 1
+        item = [fl_round, is_attacker, global_user_idx, bias]
+        logging_list.append(item)
+    prev_avg_item = [fl_round, 0, -2, list(avg_net_prev.classifier.parameters())[1].data.cpu().numpy()] if avg_net_prev else [fl_round, 0, -2, None]
+    avg_item = [fl_round, 0, -1, list(avg_net.classifier.parameters())[1].data.cpu().numpy()]
+    
+    for i,param in enumerate(avg_net_prev.classifier.parameters()):
+        if i == 0:
+            with open('logging/normal_weight.csv', 'a+') as w_f:
+                write = csv.writer(w_f)
+                write.writerow(param.data.cpu().numpy())    
+    for i,param in enumerate(avg_net.classifier.parameters()):
+        if i == 0:
+            with open('logging/normal_weight.csv', 'a+') as w_f:
+                write = csv.writer(w_f)
+                write.writerow(param.data.cpu().numpy())        
+    logging_list.append(prev_avg_item)
+    logging_list.append(avg_item)
+    return logging_list
+
+def calculate_sum_grad_diff(meta_data, num_cli=11, num_w=512, glob_update=None):
+    v_x = [num_w * i for i in range(num_cli)]
+    total_label = 10
+    sum_diff_by_label = []
+    glob_temp_sum = None
+    glob_ret = []
+    print(f"num_w: {num_w}")
+    
+    for data in meta_data:
+        data = data.flatten()
+        ret = []
+        for i in range(total_label):
+            temp_sum = np.sum(data[v_x[i]:v_x[i+1]])
+            ret.append(temp_sum)
+        sum_diff_by_label.append(ret)
+    if glob_update is not None:
+        glob_update = glob_update.flatten()
+        for i in range(total_label):
+            glob_temp_sum = np.sum(glob_update[v_x[i]:v_x[i+1]])
+            glob_ret.append(glob_temp_sum)
+    return np.asarray(sum_diff_by_label), np.asarray(glob_ret)
+
+def get_distance_on_avg_net(weight_list, avg_weight, weight_update, total_cli = 10):
+    eucl_dis = []
+    cs_dis = []
+    for i in range(total_cli):
+        # euclidean distance btw weight updates
+        point = weight_update[i].flatten().reshape(-1,1)
+        base_p = avg_weight.flatten().reshape(-1,1)
+        ds = point - base_p
+        sum_sq = np.dot(ds.T, ds)
+        eucl_dis.append(float(np.sqrt(sum_sq).flatten()))
+    for i in range(total_cli):
+        # cosine similarity
+        point = weight_list[i].flatten()
+        base_p = avg_weight.flatten()
+        cs = dot(point, base_p)/(norm(point)*norm(base_p))
+        cs_dis.append(float(cs.flatten()))
+    return eucl_dis, cs_dis
+
+def get_cs_on_base_net(weight_update, avg_weight, total_cli = 10):
+    cs_list = []
+    total_cli = len(weight_update)
+    base_p = avg_weight.flatten()
+    # print(f"base_p: {base_p}")
+    for i in range(total_cli):
+        point = weight_update[i].flatten()
+        # print("point: ", point)
+        cs = dot(point, base_p)/(norm(point)*norm(base_p))
+        cs_list.append(float(cs.flatten()))
+    return cs_list
+
+def get_ed_on_base_net(weight_update, avg_weight, total_cli = 10):
+    ed_list = []
+    total_cli = len(weight_update)
+    for i in range(total_cli):
+        point = weight_update[i].flatten().reshape(-1,1)
+        base_p = avg_weight.flatten().reshape(-1,1)
+        ds = point - base_p
+        sum_sq = np.dot(ds.T, ds)
+        ed_list.append(float(np.sqrt(sum_sq).flatten()))
+    return ed_list
+   
 
 def extract_classifier_layer(net_list, global_avg_net, prev_net, model="vgg9"):
     bias_list = []
@@ -19,6 +306,15 @@ def extract_classifier_layer(net_list, global_avg_net, prev_net, model="vgg9"):
     prev_avg_bias = None
     prev_avg_weight = None
     last_model_layer = "classifier" if model=="vgg9" else "fc3" 
+    
+    # print(f"global_avg_net: {global_avg_net}")
+    # print(f"prev_net: {prev_net}")
+    # print(f"model: {model}")
+    # Print model's state_dict
+    # print("Model's state_dict:")
+    # for param_tensor in prev_net.state_dict():
+    #     print(param_tensor, "\t", prev_net.state_dict()[param_tensor].size())
+    
     if model == "vgg9":
         for idx, param in enumerate(global_avg_net.classifier.parameters()):
             if idx:
@@ -55,11 +351,61 @@ def extract_classifier_layer(net_list, global_avg_net, prev_net, model="vgg9"):
                 prev_avg_bias = param.data.cpu().numpy()
             else:
                 prev_avg_weight = param.data.cpu().numpy()
+        # print(f"")
         glob_update = avg_weight - prev_avg_weight
         for net in net_list:
             bias = None
             weight = None
             for idx, param in enumerate(net.fc2.parameters()):
+                if idx:
+                    bias = param.data.cpu().numpy()
+                else:
+                    weight = param.data.cpu().numpy()
+            bias_list.append(bias)
+            weight_list.append(weight)
+            weight_update.append(weight-avg_weight)
+    elif model == "MnistNet":
+        for idx, param in enumerate(global_avg_net.fc2.parameters()):
+            if idx:
+                avg_bias = param.data.cpu().numpy()
+            else:
+                avg_weight = param.data.cpu().numpy()
+
+        for idx, param in enumerate(prev_net.fc2.parameters()):
+            if idx:
+                prev_avg_bias = param.data.cpu().numpy()
+            else:
+                prev_avg_weight = param.data.cpu().numpy()
+                
+        glob_update = avg_weight - prev_avg_weight
+        for net in net_list:
+            bias = None
+            weight = None
+            for idx, param in enumerate(net.fc2.parameters()):
+                if idx:
+                    bias = param.data.cpu().numpy()
+                else:
+                    weight = param.data.cpu().numpy()
+            bias_list.append(bias)
+            weight_list.append(weight)
+            weight_update.append(weight-avg_weight)          
+    elif model == "ResNet18":
+        for idx, param in enumerate(global_avg_net.linear.parameters()):
+            if idx:
+                avg_bias = param.data.cpu().numpy()
+            else:
+                avg_weight = param.data.cpu().numpy()
+
+        for idx, param in enumerate(prev_net.linear.parameters()):
+            if idx:
+                prev_avg_bias = param.data.cpu().numpy()
+            else:
+                prev_avg_weight = param.data.cpu().numpy()
+        glob_update = avg_weight - prev_avg_weight
+        for net in net_list:
+            bias = None
+            weight = None
+            for idx, param in enumerate(net.linear.parameters()):
                 if idx:
                     bias = param.data.cpu().numpy()
                 else:
@@ -94,7 +440,7 @@ class FedGrad(Defense):
         self.pairwise_w = np.zeros((total_workers+1, total_workers+1))
         self.pairwise_b = np.zeros((total_workers+1, total_workers+1))
         
-        logger.info("Starting performing KrMLRFL...")
+        dba.logger.info("Starting performing KrMLRFL...")
         self.pairwise_choosing_frequencies = np.zeros((total_workers, total_workers))
         self.trustworthy_scores = [[0.5] for _ in range(total_workers+1)]
 
@@ -105,11 +451,13 @@ class FedGrad(Defense):
         vectorize_nets = [vectorize_net(cm).detach().cpu().numpy() for cm in client_models]
         trusted_models = []
         neighbor_distances = []
-        logger.info("Starting performing KrMLRFL...")
+        dba.logger.info("Starting performing KrMLRFL...")
+        print(f"selected_attackers: {selected_attackers}")
         # FOR LAYER 1 ONLY
         layer1_start_t = time.time()*1000
+        # print(f"net_avg: {net_avg}")
         bias_list, weight_list, avg_bias, avg_weight, weight_update, glob_update, prev_avg_weight = extract_classifier_layer(client_models, pseudo_avg_net, net_avg, model_name)
-        
+        # print(f"glob_update: {glob_update}")
         total_client = len(g_user_indices)
         
         raw_t_score = self.get_trustworthy_scores(glob_update, weight_update)
@@ -122,7 +470,8 @@ class FedGrad(Defense):
             t_score.append(self.accumulate_t_scores[cli])
         
         t_score = np.array(t_score)
-        threshold = min(0.5, np.median(t_score))
+        print(f"t_score: {t_score}")
+        threshold = min(0.45, np.median(t_score)) if model_name == "ResNet18" else min(0.5, np.median(t_score))
         
         participated_attackers = []
         for in_, id_ in enumerate(g_user_indices):
@@ -192,15 +541,15 @@ class FedGrad(Defense):
         # # use krum as the baseline to improve, mark the one chosen by krum as trusted
         # if self.num_valid == 1:
         #     i_star = scores.index(min(scores))
-        #     logger.info("@@@@ The chosen trusted worker is user: {}, which is global user: {}".format(scores.index(min(scores)), g_user_indices[scores.index(min(scores))]))
+        #     dba.logger.info("@@@@ The chosen trusted worker is user: {}, which is global user: {}".format(scores.index(min(scores)), g_user_indices[scores.index(min(scores))]))
         #     trusted_models.append(i_star)
         # else:
         #     topk_ind = np.argpartition(scores, nb_in_score+2)[:self.num_valid]
             
         #     # we reconstruct the weighted averaging here:
         #     selected_num_dps = np.array(num_dps)[topk_ind]
-        #     logger.info("Num selected data points: {}".format(selected_num_dps))
-        #     logger.info("The chosen ones are users: {}, which are global users: {}".format(topk_ind, [g_user_indices[ti] for ti in topk_ind]))
+        #     dba.logger.info("Num selected data points: {}".format(selected_num_dps))
+        #     dba.logger.info("The chosen ones are users: {}, which are global users: {}".format(topk_ind, [g_user_indices[ti] for ti in topk_ind]))
 
         #     for ind in topk_ind:
         #         trusted_models.append(ind)
@@ -270,24 +619,30 @@ class FedGrad(Defense):
             attacker_local_idxs_2 = pred_attackers_indx_2
             layer2_end_t = time.time()*1000
             layer2_inf_t = layer2_end_t-layer2_start_t
-            print(f"layer2_inf_t: {layer2_inf_t}")
-            pseudo_final_attacker_idxs = np.union1d(attacker_local_idxs_2, attacker_local_idxs).flatten()
-
-            if round >= 50:
+            # print(f"layer2_inf_t: {layer2_inf_t}")
+            pseudo_final_attacker_idxs = np.union1d(attacker_local_idxs_2, attacker_local_idxs).flatten().astype(int)
+            if model_name == "ResNet18":
+                cur_r = round - 200
+            else:
+                cur_r = round
+            if cur_r >= 50:
                 final_attacker_idxs = pseudo_final_attacker_idxs
             print("assumed final_attacker_idxs: ", pseudo_final_attacker_idxs)
             print(f"final_attacker_idxs is: {final_attacker_idxs}")
 
         # STARTING USING TRUSTWORTHY SCORES
+        g_user_indices = np.asarray(g_user_indices)
+        
         normal_idxs = [id_ for id_ in range(total_client) if id_ not in final_attacker_idxs]
+        # final_attacker_idxs = 
         g_attacker_idxs = g_user_indices[final_attacker_idxs]
         print(f"g_attacker_idxs: {g_attacker_idxs}")
         g_normal_idxs = g_user_indices[normal_idxs]
         print(f"g_normal_idxs: {g_normal_idxs}")
         g_attacker_scores = [np.average(self.trustworthy_scores[id_]) for id_ in g_attacker_idxs]
         g_normal_scores = [np.average(self.trustworthy_scores[id_]) for id_ in g_normal_idxs]
-        print(f"g_attacker_idxs score: {g_attacker_scores}")
-        print(f"g_normal_idxs score: {g_normal_scores}")
+        # print(f"g_attacker_idxs score: {g_attacker_scores}")
+        # print(f"g_normal_idxs score: {g_normal_scores}")
         
         trustworthy_threshold = 0.75 #TODO
         filtered_attacker_idxs = list(final_attacker_idxs.copy())
@@ -309,24 +664,6 @@ class FedGrad(Defense):
             else:
                 self.trustworthy_scores[g_idx].append(1.0)
         
-        #GET ADDITIONAL INFORMATION of TPR and FPR, TNR
-        # tp_fedgrad_pred = []
-        # for id_ in participated_attackers:
-        #     tp_fedgrad_pred.append(1.0 if id_ in final_attacker_idxs else 0.0)
-        # fp_fegrad = len(final_attacker_idxs) - sum(tp_fedgrad_pred)
-        
-        # Calculate true positive rate (TPR = TP/(TP+FN))
-        # total_positive = len(participated_attackers)
-        # total_negative = total_client - total_positive
-        # tpr_fedgrad = 1.0
-        # if total_positive > 0.0:
-        #     tpr_fedgrad = sum(tp_fedgrad_pred)/total_positive
-        # # False postive rate
-        # fpr_fedgrad = fp_fegrad/total_negative
-        # tnr_fedgrad = 1.0 - fpr_fedgrad
-             
-        # freq_participated_attackers = [self.choosing_frequencies[g_idx] for g_idx in g_user_indices]
-        
         end_fedgrad_t = time.time()*1000
         fedgrad_t = end_fedgrad_t - start_fedgrad_t
         
@@ -345,27 +682,32 @@ class FedGrad(Defense):
             selected_net_indx.append(i_star)
             pred_g_attacker = [g_user_indices[i] for i in final_attacker_idxs]
             # return [client_models[i_star]], [1.0], pred_g_attacker
-            return [net_avg], [1.0], [], tpr_fedgrad, fpr_fedgrad, tnr_fedgrad, layer1_inf_time, layer2_inf_t, fedgrad_t
+            return [], []
             
         vectorize_nets = [vectorize_net(cm).detach().cpu().numpy() for cm in neo_net_list]
-        selected_num_dps = np.array(num_dps)[selected_net_indx]
+        # print(f"num_dps: {num_dps}")
+        num_dps = list(num_dps.values())
+        print(f"num_dps: {num_dps}")
+        
+        selected_num_dps = np.asarray(num_dps)[selected_net_indx]
         reconstructed_freq = [snd/sum(selected_num_dps) for snd in selected_num_dps]
 
-        logger.info("Num data points: {}".format(num_dps))
-        logger.info("Num selected data points: {}".format(selected_num_dps))
-        logger.info("The chosen ones are users: {}, which are global users: {}".format(selected_net_indx, [g_user_indices[ti] for ti in selected_net_indx]))
+        dba.logger.info("Num data points: {}".format(num_dps))
+        dba.logger.info("Num selected data points: {}".format(selected_num_dps))
+        dba.logger.info("The chosen ones are users: {}, which are global users: {}".format(selected_net_indx, [g_user_indices[ti] for ti in selected_net_indx]))
         
-        aggregated_grad = np.average(vectorize_nets, weights=reconstructed_freq, axis=0).astype(np.float32)
+        # aggregated_grad = np.average(vectorize_nets, weights=reconstructed_freq, axis=0).astype(np.float32)
 
-        aggregated_model = client_models[0] # slicing which doesn't really matter
-        load_model_weight(aggregated_model, torch.from_numpy(aggregated_grad).to(device))
-        pred_g_attacker = [g_user_indices[i] for i in final_attacker_idxs]
-        # print(self.pairwise_cs)
-        neo_net_list = [aggregated_model]
-        neo_net_freq = [1.0]
-        return neo_net_list, neo_net_freq, pred_g_attacker, tpr_fedgrad, fpr_fedgrad, tnr_fedgrad, layer1_inf_time, layer2_inf_t, fedgrad_t
+        # aggregated_model = client_models[0] # slicing which doesn't really matter
+        # load_model_weight(aggregated_model, torch.from_numpy(aggregated_grad).to(device))
+        # pred_g_attacker = [g_user_indices[i] for i in final_attacker_idxs]
+        # # print(self.pairwise_cs)
+        # neo_net_list = [aggregated_model]
+        # neo_net_freq = [1.0]
+        return selected_net_indx, reconstructed_freq
 
     def get_trustworthy_scores(self, global_update, weight_update):
+        # print(f"weight_update: {weight_update}")
         cs_dist = get_cs_on_base_net(weight_update, global_update)
         score = np.array(cs_dist)
         norm_score = min_max_scale(score)

@@ -1,0 +1,81 @@
+current path: saved_models/model_mnist_Oct.06_00.46.40
+Loading data
+build_classes_dict done
+train loaders done
+get poison test loader
+Starting performing KrMLRFL...
+load data done
+Loaded parameters from saved model: LR is 0.1 and current epoch is 11
+create model done
+Poisoned following participants: [41, 73, 51, 74]
+We use following environment for graphs:  mnist_DBA
+Server Epoch:11 choose agents : [23, 72, 61, 11, 71, 42, 45, 37, 21, 35].
+___Train Local_Simple,  epoch  11, local model 23, internal_epoch   1,  Average loss: 0.0016, Accuracy: 425/440 (96.5909%)
+___Train Local_Simple,  epoch  11, local model 23, internal_epoch   2,  Average loss: 0.0007, Accuracy: 437/440 (99.3182%)
+___Test Local_Simple poisoned: False, epoch: 11: Average loss: 0.1405, Accuracy: 9562/10000 (95.6200%)
+___Train Local_Simple,  epoch  11, local model 72, internal_epoch   1,  Average loss: 0.0011, Accuracy: 513/525 (97.7143%)
+___Train Local_Simple,  epoch  11, local model 72, internal_epoch   2,  Average loss: 0.0010, Accuracy: 516/525 (98.2857%)
+___Test Local_Simple poisoned: False, epoch: 11: Average loss: 0.5771, Accuracy: 8370/10000 (83.7000%)
+___Train Local_Simple,  epoch  11, local model 61, internal_epoch   1,  Average loss: 0.0007, Accuracy: 1010/1025 (98.5366%)
+___Train Local_Simple,  epoch  11, local model 61, internal_epoch   2,  Average loss: 0.0007, Accuracy: 1012/1025 (98.7317%)
+___Test Local_Simple poisoned: False, epoch: 11: Average loss: 0.3132, Accuracy: 9118/10000 (91.1800%)
+___Train Local_Simple,  epoch  11, local model 11, internal_epoch   1,  Average loss: 0.0014, Accuracy: 231/236 (97.8814%)
+___Train Local_Simple,  epoch  11, local model 11, internal_epoch   2,  Average loss: 0.0004, Accuracy: 234/236 (99.1525%)
+___Test Local_Simple poisoned: False, epoch: 11: Average loss: 0.1239, Accuracy: 9609/10000 (96.0900%)
+poison local model 71 index 0
+___PoisonTrain Local_Simple ,  epoch  11, local model 71, internal_epoch   1,  Average loss: 0.0297, Accuracy: 169/325 (52.0000%), train_poison_data_count: 105
+class_loss: 2.9154410362243652, distance_loss: 0.0
+class_loss: 1.6407932043075562, distance_loss: 0.24573640525341034
+class_loss: 1.2309988737106323, distance_loss: 0.6827292442321777
+class_loss: 1.582194209098816, distance_loss: 1.0441679954528809
+class_loss: 1.30010986328125, distance_loss: 1.326615571975708
+class_loss: 0.9822417497634888, distance_loss: 1.57593834400177
+___PoisonTrain Local_Simple ,  epoch  11, local model 71, internal_epoch   2,  Average loss: 0.0178, Accuracy: 184/325 (56.6154%), train_poison_data_count: 105
+Global model norm: 16.539532092117113.
+Norm before scaling: 16.51313952146801. Distance: 3.249005679101228
+Total norm for 1 adversaries is: 16.51313952146801. distance: 3.249005679101228
+class_loss: 1.1164298057556152, distance_loss: 1.8556770086288452
+class_loss: 1.1701418161392212, distance_loss: 2.121014356613159
+class_loss: 0.9605869054794312, distance_loss: 2.368107795715332
+class_loss: 1.0482137203216553, distance_loss: 2.6017684936523438
+class_loss: 0.9038898348808289, distance_loss: 2.820131540298462
+class_loss: 0.5772023797035217, distance_loss: 3.025327444076538
+___Test Local_Simple poisoned: True, epoch: 11: Average loss: 0.1064, Accuracy: 8873/8968 (98.9407%)
+___Train Local_Simple,  epoch  11, local model 42, internal_epoch   1,  Average loss: 0.0024, Accuracy: 294/310 (94.8387%)
+___Train Local_Simple,  epoch  11, local model 42, internal_epoch   2,  Average loss: 0.0018, Accuracy: 302/310 (97.4194%)
+___Test Local_Simple poisoned: False, epoch: 11: Average loss: 0.5750, Accuracy: 8440/10000 (84.4000%)
+___Train Local_Simple,  epoch  11, local model 45, internal_epoch   1,  Average loss: 0.0014, Accuracy: 760/786 (96.6921%)
+___Train Local_Simple,  epoch  11, local model 45, internal_epoch   2,  Average loss: 0.0015, Accuracy: 765/786 (97.3282%)
+___Test Local_Simple poisoned: False, epoch: 11: Average loss: 0.1740, Accuracy: 9410/10000 (94.1000%)
+___Train Local_Simple,  epoch  11, local model 37, internal_epoch   1,  Average loss: 0.0017, Accuracy: 564/585 (96.4103%)
+___Train Local_Simple,  epoch  11, local model 37, internal_epoch   2,  Average loss: 0.0016, Accuracy: 574/585 (98.1197%)
+___Test Local_Simple poisoned: False, epoch: 11: Average loss: 0.2424, Accuracy: 9226/10000 (92.2600%)
+___Train Local_Simple,  epoch  11, local model 21, internal_epoch   1,  Average loss: 0.0017, Accuracy: 342/352 (97.1591%)
+___Train Local_Simple,  epoch  11, local model 21, internal_epoch   2,  Average loss: 0.0009, Accuracy: 346/352 (98.2955%)
+___Test Local_Simple poisoned: False, epoch: 11: Average loss: 0.5385, Accuracy: 8453/10000 (84.5300%)
+___Train Local_Simple,  epoch  11, local model 35, internal_epoch   1,  Average loss: 0.0015, Accuracy: 795/816 (97.4265%)
+___Train Local_Simple,  epoch  11, local model 35, internal_epoch   2,  Average loss: 0.0016, Accuracy: 789/816 (96.6912%)
+___Test Local_Simple poisoned: False, epoch: 11: Average loss: 0.3238, Accuracy: 8902/10000 (89.0200%)
+time spent on training: 53.31376504898071
+Starting performing KrMLRFL...
+Traceback (most recent call last):
+  File "dba.py", line 200, in <module>
+    selected_net_indx, reconstructed_freq = defender.exec(client_models = net_list,
+  File "/home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/fedgrad_helper.py", line 626, in exec
+    if cur_r >= 50:
+UnboundLocalError: local variable 'cur_r' referenced before assignment
+selected_attackers: [71]
+t_score: [[0.02002195]
+ [0.40829379]
+ [0.30323199]
+ [0.        ]
+ [1.        ]
+ [0.30510228]
+ [0.3828721 ]
+ [0.28224004]
+ [0.34722429]
+ [0.54847127]]
+[T_SCORE] attacker_local_idxs is:  [1, 4, 6, 8, 9]
+layer1_inf_time: 5.02880859375
+num_w: 500
+[PAIRWISE] pred_attackers_indx:  [4]

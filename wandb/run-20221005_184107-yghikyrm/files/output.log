@@ -1,0 +1,234 @@
+current path: saved_models/model_cifar_Oct.05_18.41.04
+Loading data
+Files already downloaded and verified
+build_classes_dict done
+train loaders done
+get poison test loader
+Starting performing KrMLRFL...
+load data done
+Loaded parameters from saved model: LR is 0.1 and current epoch is 201
+create model done
+Poisoned following participants: [17, 33, 77, 11]
+We use following environment for graphs:  cifar
+Server Epoch:201 choose agents : [34, 50, 36, 99].
+poison local model 34 index 0
+___Train Local_ResNet_18,  epoch 201, local model 34, internal_epoch   1,  Average loss: 0.0064, Accuracy: 433/490 (88.3673%)
+___Train Local_ResNet_18,  epoch 201, local model 34, internal_epoch   2,  Average loss: 0.0034, Accuracy: 463/490 (94.4898%)
+___Test Local_ResNet_18 poisoned: False, epoch: 201: Average loss: 2.5243, Accuracy: 4720/10000 (47.2000%)
+___Train Local_ResNet_18,  epoch 201, local model 50, internal_epoch   1,  Average loss: 0.0049, Accuracy: 318/346 (91.9075%)
+___Train Local_ResNet_18,  epoch 201, local model 50, internal_epoch   2,  Average loss: 0.0021, Accuracy: 329/346 (95.0867%)
+___Test Local_ResNet_18 poisoned: False, epoch: 201: Average loss: 1.5880, Accuracy: 5540/10000 (55.4000%)
+poison local model 36 index 1
+___Train Local_ResNet_18,  epoch 201, local model 36, internal_epoch   1,  Average loss: 0.0087, Accuracy: 888/1060 (83.7736%)
+___Train Local_ResNet_18,  epoch 201, local model 36, internal_epoch   2,  Average loss: 0.0093, Accuracy: 852/1060 (80.3774%)
+___Test Local_ResNet_18 poisoned: False, epoch: 201: Average loss: 4.6962, Accuracy: 3299/10000 (32.9900%)
+___Train Local_ResNet_18,  epoch 201, local model 99, internal_epoch   1,  Average loss: 0.0035, Accuracy: 339/366 (92.6230%)
+___Train Local_ResNet_18,  epoch 201, local model 99, internal_epoch   2,  Average loss: 0.0014, Accuracy: 357/366 (97.5410%)
+___Test Local_ResNet_18 poisoned: False, epoch: 201: Average loss: 2.5764, Accuracy: 4850/10000 (48.5000%)
+time spent on training: 78.83672857284546
+Starting performing KrMLRFL...
+/home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/fedgrad_helper.py:284: RuntimeWarning: invalid value encountered in float_scalars
+  cs = dot(point, base_p)/(norm(point)*norm(base_p))
+/home/ubuntu/miniconda3/envs/dungnt/lib/python3.8/site-packages/sklearn/preprocessing/_data.py:464: RuntimeWarning: All-NaN slice encountered
+  data_min = np.nanmin(X, axis=0)
+/home/ubuntu/miniconda3/envs/dungnt/lib/python3.8/site-packages/sklearn/preprocessing/_data.py:465: RuntimeWarning: All-NaN slice encountered
+  data_max = np.nanmax(X, axis=0)
+selected_attackers: [34, 36]
+glob_update: [[0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ ...
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]], weight_update: [array([[-0.00353017, -0.0047188 , -0.0067787 , ..., -0.00569283,
+        -0.01610177, -0.01648399],
+       [-0.0014185 , -0.00567833,  0.0010014 , ..., -0.00052579,
+        -0.00436789, -0.0007221 ],
+       [-0.00043678, -0.00504498, -0.00267455, ..., -0.00122631,
+         0.01658282,  0.00519241],
+       ...,
+       [-0.02576342, -0.02712506, -0.00499265, ..., -0.00749303,
+        -0.01298842, -0.00897929],
+       [-0.00091197, -0.00307471, -0.0039494 , ..., -0.00264718,
+         0.00411734, -0.00274415],
+       [-0.00086181, -0.00583886, -0.00396967, ..., -0.00327165,
+        -0.00230891,  0.00645567]], dtype=float32), array([[ 1.9013882e-05, -7.4572861e-04,  8.4704459e-03, ...,
+         2.8730184e-04,  1.9595832e-02,  1.8706024e-03],
+       [-1.1965632e-03, -6.5832585e-03, -3.2389611e-03, ...,
+        -2.8155856e-03, -3.8881749e-03, -1.9782186e-03],
+       [-2.9317290e-03, -7.0437118e-03, -1.7611831e-03, ...,
+        -4.8147403e-03, -1.2502935e-02, -4.7153477e-03],
+       ...,
+       [-4.5104623e-03, -5.1131323e-03, -2.8182417e-03, ...,
+        -1.9044429e-03,  5.5703223e-03, -5.0757825e-04],
+       [-4.3222066e-03, -4.8136264e-03, -4.9052536e-03, ...,
+        -3.2334998e-03, -1.2992054e-02, -4.1317120e-03],
+       [-5.0508976e-03, -2.1833681e-02, -8.4906397e-03, ...,
+        -6.9414619e-03, -1.1943743e-02, -1.0120243e-02]], dtype=float32), array([[-3.3607036e-03, -5.2754879e-03, -5.6780130e-03, ...,
+        -9.9876225e-03, -6.4493679e-03, -1.8930763e-02],
+       [ 5.8621168e-05, -8.9397505e-03, -2.9522926e-03, ...,
+        -4.1448493e-03,  3.8877130e-03, -2.4013370e-03],
+       [ 1.1342168e-03, -8.9308955e-03,  6.2912852e-03, ...,
+         9.3266740e-04, -7.2272904e-03, -3.2242537e-03],
+       ...,
+       [-1.9109845e-03, -1.2476027e-02, -8.0629140e-03, ...,
+         6.5414608e-03,  1.9489706e-02,  1.5844971e-02],
+       [-4.2197909e-03,  1.0444686e-02,  4.6523660e-03, ...,
+         1.2528017e-02, -3.0004889e-02,  1.6558319e-02],
+       [-1.2795210e-02, -6.1098777e-02, -2.1218542e-02, ...,
+        -1.8547526e-02, -2.3909688e-02, -3.5715446e-02]], dtype=float32), array([[-0.00343634, -0.00486676, -0.00702621, ..., -0.00382958,
+        -0.00762323, -0.00784686],
+       [-0.00122432, -0.00645101, -0.00306615, ..., -0.00223113,
+        -0.00188647, -0.00127459],
+       [-0.00090855, -0.0031769 ,  0.00271413, ...,  0.0023233 ,
+         0.00469706,  0.00272669],
+       ...,
+       [ 0.04268532,  0.0397561 ,  0.02101484, ...,  0.01176547,
+         0.02982956,  0.01786089],
+       [-0.00289745, -0.00126003,  0.00498146, ..., -0.00116564,
+        -0.005972  , -0.00196206],
+       [-0.00469731, -0.00763044, -0.00244323, ..., -0.00254744,
+        -0.00438246, -0.00460638]], dtype=float32)]
+t_score: [[nan]
+ [nan]
+ [nan]
+ [nan]]
+[T_SCORE] attacker_local_idxs is:  []
+layer1_inf_time: 8.82080078125
+num_w: 256
+Num data points: [490, 346, 1060, 366]
+Num selected data points: [ 490  346 1060  366]
+The chosen ones are users: [0, 1, 2, 3], which are global users: [34, 50, 36, 99]
+[PAIRWISE] pred_attackers_indx:  [0 1]
+assumed final_attacker_idxs:  [0 1]
+final_attacker_idxs is: []
+g_attacker_idxs: []
+g_normal_idxs: [34 50 36 99]
+filtered_attacker_idxs: []
+final_attacker_idxs are: []
+num_dps: [490, 346, 1060, 366]
+___Test Target_ResNet_18 poisoned: False, epoch: 201: Average loss: 0.7265, Accuracy: 7621/10000 (76.2100%)
+epoch_acc: 76.21
+___Test Target_ResNet_18 poisoned: True, epoch: 201: Average loss: 6.5282, Accuracy: 218/9000 (2.4222%)
+Done in 99.40199184417725 sec.
+Server Epoch:202 choose agents : [54, 60, 45, 47].
+___Train Local_ResNet_18,  epoch 202, local model 54, internal_epoch   1,  Average loss: 0.0025, Accuracy: 588/622 (94.5338%)
+___Train Local_ResNet_18,  epoch 202, local model 54, internal_epoch   2,  Average loss: 0.0026, Accuracy: 595/622 (95.6592%)
+___Test Local_ResNet_18 poisoned: False, epoch: 202: Average loss: 4.3083, Accuracy: 3115/10000 (31.1500%)
+poison local model 60 index 0
+___Train Local_ResNet_18,  epoch 202, local model 60, internal_epoch   1,  Average loss: 0.0068, Accuracy: 402/449 (89.5323%)
+___Train Local_ResNet_18,  epoch 202, local model 60, internal_epoch   2,  Average loss: 0.0042, Accuracy: 410/449 (91.3140%)
+___Test Local_ResNet_18 poisoned: False, epoch: 202: Average loss: 3.1718, Accuracy: 4413/10000 (44.1300%)
+___Train Local_ResNet_18,  epoch 202, local model 45, internal_epoch   1,  Average loss: 0.0036, Accuracy: 612/663 (92.3077%)
+___Train Local_ResNet_18,  epoch 202, local model 45, internal_epoch   2,  Average loss: 0.0046, Accuracy: 601/663 (90.6486%)
+___Test Local_ResNet_18 poisoned: False, epoch: 202: Average loss: 4.2178, Accuracy: 3098/10000 (30.9800%)
+poison local model 47 index 1
+___Train Local_ResNet_18,  epoch 202, local model 47, internal_epoch   1,  Average loss: 0.0041, Accuracy: 865/897 (96.4326%)
+___Train Local_ResNet_18,  epoch 202, local model 47, internal_epoch   2,  Average loss: 0.0098, Accuracy: 767/897 (85.5072%)
+___Test Local_ResNet_18 poisoned: False, epoch: 202: Average loss: 5.2343, Accuracy: 3545/10000 (35.4500%)
+selected_attackers: [60, 47]
+glob_update: [[0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ ...
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]], weight_update: [array([[-0.00263035, -0.00584169, -0.01729311, ..., -0.00898197,
+        -0.02525128, -0.01759982],
+       [ 0.01275913,  0.02854843,  0.04304769, ...,  0.02385614,
+         0.06750207,  0.02902962],
+       [ 0.0066763 ,  0.00331272,  0.00189611, ...,  0.00435773,
+         0.02476699,  0.00663115],
+       ...,
+       [-0.00940376, -0.01148652, -0.00510286, ..., -0.00332921,
+        -0.00833511, -0.00273353],
+       [-0.00594357, -0.00837865, -0.0155063 , ..., -0.003966  ,
+        -0.03261232, -0.00700464],
+       [ 0.00421567,  0.00607419,  0.00717946, ...,  0.00125114,
+         0.0016466 ,  0.01048103]], dtype=float32), array([[-0.010305  , -0.0044108 , -0.00745167, ..., -0.00313644,
+        -0.02704779, -0.006742  ],
+       [-0.00418121, -0.00808214, -0.00594025, ..., -0.00442984,
+        -0.00813954, -0.00498728],
+       [-0.0076787 , -0.00169571, -0.00276543, ..., -0.00044632,
+        -0.01216641, -0.00881257],
+       ...,
+       [-0.02100454, -0.00875875, -0.00721537, ..., -0.00327828,
+        -0.02531478, -0.01056761],
+       [-0.004467  , -0.00554985, -0.00047506, ..., -0.00331008,
+        -0.01676598, -0.00866383],
+       [-0.01676692, -0.03751201, -0.01690786, ..., -0.01187184,
+        -0.03838839, -0.02695128]], dtype=float32), array([[-0.00383943, -0.01108864, -0.0191247 , ..., -0.0112572 ,
+        -0.02636046, -0.01883316],
+       [ 0.01481996,  0.03523013,  0.03090747, ...,  0.01986   ,
+         0.07666378,  0.01927605],
+       [-0.00224362, -0.00471788, -0.00190967, ..., -0.00540801,
+        -0.00377827, -0.00570704],
+       ...,
+       [-0.00333895, -0.00670729, -0.00486378, ..., -0.00162175,
+        -0.00592765, -0.00191244],
+       [-0.01710077, -0.01882044, -0.01255381, ..., -0.00529986,
+        -0.05745837, -0.00954621],
+       [ 0.02659802,  0.03325322,  0.02004367, ...,  0.01278192,
+         0.05137742,  0.03018518]], dtype=float32), array([[-0.0106445 ,  0.00093858, -0.00295363, ...,  0.00088866,
+        -0.02344153, -0.0039821 ],
+       [-0.00478905, -0.01473874, -0.01211315, ..., -0.00729159,
+        -0.01282056, -0.00659785],
+       [-0.01218206, -0.01563178, -0.00767708, ..., -0.01230314,
+        -0.02716272, -0.02040314],
+       ...,
+       [ 0.00895057,  0.0338326 , -0.01032473, ..., -0.00589323,
+        -0.03773913, -0.01926222],
+       [ 0.00411878, -0.01471055,  0.01288107, ...,  0.0052331 ,
+         0.03633851, -0.00331638],
+       [-0.00948597,  0.0069087 ,  0.00029802, ...,  0.00334766,
+        -0.02016781, -0.02206209]], dtype=float32)]
+t_score: [[nan]
+ [nan]
+ [nan]
+ [nan]]
+[T_SCORE] attacker_local_idxs is:  []
+layer1_inf_time: 5.368896484375
+num_w: 256
+[PAIRWISE] pred_attackers_indx:  [1 3]
+assumed final_attacker_idxs:  [1 3]
+final_attacker_idxs is: []
+g_attacker_idxs: []
+g_normal_idxs: [54 60 45 47]
+filtered_attacker_idxs: []
+final_attacker_idxs are: []
+num_dps: [622, 449, 663, 897]
+time spent on training: 62.824950218200684
+Starting performing KrMLRFL...
+/home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/fedgrad_helper.py:284: RuntimeWarning: invalid value encountered in float_scalars
+  cs = dot(point, base_p)/(norm(point)*norm(base_p))
+/home/ubuntu/miniconda3/envs/dungnt/lib/python3.8/site-packages/sklearn/preprocessing/_data.py:464: RuntimeWarning: All-NaN slice encountered
+  data_min = np.nanmin(X, axis=0)
+/home/ubuntu/miniconda3/envs/dungnt/lib/python3.8/site-packages/sklearn/preprocessing/_data.py:465: RuntimeWarning: All-NaN slice encountered
+  data_max = np.nanmax(X, axis=0)
+Num data points: [622, 449, 663, 897]
+Num selected data points: [622 449 663 897]
+The chosen ones are users: [0, 1, 2, 3], which are global users: [54, 60, 45, 47]
+epoch_acc: 76.41
+___Test Target_ResNet_18 poisoned: False, epoch: 202: Average loss: 0.7187, Accuracy: 7641/10000 (76.4100%)
+Traceback (most recent call last):
+  File "dba.py", line 247, in <module>
+    epoch_loss_p, epoch_acc_p, epoch_corret_p, epoch_total_p = test.Mytest_poison(helper=helper,
+  File "/home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/test.py", line 94, in Mytest_poison
+    data, targets, poison_num = helper.get_poison_batch(batch, adversarial_index=-1, evaluation=True)
+  File "/home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/image_helper.py", line 310, in get_poison_batch
+    new_images[index] = self.add_pixel_pattern(images[index],adversarial_index)
+  File "/home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/image_helper.py", line 330, in add_pixel_pattern
+    image = copy.deepcopy(ori_image)
+  File "/home/ubuntu/miniconda3/envs/dungnt/lib/python3.8/copy.py", line 153, in deepcopy
+    y = copier(memo)
+  File "/home/ubuntu/miniconda3/envs/dungnt/lib/python3.8/site-packages/torch/_tensor.py", line 110, in __deepcopy__
+    new_storage = self.storage().__deepcopy__(memo)
+  File "/home/ubuntu/miniconda3/envs/dungnt/lib/python3.8/site-packages/torch/storage.py", line 565, in __deepcopy__
+    return self._new_wrapped_storage(copy.deepcopy(self._storage, memo))
+  File "/home/ubuntu/miniconda3/envs/dungnt/lib/python3.8/copy.py", line 153, in deepcopy
+    y = copier(memo)
+  File "/home/ubuntu/miniconda3/envs/dungnt/lib/python3.8/site-packages/torch/storage.py", line 88, in __deepcopy__
+    new_storage = self.clone()
+  File "/home/ubuntu/miniconda3/envs/dungnt/lib/python3.8/site-packages/torch/storage.py", line 102, in clone
+    return type(self)(self.nbytes(), device=self.device).copy_(self)
+KeyboardInterrupt

@@ -1,0 +1,71 @@
+current path: saved_models/model_cifar_Oct.05_23.46.52
+Loading data
+Files already downloaded and verified
+build_classes_dict done
+train loaders done
+get poison test loader
+Starting performing KrMLRFL...
+load data done
+Loaded parameters from saved model: LR is 0.1 and current epoch is 201
+create model done
+Poisoned following participants: [17, 33, 77, 11]
+We use following environment for graphs:  cifar
+Server Epoch:201 choose agents : [34, 50, 36, 99].
+poison local model 34 index 0
+___Train Local_ResNet_18,  epoch 201, local model 34, internal_epoch   1,  Average loss: 0.0064, Accuracy: 432/490 (88.1633%)
+___Train Local_ResNet_18,  epoch 201, local model 34, internal_epoch   2,  Average loss: 0.0034, Accuracy: 460/490 (93.8776%)
+___Test Local_ResNet_18 poisoned: False, epoch: 201: Average loss: 2.5166, Accuracy: 4720/10000 (47.2000%)
+___Train Local_ResNet_18,  epoch 201, local model 50, internal_epoch   1,  Average loss: 0.0049, Accuracy: 318/346 (91.9075%)
+___Train Local_ResNet_18,  epoch 201, local model 50, internal_epoch   2,  Average loss: 0.0021, Accuracy: 329/346 (95.0867%)
+___Test Local_ResNet_18 poisoned: False, epoch: 201: Average loss: 1.5662, Accuracy: 5568/10000 (55.6800%)
+poison local model 36 index 1
+___Train Local_ResNet_18,  epoch 201, local model 36, internal_epoch   1,  Average loss: 0.0087, Accuracy: 889/1060 (83.8679%)
+___Train Local_ResNet_18,  epoch 201, local model 36, internal_epoch   2,  Average loss: 0.0091, Accuracy: 857/1060 (80.8491%)
+___Test Local_ResNet_18 poisoned: False, epoch: 201: Average loss: 6.8329, Accuracy: 2524/10000 (25.2400%)
+___Train Local_ResNet_18,  epoch 201, local model 99, internal_epoch   1,  Average loss: 0.0035, Accuracy: 339/366 (92.6230%)
+___Train Local_ResNet_18,  epoch 201, local model 99, internal_epoch   2,  Average loss: 0.0014, Accuracy: 357/366 (97.5410%)
+___Test Local_ResNet_18 poisoned: False, epoch: 201: Average loss: 2.5523, Accuracy: 4859/10000 (48.5900%)
+time spent on training: 43.342785596847534
+state_keys[i]: 34
+state_keys[i]: 50
+state_keys[i]: 36
+Starting performing KrMLRFL...
+Num data points: [490, 346, 1060, 366]
+Num selected data points: [366]
+The chosen ones are users: [3], which are global users: [99]
+state_keys[i]: 99
+selected_attackers: [34, 36]
+glob_update: [[-1.19656324e-04 -1.24812126e-04 -8.67694616e-05 ... -1.30839646e-04
+  -1.61092728e-04 -3.49462032e-04]
+ [-2.58833170e-05 -2.01895833e-04 -4.84585762e-05 ... -7.15889037e-05
+  -4.41223383e-05 -5.09619713e-05]
+ [-2.37673521e-05 -2.04604119e-04  3.81171703e-05 ... -4.16859984e-06
+   2.12341547e-06  1.88909471e-05]
+ ...
+ [ 8.09878111e-05  6.37024641e-06  3.48091125e-05 ...  5.60358167e-05
+   3.32951546e-04  2.12609768e-04]
+ [-4.46662307e-05  4.45470214e-05 -3.01450491e-05 ...  1.98185444e-05
+  -2.63661146e-04  8.02576542e-05]
+ [-1.92806125e-04 -7.87481666e-04 -2.95489328e-04 ... -2.55480409e-04
+  -3.50363553e-04 -3.61695886e-04]]
+t_score: [[0.56149426]
+ [0.97522233]
+ [1.        ]
+ [0.        ]]
+[T_SCORE] attacker_local_idxs is:  [0, 1, 2]
+layer1_inf_time: 3.896240234375
+num_w: 256
+[PAIRWISE] pred_attackers_indx:  [0 1]
+assumed final_attacker_idxs:  [0 1 2]
+final_attacker_idxs is: [0, 1, 2]
+g_attacker_idxs: [34 50 36]
+g_normal_idxs: [99]
+filtered_attacker_idxs: [0, 1, 2]
+final_attacker_idxs are: [0, 1, 2]
+num_dps: [490, 346, 1060, 366]
+Traceback (most recent call last):
+  File "dba.py", line 212, in <module>
+    # print(f"after: epochs_submit_update_dict: {epochs_submit_update_dict}")
+  File "/home/ubuntu/miniconda3/envs/dungnt/lib/python3.8/site-packages/wandb/sdk/lib/redirect.py", line 640, in write
+    self._old_write(data)
+KeyboardInterrupt

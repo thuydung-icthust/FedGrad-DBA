@@ -1,0 +1,27 @@
+{
+    "os": "Linux-5.15.0-47-generic-x86_64-with-glibc2.17",
+    "python": "3.8.13",
+    "heartbeatAt": "2022-10-05T07:28:09.968975",
+    "startedAt": "2022-10-05T07:28:09.870125",
+    "docker": null,
+    "gpu": "NVIDIA GeForce RTX 3090",
+    "gpu_count": 4,
+    "cpu_count": 64,
+    "cuda": null,
+    "args": [
+        "--params",
+        "experiments_yaml/fedgrad_cifar10_params.yaml"
+    ],
+    "state": "running",
+    "program": "dba.py",
+    "codePath": "dba.py",
+    "git": {
+        "remote": "https://github.com/thuydung-icthust/FedGrad-DBA.git",
+        "commit": "f4a4a45ae9f524a64e61032cac54e837e4398d5b"
+    },
+    "email": "thuydungnguyen.ictk63@gmail.com",
+    "root": "/home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA",
+    "host": "cb2c62981e8b",
+    "username": "ubuntu",
+    "executable": "/home/ubuntu/miniconda3/envs/dungnt/bin/python"
+}

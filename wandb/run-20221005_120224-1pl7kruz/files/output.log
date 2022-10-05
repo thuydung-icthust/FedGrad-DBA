@@ -1,0 +1,263 @@
+current path: saved_models/model_cifar_Oct.05_12.02.22
+Loading data
+0.0%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+100.0%
+Extracting ./data/cifar-10-python.tar.gz to ./data
+build_classes_dict done
+train loaders done
+get poison test loader
+Starting performing KrMLRFL...
+load data done
+Loaded parameters from saved model: LR is 0.1 and current epoch is 201
+create model done
+Poisoned following participants: [17, 33, 77, 11]
+We use following environment for graphs:  cifar
+Server Epoch:201 choose agents : [34, 50, 36, 99, 54, 60, 45, 47, 69, 84].
+poison local model 34 index 0
+___Train Local_ResNet_18,  epoch 201, local model 34, internal_epoch   1,  Average loss: 0.0068, Accuracy: 304/349 (87.1060%)
+___Train Local_ResNet_18,  epoch 201, local model 34, internal_epoch   2,  Average loss: 0.0049, Accuracy: 327/349 (93.6963%)
+___Test Local_ResNet_18 poisoned: False, epoch: 201: Average loss: 3.3984, Accuracy: 3413/10000 (34.1300%)
+___Train Local_ResNet_18,  epoch 201, local model 50, internal_epoch   1,  Average loss: 0.0040, Accuracy: 377/401 (94.0150%)
+___Train Local_ResNet_18,  epoch 201, local model 50, internal_epoch   2,  Average loss: 0.0023, Accuracy: 391/401 (97.5062%)
+___Test Local_ResNet_18 poisoned: False, epoch: 201: Average loss: 3.2109, Accuracy: 3976/10000 (39.7600%)
+___Train Local_ResNet_18,  epoch 201, local model 36, internal_epoch   1,  Average loss: 0.0108, Accuracy: 675/849 (79.5053%)
+___Train Local_ResNet_18,  epoch 201, local model 36, internal_epoch   2,  Average loss: 0.0176, Accuracy: 559/849 (65.8422%)
+___Test Local_ResNet_18 poisoned: False, epoch: 201: Average loss: 32.3965, Accuracy: 1399/10000 (13.9900%)
+___Train Local_ResNet_18,  epoch 201, local model 99, internal_epoch   1,  Average loss: 0.0052, Accuracy: 356/391 (91.0486%)
+___Train Local_ResNet_18,  epoch 201, local model 99, internal_epoch   2,  Average loss: 0.0057, Accuracy: 366/391 (93.6061%)
+___Test Local_ResNet_18 poisoned: False, epoch: 201: Average loss: 6.1703, Accuracy: 2530/10000 (25.3000%)
+___Train Local_ResNet_18,  epoch 201, local model 54, internal_epoch   1,  Average loss: 0.0028, Accuracy: 410/440 (93.1818%)
+___Train Local_ResNet_18,  epoch 201, local model 54, internal_epoch   2,  Average loss: 0.0012, Accuracy: 431/440 (97.9545%)
+___Test Local_ResNet_18 poisoned: False, epoch: 201: Average loss: 2.5125, Accuracy: 4978/10000 (49.7800%)
+___Train Local_ResNet_18,  epoch 201, local model 60, internal_epoch   1,  Average loss: 0.0054, Accuracy: 256/284 (90.1408%)
+___Train Local_ResNet_18,  epoch 201, local model 60, internal_epoch   2,  Average loss: 0.0014, Accuracy: 281/284 (98.9437%)
+___Test Local_ResNet_18 poisoned: False, epoch: 201: Average loss: 3.1943, Accuracy: 4079/10000 (40.7900%)
+poison local model 45 index 1
+___Train Local_ResNet_18,  epoch 201, local model 45, internal_epoch   1,  Average loss: 0.0068, Accuracy: 460/529 (86.9565%)
+___Train Local_ResNet_18,  epoch 201, local model 45, internal_epoch   2,  Average loss: 0.0058, Accuracy: 469/529 (88.6578%)
+___Test Local_ResNet_18 poisoned: False, epoch: 201: Average loss: 4.5869, Accuracy: 3133/10000 (31.3300%)
+___Train Local_ResNet_18,  epoch 201, local model 47, internal_epoch   1,  Average loss: 0.0032, Accuracy: 619/654 (94.6483%)
+___Train Local_ResNet_18,  epoch 201, local model 47, internal_epoch   2,  Average loss: 0.0053, Accuracy: 598/654 (91.4373%)
+___Test Local_ResNet_18 poisoned: False, epoch: 201: Average loss: 2.5983, Accuracy: 4863/10000 (48.6300%)
+___Train Local_ResNet_18,  epoch 201, local model 69, internal_epoch   1,  Average loss: 0.0073, Accuracy: 188/216 (87.0370%)
+___Train Local_ResNet_18,  epoch 201, local model 69, internal_epoch   2,  Average loss: 0.0009, Accuracy: 213/216 (98.6111%)
+___Test Local_ResNet_18 poisoned: False, epoch: 201: Average loss: 8.1235, Accuracy: 1279/10000 (12.7900%)
+___Train Local_ResNet_18,  epoch 201, local model 84, internal_epoch   1,  Average loss: 0.0029, Accuracy: 998/1053 (94.7768%)
+___Train Local_ResNet_18,  epoch 201, local model 84, internal_epoch   2,  Average loss: 0.0079, Accuracy: 892/1053 (84.7104%)
+___Test Local_ResNet_18 poisoned: False, epoch: 201: Average loss: 8.0582, Accuracy: 2254/10000 (22.5400%)
+time spent on training: 123.04720520973206
+Traceback (most recent call last):
+  File "dba.py", line 194, in <module>
+    helper.average_shrink_models(weight_accumulator, pseudo_avg_net, 10)
+  File "/home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/helper.py", line 260, in average_shrink_models
+    data.add_(update_per_layer)
+RuntimeError: result type Float can't be cast to the desired output type Long

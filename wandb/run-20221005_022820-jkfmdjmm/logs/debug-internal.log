@@ -1,0 +1,236 @@
+2022-10-05 02:28:20,382 INFO    StreamThr :65656 [internal.py:wandb_internal():88] W&B internal server running at pid: 65656, started at: 2022-10-05 02:28:20.381956
+2022-10-05 02:28:20,386 DEBUG   HandlerThread:65656 [handler.py:handle_request():138] handle_request: status
+2022-10-05 02:28:20,387 DEBUG   SenderThread:65656 [sender.py:send_request():315] send_request: status
+2022-10-05 02:28:20,394 DEBUG   SenderThread:65656 [sender.py:send():301] send: header
+2022-10-05 02:28:20,394 INFO    WriterThread:65656 [datastore.py:open_for_write():75] open: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_022820-jkfmdjmm/run-jkfmdjmm.wandb
+2022-10-05 02:28:20,421 DEBUG   SenderThread:65656 [sender.py:send():301] send: run
+2022-10-05 02:28:21,117 INFO    SenderThread:65656 [dir_watcher.py:__init__():216] watching files in: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_022820-jkfmdjmm/files
+2022-10-05 02:28:21,117 INFO    SenderThread:65656 [sender.py:_start_run_threads():912] run started: jkfmdjmm with start time 1664908100.382335
+2022-10-05 02:28:21,118 DEBUG   SenderThread:65656 [sender.py:send():301] send: summary
+2022-10-05 02:28:21,118 INFO    SenderThread:65656 [sender.py:_save_file():1155] saving file wandb-summary.json with policy end
+2022-10-05 02:28:21,130 DEBUG   HandlerThread:65656 [handler.py:handle_request():138] handle_request: check_version
+2022-10-05 02:28:21,130 DEBUG   SenderThread:65656 [sender.py:send_request():315] send_request: check_version
+2022-10-05 02:28:21,470 DEBUG   HandlerThread:65656 [handler.py:handle_request():138] handle_request: run_start
+2022-10-05 02:28:21,486 DEBUG   HandlerThread:65656 [meta.py:__init__():34] meta init
+2022-10-05 02:28:21,486 DEBUG   HandlerThread:65656 [meta.py:__init__():49] meta init done
+2022-10-05 02:28:21,486 DEBUG   HandlerThread:65656 [meta.py:probe():215] probe
+2022-10-05 02:28:21,493 DEBUG   HandlerThread:65656 [meta.py:_setup_git():205] setup git
+2022-10-05 02:28:21,517 DEBUG   HandlerThread:65656 [meta.py:_setup_git():212] setup git done
+2022-10-05 02:28:21,517 DEBUG   HandlerThread:65656 [meta.py:_save_pip():53] save pip
+2022-10-05 02:28:21,519 DEBUG   HandlerThread:65656 [meta.py:_save_pip():67] save pip done
+2022-10-05 02:28:21,519 DEBUG   HandlerThread:65656 [meta.py:_save_conda():74] save conda
+2022-10-05 02:28:22,120 INFO    Thread-13 :65656 [dir_watcher.py:_on_file_created():275] file/dir created: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_022820-jkfmdjmm/files/wandb-summary.json
+2022-10-05 02:28:22,121 INFO    Thread-13 :65656 [dir_watcher.py:_on_file_created():275] file/dir created: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_022820-jkfmdjmm/files/conda-environment.yaml
+2022-10-05 02:28:22,121 INFO    Thread-13 :65656 [dir_watcher.py:_on_file_created():275] file/dir created: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_022820-jkfmdjmm/files/requirements.txt
+2022-10-05 02:28:23,932 DEBUG   HandlerThread:65656 [meta.py:_save_conda():84] save conda done
+2022-10-05 02:28:23,932 DEBUG   HandlerThread:65656 [meta.py:probe():253] probe done
+2022-10-05 02:28:23,940 DEBUG   SenderThread:65656 [sender.py:send():301] send: files
+2022-10-05 02:28:23,941 INFO    SenderThread:65656 [sender.py:_save_file():1155] saving file wandb-metadata.json with policy now
+2022-10-05 02:28:23,953 DEBUG   HandlerThread:65656 [handler.py:handle_request():138] handle_request: stop_status
+2022-10-05 02:28:23,954 DEBUG   SenderThread:65656 [sender.py:send_request():315] send_request: stop_status
+2022-10-05 02:28:24,122 INFO    Thread-13 :65656 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_022820-jkfmdjmm/files/conda-environment.yaml
+2022-10-05 02:28:24,123 INFO    Thread-13 :65656 [dir_watcher.py:_on_file_created():275] file/dir created: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_022820-jkfmdjmm/files/wandb-metadata.json
+2022-10-05 02:28:24,284 DEBUG   SenderThread:65656 [sender.py:send():301] send: telemetry
+2022-10-05 02:28:24,762 INFO    Thread-17 :65656 [upload_job.py:push():139] Uploaded file /tmp/tmpwmj9bxqwwandb/3a0gydvw-wandb-metadata.json
+2022-10-05 02:28:25,123 INFO    Thread-13 :65656 [dir_watcher.py:_on_file_created():275] file/dir created: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_022820-jkfmdjmm/files/output.log
+2022-10-05 02:28:27,124 INFO    Thread-13 :65656 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_022820-jkfmdjmm/files/output.log
+2022-10-05 02:28:31,126 INFO    Thread-13 :65656 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_022820-jkfmdjmm/files/output.log
+2022-10-05 02:28:33,127 INFO    Thread-13 :65656 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_022820-jkfmdjmm/files/output.log
+2022-10-05 02:28:35,128 INFO    Thread-13 :65656 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_022820-jkfmdjmm/files/output.log
+2022-10-05 02:28:39,130 INFO    Thread-13 :65656 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_022820-jkfmdjmm/files/output.log
+2022-10-05 02:28:39,288 DEBUG   HandlerThread:65656 [handler.py:handle_request():138] handle_request: stop_status
+2022-10-05 02:28:39,288 DEBUG   SenderThread:65656 [sender.py:send_request():315] send_request: stop_status
+2022-10-05 02:28:41,131 INFO    Thread-13 :65656 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_022820-jkfmdjmm/files/output.log
+2022-10-05 02:28:43,133 INFO    Thread-13 :65656 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_022820-jkfmdjmm/files/output.log
+2022-10-05 02:28:47,135 INFO    Thread-13 :65656 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_022820-jkfmdjmm/files/output.log
+2022-10-05 02:28:49,930 DEBUG   SenderThread:65656 [sender.py:send():301] send: stats
+2022-10-05 02:28:51,136 INFO    Thread-13 :65656 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_022820-jkfmdjmm/files/output.log
+2022-10-05 02:28:51,137 INFO    Thread-13 :65656 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_022820-jkfmdjmm/files/config.yaml
+2022-10-05 02:28:53,137 INFO    Thread-13 :65656 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_022820-jkfmdjmm/files/output.log
+2022-10-05 02:28:54,612 DEBUG   HandlerThread:65656 [handler.py:handle_request():138] handle_request: stop_status
+2022-10-05 02:28:54,612 DEBUG   SenderThread:65656 [sender.py:send_request():315] send_request: stop_status
+2022-10-05 02:28:57,139 INFO    Thread-13 :65656 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_022820-jkfmdjmm/files/output.log
+2022-10-05 02:28:59,140 INFO    Thread-13 :65656 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_022820-jkfmdjmm/files/output.log
+2022-10-05 02:29:01,141 INFO    Thread-13 :65656 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_022820-jkfmdjmm/files/output.log
+2022-10-05 02:29:03,142 INFO    Thread-13 :65656 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_022820-jkfmdjmm/files/output.log
+2022-10-05 02:29:07,143 INFO    Thread-13 :65656 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_022820-jkfmdjmm/files/output.log
+2022-10-05 02:29:09,938 DEBUG   HandlerThread:65656 [handler.py:handle_request():138] handle_request: stop_status
+2022-10-05 02:29:09,964 DEBUG   SenderThread:65656 [sender.py:send_request():315] send_request: stop_status
+2022-10-05 02:29:11,145 INFO    Thread-13 :65656 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_022820-jkfmdjmm/files/output.log
+2022-10-05 02:29:13,146 INFO    Thread-13 :65656 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_022820-jkfmdjmm/files/output.log
+2022-10-05 02:29:15,147 INFO    Thread-13 :65656 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_022820-jkfmdjmm/files/output.log
+2022-10-05 02:29:17,148 INFO    Thread-13 :65656 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_022820-jkfmdjmm/files/output.log
+2022-10-05 02:29:20,396 DEBUG   SenderThread:65656 [sender.py:send():301] send: stats
+2022-10-05 02:29:21,150 INFO    Thread-13 :65656 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_022820-jkfmdjmm/files/output.log
+2022-10-05 02:29:23,151 INFO    Thread-13 :65656 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_022820-jkfmdjmm/files/output.log
+2022-10-05 02:29:25,152 INFO    Thread-13 :65656 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_022820-jkfmdjmm/files/output.log
+2022-10-05 02:29:25,313 DEBUG   HandlerThread:65656 [handler.py:handle_request():138] handle_request: stop_status
+2022-10-05 02:29:25,314 DEBUG   SenderThread:65656 [sender.py:send_request():315] send_request: stop_status
+2022-10-05 02:29:27,153 INFO    Thread-13 :65656 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_022820-jkfmdjmm/files/output.log
+2022-10-05 02:29:29,154 INFO    Thread-13 :65656 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_022820-jkfmdjmm/files/output.log
+2022-10-05 02:29:31,155 INFO    Thread-13 :65656 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_022820-jkfmdjmm/files/output.log
+2022-10-05 02:29:40,649 DEBUG   HandlerThread:65656 [handler.py:handle_request():138] handle_request: stop_status
+2022-10-05 02:29:40,649 DEBUG   SenderThread:65656 [sender.py:send_request():315] send_request: stop_status
+2022-10-05 02:29:50,672 DEBUG   SenderThread:65656 [sender.py:send():301] send: stats
+2022-10-05 02:29:55,980 DEBUG   HandlerThread:65656 [handler.py:handle_request():138] handle_request: stop_status
+2022-10-05 02:29:55,980 DEBUG   SenderThread:65656 [sender.py:send_request():315] send_request: stop_status
+2022-10-05 02:30:11,313 DEBUG   HandlerThread:65656 [handler.py:handle_request():138] handle_request: stop_status
+2022-10-05 02:30:11,313 DEBUG   SenderThread:65656 [sender.py:send_request():315] send_request: stop_status
+2022-10-05 02:30:20,958 WARNING FileStreamThread:65656 [file_stream.py:request_with_retry():667] requests_with_retry encountered retryable exception: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')). func: <bound method Session.post of <requests.sessions.Session object at 0x7f907cd740a0>>, args: ('https://api.wandb.ai/files/aiotlab/Backdoor attack in FL/jkfmdjmm/file_stream',), kwargs: {'json': {'complete': False, 'failed': False, 'dropped': 0, 'uploaded': []}}
+2022-10-05 02:30:21,117 DEBUG   SenderThread:65656 [sender.py:send():301] send: stats
+2022-10-05 02:30:26,678 DEBUG   HandlerThread:65656 [handler.py:handle_request():138] handle_request: stop_status
+2022-10-05 02:30:26,678 DEBUG   SenderThread:65656 [sender.py:send_request():315] send_request: stop_status
+2022-10-05 02:30:42,018 DEBUG   HandlerThread:65656 [handler.py:handle_request():138] handle_request: stop_status
+2022-10-05 02:30:42,018 DEBUG   SenderThread:65656 [sender.py:send_request():315] send_request: stop_status
+2022-10-05 02:30:51,505 DEBUG   SenderThread:65656 [sender.py:send():301] send: stats
+2022-10-05 02:30:57,380 DEBUG   HandlerThread:65656 [handler.py:handle_request():138] handle_request: stop_status
+2022-10-05 02:30:57,381 DEBUG   SenderThread:65656 [sender.py:send_request():315] send_request: stop_status
+2022-10-05 02:31:12,713 DEBUG   HandlerThread:65656 [handler.py:handle_request():138] handle_request: stop_status
+2022-10-05 02:31:12,713 DEBUG   SenderThread:65656 [sender.py:send_request():315] send_request: stop_status
+2022-10-05 02:31:21,816 DEBUG   SenderThread:65656 [sender.py:send():301] send: stats
+2022-10-05 02:31:28,050 DEBUG   HandlerThread:65656 [handler.py:handle_request():138] handle_request: stop_status
+2022-10-05 02:31:28,050 DEBUG   SenderThread:65656 [sender.py:send_request():315] send_request: stop_status
+2022-10-05 02:31:43,372 DEBUG   HandlerThread:65656 [handler.py:handle_request():138] handle_request: stop_status
+2022-10-05 02:31:43,373 DEBUG   SenderThread:65656 [sender.py:send_request():315] send_request: stop_status
+2022-10-05 02:31:52,097 DEBUG   SenderThread:65656 [sender.py:send():301] send: stats
+2022-10-05 02:31:52,126 WARNING FileStreamThread:65656 [file_stream.py:request_with_retry():667] requests_with_retry encountered retryable exception: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')). func: <bound method Session.post of <requests.sessions.Session object at 0x7f907cd740a0>>, args: ('https://api.wandb.ai/files/aiotlab/Backdoor attack in FL/jkfmdjmm/file_stream',), kwargs: {'json': {'files': {'wandb-events.jsonl': {'offset': 6, 'content': ['{"system.gpu.0.gpu": 0.0, "system.gpu.0.memory": 0.0, "system.gpu.0.memoryAllocated": 15.63, "system.gpu.0.temp": 46.13, "system.gpu.0.powerWatts": 109.21, "system.gpu.0.powerPercent": 31.2, "system.gpu.1.gpu": 0.13, "system.gpu.1.memory": 0.0, "system.gpu.1.memoryAllocated": 8.33, "system.gpu.1.temp": 50.4, "system.gpu.1.powerWatts": 113.38, "system.gpu.1.powerPercent": 32.39, "system.gpu.2.gpu": 0.13, "system.gpu.2.memory": 0.0, "system.gpu.2.memoryAllocated": 8.29, "system.gpu.2.temp": 39.8, "system.gpu.2.powerWatts": 110.59, "system.gpu.2.powerPercent": 31.6, "system.gpu.3.gpu": 0.0, "system.gpu.3.memory": 0.0, "system.gpu.3.memoryAllocated": 1.27, "system.gpu.3.temp": 29.27, "system.gpu.3.powerWatts": 19.42, "system.gpu.3.powerPercent": 5.55, "system.cpu": 85.92, "system.memory": 18.51, "system.disk": 84.7, "system.proc.memory.availableMB": 209856.86, "system.proc.memory.rssMB": 4721.45, "system.proc.memory.percent": 1.83, "system.proc.cpu.threads": 46.0, "system.network.sent": 1424248, "system.network.recv": 1337946, "_wandb": true, "_timestamp": 1664908312.096262, "_runtime": 211.713927}']}}, 'dropped': 0}}
+2022-10-05 02:31:58,804 DEBUG   HandlerThread:65656 [handler.py:handle_request():138] handle_request: stop_status
+2022-10-05 02:31:58,805 DEBUG   SenderThread:65656 [sender.py:send_request():315] send_request: stop_status
+2022-10-05 02:32:14,164 DEBUG   HandlerThread:65656 [handler.py:handle_request():138] handle_request: stop_status
+2022-10-05 02:32:14,165 DEBUG   SenderThread:65656 [sender.py:send_request():315] send_request: stop_status
+2022-10-05 02:32:22,394 DEBUG   SenderThread:65656 [sender.py:send():301] send: stats
+2022-10-05 02:32:29,498 DEBUG   HandlerThread:65656 [handler.py:handle_request():138] handle_request: stop_status
+2022-10-05 02:32:29,498 DEBUG   SenderThread:65656 [sender.py:send_request():315] send_request: stop_status
+2022-10-05 02:32:44,825 DEBUG   HandlerThread:65656 [handler.py:handle_request():138] handle_request: stop_status
+2022-10-05 02:32:44,825 DEBUG   SenderThread:65656 [sender.py:send_request():315] send_request: stop_status
+2022-10-05 02:32:52,693 WARNING FileStreamThread:65656 [file_stream.py:request_with_retry():667] requests_with_retry encountered retryable exception: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')). func: <bound method Session.post of <requests.sessions.Session object at 0x7f907cd740a0>>, args: ('https://api.wandb.ai/files/aiotlab/Backdoor attack in FL/jkfmdjmm/file_stream',), kwargs: {'json': {'complete': False, 'failed': False, 'dropped': 0, 'uploaded': []}}
+2022-10-05 02:32:52,701 DEBUG   SenderThread:65656 [sender.py:send():301] send: stats
+2022-10-05 02:32:56,324 DEBUG   HandlerThread:65656 [handler.py:handle_request():138] handle_request: partial_history
+2022-10-05 02:32:56,325 DEBUG   SenderThread:65656 [sender.py:send():301] send: history
+2022-10-05 02:32:56,326 DEBUG   SenderThread:65656 [sender.py:send():301] send: summary
+2022-10-05 02:32:56,327 INFO    SenderThread:65656 [sender.py:_save_file():1155] saving file wandb-summary.json with policy end
+2022-10-05 02:32:57,259 INFO    Thread-13 :65656 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_022820-jkfmdjmm/files/wandb-summary.json
+2022-10-05 02:32:59,260 INFO    Thread-13 :65656 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_022820-jkfmdjmm/files/output.log
+2022-10-05 02:33:00,171 DEBUG   HandlerThread:65656 [handler.py:handle_request():138] handle_request: stop_status
+2022-10-05 02:33:00,172 DEBUG   SenderThread:65656 [sender.py:send_request():315] send_request: stop_status
+2022-10-05 02:33:01,264 INFO    Thread-13 :65656 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_022820-jkfmdjmm/files/output.log
+2022-10-05 02:33:15,642 DEBUG   HandlerThread:65656 [handler.py:handle_request():138] handle_request: stop_status
+2022-10-05 02:33:15,642 DEBUG   SenderThread:65656 [sender.py:send_request():315] send_request: stop_status
+2022-10-05 02:33:17,270 INFO    Thread-13 :65656 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_022820-jkfmdjmm/files/output.log
+2022-10-05 02:33:23,187 DEBUG   SenderThread:65656 [sender.py:send():301] send: stats
+2022-10-05 02:33:30,982 DEBUG   HandlerThread:65656 [handler.py:handle_request():138] handle_request: stop_status
+2022-10-05 02:33:30,982 DEBUG   SenderThread:65656 [sender.py:send_request():315] send_request: stop_status
+2022-10-05 02:33:35,289 INFO    Thread-13 :65656 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_022820-jkfmdjmm/files/output.log
+2022-10-05 02:33:37,289 INFO    Thread-13 :65656 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_022820-jkfmdjmm/files/output.log
+2022-10-05 02:33:39,292 INFO    Thread-13 :65656 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_022820-jkfmdjmm/files/output.log
+2022-10-05 02:33:41,292 INFO    Thread-13 :65656 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_022820-jkfmdjmm/files/output.log
+2022-10-05 02:33:42,736 WARNING FileStreamThread:65656 [file_stream.py:request_with_retry():667] requests_with_retry encountered retryable exception: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')). func: <bound method Session.post of <requests.sessions.Session object at 0x7f907cd740a0>>, args: ('https://api.wandb.ai/files/aiotlab/Backdoor attack in FL/jkfmdjmm/file_stream',), kwargs: {'json': {'files': {'wandb-events.jsonl': {'offset': 9, 'content': ['{"system.gpu.0.gpu": 2.27, "system.gpu.0.memory": 0.0, "system.gpu.0.memoryAllocated": 24.94, "system.gpu.0.temp": 41.93, "system.gpu.0.powerWatts": 112.25, "system.gpu.0.powerPercent": 32.07, "system.gpu.1.gpu": 0.27, "system.gpu.1.memory": 0.0, "system.gpu.1.memoryAllocated": 8.33, "system.gpu.1.temp": 51.0, "system.gpu.1.powerWatts": 113.28, "system.gpu.1.powerPercent": 32.36, "system.gpu.2.gpu": 0.27, "system.gpu.2.memory": 0.0, "system.gpu.2.memoryAllocated": 8.33, "system.gpu.2.temp": 44.53, "system.gpu.2.powerWatts": 112.53, "system.gpu.2.powerPercent": 32.15, "system.gpu.3.gpu": 0.0, "system.gpu.3.memory": 0.0, "system.gpu.3.memoryAllocated": 1.27, "system.gpu.3.temp": 30.6, "system.gpu.3.powerWatts": 20.21, "system.gpu.3.powerPercent": 5.77, "system.cpu": 86.69, "system.memory": 20.25, "system.disk": 84.7, "system.proc.memory.availableMB": 205465.89, "system.proc.memory.rssMB": 4721.47, "system.proc.memory.percent": 1.83, "system.proc.cpu.threads": 47.2, "system.network.sent": 1572707, "system.network.recv": 1521390, "_wandb": true, "_timestamp": 1664908403.185401, "_runtime": 302.803066}']}, 'output.log': {'offset': 231, 'content': ['ERROR 2022-10-04T18:33:16.672288 ___Test Local_Simple poisoned: True, epoch: 12: Average loss: 0.8211, Accuracy: 6228/8968 (69.4469%)\n', 'ERROR 2022-10-04T18:33:34.695822 ___Train Local_Simple,  epoch  12, local model 59, internal_epoch   1,  Average loss: 0.0019, Accuracy: 735/760 (96.7105%)\n', 'ERROR 2022-10-04T18:33:34.695822 ___Train Local_Simple,  epoch  12, local model 59, internal_epoch   2,  Average loss: 0.0011, Accuracy: 745/760 (98.0263%)\n', 'ERROR 2022-10-04T18:33:34.695822 ___Test Local_Simple poisoned: False, epoch: 12: Average loss: 0.2241, Accuracy: 9273/10000 (92.7300%)\n', 'ERROR 2022-10-04T18:33:36.699477 ___Train Local_Simple,  epoch  12, local model 62, internal_epoch   1,  Average loss: 0.0014, Accuracy: 412/423 (97.3995%)\n', 'ERROR 2022-10-04T18:33:36.699477 ___Train Local_Simple,  epoch  12, local model 62, internal_epoch   2,  Average loss: 0.0014, Accuracy: 409/423 (96.6903%)\n', 'ERROR 2022-10-04T18:33:36.699477 ___Test Local_Simple poisoned: False, epoch: 12: Average loss: 0.1414, Accuracy: 9520/10000 (95.2000%)\n', 'ERROR 2022-10-04T18:33:38.702911 ___Train Local_Simple,  epoch  12, local model 28, internal_epoch   1,  Average loss: 0.0015, Accuracy: 486/501 (97.0060%)\n', 'ERROR 2022-10-04T18:33:38.702911 ___Train Local_Simple,  epoch  12, local model 28, internal_epoch   2,  Average loss: 0.0009, Accuracy: 492/501 (98.2036%)\n', 'ERROR 2022-10-04T18:33:38.702911 ___Test Local_Simple poisoned: False, epoch: 12: Average loss: 0.1615, Accuracy: 9457/10000 (94.5700%)\n', 'ERROR 2022-10-04T18:33:40.705260 ___Train Local_Simple,  epoch  12, local model 65, internal_epoch   1,  Average loss: 0.0011, Accuracy: 361/371 (97.3046%)\n', 'ERROR 2022-10-04T18:33:40.705260 ___Train Local_Simple,  epoch  12, local model 65, internal_epoch   2,  Average loss: 0.0005, Accuracy: 367/371 (98.9218%)\n', 'ERROR 2022-10-04T18:33:40.705260 ___Test Local_Simple poisoned: False, epoch: 12: Average loss: 0.5269, Accuracy: 8687/10000 (86.8700%)\n', 'ERROR 2022-10-04T18:33:40.705260 poison local model 22 index 1\n', 'ERROR 2022-10-04T18:33:42.707972 ___PoisonTrain Local_Simple ,  epoch  12, local model 22, internal_epoch   1,  Average loss: 0.0273, Accuracy: 329/583 (56.4322%), train_poison_data_count: 187\n']}}, 'dropped': 0}}
+2022-10-05 02:33:43,320 INFO    Thread-13 :65656 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_022820-jkfmdjmm/files/output.log
+2022-10-05 02:33:45,321 INFO    Thread-13 :65656 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_022820-jkfmdjmm/files/output.log
+2022-10-05 02:33:46,329 DEBUG   HandlerThread:65656 [handler.py:handle_request():138] handle_request: stop_status
+2022-10-05 02:33:46,329 DEBUG   SenderThread:65656 [sender.py:send_request():315] send_request: stop_status
+2022-10-05 02:33:53,683 DEBUG   SenderThread:65656 [sender.py:send():301] send: stats
+2022-10-05 02:33:57,330 INFO    Thread-13 :65656 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_022820-jkfmdjmm/files/output.log
+2022-10-05 02:34:01,678 DEBUG   HandlerThread:65656 [handler.py:handle_request():138] handle_request: stop_status
+2022-10-05 02:34:01,678 DEBUG   SenderThread:65656 [sender.py:send_request():315] send_request: stop_status
+2022-10-05 02:34:09,336 INFO    Thread-13 :65656 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_022820-jkfmdjmm/files/output.log
+2022-10-05 02:34:11,337 INFO    Thread-13 :65656 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_022820-jkfmdjmm/files/output.log
+2022-10-05 02:34:13,338 INFO    Thread-13 :65656 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_022820-jkfmdjmm/files/output.log
+2022-10-05 02:34:15,339 INFO    Thread-13 :65656 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_022820-jkfmdjmm/files/output.log
+2022-10-05 02:34:17,014 DEBUG   HandlerThread:65656 [handler.py:handle_request():138] handle_request: stop_status
+2022-10-05 02:34:17,014 DEBUG   SenderThread:65656 [sender.py:send_request():315] send_request: stop_status
+2022-10-05 02:34:17,340 INFO    Thread-13 :65656 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_022820-jkfmdjmm/files/output.log
+2022-10-05 02:34:24,018 DEBUG   SenderThread:65656 [sender.py:send():301] send: stats
+2022-10-05 02:34:29,345 INFO    Thread-13 :65656 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_022820-jkfmdjmm/files/output.log
+2022-10-05 02:34:32,349 DEBUG   HandlerThread:65656 [handler.py:handle_request():138] handle_request: stop_status
+2022-10-05 02:34:32,349 DEBUG   SenderThread:65656 [sender.py:send_request():315] send_request: stop_status
+2022-10-05 02:34:42,822 WARNING FileStreamThread:65656 [file_stream.py:request_with_retry():667] requests_with_retry encountered retryable exception: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')). func: <bound method Session.post of <requests.sessions.Session object at 0x7f907cd740a0>>, args: ('https://api.wandb.ai/files/aiotlab/Backdoor attack in FL/jkfmdjmm/file_stream',), kwargs: {'json': {'files': {'wandb-events.jsonl': {'offset': 11, 'content': ['{"system.gpu.0.gpu": 0.07, "system.gpu.0.memory": 0.0, "system.gpu.0.memoryAllocated": 15.63, "system.gpu.0.temp": 44.53, "system.gpu.0.powerWatts": 80.87, "system.gpu.0.powerPercent": 23.11, "system.gpu.1.gpu": 1.67, "system.gpu.1.memory": 0.2, "system.gpu.1.memoryAllocated": 8.38, "system.gpu.1.temp": 51.0, "system.gpu.1.powerWatts": 114.27, "system.gpu.1.powerPercent": 32.65, "system.gpu.2.gpu": 0.73, "system.gpu.2.memory": 0.0, "system.gpu.2.memoryAllocated": 8.33, "system.gpu.2.temp": 45.53, "system.gpu.2.powerWatts": 113.45, "system.gpu.2.powerPercent": 32.41, "system.gpu.3.gpu": 0.0, "system.gpu.3.memory": 0.0, "system.gpu.3.memoryAllocated": 1.27, "system.gpu.3.temp": 31.0, "system.gpu.3.powerWatts": 19.9, "system.gpu.3.powerPercent": 5.69, "system.cpu": 81.6, "system.memory": 18.54, "system.disk": 84.7, "system.proc.memory.availableMB": 209812.4, "system.proc.memory.rssMB": 4721.46, "system.proc.memory.percent": 1.83, "system.proc.cpu.threads": 47.13, "system.network.sent": 1704564, "system.network.recv": 1671227, "_wandb": true, "_timestamp": 1664908464.017054, "_runtime": 363.634719}']}, 'output.log': {'offset': 281, 'content': ['2022-10-04T18:34:13.079866 class_loss: 4.4848504066467285, distance_loss: 0.0\n', '2022-10-04T18:34:13.079866 class_loss: 2.4960033893585205, distance_loss: 0.41819486021995544\n', '2022-10-04T18:34:15.086290 class_loss: 1.910090684890747, distance_loss: 0.9775446653366089\n', '2022-10-04T18:34:15.086290 class_loss: 1.8231674432754517, distance_loss: 1.4826228618621826\n', '2022-10-04T18:34:15.086290 class_loss: 1.7029972076416016, distance_loss: 1.9186687469482422\n', '2022-10-04T18:34:15.086290 class_loss: 1.5105408430099487, distance_loss: 2.3259897232055664\n', '2022-10-04T18:34:15.086290 class_loss: 1.5092912912368774, distance_loss: 2.6939034461975098\n', '2022-10-04T18:34:15.086290 class_loss: 1.4894262552261353, distance_loss: 3.0237419605255127\n', '2022-10-04T18:34:15.086290 class_loss: 1.3037667274475098, distance_loss: 3.3209986686706543\n', '2022-10-04T18:34:15.086290 class_loss: 1.1826348304748535, distance_loss: 3.5949625968933105\n', '2022-10-04T18:34:15.086290 class_loss: 1.3414409160614014, distance_loss: 3.848747730255127\n', '2022-10-04T18:34:15.086290 class_loss: 1.045551061630249, distance_loss: 4.074604511260986\n', '2022-10-04T18:34:15.086290 class_loss: 1.2727607488632202, distance_loss: 4.275721549987793\n', '2022-10-04T18:34:15.086290 class_loss: 1.1280889511108398, distance_loss: 4.453254699707031\n', '2022-10-04T18:34:15.086290 class_loss: 1.0525333881378174, distance_loss: 4.612661838531494\n', '2022-10-04T18:34:15.086290 class_loss: 1.1955198049545288, distance_loss: 4.760619640350342\n', '2022-10-04T18:34:15.086290 class_loss: 0.9680412411689758, distance_loss: 4.899282455444336\n', '2022-10-04T18:34:15.086290 class_loss: 0.9901523590087891, distance_loss: 5.027608394622803\n', '2022-10-04T18:34:15.086290 class_loss: 0.9413684010505676, distance_loss: 5.146174430847168\n', '2022-10-04T18:34:15.086290 class_loss: 1.2449889183044434, distance_loss: 5.25862979888916\n', 'ERROR 2022-10-04T18:34:16.756583 ___PoisonTrain Local_Simple ,  epoch  12, local model 81, internal_epoch   1,  Average loss: 0.0249, Accuracy: 596/1227 (48.5738%), train_poison_data_count: 391\n', 'ERROR 2022-10-04T18:34:16.756583 ___PoisonTrain Local_Simple ,  epoch  12, local model 81, internal_epoch   2,  Average loss: 0.0144, Accuracy: 746/1227 (60.7987%), train_poison_data_count: 391\n', 'ERROR 2022-10-04T18:34:16.756583 Global model norm: 16.483873289166027.\n', 'ERROR 2022-10-04T18:34:16.756583 Norm before scaling: 17.159963737396126. Distance: 6.413416282820572\n', 'ERROR 2022-10-04T18:34:16.756583 Total norm for 3 adversaries is: 17.159963737396126. distance: 6.413416282820572\n', '2022-10-04T18:34:17.090262 class_loss: 0.9148592948913574, distance_loss: 5.366633415222168\n', '2022-10-04T18:34:17.090262 class_loss: 1.0793617963790894, distance_loss: 5.470197677612305\n', '2022-10-04T18:34:17.090262 class_loss: 1.0601943731307983, distance_loss: 5.564065456390381\n', '2022-10-04T18:34:17.090262 class_loss: 1.0077050924301147, distance_loss: 5.648239612579346\n', '2022-10-04T18:34:17.090262 class_loss: 0.973906934261322, distance_loss: 5.724555015563965\n', '2022-10-04T18:34:17.090262 class_loss: 0.9958239197731018, distance_loss: 5.795014381408691\n', '2022-10-04T18:34:17.090262 class_loss: 0.8689332008361816, distance_loss: 5.8581318855285645\n', '2022-10-04T18:34:17.090262 class_loss: 0.7803768515586853, distance_loss: 5.914578437805176\n', '2022-10-04T18:34:17.090262 class_loss: 0.7403239011764526, distance_loss: 5.966854572296143\n', '2022-10-04T18:34:17.090262 class_loss: 0.8376144170761108, distance_loss: 6.016416549682617\n', '2022-10-04T18:34:17.090262 class_loss: 0.9445468783378601, distance_loss: 6.064080238342285\n', '2022-10-04T18:34:17.090262 class_loss: 0.9103601574897766, distance_loss: 6.107975959777832\n', '2022-10-04T18:34:17.090262 class_loss: 0.9768953919410706, distance_loss: 6.151541233062744\n', '2022-10-04T18:34:17.090262 class_loss: 0.8127078413963318, distance_loss: 6.1968674659729\n', '2022-10-04T18:34:17.090262 class_loss: 0.8754545450210571, distance_loss: 6.238396167755127\n', '2022-10-04T18:34:17.090262 class_loss: 0.8054509162902832, distance_loss: 6.275660037994385\n', '2022-10-04T18:34:17.090262 class_loss: 0.768092691898346, distance_loss: 6.3063507080078125\n', '2022-10-04T18:34:17.090262 class_loss: 0.7334809899330139, distance_loss: 6.3341169357299805\n', '2022-10-04T18:34:17.090262 class_loss: 0.7084000110626221, distance_loss: 6.360551834106445\n', '2022-10-04T18:34:17.090262 class_loss: 0.9148587584495544, distance_loss: 6.383816242218018\n', 'ERROR 2022-10-04T18:34:28.772453 ___Test Local_Simple poisoned: True, epoch: 12: Average loss: 0.3715, Accuracy: 7851/8968 (87.5446%)\n', 'ERROR 2022-10-04T18:34:42.791704 time spent on training: 104.12250185012817\n', 'ERROR 2022-10-04T18:34:42.791704 Starting performing KrMLRFL...\n', 'ERROR 2022-10-04T18:34:42.791704 Num data points: [645, 760, 423, 501, 371, 583, 303, 276, 606, 1227]\n', 'ERROR 2022-10-04T18:34:42.791704 Num selected data points: [423 501 371 303 606]\n', 'ERROR 2022-10-04T18:34:42.791704 The chosen ones are users: [2, 3, 4, 6, 8], which are global users: [62, 28, 65, 78, 41]\n', 'ERROR 2022-10-04T18:34:42.791704 ___Test Local_Simple poisoned: False, epoch: 12: Average loss: 0.1037, Accuracy: 9662/10000 (96.6200%)\n']}}, 'dropped': 0}}
+2022-10-05 02:34:43,351 INFO    Thread-13 :65656 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_022820-jkfmdjmm/files/output.log
+2022-10-05 02:34:47,683 DEBUG   HandlerThread:65656 [handler.py:handle_request():138] handle_request: stop_status
+2022-10-05 02:34:47,683 DEBUG   SenderThread:65656 [sender.py:send_request():315] send_request: stop_status
+2022-10-05 02:34:54,358 DEBUG   SenderThread:65656 [sender.py:send():301] send: stats
+2022-10-05 02:35:03,012 DEBUG   HandlerThread:65656 [handler.py:handle_request():138] handle_request: stop_status
+2022-10-05 02:35:03,012 DEBUG   SenderThread:65656 [sender.py:send_request():315] send_request: stop_status
+2022-10-05 02:35:07,361 INFO    Thread-13 :65656 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_022820-jkfmdjmm/files/output.log
+2022-10-05 02:35:18,361 DEBUG   HandlerThread:65656 [handler.py:handle_request():138] handle_request: stop_status
+2022-10-05 02:35:18,361 DEBUG   SenderThread:65656 [sender.py:send_request():315] send_request: stop_status
+2022-10-05 02:35:24,741 DEBUG   SenderThread:65656 [sender.py:send():301] send: stats
+2022-10-05 02:35:33,701 DEBUG   HandlerThread:65656 [handler.py:handle_request():138] handle_request: stop_status
+2022-10-05 02:35:33,701 DEBUG   SenderThread:65656 [sender.py:send_request():315] send_request: stop_status
+2022-10-05 02:35:49,051 DEBUG   HandlerThread:65656 [handler.py:handle_request():138] handle_request: stop_status
+2022-10-05 02:35:49,058 DEBUG   SenderThread:65656 [sender.py:send_request():315] send_request: stop_status
+2022-10-05 02:35:55,191 DEBUG   SenderThread:65656 [sender.py:send():301] send: stats
+2022-10-05 02:36:04,406 DEBUG   HandlerThread:65656 [handler.py:handle_request():138] handle_request: stop_status
+2022-10-05 02:36:04,406 DEBUG   SenderThread:65656 [sender.py:send_request():315] send_request: stop_status
+2022-10-05 02:36:19,746 DEBUG   HandlerThread:65656 [handler.py:handle_request():138] handle_request: stop_status
+2022-10-05 02:36:19,746 DEBUG   SenderThread:65656 [sender.py:send_request():315] send_request: stop_status
+2022-10-05 02:36:25,685 DEBUG   SenderThread:65656 [sender.py:send():301] send: stats
+2022-10-05 02:36:28,829 DEBUG   SenderThread:65656 [sender.py:send():301] send: exit
+2022-10-05 02:36:28,830 INFO    SenderThread:65656 [sender.py:send_exit():437] handling exit code: 255
+2022-10-05 02:36:28,830 INFO    SenderThread:65656 [sender.py:send_exit():439] handling runtime: 487
+2022-10-05 02:36:28,830 DEBUG   HandlerThread:65656 [handler.py:handle_request():138] handle_request: poll_exit
+2022-10-05 02:36:28,839 INFO    SenderThread:65656 [sender.py:_save_file():1155] saving file wandb-summary.json with policy end
+2022-10-05 02:36:28,839 INFO    SenderThread:65656 [sender.py:send_exit():445] send defer
+2022-10-05 02:36:28,839 DEBUG   SenderThread:65656 [sender.py:send_request():315] send_request: poll_exit
+2022-10-05 02:36:28,840 DEBUG   HandlerThread:65656 [handler.py:handle_request():138] handle_request: defer
+2022-10-05 02:36:28,841 INFO    HandlerThread:65656 [handler.py:handle_request_defer():161] handle defer: 0
+2022-10-05 02:36:28,841 DEBUG   SenderThread:65656 [sender.py:send_request():315] send_request: defer
+2022-10-05 02:36:28,841 INFO    SenderThread:65656 [sender.py:send_request_defer():454] handle sender defer: 0
+2022-10-05 02:36:28,841 INFO    SenderThread:65656 [sender.py:transition_state():458] send defer: 1
+2022-10-05 02:36:28,841 DEBUG   HandlerThread:65656 [handler.py:handle_request():138] handle_request: defer
+2022-10-05 02:36:28,841 INFO    HandlerThread:65656 [handler.py:handle_request_defer():161] handle defer: 1
+2022-10-05 02:36:28,929 DEBUG   SenderThread:65656 [sender.py:send_request():315] send_request: defer
+2022-10-05 02:36:28,929 INFO    SenderThread:65656 [sender.py:send_request_defer():454] handle sender defer: 1
+2022-10-05 02:36:28,929 INFO    SenderThread:65656 [sender.py:transition_state():458] send defer: 2
+2022-10-05 02:36:28,930 DEBUG   SenderThread:65656 [sender.py:send():301] send: stats
+2022-10-05 02:36:28,931 DEBUG   HandlerThread:65656 [handler.py:handle_request():138] handle_request: defer
+2022-10-05 02:36:28,931 INFO    HandlerThread:65656 [handler.py:handle_request_defer():161] handle defer: 2
+2022-10-05 02:36:28,931 DEBUG   SenderThread:65656 [sender.py:send_request():315] send_request: defer
+2022-10-05 02:36:28,931 INFO    SenderThread:65656 [sender.py:send_request_defer():454] handle sender defer: 2
+2022-10-05 02:36:28,931 INFO    SenderThread:65656 [sender.py:transition_state():458] send defer: 3
+2022-10-05 02:36:28,932 DEBUG   HandlerThread:65656 [handler.py:handle_request():138] handle_request: defer
+2022-10-05 02:36:28,932 INFO    HandlerThread:65656 [handler.py:handle_request_defer():161] handle defer: 3
+2022-10-05 02:36:28,932 DEBUG   SenderThread:65656 [sender.py:send_request():315] send_request: defer
+2022-10-05 02:36:28,932 INFO    SenderThread:65656 [sender.py:send_request_defer():454] handle sender defer: 3
+2022-10-05 02:36:28,932 INFO    SenderThread:65656 [sender.py:transition_state():458] send defer: 4
+2022-10-05 02:36:28,933 DEBUG   HandlerThread:65656 [handler.py:handle_request():138] handle_request: defer
+2022-10-05 02:36:28,933 INFO    HandlerThread:65656 [handler.py:handle_request_defer():161] handle defer: 4
+2022-10-05 02:36:28,933 DEBUG   SenderThread:65656 [sender.py:send():301] send: summary
+2022-10-05 02:36:28,934 INFO    SenderThread:65656 [sender.py:_save_file():1155] saving file wandb-summary.json with policy end
+2022-10-05 02:36:28,935 DEBUG   SenderThread:65656 [sender.py:send_request():315] send_request: defer
+2022-10-05 02:36:28,935 INFO    SenderThread:65656 [sender.py:send_request_defer():454] handle sender defer: 4
+2022-10-05 02:36:28,935 INFO    SenderThread:65656 [sender.py:transition_state():458] send defer: 5
+2022-10-05 02:36:28,936 DEBUG   HandlerThread:65656 [handler.py:handle_request():138] handle_request: defer
+2022-10-05 02:36:28,936 INFO    HandlerThread:65656 [handler.py:handle_request_defer():161] handle defer: 5
+2022-10-05 02:36:28,936 DEBUG   SenderThread:65656 [sender.py:send_request():315] send_request: defer
+2022-10-05 02:36:28,936 INFO    SenderThread:65656 [sender.py:send_request_defer():454] handle sender defer: 5
+2022-10-05 02:36:28,936 INFO    SenderThread:65656 [sender.py:transition_state():458] send defer: 6
+2022-10-05 02:36:28,937 DEBUG   HandlerThread:65656 [handler.py:handle_request():138] handle_request: defer
+2022-10-05 02:36:28,937 INFO    HandlerThread:65656 [handler.py:handle_request_defer():161] handle defer: 6
+2022-10-05 02:36:28,937 DEBUG   SenderThread:65656 [sender.py:send_request():315] send_request: defer
+2022-10-05 02:36:28,937 INFO    SenderThread:65656 [sender.py:send_request_defer():454] handle sender defer: 6
+2022-10-05 02:36:28,942 DEBUG   HandlerThread:65656 [handler.py:handle_request():138] handle_request: poll_exit
+2022-10-05 02:36:29,416 INFO    Thread-13 :65656 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_022820-jkfmdjmm/files/wandb-summary.json
+2022-10-05 02:36:31,233 INFO    SenderThread:65656 [sender.py:transition_state():458] send defer: 7
+2022-10-05 02:36:31,234 DEBUG   SenderThread:65656 [sender.py:send_request():315] send_request: poll_exit
+2022-10-05 02:36:31,235 DEBUG   HandlerThread:65656 [handler.py:handle_request():138] handle_request: defer
+2022-10-05 02:36:31,235 INFO    HandlerThread:65656 [handler.py:handle_request_defer():161] handle defer: 7
+2022-10-05 02:36:31,236 DEBUG   SenderThread:65656 [sender.py:send_request():315] send_request: defer
+2022-10-05 02:36:31,236 INFO    SenderThread:65656 [sender.py:send_request_defer():454] handle sender defer: 7
+2022-10-05 02:36:31,236 INFO    SenderThread:65656 [dir_watcher.py:finish():362] shutting down directory watcher
+2022-10-05 02:36:31,417 INFO    Thread-13 :65656 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_022820-jkfmdjmm/files/output.log
+2022-10-05 02:36:31,418 INFO    SenderThread:65656 [dir_watcher.py:finish():392] scan: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_022820-jkfmdjmm/files
+2022-10-05 02:36:31,418 INFO    SenderThread:65656 [dir_watcher.py:finish():406] scan save: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_022820-jkfmdjmm/files/wandb-metadata.json wandb-metadata.json
+2022-10-05 02:36:31,419 INFO    SenderThread:65656 [dir_watcher.py:finish():406] scan save: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_022820-jkfmdjmm/files/requirements.txt requirements.txt
+2022-10-05 02:36:31,419 INFO    SenderThread:65656 [dir_watcher.py:finish():406] scan save: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_022820-jkfmdjmm/files/wandb-summary.json wandb-summary.json
+2022-10-05 02:36:31,419 INFO    SenderThread:65656 [dir_watcher.py:finish():406] scan save: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_022820-jkfmdjmm/files/config.yaml config.yaml
+2022-10-05 02:36:31,419 INFO    SenderThread:65656 [dir_watcher.py:finish():406] scan save: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_022820-jkfmdjmm/files/conda-environment.yaml conda-environment.yaml
+2022-10-05 02:36:31,426 INFO    SenderThread:65656 [dir_watcher.py:finish():406] scan save: /home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/wandb/run-20221005_022820-jkfmdjmm/files/output.log output.log
+2022-10-05 02:36:31,430 INFO    SenderThread:65656 [sender.py:transition_state():458] send defer: 8
+2022-10-05 02:36:31,435 DEBUG   HandlerThread:65656 [handler.py:handle_request():138] handle_request: defer
+2022-10-05 02:36:31,435 INFO    HandlerThread:65656 [handler.py:handle_request_defer():161] handle defer: 8
+2022-10-05 02:36:31,440 DEBUG   SenderThread:65656 [sender.py:send_request():315] send_request: defer
+2022-10-05 02:36:31,440 INFO    SenderThread:65656 [sender.py:send_request_defer():454] handle sender defer: 8
+2022-10-05 02:36:31,441 INFO    SenderThread:65656 [file_pusher.py:finish():168] shutting down file pusher
+2022-10-05 02:36:32,091 INFO    MainThread:65656 [internal.py:handle_exit():78] Internal process exited
+2022-10-05 02:36:32,091 WARNING MsgRouterThr:65656 [router.py:message_loop():74] EOFError seen in message_loop

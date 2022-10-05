@@ -5,7 +5,7 @@ import config
 import dba
 
 def Mytest(helper, epoch,
-           model, is_poison=False, visualize=True, agent_name_key=""):
+           model, is_poison=False, visualize=True, agent_name_key="", device='cuda'):
     model.eval()
     total_loss = 0
     correct = 0
@@ -28,7 +28,7 @@ def Mytest(helper, epoch,
             or helper.params['type'] == config.TYPE_TINYIMAGENET:
         data_iterator = helper.test_data
         for batch_id, batch in enumerate(data_iterator):
-            data, targets = helper.get_batch(data_iterator, batch, evaluation=True)
+            data, targets = helper.get_batch(data_iterator, batch, evaluation=True)            
             dataset_size += len(data)
             output = model(data)
             total_loss += nn.functional.cross_entropy(output, targets,
@@ -51,7 +51,7 @@ def Mytest(helper, epoch,
     return (total_l, acc, correct, dataset_size)
 
 def Mytest_poison(helper, epoch,
-                  model, is_poison=False, visualize=True, agent_name_key=""):
+                  model, is_poison=False, visualize=True, agent_name_key="", device='cuda'):
     model.eval()
     total_loss = 0.0
     correct = 0
@@ -113,7 +113,7 @@ def Mytest_poison(helper, epoch,
     model.train()
     return total_l, acc, correct, poison_data_count
 
-def Mytest_poison_trigger(helper, model, adver_trigger_index):
+def Mytest_poison_trigger(helper, model, adver_trigger_index, device='cuda'):
     model.eval()
     total_loss = 0.0
     correct = 0
@@ -174,7 +174,7 @@ def Mytest_poison_trigger(helper, model, adver_trigger_index):
     model.train()
     return total_l, acc, correct, poison_data_count
 
-def Mytest_poison_agent_trigger(helper, model, agent_name_key):
+def Mytest_poison_agent_trigger(helper, model, agent_name_key, device='cuda'):
     model.eval()
     total_loss = 0.0
     correct = 0

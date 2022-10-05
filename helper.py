@@ -18,11 +18,15 @@ import config
 import copy
 import utils.csv_record
 
+set_device = "cuda"
+
 class Helper:
-    def __init__(self, current_time, params, name):
+    def __init__(self, current_time, params, name, device="cuda"):
         self.current_time = current_time
         self.target_model = None
         self.local_model = None
+        self.device= device
+        set_device = device
 
         self.train_data = None
         self.test_data = None
@@ -113,7 +117,7 @@ class Helper:
         for name, layer in model.named_parameters():
             size += layer.view(-1).shape[0]
         sum_var = torch.FloatTensor(size).fill_(0)
-        sum_var= sum_var.to(config.device)
+        sum_var= sum_var.to(set_device)
         size = 0
         for name, layer in model.named_parameters():
             sum_var[size:size + layer.view(-1).shape[0]] = (
@@ -190,7 +194,7 @@ class Helper:
 
         return noised_layer
 
-    def accumulate_weight(self, weight_accumulator, epochs_submit_update_dict, state_keys,num_samples_dict):
+    def accumulate_weight(self, weight_accumulator, epochs_submit_update_dict, state_keys, num_samples_dict, selected_net_indx = [], reconstructed_freq = []):
         """
          return Args:
              updates: dict of (num_samples, update), where num_samples is the
@@ -206,13 +210,18 @@ class Helper:
             return None, updates
 
         else:
+            # NORMAL UPDATE
             updates = dict()
             for i in range(0, len(state_keys)):
+                if selected_net_indx and i not in selected_net_indx:
+                    continue
+                # print(f"state_keys[i]: {state_keys[i]}")
                 local_model_update_list = epochs_submit_update_dict[state_keys[i]]
-                update= dict()
+                update = dict()
                 num_samples=num_samples_dict[state_keys[i]]
 
                 for name, data in local_model_update_list[0].items():
+                    # print(f"data: {data}")
                     update[name] = torch.zeros_like(data)
 
                 for j in range(0, len(local_model_update_list)):
@@ -228,31 +237,41 @@ class Helper:
 
                 updates[state_keys[i]]=(num_samples,update)
 
-            return weight_accumulator,updates
+            return weight_accumulator, updates
 
     def init_weight_accumulator(self, target_model):
         weight_accumulator = dict()
         for name, data in target_model.state_dict().items():
-            weight_accumulator[name] = torch.zeros_like(data)
+            weight_accumulator[name] = torch.zeros_like(input=data, dtype=torch.float32)
 
         return weight_accumulator
 
-    def average_shrink_models(self, weight_accumulator, target_model, epoch_interval):
+    def average_shrink_models(self, weight_accumulator, target_model, epoch_interval, device="cpu"):
         """
         Perform FedAvg algorithm and perform some clustering on top of it.
-
+        
         """
+        no_models = len(weight_accumulator.values())
         for name, data in target_model.state_dict().items():
             if self.params.get('tied', False) and name == 'decoder.weight':
                 continue
 
-            update_per_layer = weight_accumulator[name] * (self.params["eta"] / self.params["no_models"])
+            update_per_layer = weight_accumulator[name] * float((self.params["eta"] / no_models))
             # update_per_layer = weight_accumulator[name] * (self.params["eta"] / self.params["number_of_total_participants"])
-
+            # print(f"type(update_per_layer): {type(update_per_layer)}")
+            # print(f" weight_accumulator[name]: {weight_accumulator[name]}")
+            # print(f"data: {data}")
             # update_per_layer = update_per_layer * 1.0 / epoch_interval
             if self.params['diff_privacy']:
                 update_per_layer.add_(self.dp_noise(data, self.params['sigma']))
-
+            # print(f"torch.is_tensor(update_per_layer: {torch.is_tensor(update_per_layer)})")
+            
+            if not torch.is_tensor(update_per_layer):
+                update_per_layer = torch.as_tensor(float(update_per_layer)).to(device)
+            # print(f"update_per_layer: {update_per_layer}")
+            # print(f"update_per_layer: {update_per_layer.dtype}")
+            # print("This is a Sample data with its data type:", data, data.dtype)
+            data = data.type(torch.float)
             data.add_(update_per_layer)
         return True
 
@@ -286,7 +305,7 @@ class Helper:
         for i, (name, params) in enumerate(target_model.named_parameters()):
             agg_grads[i]=agg_grads[i] * self.params["eta"]
             if params.requires_grad:
-                params.grad = agg_grads[i].to(config.device)
+                params.grad = agg_grads[i].to(self.device)
         optimizer.step()
         wv=wv.tolist()
         utils.csv_record.add_weight_result(names, wv, alpha)
@@ -408,7 +427,7 @@ class Helper:
             weighted_updates[name]=  torch.zeros_like(data)
         for w, p in zip(weights, points): # 对每一个agent
             for name, data in weighted_updates.items():
-                temp = (w / tot_weights).float().to(config.device)
+                temp = (w / tot_weights).float().to(set_device)
                 temp= temp* (p[name].float())
                 # temp = w / tot_weights * p[name]
                 if temp.dtype!=data.dtype:
@@ -531,7 +550,7 @@ class FoolsGold(object):
         self.wv_history = []
         self.use_memory = use_memory
 
-    def aggregate_gradients(self, client_grads,names):
+    def aggregate_gradients(self, client_grads, names):
         cur_time = time.time()
         num_clients = len(client_grads)
         grad_len = np.array(client_grads[0][-2].cpu().data.numpy().shape).prod()

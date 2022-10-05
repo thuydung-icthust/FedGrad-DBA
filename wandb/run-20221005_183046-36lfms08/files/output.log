@@ -1,0 +1,175 @@
+current path: saved_models/model_cifar_Oct.05_18.30.43
+Loading data
+Files already downloaded and verified
+build_classes_dict done
+train loaders done
+get poison test loader
+Starting performing KrMLRFL...
+load data done
+Loaded parameters from saved model: LR is 0.1 and current epoch is 201
+create model done
+Poisoned following participants: [17, 33, 77, 11]
+We use following environment for graphs:  cifar
+Server Epoch:201 choose agents : [34, 50, 36, 99, 54, 60, 45, 47, 69, 84].
+poison local model 34 index 0
+___Train Local_ResNet_18,  epoch 201, local model 34, internal_epoch   1,  Average loss: 0.0064, Accuracy: 432/490 (88.1633%)
+___Train Local_ResNet_18,  epoch 201, local model 34, internal_epoch   2,  Average loss: 0.0034, Accuracy: 461/490 (94.0816%)
+___Test Local_ResNet_18 poisoned: False, epoch: 201: Average loss: 2.5088, Accuracy: 4698/10000 (46.9800%)
+___Train Local_ResNet_18,  epoch 201, local model 50, internal_epoch   1,  Average loss: 0.0049, Accuracy: 318/346 (91.9075%)
+___Train Local_ResNet_18,  epoch 201, local model 50, internal_epoch   2,  Average loss: 0.0021, Accuracy: 329/346 (95.0867%)
+___Test Local_ResNet_18 poisoned: False, epoch: 201: Average loss: 1.6141, Accuracy: 5486/10000 (54.8600%)
+poison local model 36 index 1
+___Train Local_ResNet_18,  epoch 201, local model 36, internal_epoch   1,  Average loss: 0.0085, Accuracy: 888/1060 (83.7736%)
+___Train Local_ResNet_18,  epoch 201, local model 36, internal_epoch   2,  Average loss: 0.0087, Accuracy: 865/1060 (81.6038%)
+___Test Local_ResNet_18 poisoned: False, epoch: 201: Average loss: 6.2511, Accuracy: 2523/10000 (25.2300%)
+___Train Local_ResNet_18,  epoch 201, local model 99, internal_epoch   1,  Average loss: 0.0035, Accuracy: 339/366 (92.6230%)
+___Train Local_ResNet_18,  epoch 201, local model 99, internal_epoch   2,  Average loss: 0.0014, Accuracy: 357/366 (97.5410%)
+___Test Local_ResNet_18 poisoned: False, epoch: 201: Average loss: 2.5577, Accuracy: 4872/10000 (48.7200%)
+___Train Local_ResNet_18,  epoch 201, local model 54, internal_epoch   1,  Average loss: 0.0022, Accuracy: 594/622 (95.4984%)
+___Train Local_ResNet_18,  epoch 201, local model 54, internal_epoch   2,  Average loss: 0.0016, Accuracy: 603/622 (96.9453%)
+___Test Local_ResNet_18 poisoned: False, epoch: 201: Average loss: 2.2448, Accuracy: 4593/10000 (45.9300%)
+poison local model 60 index 2
+___Train Local_ResNet_18,  epoch 201, local model 60, internal_epoch   1,  Average loss: 0.0060, Accuracy: 412/449 (91.7595%)
+___Train Local_ResNet_18,  epoch 201, local model 60, internal_epoch   2,  Average loss: 0.0030, Accuracy: 429/449 (95.5457%)
+___Test Local_ResNet_18 poisoned: False, epoch: 201: Average loss: 9.7737, Accuracy: 2208/10000 (22.0800%)
+___Train Local_ResNet_18,  epoch 201, local model 45, internal_epoch   1,  Average loss: 0.0032, Accuracy: 618/663 (93.2127%)
+___Train Local_ResNet_18,  epoch 201, local model 45, internal_epoch   2,  Average loss: 0.0036, Accuracy: 622/663 (93.8160%)
+___Test Local_ResNet_18 poisoned: False, epoch: 201: Average loss: 6.0310, Accuracy: 2216/10000 (22.1600%)
+poison local model 47 index 3
+___Train Local_ResNet_18,  epoch 201, local model 47, internal_epoch   1,  Average loss: 0.0044, Accuracy: 855/897 (95.3177%)
+___Train Local_ResNet_18,  epoch 201, local model 47, internal_epoch   2,  Average loss: 0.0089, Accuracy: 792/897 (88.2943%)
+___Test Local_ResNet_18 poisoned: False, epoch: 201: Average loss: 7.1430, Accuracy: 3152/10000 (31.5200%)
+___Train Local_ResNet_18,  epoch 201, local model 69, internal_epoch   1,  Average loss: 0.0043, Accuracy: 230/254 (90.5512%)
+___Train Local_ResNet_18,  epoch 201, local model 69, internal_epoch   2,  Average loss: 0.0010, Accuracy: 251/254 (98.8189%)
+___Test Local_ResNet_18 poisoned: False, epoch: 201: Average loss: 3.0567, Accuracy: 4551/10000 (45.5100%)
+___Train Local_ResNet_18,  epoch 201, local model 84, internal_epoch   1,  Average loss: 0.0058, Accuracy: 361/409 (88.2641%)
+___Train Local_ResNet_18,  epoch 201, local model 84, internal_epoch   2,  Average loss: 0.0035, Accuracy: 387/409 (94.6210%)
+___Test Local_ResNet_18 poisoned: False, epoch: 201: Average loss: 3.0555, Accuracy: 3912/10000 (39.1200%)
+time spent on training: 147.0355682373047
+Starting performing KrMLRFL...
+/home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/fedgrad_helper.py:284: RuntimeWarning: invalid value encountered in float_scalars
+  cs = dot(point, base_p)/(norm(point)*norm(base_p))
+/home/ubuntu/miniconda3/envs/dungnt/lib/python3.8/site-packages/sklearn/preprocessing/_data.py:464: RuntimeWarning: All-NaN slice encountered
+  data_min = np.nanmin(X, axis=0)
+/home/ubuntu/miniconda3/envs/dungnt/lib/python3.8/site-packages/sklearn/preprocessing/_data.py:465: RuntimeWarning: All-NaN slice encountered
+  data_max = np.nanmax(X, axis=0)
+Num data points: [490, 346, 1060, 366, 622, 449, 663, 897, 254, 409]
+Num selected data points: [ 490  346 1060  366  622  449  663  897  254  409]
+The chosen ones are users: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], which are global users: [34, 50, 36, 99, 54, 60, 45, 47, 69, 84]
+selected_attackers: [34, 36, 60, 47]
+t_score: [[nan]
+ [nan]
+ [nan]
+ [nan]
+ [nan]
+ [nan]
+ [nan]
+ [nan]
+ [nan]
+ [nan]]
+[T_SCORE] attacker_local_idxs is:  []
+layer1_inf_time: 5.757568359375
+num_w: 256
+[PAIRWISE] pred_attackers_indx:  [0 1 4 6]
+assumed final_attacker_idxs:  [0 1 4 6]
+final_attacker_idxs is: []
+g_attacker_idxs: []
+g_normal_idxs: [34 50 36 99 54 60 45 47 69 84]
+filtered_attacker_idxs: []
+final_attacker_idxs are: []
+num_dps: [490, 346, 1060, 366, 622, 449, 663, 897, 254, 409]
+___Test Target_ResNet_18 poisoned: False, epoch: 201: Average loss: 0.7170, Accuracy: 7649/10000 (76.4900%)
+epoch_acc: 76.49000000000001
+___Test Target_ResNet_18 poisoned: True, epoch: 201: Average loss: 6.4800, Accuracy: 230/9000 (2.5556%)
+Done in 176.38805270195007 sec.
+Server Epoch:202 choose agents : [68, 88, 21, 24, 47, 13, 73, 46, 82, 55].
+___Train Local_ResNet_18,  epoch 202, local model 68, internal_epoch   1,  Average loss: 0.0059, Accuracy: 361/416 (86.7788%)
+___Train Local_ResNet_18,  epoch 202, local model 68, internal_epoch   2,  Average loss: 0.0036, Accuracy: 390/416 (93.7500%)
+___Test Local_ResNet_18 poisoned: False, epoch: 202: Average loss: 3.1954, Accuracy: 4402/10000 (44.0200%)
+___Train Local_ResNet_18,  epoch 202, local model 88, internal_epoch   1,  Average loss: 0.0042, Accuracy: 581/636 (91.3522%)
+___Train Local_ResNet_18,  epoch 202, local model 88, internal_epoch   2,  Average loss: 0.0021, Accuracy: 611/636 (96.0692%)
+___Test Local_ResNet_18 poisoned: False, epoch: 202: Average loss: 1.9115, Accuracy: 5534/10000 (55.3400%)
+___Train Local_ResNet_18,  epoch 202, local model 21, internal_epoch   1,  Average loss: 0.0082, Accuracy: 250/297 (84.1751%)
+___Train Local_ResNet_18,  epoch 202, local model 21, internal_epoch   2,  Average loss: 0.0017, Accuracy: 292/297 (98.3165%)
+___Test Local_ResNet_18 poisoned: False, epoch: 202: Average loss: 10.0273, Accuracy: 1380/10000 (13.8000%)
+___Train Local_ResNet_18,  epoch 202, local model 24, internal_epoch   1,  Average loss: 0.0050, Accuracy: 702/778 (90.2314%)
+___Train Local_ResNet_18,  epoch 202, local model 24, internal_epoch   2,  Average loss: 0.0112, Accuracy: 617/778 (79.3059%)
+___Test Local_ResNet_18 poisoned: False, epoch: 202: Average loss: 19.1103, Accuracy: 1330/10000 (13.3000%)
+poison local model 47 index 0
+___Train Local_ResNet_18,  epoch 202, local model 47, internal_epoch   1,  Average loss: 0.0035, Accuracy: 861/897 (95.9866%)
+___Train Local_ResNet_18,  epoch 202, local model 47, internal_epoch   2,  Average loss: 0.0078, Accuracy: 799/897 (89.0747%)
+___Test Local_ResNet_18 poisoned: False, epoch: 202: Average loss: 6.3754, Accuracy: 2886/10000 (28.8600%)
+___Train Local_ResNet_18,  epoch 202, local model 13, internal_epoch   1,  Average loss: 0.0051, Accuracy: 386/436 (88.5321%)
+___Train Local_ResNet_18,  epoch 202, local model 13, internal_epoch   2,  Average loss: 0.0024, Accuracy: 413/436 (94.7248%)
+___Test Local_ResNet_18 poisoned: False, epoch: 202: Average loss: 1.7582, Accuracy: 5151/10000 (51.5100%)
+poison local model 73 index 1
+___Train Local_ResNet_18,  epoch 202, local model 73, internal_epoch   1,  Average loss: 0.0034, Accuracy: 355/378 (93.9153%)
+___Train Local_ResNet_18,  epoch 202, local model 73, internal_epoch   2,  Average loss: 0.0016, Accuracy: 363/378 (96.0317%)
+___Test Local_ResNet_18 poisoned: False, epoch: 202: Average loss: 2.1757, Accuracy: 4664/10000 (46.6400%)
+___Train Local_ResNet_18,  epoch 202, local model 46, internal_epoch   1,  Average loss: 0.0039, Accuracy: 735/776 (94.7165%)
+___Train Local_ResNet_18,  epoch 202, local model 46, internal_epoch   2,  Average loss: 0.0115, Accuracy: 622/776 (80.1546%)
+___Test Local_ResNet_18 poisoned: False, epoch: 202: Average loss: 12.3409, Accuracy: 2165/10000 (21.6500%)
+poison local model 82 index 2
+___Train Local_ResNet_18,  epoch 202, local model 82, internal_epoch   1,  Average loss: 0.0101, Accuracy: 289/364 (79.3956%)
+___Train Local_ResNet_18,  epoch 202, local model 82, internal_epoch   2,  Average loss: 0.0040, Accuracy: 337/364 (92.5824%)
+___Test Local_ResNet_18 poisoned: False, epoch: 202: Average loss: 20.3589, Accuracy: 1043/10000 (10.4300%)
+___Train Local_ResNet_18,  epoch 202, local model 55, internal_epoch   1,  Average loss: 0.0139, Accuracy: 326/429 (75.9907%)
+___Train Local_ResNet_18,  epoch 202, local model 55, internal_epoch   2,  Average loss: 0.0060, Accuracy: 385/429 (89.7436%)
+___Test Local_ResNet_18 poisoned: False, epoch: 202: Average loss: 8.7296, Accuracy: 2119/10000 (21.1900%)
+time spent on training: 159.02197217941284
+Starting performing KrMLRFL...
+/home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/fedgrad_helper.py:284: RuntimeWarning: invalid value encountered in float_scalars
+  cs = dot(point, base_p)/(norm(point)*norm(base_p))
+/home/ubuntu/miniconda3/envs/dungnt/lib/python3.8/site-packages/sklearn/preprocessing/_data.py:464: RuntimeWarning: All-NaN slice encountered
+  data_min = np.nanmin(X, axis=0)
+/home/ubuntu/miniconda3/envs/dungnt/lib/python3.8/site-packages/sklearn/preprocessing/_data.py:465: RuntimeWarning: All-NaN slice encountered
+  data_max = np.nanmax(X, axis=0)
+selected_attackers: [47, 73, 82]
+t_score: [[nan]
+ [nan]
+ [nan]
+ [nan]
+ [nan]
+ [nan]
+ [nan]
+ [nan]
+ [nan]
+ [nan]]
+[T_SCORE] attacker_local_idxs is:  []
+layer1_inf_time: 4.44140625
+num_w: 256
+[PAIRWISE] pred_attackers_indx:  [2 3 4 5]
+assumed final_attacker_idxs:  [2 3 4 5]
+final_attacker_idxs is: []
+g_attacker_idxs: []
+g_normal_idxs: [68 88 21 24 47 13 73 46 82 55]
+filtered_attacker_idxs: []
+final_attacker_idxs are: []
+Num data points: [416, 636, 297, 778, 897, 436, 378, 776, 364, 429]
+Num selected data points: [416 636 297 778 897 436 378 776 364 429]
+The chosen ones are users: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], which are global users: [68, 88, 21, 24, 47, 13, 73, 46, 82, 55]
+num_dps: [416, 636, 297, 778, 897, 436, 378, 776, 364, 429]
+___Test Target_ResNet_18 poisoned: False, epoch: 202: Average loss: 0.6856, Accuracy: 7713/10000 (77.1300%)
+epoch_acc: 77.13
+Traceback (most recent call last):
+  File "dba.py", line 247, in <module>
+    epoch_loss_p, epoch_acc_p, epoch_corret_p, epoch_total_p = test.Mytest_poison(helper=helper,
+  File "/home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/test.py", line 94, in Mytest_poison
+    data, targets, poison_num = helper.get_poison_batch(batch, adversarial_index=-1, evaluation=True)
+  File "/home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/image_helper.py", line 310, in get_poison_batch
+    new_images[index] = self.add_pixel_pattern(images[index],adversarial_index)
+  File "/home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/image_helper.py", line 330, in add_pixel_pattern
+    image = copy.deepcopy(ori_image)
+  File "/home/ubuntu/miniconda3/envs/dungnt/lib/python3.8/copy.py", line 153, in deepcopy
+    y = copier(memo)
+  File "/home/ubuntu/miniconda3/envs/dungnt/lib/python3.8/site-packages/torch/_tensor.py", line 110, in __deepcopy__
+    new_storage = self.storage().__deepcopy__(memo)
+  File "/home/ubuntu/miniconda3/envs/dungnt/lib/python3.8/site-packages/torch/storage.py", line 565, in __deepcopy__
+    return self._new_wrapped_storage(copy.deepcopy(self._storage, memo))
+  File "/home/ubuntu/miniconda3/envs/dungnt/lib/python3.8/copy.py", line 153, in deepcopy
+    y = copier(memo)
+  File "/home/ubuntu/miniconda3/envs/dungnt/lib/python3.8/site-packages/torch/storage.py", line 88, in __deepcopy__
+    new_storage = self.clone()
+  File "/home/ubuntu/miniconda3/envs/dungnt/lib/python3.8/site-packages/torch/storage.py", line 102, in clone
+    return type(self)(self.nbytes(), device=self.device).copy_(self)
+KeyboardInterrupt

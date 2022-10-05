@@ -1,0 +1,79 @@
+current path: saved_models/model_cifar_Oct.05_18.36.16
+Loading data
+Files already downloaded and verified
+build_classes_dict done
+train loaders done
+get poison test loader
+Starting performing KrMLRFL...
+load data done
+Loaded parameters from saved model: LR is 0.1 and current epoch is 201
+create model done
+Poisoned following participants: [17, 33, 77, 11]
+We use following environment for graphs:  cifar
+Server Epoch:201 choose agents : [34, 50, 36, 99, 54, 60, 45, 47, 69, 84].
+poison local model 34 index 0
+___Train Local_ResNet_18,  epoch 201, local model 34, internal_epoch   1,  Average loss: 0.0064, Accuracy: 432/490 (88.1633%)
+___Train Local_ResNet_18,  epoch 201, local model 34, internal_epoch   2,  Average loss: 0.0034, Accuracy: 461/490 (94.0816%)
+___Test Local_ResNet_18 poisoned: False, epoch: 201: Average loss: 2.5140, Accuracy: 4703/10000 (47.0300%)
+___Train Local_ResNet_18,  epoch 201, local model 50, internal_epoch   1,  Average loss: 0.0049, Accuracy: 318/346 (91.9075%)
+___Train Local_ResNet_18,  epoch 201, local model 50, internal_epoch   2,  Average loss: 0.0021, Accuracy: 330/346 (95.3757%)
+___Test Local_ResNet_18 poisoned: False, epoch: 201: Average loss: 1.5853, Accuracy: 5549/10000 (55.4900%)
+poison local model 36 index 1
+___Train Local_ResNet_18,  epoch 201, local model 36, internal_epoch   1,  Average loss: 0.0087, Accuracy: 890/1060 (83.9623%)
+___Train Local_ResNet_18,  epoch 201, local model 36, internal_epoch   2,  Average loss: 0.0090, Accuracy: 866/1060 (81.6981%)
+___Test Local_ResNet_18 poisoned: False, epoch: 201: Average loss: 22.6080, Accuracy: 1151/10000 (11.5100%)
+___Train Local_ResNet_18,  epoch 201, local model 99, internal_epoch   1,  Average loss: 0.0035, Accuracy: 339/366 (92.6230%)
+___Train Local_ResNet_18,  epoch 201, local model 99, internal_epoch   2,  Average loss: 0.0014, Accuracy: 358/366 (97.8142%)
+___Test Local_ResNet_18 poisoned: False, epoch: 201: Average loss: 2.5625, Accuracy: 4855/10000 (48.5500%)
+___Train Local_ResNet_18,  epoch 201, local model 54, internal_epoch   1,  Average loss: 0.0022, Accuracy: 594/622 (95.4984%)
+___Train Local_ResNet_18,  epoch 201, local model 54, internal_epoch   2,  Average loss: 0.0016, Accuracy: 600/622 (96.4630%)
+___Test Local_ResNet_18 poisoned: False, epoch: 201: Average loss: 2.3423, Accuracy: 4405/10000 (44.0500%)
+poison local model 60 index 2
+___Train Local_ResNet_18,  epoch 201, local model 60, internal_epoch   1,  Average loss: 0.0060, Accuracy: 412/449 (91.7595%)
+___Train Local_ResNet_18,  epoch 201, local model 60, internal_epoch   2,  Average loss: 0.0031, Accuracy: 429/449 (95.5457%)
+___Test Local_ResNet_18 poisoned: False, epoch: 201: Average loss: 8.4537, Accuracy: 2468/10000 (24.6800%)
+___Train Local_ResNet_18,  epoch 201, local model 45, internal_epoch   1,  Average loss: 0.0032, Accuracy: 618/663 (93.2127%)
+___Train Local_ResNet_18,  epoch 201, local model 45, internal_epoch   2,  Average loss: 0.0036, Accuracy: 623/663 (93.9668%)
+___Test Local_ResNet_18 poisoned: False, epoch: 201: Average loss: 5.5892, Accuracy: 2390/10000 (23.9000%)
+poison local model 47 index 3
+___Train Local_ResNet_18,  epoch 201, local model 47, internal_epoch   1,  Average loss: 0.0044, Accuracy: 855/897 (95.3177%)
+___Train Local_ResNet_18,  epoch 201, local model 47, internal_epoch   2,  Average loss: 0.0090, Accuracy: 793/897 (88.4058%)
+___Test Local_ResNet_18 poisoned: False, epoch: 201: Average loss: 11.3169, Accuracy: 2661/10000 (26.6100%)
+Error in sys.excepthook:
+Traceback (most recent call last):
+  File "/home/ubuntu/miniconda3/envs/dungnt/lib/python3.8/linecache.py", line 47, in getlines
+    return updatecache(filename, module_globals)
+  File "/home/ubuntu/miniconda3/envs/dungnt/lib/python3.8/linecache.py", line 137, in updatecache
+    lines = fp.readlines()
+  File "/home/ubuntu/miniconda3/envs/dungnt/lib/python3.8/codecs.py", line 319, in decode
+    def decode(self, input, final=False):
+KeyboardInterrupt
+Original exception was:
+Traceback (most recent call last):
+  File "dba.py", line 181, in <module>
+    epochs_submit_update_dict, num_samples_dict, net_list = train.train(helper=helper, start_epoch=epoch,
+  File "/home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/train.py", line 23, in train
+    epochs_submit_update_dict, num_samples_dict, net_list = image_train.ImageTrain(helper, start_epoch, local_model,
+  File "/home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/image_train.py", line 305, in ImageTrain
+    test.Mytest_poison_agent_trigger(helper=helper, model=model, agent_name_key=agent_name_key)
+  File "/home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/test.py", line 226, in Mytest_poison_agent_trigger
+    output = model(data)
+  File "/home/ubuntu/miniconda3/envs/dungnt/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1130, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/models/resnet_cifar.py", line 91, in forward
+    out = self.layer2(out)
+  File "/home/ubuntu/miniconda3/envs/dungnt/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1130, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/ubuntu/miniconda3/envs/dungnt/lib/python3.8/site-packages/torch/nn/modules/container.py", line 139, in forward
+    input = module(input)
+  File "/home/ubuntu/miniconda3/envs/dungnt/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1130, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/models/resnet_cifar.py", line 32, in forward
+    out = F.relu(self.bn1(self.conv1(x)))
+  File "/home/ubuntu/miniconda3/envs/dungnt/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1130, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/ubuntu/miniconda3/envs/dungnt/lib/python3.8/site-packages/torch/nn/modules/conv.py", line 457, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/home/ubuntu/miniconda3/envs/dungnt/lib/python3.8/site-packages/torch/nn/modules/conv.py", line 453, in _conv_forward
+    return F.conv2d(input, weight, bias, self.stride,
+KeyboardInterrupt

@@ -64,7 +64,7 @@ def trigger_test_byname(helper, agent_name_key, vis, epoch):
 if __name__ == '__main__':
     print('Start training')
     
-    np.random.seed(1)
+    np.random.seed(7)
     time_start_load_everything = time.time()
     parser = argparse.ArgumentParser(description='PPDL')
     parser.add_argument('--params', dest='params')
@@ -80,6 +80,7 @@ if __name__ == '__main__':
     instance_name = params_loaded['wandb_instance']
     defense = params_loaded['defense']
     defender =  None
+    device = params_loaded['device']
 
     wandb_ins = wandb.init(project="Backdoor attack in FL",
                             entity="aiotlab",
@@ -88,6 +89,26 @@ if __name__ == '__main__':
     poison_ratio = params_loaded['poison_ratio']
     total_participants = params_loaded['number_of_total_participants']
     total_attackers = int(poison_ratio*total_participants)
+
+    if params_loaded['type'] == config.TYPE_LOAN:
+        helper = LoanHelper(current_time=current_time, params=params_loaded,
+                            name=params_loaded.get('name', 'loan'), device=device)
+        helper.load_data(params_loaded)
+    elif params_loaded['type'] == config.TYPE_CIFAR:
+        helper = ImageHelper(current_time=current_time, params=params_loaded,
+                             name=params_loaded.get('name', 'cifar'),
+                             device=device)
+        helper.load_data()
+    elif params_loaded['type'] == config.TYPE_MNIST:
+        helper = ImageHelper(current_time=current_time, params=params_loaded,
+                             name=params_loaded.get('name', 'mnist'), device=device)
+        helper.load_data()
+    elif params_loaded['type'] == config.TYPE_TINYIMAGENET:
+        helper = ImageHelper(current_time=current_time, params=params_loaded,
+                             name=params_loaded.get('name', 'tiny'), device=device)
+        helper.load_data()
+    else:
+        helper = None
     if defense == 'fedgrad':
         num_adv = int(0.1*helper.params['no_models'])
         defender = FedGrad(total_workers = total_participants, 
@@ -95,25 +116,6 @@ if __name__ == '__main__':
                            num_adv = num_adv, 
                            num_valid = 1, instance="benchmark", 
                            use_trustworthy=True)
-    if params_loaded['type'] == config.TYPE_LOAN:
-        helper = LoanHelper(current_time=current_time, params=params_loaded,
-                            name=params_loaded.get('name', 'loan'))
-        helper.load_data(params_loaded)
-    elif params_loaded['type'] == config.TYPE_CIFAR:
-        helper = ImageHelper(current_time=current_time, params=params_loaded,
-                             name=params_loaded.get('name', 'cifar'))
-        helper.load_data()
-    elif params_loaded['type'] == config.TYPE_MNIST:
-        helper = ImageHelper(current_time=current_time, params=params_loaded,
-                             name=params_loaded.get('name', 'mnist'))
-        helper.load_data()
-    elif params_loaded['type'] == config.TYPE_TINYIMAGENET:
-        helper = ImageHelper(current_time=current_time, params=params_loaded,
-                             name=params_loaded.get('name', 'tiny'))
-        helper.load_data()
-    else:
-        helper = None
-
     logger.info(f'load data done')
     helper.create_model()
     logger.info(f'create model done')
@@ -135,7 +137,7 @@ if __name__ == '__main__':
 
     submit_update_dict = None
     num_no_progress = 0
-    
+    old_w_accumulator = weight_accumulator
     
     adversary_idxs = np.random.choice(total_participants, total_attackers, replace=False)
     for epoch in range(helper.start_epoch, helper.params['epochs'] + 1, helper.params['aggr_epoch_interval']):
@@ -144,14 +146,17 @@ if __name__ == '__main__':
 
         agent_name_keys = helper.participants_list
         adversarial_name_keys = []
+        net_list = []
+        selected_adversary_idxs = []
         if helper.params['is_random_namelist']:
             if helper.params['is_random_adversary']:  # random choose , maybe don't have advasarial
                 agent_name_keys = random.sample(helper.participants_list, helper.params['no_models'])
-                for _name_keys in agent_name_keys:
+                for _id, _name_keys in enumerate(agent_name_keys):
                     # if _name_keys in helper.params['adversary_list']:
                     #     adversarial_name_keys.append(_name_key
                     if _name_keys in adversary_idxs:
                         adversarial_name_keys.append(_name_keys)
+                        selected_adversary_idxs.append(_name_keys)
             else:  # must have advasarial if this epoch is in their poison epoch
                 ongoing_epochs = list(range(epoch, epoch + helper.params['aggr_epoch_interval']))
                 for idx in range(0, len(helper.params['adversary_list'])):
@@ -173,20 +178,47 @@ if __name__ == '__main__':
                 adversarial_name_keys=copy.deepcopy(adversary_idxs)
 
         logger.info(f'Server Epoch:{epoch} choose agents : {agent_name_keys}.')
-        epochs_submit_update_dict, num_samples_dict = train.train(helper=helper, start_epoch=epoch,
+        epochs_submit_update_dict, num_samples_dict, net_list = train.train(helper=helper, start_epoch=epoch,
                                                                   local_model=helper.local_model,
                                                                   target_model=helper.target_model,
                                                                   is_poison=helper.params['is_poison'],
-                                                                  agent_name_keys=agent_name_keys)
+                                                                  agent_name_keys=agent_name_keys, 
+                                                                  adversary_idxs=selected_adversary_idxs,
+                                                                  device=device)
         logger.info(f'time spent on training: {time.time() - t}')
+        cp_epochs_submit_update_dict = copy.deepcopy(epochs_submit_update_dict)
         weight_accumulator, updates = helper.accumulate_weight(weight_accumulator, epochs_submit_update_dict,
                                                                agent_name_keys, num_samples_dict)
         is_updated = True
-        if helper.params['aggregation_methods'] == config.AGGR_MEAN:
+        # print(f"before: epochs_submit_update_dict: {epochs_submit_update_dict}")
+        if defender:
+            pseudo_avg_net = copy.deepcopy(helper.target_model).to(device)
+            helper.average_shrink_models(weight_accumulator, pseudo_avg_net, 10, device)
+            # pseudo_avg_net = fed_avg_aggregator(net_list, net_freq, device=device, model=helper.target_model)
+            # print(f"model: {(pseudo_avg_net)}")
+            model_name = "MnistNet" if params_loaded['type'] == 'mnist' else "ResNet18"
+            selected_net_indx, reconstructed_freq = defender.exec(client_models = net_list, 
+                          num_dps = num_samples_dict, 
+                          net_freq = [], 
+                          net_avg = helper.target_model, 
+                          g_user_indices = agent_name_keys, 
+                          pseudo_avg_net = pseudo_avg_net, 
+                          round = epoch, 
+                          selected_attackers = selected_adversary_idxs, 
+                          model_name = model_name, 
+                          device=device)
+            if not selected_net_indx:
+                helper.average_shrink_models(old_w_accumulator, helper.target_model, 10, device)
+            else:
+                # print(f"after: epochs_submit_update_dict: {epochs_submit_update_dict['99']}")
+                weight_accumulator, updates = helper.accumulate_weight(old_w_accumulator, cp_epochs_submit_update_dict, agent_name_keys, num_samples_dict, selected_net_indx, reconstructed_freq)    
+                helper.average_shrink_models(weight_accumulator, helper.target_model, 10)
+            # helper.target_model = neo_net_list[0]
+        elif helper.params['aggregation_methods'] == config.AGGR_MEAN:
             # Average the models
             is_updated = helper.average_shrink_models(weight_accumulator=weight_accumulator,
                                                       target_model=helper.target_model,
-                                                      epoch_interval=helper.params['aggr_epoch_interval'])
+                                                      epoch_interval=helper.params['aggr_epoch_interval'], device=device)
             num_oracle_calls = 1
         elif helper.params['aggregation_methods'] == config.AGGR_GEO_MED:
             maxiter = helper.params['geom_median_maxiter']
@@ -201,28 +233,29 @@ if __name__ == '__main__':
             num_oracle_calls = 1
 
         # clear the weight_accumulator
+        old_w_accumulator = copy.deepcopy(weight_accumulator)
         weight_accumulator = helper.init_weight_accumulator(helper.target_model)
-
         temp_global_epoch = epoch + helper.params['aggr_epoch_interval'] - 1
-
         epoch_loss, epoch_acc, epoch_corret, epoch_total = test.Mytest(helper=helper, epoch=temp_global_epoch,
-                                                                       model=helper.target_model, is_poison=False,
+                                                                       model=helper.target_model, device = device, is_poison=False,
                                                                        visualize=True, agent_name_key="global")
+        print(f"epoch_acc: {epoch_acc}")
         csv_record.test_result.append(["global", temp_global_epoch, epoch_loss, epoch_acc, epoch_corret, epoch_total])
         if len(csv_record.scale_temp_one_row)>0:
             csv_record.scale_temp_one_row.append(round(epoch_acc, 4))
         poison_epoch_loss, poison_epoch_acc, poison_epoch_corret, poison_epoch_total = 0,0,0,0
         if helper.params['is_poison']:
 
-            epoch_loss, epoch_acc_p, epoch_corret, epoch_total = test.Mytest_poison(helper=helper,
+            epoch_loss_p, epoch_acc_p, epoch_corret_p, epoch_total_p = test.Mytest_poison(helper=helper,
                                                                                     epoch=temp_global_epoch,
                                                                                     model=helper.target_model,
+                                                                                    device = device,
                                                                                     is_poison=True,
                                                                                     visualize=True,
                                                                                     agent_name_key="global")
 
             csv_record.posiontest_result.append(
-                ["global", temp_global_epoch, epoch_loss, epoch_acc_p, epoch_corret, epoch_total])
+                ["global", temp_global_epoch, epoch_loss_p, epoch_acc_p, epoch_corret_p, epoch_total_p])
 
 
             # test on local triggers
@@ -233,24 +266,24 @@ if __name__ == '__main__':
             #                                                eid=helper.params['environment_name'],
             #                                                name="global_combine")
             # if len(helper.params['adversary_list']) == 1:  # centralized attack
-            if len(adversary_idxs) == 1:  # centralized attack
-                if helper.params['centralized_test_trigger'] == True:  # centralized attack test on local triggers
-                    for j in range(0, helper.params['trigger_num']):
-                        trigger_test_byindex(helper, j, None, epoch)
-            else:  # distributed attack
-                for agent_name_key in helper.params['adversary_list']:
-                    poison_epoch_loss, poison_epoch_acc, poison_epoch_corret, poison_epoch_total = trigger_test_byname(helper, agent_name_key, None, epoch)
+            # if len(adversary_idxs) == 1:  # centralized attack
+            #     if helper.params['centralized_test_trigger'] == True:  # centralized attack test on local triggers
+            #         for j in range(0, helper.params['trigger_num']):
+            #             trigger_test_byindex(helper, j, None, epoch)
+            # else:  # distributed attack
+            #     for agent_name_key in adversary_idxs:
+            #         poison_epoch_loss, poison_epoch_acc, poison_epoch_corret, poison_epoch_total = trigger_test_byname(helper, agent_name_key, None, epoch)
 
         wandb_logging_items = {
             "round": epoch,
             "epoch_loss": epoch_loss, 
-            "epoch_acc_p": epoch_acc_p, 
+            "maintask_acc_epoch": epoch_acc, 
             "epoch_corret": epoch_corret, 
             "epoch_total": epoch_total, 
-            "poison_epoch_loss": poison_epoch_loss, 
-            "poison_epoch_acc": poison_epoch_acc, 
-            "poison_epoch_corret": poison_epoch_corret, 
-            "poison_epoch_total": poison_epoch_total,
+            "poison_epoch_loss": epoch_loss_p, 
+            "backdoor_acc_epoch": epoch_acc_p, 
+            "poison_epoch_corret": epoch_corret_p, 
+            "poison_epoch_total": epoch_total,
         }
         wandb_ins.log({"general": wandb_logging_items})
         helper.save_model(epoch=epoch, val_loss=epoch_loss)

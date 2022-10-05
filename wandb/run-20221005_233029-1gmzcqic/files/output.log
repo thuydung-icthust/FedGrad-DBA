@@ -1,0 +1,67 @@
+current path: saved_models/model_cifar_Oct.05_23.30.27
+Loading data
+Files already downloaded and verified
+build_classes_dict done
+train loaders done
+get poison test loader
+Starting performing KrMLRFL...
+load data done
+Loaded parameters from saved model: LR is 0.1 and current epoch is 201
+create model done
+Poisoned following participants: [17, 33, 77, 11]
+We use following environment for graphs:  cifar
+Server Epoch:201 choose agents : [34, 50, 36, 99].
+poison local model 34 index 0
+___Train Local_ResNet_18,  epoch 201, local model 34, internal_epoch   1,  Average loss: 0.0064, Accuracy: 432/490 (88.1633%)
+___Train Local_ResNet_18,  epoch 201, local model 34, internal_epoch   2,  Average loss: 0.0034, Accuracy: 460/490 (93.8776%)
+___Test Local_ResNet_18 poisoned: False, epoch: 201: Average loss: 2.5366, Accuracy: 4667/10000 (46.6700%)
+___Train Local_ResNet_18,  epoch 201, local model 50, internal_epoch   1,  Average loss: 0.0049, Accuracy: 318/346 (91.9075%)
+___Train Local_ResNet_18,  epoch 201, local model 50, internal_epoch   2,  Average loss: 0.0021, Accuracy: 329/346 (95.0867%)
+___Test Local_ResNet_18 poisoned: False, epoch: 201: Average loss: 1.5845, Accuracy: 5547/10000 (55.4700%)
+poison local model 36 index 1
+___Train Local_ResNet_18,  epoch 201, local model 36, internal_epoch   1,  Average loss: 0.0087, Accuracy: 887/1060 (83.6792%)
+___Train Local_ResNet_18,  epoch 201, local model 36, internal_epoch   2,  Average loss: 0.0097, Accuracy: 850/1060 (80.1887%)
+___Test Local_ResNet_18 poisoned: False, epoch: 201: Average loss: 7.0230, Accuracy: 2444/10000 (24.4400%)
+___Train Local_ResNet_18,  epoch 201, local model 99, internal_epoch   1,  Average loss: 0.0035, Accuracy: 339/366 (92.6230%)
+___Train Local_ResNet_18,  epoch 201, local model 99, internal_epoch   2,  Average loss: 0.0014, Accuracy: 357/366 (97.5410%)
+___Test Local_ResNet_18 poisoned: False, epoch: 201: Average loss: 2.5466, Accuracy: 4875/10000 (48.7500%)
+time spent on training: 68.96110248565674
+Starting performing KrMLRFL...
+selected_attackers: [34, 36]
+glob_update: [[-9.7587705e-05 -1.3245642e-04 -7.2941184e-05 ... -1.2999773e-04
+  -1.2314320e-04 -3.3637881e-04]
+ [-3.9219856e-05 -2.3696572e-04 -5.2608550e-05 ... -8.6277723e-05
+  -4.8846006e-05 -5.2914023e-05]
+ [-3.3080578e-05 -1.9737706e-04  2.6285648e-05 ... -1.6193837e-05
+  -3.5479665e-05  7.3798001e-06]
+ ...
+ [ 1.0218471e-04 -8.9980662e-05  3.3915043e-05 ...  1.6324222e-05
+   3.5956502e-04  1.9130111e-04]
+ [-6.6844746e-05  5.7995319e-05 -2.2143126e-05 ...  4.1760504e-05
+  -3.2240152e-04  8.3394349e-05]
+ [-1.9361079e-04 -7.9166889e-04 -2.9738306e-04 ... -2.5611930e-04
+  -3.5073608e-04 -3.6148727e-04]]
+t_score: [[0.61269269]
+ [0.94367429]
+ [1.        ]
+ [0.        ]]
+[T_SCORE] attacker_local_idxs is:  [0, 1, 2]
+layer1_inf_time: 74.84033203125
+num_w: 256
+[PAIRWISE] pred_attackers_indx:  [0 1]
+assumed final_attacker_idxs:  [0 1 2]
+final_attacker_idxs is: [0, 1, 2]
+g_attacker_idxs: [34 50 36]
+g_normal_idxs: [99]
+filtered_attacker_idxs: [0, 1, 2]
+final_attacker_idxs are: [0, 1, 2]
+num_dps: [490, 346, 1060, 366]
+Num data points: [490, 346, 1060, 366]
+Num selected data points: [366]
+The chosen ones are users: [3], which are global users: [99]
+Traceback (most recent call last):
+  File "dba.py", line 212, in <module>
+    weight_accumulator, updates = helper.accumulate_weight(weight_accumulator, epochs_submit_update_dict, agent_name_keys, num_samples_dict, selected_net_indx, reconstructed_freq)
+  File "/home/ubuntu/dung.nt184244/backdoor-attack/FedGrad-DBA/helper.py", line 223, in accumulate_weight
+    update[name] = torch.zeros_like(data)
+TypeError: zeros_like(): argument 'input' (position 1) must be Tensor, not list
