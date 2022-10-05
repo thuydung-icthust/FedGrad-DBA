@@ -1,0 +1,14 @@
+__pycache__/
+.idea/
+log/
+logging/
+wandb/
+models/
+utils/__pycache__/
+models/__pycache__/
+data/
+saved_datasets/
+jupyter_notebook/
+checkpoint/
+saved_models/
+.vscode
