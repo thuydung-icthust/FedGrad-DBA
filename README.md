@@ -1,6 +1,20 @@
 # DBA
 In this repository, code is for our ICLR 2020 paper [DBA: Distributed Backdoor Attacks against Federated Learning](https://openreview.net/forum?id=rkgyS0VFvr)
 
+## Installation Guide (by Dung)
+This repository is employed to evaluate the effectiveness of FedGrad under trigger-based backdoor attacks on FL.
+### Installation
+- Pytorch (on the official link: https://pytorch.org/)
+- Required packages on ```requirements.txt``` file.
+- prepare the pretrained model:
+    Our pretrained clean models for attack can be downloaded from [Google Drive](https://drive.google.com/file/d/1wcJ_DkviuOLkmr-FgIVSFwnZwyGU8SjH/view?usp=sharing). 
+    Then copy downloaded "saved_models.zip" to FedGrad-DBA repo && unzip.
+- MNIST and CIFAR will be automatically download if experiments are run
+### Experiment running
+- run experiments for all the yaml file on folder ```experiments_yaml/AISTATS2023``` with the following command:
+    python dba.py --params [yaml_file]
+    (e.g., ```python dba.py --params python dba.py --params experiments_yaml/AISTATS2023/fedavg_1.1_params.yaml```)
+
 ## Installation
 Install Pytorch
 
