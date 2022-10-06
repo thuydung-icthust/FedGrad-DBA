@@ -260,8 +260,7 @@ if __name__ == '__main__':
                                                                                     device = device,
                                                                                     is_poison=True,
                                                                                     visualize=True,
-                                                                                    agent_name_key="global", 
-                                                                                    device=device)
+                                                                                    agent_name_key="global")
 
             csv_record.posiontest_result.append(
                 ["global", temp_global_epoch, epoch_loss_p, epoch_acc_p, epoch_corret_p, epoch_total_p])
@@ -279,7 +278,7 @@ if __name__ == '__main__':
                 if helper.params['centralized_test_trigger'] == True:  # centralized attack test on local triggers
                     for j in range(0, helper.params['trigger_num']):
                         trigger_test_byindex(helper, j, None, epoch, device)
-            print(f"\nAt fl training round: {epoch}, MA = {epoch_acc}, BA = {epoch_loss_p}.")            
+            print(f"\nAt fl training round: {epoch}, MA = {epoch_acc}, BA = {epoch_acc_p}.")            
             # else:  # distributed attack
             #     for agent_name_key in adversary_idxs:
             #         poison_epoch_loss, poison_epoch_acc, poison_epoch_corret, poison_epoch_total = trigger_test_byname(helper, agent_name_key, None, epoch)
