@@ -92,10 +92,10 @@ def Mytest_poison(helper, epoch,
         data_iterator = helper.test_data_poison
         for batch_id, batch in enumerate(data_iterator):
             data, targets, poison_num = helper.get_poison_batch(batch, adversarial_index=-1, evaluation=True)
-
+            data, targets = data.to(device), targets.to(device)
             poison_data_count += poison_num
             dataset_size += len(data)
-            output = model(data)
+            output = model(data).to(device)
             total_loss += nn.functional.cross_entropy(output, targets,
                                                       reduction='sum').item()  # sum up batch loss
             pred = output.data.max(1)[1]  # get the index of the max log-probability
@@ -145,8 +145,9 @@ def Mytest_poison_trigger(helper, model, adver_trigger_index, device='cuda'):
                         batch[0][index][helper.feature_dict[name]] = value
                     poison_data_count += 1
                 data, targets = state_helper.get_batch(data_source, batch, evaluation=True)
+                data, targets = data.to(device), targets.to(device)
                 dataset_size += len(data)
-                output = model(data)
+                output = model(data).to(device)
                 total_loss += nn.functional.cross_entropy(output, targets,
                                                           reduction='sum').item()  # sum up batch loss
                 pred = output.data.max(1)[1]  # get the index of the max log-probability

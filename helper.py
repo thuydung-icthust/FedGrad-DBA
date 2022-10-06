@@ -21,7 +21,7 @@ import utils.csv_record
 set_device = "cuda"
 
 class Helper:
-    def __init__(self, current_time, params, name, device="cuda"):
+    def __init__(self, current_time, params, name, device="cuda", centralized_attack=False):
         self.current_time = current_time
         self.target_model = None
         self.local_model = None
@@ -36,6 +36,7 @@ class Helper:
         self.params = params
         self.name = name
         self.best_loss = math.inf
+        self.centralized_attack = centralized_attack
         self.folder_path = f'saved_models/model_{self.name}_{current_time}'
         try:
             os.mkdir(self.folder_path)

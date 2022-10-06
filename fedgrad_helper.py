@@ -715,22 +715,22 @@ class FedGrad(Defense):
         return norm_score
         # for cli_ind, weight_update in enumerate(weight_update):
 
-    def get_predicted_attackers(self, weight_list, avg_weight, weight_update, total_client):
-        # from sklearn.cluster import KMeans
-        eucl_dis, cs_dis = get_distance_on_avg_net(weight_list, avg_weight, weight_update, total_client)
-        norm_cs_data = min_max_scale(cs_dis)
-        norm_eu_data = 1.0 - min_max_scale(eucl_dis)
-        # norm_eu_data = min_max_scale(eucl_dis)
-        stack_dis = np.hstack((norm_cs_data,norm_eu_data))
-        print("stack dis is: ", stack_dis)
-        temp_score = [0.5*norm_cs_data[i] + 0.5*norm_eu_data[i] for i in range(total_client)]
-        threshold = sum(temp_score)/total_client
-        abnormal_score = [1.0 if temp_score[i] > threshold else 0.0 for i in range(total_client)]
-        print("abnormal_score: ", abnormal_score)
+    # def get_predicted_attackers(self, weight_list, avg_weight, weight_update, total_client):
+    #     # from sklearn.cluster import KMeans
+    #     eucl_dis, cs_dis = get_distance_on_avg_net(weight_list, avg_weight, weight_update, total_client)
+    #     norm_cs_data = min_max_scale(cs_dis)
+    #     norm_eu_data = 1.0 - min_max_scale(eucl_dis)
+    #     # norm_eu_data = min_max_scale(eucl_dis)
+    #     stack_dis = np.hstack((norm_cs_data,norm_eu_data))
+    #     print("stack dis is: ", stack_dis)
+    #     temp_score = [0.5*norm_cs_data[i] + 0.5*norm_eu_data[i] for i in range(total_client)]
+    #     threshold = sum(temp_score)/total_client
+    #     abnormal_score = [1.0 if temp_score[i] > threshold else 0.0 for i in range(total_client)]
+    #     print("abnormal_score: ", abnormal_score)
         
-        hb_clusterer = hdbscan.HDBSCAN(algorithm='best', alpha=1.0, approx_min_span_tree=True,
-                                gen_min_span_tree=False, leaf_size=40,
-                                metric='euclidean', min_cluster_size=2, min_samples=None, p=None)
-        hb_clusterer.fit(stack_dis)
-        print("hb_clusterer.labels_ is: ", hb_clusterer.labels_)
-        return abnormal_score
+    #     hb_clusterer = hdbscan.HDBSCAN(algorithm='best', alpha=1.0, approx_min_span_tree=True,
+    #                             gen_min_span_tree=False, leaf_size=40,
+    #                             metric='euclidean', min_cluster_size=2, min_samples=None, p=None)
+    #     hb_clusterer.fit(stack_dis)
+    #     print("hb_clusterer.labels_ is: ", hb_clusterer.labels_)
+    #     return abnormal_score

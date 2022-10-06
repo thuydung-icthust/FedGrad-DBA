@@ -9,7 +9,7 @@ import copy
 import config
 
 
-def ImageTrain(helper, start_epoch, local_model, target_model, is_poison, agent_name_keys, adversary_idxs, device):
+def ImageTrain(helper, start_epoch, local_model, target_model, is_poison, agent_name_keys, adversary_idxs, device, centralized_attack=False, constrain=True):
 
     epochs_submit_update_dict = dict()
     num_samples_dict = dict()
@@ -39,24 +39,20 @@ def ImageTrain(helper, start_epoch, local_model, target_model, is_poison, agent_
                                     momentum=helper.params['momentum'],
                                     weight_decay=helper.params['decay'])
         model.train()
-        adversarial_index= -1
+        adversarial_index = -1
         localmodel_poison_epochs = helper.params['poison_epochs']
         if is_poison and agent_name_key in adversary_idxs:
-            # print(f"!!! [HERE] --> ok now")
             for temp_index in range(0, len(adversary_idxs)):
-                # if int(agent_name_key) == adversary_idxs[temp_index]:
                 if int(agent_name_key) == adversary_idxs[temp_index]:
-                    # print(f"found a poisoned client: {agent_name_key}")
                     adversarial_index = temp_index%4
                     # localmodel_poison_epochs = helper.params[str(temp_index) + '_poison_epochs']
                     dba.logger.info(
                         f'\npoison local model {agent_name_key} index {adversarial_index} ')
                     break
             # if len(adversary_idxs) == 1:
-            if len(adversary_idxs) == 1:
+            if len(adversary_idxs) == 1 or centralized_attack:
                 adversarial_index = -1  # the global pattern
-        # if adversarial_index >= 0:
-        #     print(f"adversarial_index after check is: {adversarial_index}")
+
         
         for epoch in range(start_epoch, start_epoch + helper.params['aggr_epoch_interval']):
 
@@ -64,9 +60,9 @@ def ImageTrain(helper, start_epoch, local_model, target_model, is_poison, agent_
             for name, param in target_model.named_parameters():
                 target_params_variables[name] = last_local_model[name].clone().detach().requires_grad_(False)
 
-            if is_poison and agent_name_key in adversary_idxs and (epoch in localmodel_poison_epochs):
+            # if is_poison and agent_name_key in adversary_idxs and (epoch in localmodel_poison_epochs):
+            if is_poison and agent_name_key in adversary_idxs: # --> poison every round
                 # dba.logger.info('poison_now')
-
                 poison_lr = helper.params['poison_lr']
                 internal_epoch_num = helper.params['internal_poison_epochs']
                 step_lr = helper.params['poison_step_lr']
@@ -97,10 +93,16 @@ def ImageTrain(helper, start_epoch, local_model, target_model, is_poison, agent_
                         class_loss = nn.functional.cross_entropy(output, targets).to(device)
 
                         distance_loss = helper.model_dist_norm_var(model, target_params_variables).to(device)
+                        
                         # Lmodel = αLclass + (1 − α)Lano; alpha_loss =1 fixed
-                        print(f"class_loss: {class_loss}, distance_loss: {distance_loss}")
-                        loss = helper.params['alpha_loss'] * class_loss + \
-                               (1 - helper.params['alpha_loss']) * distance_loss
+                        # print(f"class_loss: {class_loss}, distance_loss: {distance_loss}")
+                        
+                        # Contrain-and-scale method, turn-off here
+                        if constrain:
+                            loss = helper.params['alpha_loss'] * class_loss + \
+                                (1 - helper.params['alpha_loss']) * distance_loss
+                        else:
+                            loss = class_loss
                         loss.backward()
 
                         # get gradients
@@ -122,11 +124,6 @@ def ImageTrain(helper, start_epoch, local_model, target_model, is_poison, agent_
                             temp_data_len = len(data_iterator)
                             distance_to_global_model = helper.model_dist_norm(model, target_params_variables)
                             dis2global_list.append(distance_to_global_model)
-                            # model.track_distance_batch_vis(vis=main.vis, epoch=temp_local_epoch,
-                            #                                data_len=temp_data_len,
-                            #                                 batch=batch_id,distance_to_global_model= distance_to_global_model,
-                            #                                eid=helper.params['environment_name'],
-                            #                                name=str(agent_name_key),is_poisoned=True)
 
                     if step_lr:
                         scheduler.step()
@@ -143,10 +140,7 @@ def ImageTrain(helper, start_epoch, local_model, target_model, is_poison, agent_
                     csv_record.train_result.append(
                         [agent_name_key, temp_local_epoch,
                          epoch, internal_epoch, total_l.item(), acc, correct, dataset_size])
-                    # if helper.params['vis_train']:
-                    #     model.train_vis(main.vis, temp_local_epoch,
-                    #                     acc, loss=total_l, eid=helper.params['environment_name'], is_poisoned=True,
-                    #                     name=str(agent_name_key) )
+
                     num_samples_dict[agent_name_key] = dataset_size
                     if helper.params["batch_track_distance"]:
                         dba.logger.info(
@@ -172,7 +166,8 @@ def ImageTrain(helper, start_epoch, local_model, target_model, is_poison, agent_
                                                                                           model=model,
                                                                                           is_poison=True,
                                                                                           visualize=False,
-                                                                                          agent_name_key=agent_name_key)
+                                                                                          agent_name_key=agent_name_key,
+                                                                                          device=device)
                     csv_record.posiontest_result.append(
                         [agent_name_key, epoch, epoch_loss, epoch_acc, epoch_corret, epoch_total])
 
@@ -217,7 +212,7 @@ def ImageTrain(helper, start_epoch, local_model, target_model, is_poison, agent_
                         data, targets = helper.get_batch(data_iterator, batch,evaluation=False)
                         data, targets = data.to(device), targets.to(device)
                         dataset_size += len(data)
-                        output = model(data)
+                        output = model(data).to(device)
                         loss = nn.functional.cross_entropy(output, targets)
                         loss.backward()
 
@@ -284,13 +279,14 @@ def ImageTrain(helper, start_epoch, local_model, target_model, is_poison, agent_
                 csv_record.test_result.append([agent_name_key, epoch, epoch_loss, epoch_acc, epoch_corret, epoch_total])
 
             if is_poison:
-                if agent_name_key in adversary_idxs and (epoch in localmodel_poison_epochs):
+                if agent_name_key in adversary_idxs:
                     epoch_loss, epoch_acc, epoch_corret, epoch_total = test.Mytest_poison(helper=helper,
                                                                                           epoch=epoch,
                                                                                           model=model,
                                                                                           is_poison=True,
                                                                                           visualize=True,
-                                                                                          agent_name_key=agent_name_key)
+                                                                                          agent_name_key=agent_name_key,
+                                                                                          device=device)
                     csv_record.posiontest_result.append(
                         [agent_name_key, epoch, epoch_loss, epoch_acc, epoch_corret, epoch_total])
 
@@ -302,7 +298,7 @@ def ImageTrain(helper, start_epoch, local_model, target_model, is_poison, agent_
                     #                                  name=str(agent_name_key)  + "_combine")
 
                     epoch_loss, epoch_acc, epoch_corret, epoch_total = \
-                        test.Mytest_poison_agent_trigger(helper=helper, model=model, agent_name_key=agent_name_key)
+                        test.Mytest_poison_agent_trigger(helper=helper, model=model, agent_name_key=agent_name_key, device=device)
                     csv_record.poisontriggertest_result.append(
                         [agent_name_key, str(agent_name_key) + "_trigger", "", epoch, epoch_loss,
                          epoch_acc, epoch_corret, epoch_total])
