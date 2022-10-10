@@ -184,7 +184,7 @@ if __name__ == '__main__':
 
         logger.info(f'Server comm. round: {epoch} choose agents : {agent_name_keys}.')
         print(f"Selected adversary idxs for this epoch is: {selected_adversary_idxs}.")
-        print(f"Round adversary idxs for this epoch is: {round_adversary_idxs}.")
+        # print(f"Round adversary idxs for this epoch is: {round_adversary_idxs}.")
         epochs_submit_update_dict, num_samples_dict, net_list = train.train(helper=helper, start_epoch=epoch,
                                                                   local_model=helper.local_model,
                                                                   target_model=helper.target_model,
@@ -195,14 +195,16 @@ if __name__ == '__main__':
                                                                   centralized_attack=centralized_attack,
                                                                   constrain=constrain)
         logger.info(f'time spent on training: {time.time() - t}')
+        print(f"Round adversary idxs for this epoch is: {round_adversary_idxs}.")
         cp_epochs_submit_update_dict = copy.deepcopy(epochs_submit_update_dict)
+        cp_weight_accumulator = copy.deepcopy(weight_accumulator)
         weight_accumulator, updates = helper.accumulate_weight(weight_accumulator, epochs_submit_update_dict,
                                                                agent_name_keys, num_samples_dict)
         is_updated = True
         # print(f"before: epochs_submit_update_dict: {epochs_submit_update_dict}")
         if defender:
             pseudo_avg_net = copy.deepcopy(helper.target_model).to(device)
-            helper.average_shrink_models(weight_accumulator, pseudo_avg_net, 10, device)
+            helper.average_shrink_models(weight_accumulator, pseudo_avg_net, 10, device, total_participants) # get the pseudo avg models
             model_name = "MnistNet" if params_loaded['type'] == 'mnist' else "ResNet18"
             selected_net_indx, reconstructed_freq = defender.exec(client_models = net_list, 
                           num_dps = num_samples_dict, 
@@ -214,19 +216,24 @@ if __name__ == '__main__':
                           selected_attackers = selected_adversary_idxs, 
                           model_name = model_name, 
                           device=device)
-            if not selected_net_indx:
-                helper.average_shrink_models(old_w_accumulator, helper.target_model, 10, device)
-            else:
+
+            # if not selected_net_indx:
+            #     break
+                # cp_weight_accumulator, cp_updates = helper.accumulate_weight(cp_weight_accumulator, epochs_submit_update_dict,
+                                                            #    agent_name_keys, num_samples_dict)
+                # helper.average_shrink_models(old_w_accumulator, helper.target_model, 10, device)
+            if selected_net_indx:
                 # print(f"after: epochs_submit_update_dict: {epochs_submit_update_dict['99']}")
-                weight_accumulator, updates = helper.accumulate_weight(old_w_accumulator, cp_epochs_submit_update_dict, agent_name_keys, num_samples_dict, selected_net_indx, reconstructed_freq)    
-                helper.average_shrink_models(weight_accumulator, helper.target_model, 10)
+                cp_weight_accumulator, updates = helper.accumulate_weight(cp_weight_accumulator, cp_epochs_submit_update_dict, agent_name_keys, num_samples_dict, selected_net_indx, reconstructed_freq)    
+                helper.average_shrink_models(cp_weight_accumulator, helper.target_model, 10, device, len(selected_net_indx))
             # helper.target_model = neo_net_list[0]
         elif helper.params['aggregation_methods'] == config.AGGR_MEAN:
             # Average the models
             is_updated = helper.average_shrink_models(weight_accumulator=weight_accumulator,
                                                       target_model=helper.target_model,
                                                       epoch_interval=helper.params['aggr_epoch_interval'], 
-                                                      device=device)
+                                                      device=device,
+                                                      no_models=total_participants)
             num_oracle_calls = 1
         elif helper.params['aggregation_methods'] == config.AGGR_GEO_MED:
             maxiter = helper.params['geom_median_maxiter']
