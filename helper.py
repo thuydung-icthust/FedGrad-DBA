@@ -252,12 +252,12 @@ class Helper:
         Perform FedAvg algorithm and perform some clustering on top of it.
         
         """
-        first_key = list(weight_accumulator.keys())[1]
-        print(f"first_key: {first_key}")
-        print(f"{weight_accumulator[first_key]}")
+        # first_key = list(weight_accumulator.keys())[1]
+        # print(f"first_key: {first_key}")
+        # print(f"{weight_accumulator[first_key]}")
         # print(f"first keys len: {len(weight_accumulator[first_key])}")
         # no_models = len(weight_accumulator.values())
-        # print(f"no models: {no_models}")
+        print(f"no models: {no_models}")
         # no_models = 10
         for name, data in target_model.state_dict().items():
             if self.params.get('tied', False) and name == 'decoder.weight':

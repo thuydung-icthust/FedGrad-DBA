@@ -314,7 +314,7 @@ def extract_classifier_layer(net_list, global_avg_net, prev_net, model="vgg9"):
     # print("Model's state_dict:")
     # for param_tensor in prev_net.state_dict():
     #     print(param_tensor, "\t", prev_net.state_dict()[param_tensor].size())
-    
+    print(f"model: {model}")
     if model == "vgg9":
         for idx, param in enumerate(global_avg_net.classifier.parameters()):
             if idx:
@@ -471,7 +471,7 @@ class FedGrad(Defense):
         
         t_score = np.array(t_score)
         print(f"t_score: {t_score}")
-        threshold = min(0.45, np.median(t_score)) if model_name == "ResNet18" else min(0.5, np.median(t_score))
+        threshold = min(0.5, np.median(t_score)) if model_name == "ResNet18" else min(0.5, np.median(t_score))
         
         participated_attackers = []
         for in_, id_ in enumerate(g_user_indices):
@@ -634,15 +634,12 @@ class FedGrad(Defense):
         g_user_indices = np.asarray(g_user_indices)
         
         normal_idxs = [id_ for id_ in range(total_client) if id_ not in final_attacker_idxs]
-        # final_attacker_idxs = 
         g_attacker_idxs = g_user_indices[final_attacker_idxs]
         print(f"g_attacker_idxs: {g_attacker_idxs}")
         g_normal_idxs = g_user_indices[normal_idxs]
         print(f"g_normal_idxs: {g_normal_idxs}")
         g_attacker_scores = [np.average(self.trustworthy_scores[id_]) for id_ in g_attacker_idxs]
         g_normal_scores = [np.average(self.trustworthy_scores[id_]) for id_ in g_normal_idxs]
-        # print(f"g_attacker_idxs score: {g_attacker_scores}")
-        # print(f"g_normal_idxs score: {g_normal_scores}")
         
         trustworthy_threshold = 0.75 #TODO
         filtered_attacker_idxs = list(final_attacker_idxs.copy())

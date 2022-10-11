@@ -85,7 +85,7 @@ diff_privacy: false
 sigma: 0.01
 
 # DUNG's additional params
-wandb_group: AISTATS_DBA_Backdoor_Attack
+wandb_group: NEW_AISTATS_DBA_Backdoor_Attack
 wandb_instance: fedavg_mnist_4.1
 defense: no-defense
 poison_ratio: 0.25
