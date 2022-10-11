@@ -24,7 +24,7 @@ is_random_namelist: true
 is_random_adversary: true # fix adversary in their poison epochs
 is_poison: true
 
-baseline: false
+baseline: true
 scale_weights_poison: 100
 eta: 1 # multi-shot 
 sampling_dirichlet: true
@@ -83,7 +83,7 @@ diff_privacy: false
 sigma: 0.01
 
 # DUNG's additional params
-wandb_group: AISTATS_DBA_Backdoor_Attack
+wandb_group: NEW_AISTATS_DBA_Backdoor_Attack
 wandb_instance: fedgrad_mnist_2.2
 defense: fedgrad
 poison_ratio: 0.25

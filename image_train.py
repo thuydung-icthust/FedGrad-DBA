@@ -60,6 +60,7 @@ def ImageTrain(helper, start_epoch, local_model, target_model, is_poison, agent_
             for name, param in target_model.named_parameters():
                 target_params_variables[name] = last_local_model[name].clone().detach().requires_grad_(False)
 
+            fixed_name_id = 45
             # if is_poison and agent_name_key in adversary_idxs and (epoch in localmodel_poison_epochs):
             if is_poison and agent_name_key in adversary_idxs: # --> poison every round
                 # dba.logger.info('poison_now')
@@ -73,16 +74,18 @@ def ImageTrain(helper, start_epoch, local_model, target_model, is_poison, agent_
                 scheduler = torch.optim.lr_scheduler.MultiStepLR(poison_optimizer,
                                                                  milestones=[0.2 * internal_epoch_num,
                                                                              0.8 * internal_epoch_num], gamma=0.1)
-                temp_local_epoch = (epoch - 1) *internal_epoch_num
+                temp_local_epoch = (epoch - 1) * internal_epoch_num
                 for internal_epoch in range(1, internal_epoch_num + 1):
                     temp_local_epoch += 1
                     _, data_iterator = helper.train_data[agent_name_key]
+                    # _, data_iterator = helper.train_data[fixed_name_id]
                     poison_data_count = 0
                     total_loss = 0.
                     correct = 0
                     dataset_size = 0
                     dis2global_list=[]
                     for batch_id, batch in enumerate(data_iterator):
+                        # data, targets, poison_num = helper.get_poison_batch(batch, adversarial_index=adversarial_index,evaluation=False)
                         data, targets, poison_num = helper.get_poison_batch(batch, adversarial_index=adversarial_index,evaluation=False)
                         data, targets = data.to(device), targets.to(device)
                         poison_optimizer.zero_grad()

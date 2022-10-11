@@ -88,6 +88,7 @@ if __name__ == '__main__':
                             name=instance_name,
                             group=group_name)
     poison_ratio = params_loaded['poison_ratio']
+    part_nets_per_round = params_loaded['no_models']
     total_participants = params_loaded['number_of_total_participants']
     total_attackers = int(poison_ratio*total_participants)
 
@@ -112,7 +113,7 @@ if __name__ == '__main__':
     else:
         helper = None
     if defense == 'fedgrad':
-        num_adv = int(0.1*helper.params['no_models'])
+        num_adv = int(0.3*helper.params['no_models'])
         defender = FedGrad(total_workers = total_participants, 
                            num_workers = helper.params['no_models'], 
                            num_adv = num_adv, 
@@ -122,8 +123,8 @@ if __name__ == '__main__':
     helper.create_model()
     logger.info(f'create model done')
     ### Create models
-    if helper.params['is_poison']:
-        logger.info(f"Poisoned following participants: {(helper.params['adversary_list'])}")
+    # if helper.params['is_poison']:
+    #     logger.info(f"Poisoned following participants: {(helper.params['adversary_list'])}")
 
     best_loss = float('inf')
 
@@ -181,7 +182,7 @@ if __name__ == '__main__':
             if helper.params['is_random_adversary']==False:
                 # adversarial_name_keys=copy.deepcopy(helper.params['adversary_list'])
                 adversarial_name_keys=copy.deepcopy(adversary_idxs)
-
+        # print(f"self.model: {helper.target_model}")
         logger.info(f'Server comm. round: {epoch} choose agents : {agent_name_keys}.')
         print(f"Selected adversary idxs for this epoch is: {selected_adversary_idxs}.")
         # print(f"Round adversary idxs for this epoch is: {round_adversary_idxs}.")
@@ -204,7 +205,7 @@ if __name__ == '__main__':
         # print(f"before: epochs_submit_update_dict: {epochs_submit_update_dict}")
         if defender:
             pseudo_avg_net = copy.deepcopy(helper.target_model).to(device)
-            helper.average_shrink_models(weight_accumulator, pseudo_avg_net, 10, device, total_participants) # get the pseudo avg models
+            helper.average_shrink_models(weight_accumulator, pseudo_avg_net, 10, device, part_nets_per_round) # get the pseudo avg models
             model_name = "MnistNet" if params_loaded['type'] == 'mnist' else "ResNet18"
             selected_net_indx, reconstructed_freq = defender.exec(client_models = net_list, 
                           num_dps = num_samples_dict, 
@@ -233,7 +234,7 @@ if __name__ == '__main__':
                                                       target_model=helper.target_model,
                                                       epoch_interval=helper.params['aggr_epoch_interval'], 
                                                       device=device,
-                                                      no_models=total_participants)
+                                                      no_models=part_nets_per_round)
             num_oracle_calls = 1
         elif helper.params['aggregation_methods'] == config.AGGR_GEO_MED:
             maxiter = helper.params['geom_median_maxiter']
@@ -268,7 +269,6 @@ if __name__ == '__main__':
                                                                                     is_poison=True,
                                                                                     visualize=True,
                                                                                     agent_name_key="global")
-
             csv_record.posiontest_result.append(
                 ["global", temp_global_epoch, epoch_loss_p, epoch_acc_p, epoch_corret_p, epoch_total_p])
 
