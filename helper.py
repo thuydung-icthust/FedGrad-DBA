@@ -21,7 +21,7 @@ import utils.csv_record
 set_device = "cuda"
 
 class Helper:
-    def __init__(self, current_time, params, name, device="cuda", centralized_attack=False, adversary_idxs=[]):
+    def __init__(self, current_time, params, name, device="cuda", centralized_attack=False, adversary_idxs=[], total_poisoned_batch=3):
         self.current_time = current_time
         self.target_model = None
         self.local_model = None
@@ -36,7 +36,7 @@ class Helper:
         self.adversary_idxs = adversary_idxs
         self.poisoned_node = 95
         self.total_fixed_samples = 0
-        self.total_poisoned_batch = 3
+        self.total_poisoned_batch = total_poisoned_batch
 
         self.params = params
         self.name = name

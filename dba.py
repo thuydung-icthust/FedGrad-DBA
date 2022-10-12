@@ -102,12 +102,14 @@ if __name__ == '__main__':
         helper = ImageHelper(current_time=current_time, params=params_loaded,
                              name=params_loaded.get('name', 'cifar'),
                              device=device, centralized_attack=centralized_attack,
-                             adversary_idxs=adversary_idxs)
+                             adversary_idxs=adversary_idxs, total_poisoned_batch=params_loaded['total_poisoned_batch'])
         helper.load_data()
     elif params_loaded['type'] == config.TYPE_MNIST:
         helper = ImageHelper(current_time=current_time, params=params_loaded,
                              name=params_loaded.get('name', 'mnist'), 
-                             device=device, centralized_attack=centralized_attack)
+                             device=device, centralized_attack=centralized_attack,
+                             adversary_idxs=adversary_idxs, 
+                             total_poisoned_batch=params_loaded['total_poisoned_batch'])
         helper.load_data()
     elif params_loaded['type'] == config.TYPE_TINYIMAGENET:
         helper = ImageHelper(current_time=current_time, params=params_loaded,
@@ -116,7 +118,7 @@ if __name__ == '__main__':
     else:
         helper = None
     if defense == 'fedgrad':
-        num_adv = int(0.3*helper.params['no_models'])
+        num_adv = int(0.25*helper.params['no_models'])
         defender = FedGrad(total_workers = total_participants, 
                            num_workers = helper.params['no_models'], 
                            num_adv = num_adv, 
@@ -196,7 +198,8 @@ if __name__ == '__main__':
                                                                   adversary_idxs=selected_adversary_idxs,
                                                                   device=device,
                                                                   centralized_attack=centralized_attack,
-                                                                  constrain=constrain)
+                                                                  constrain=constrain,
+                                                                  g_epc=epoch)
         logger.info(f'time spent on training: {time.time() - t}')
         print(f"Round adversary idxs for this epoch is: {round_adversary_idxs}.")
         cp_epochs_submit_update_dict = copy.deepcopy(epochs_submit_update_dict)

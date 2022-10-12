@@ -179,11 +179,23 @@ class ImageHelper(Helper):
             ### data load
             transform_train = transforms.Compose([
                 transforms.ToTensor(),
+                transforms.RandomCrop(32, padding=1),
+                transforms.RandomHorizontalFlip(0.2)
             ])
 
             transform_test = transforms.Compose([
                 transforms.ToTensor(),
             ])
+            # transform_train = transforms.Compose([
+            #     transforms.RandomCrop(32, padding=4),
+            #     # transforms.RandomHorizontalFlip(),
+            #     transforms.ToTensor(),
+            #     transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010)),
+            # ])
+
+            # transform_test = transforms.Compose([
+            #     transforms.ToTensor(),
+            #     transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010)),])
 
             self.train_dataset = datasets.CIFAR10(dataPath, train=True, download=True,
                                              transform=transform_train)
@@ -228,16 +240,18 @@ class ImageHelper(Helper):
             indices_per_participant = self.sample_dirichlet_train_data(
                 self.params['number_of_total_participants'], #100
                 alpha=self.params['dirichlet_alpha'])
-            print(f"indices_per_participant: {indices_per_participant}")
+            # print(f"indices_per_participant: {indices_per_participant}")
             print(f"self.adversary_idxs: {self.adversary_idxs}")
-            self.total_fixed_samples = 200
+            self.total_fixed_samples = 600
             poisoned_indices = np.random.choice(50000, self.total_fixed_samples, False)
             
             for pos, indices in indices_per_participant.items():
                 if pos in self.adversary_idxs:
                     # indices = indices.append(indices_per_participant[self.poisoned_node])
-                    indices_per_participant[pos] = list(poisoned_indices[:200]) + indices
-            print(f"indices_per_participant: {indices_per_participant}")
+                    # indices_per_participant[pos] = indices + list(poisoned_indices[:400]) 
+                    indices_per_participant[pos] = poisoned_indices
+                    
+            # print(f"indices_per_participant: {indices_per_participant}")
             train_loaders = [(pos, self.get_train(indices)) for pos, indices in
                              indices_per_participant.items()]
         else:
@@ -313,7 +327,7 @@ class ImageHelper(Helper):
         poison_count= 0
         new_images=images
         new_targets=targets
-
+        # print(f"\nTesting poisoned of adversarial_index: {adversarial_index}")
         for index in range(0, len(images)):
             if evaluation: # poison all data when testing
                 new_targets[index] = self.params['poison_label_swap']
@@ -343,6 +357,7 @@ class ImageHelper(Helper):
         poison_count= 0
         new_images=images
         new_targets=targets
+        # print(f"New poisoned func: adversarial_index: {adversarial_index}")
 
         for index in range(0, len(images)):
             # if evaluation: # poison all data when testing

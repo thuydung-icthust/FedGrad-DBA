@@ -471,7 +471,7 @@ class FedGrad(Defense):
         
         t_score = np.array(t_score)
         print(f"t_score: {t_score}")
-        threshold = min(0.45, 0.9*np.median(t_score)) if model_name == "ResNet18" else min(0.5, np.median(t_score))
+        threshold = min(0.5, 1.1*np.median(t_score)) if model_name == "ResNet18" else min(0.5, np.median(t_score))
         
         participated_attackers = []
         for in_, id_ in enumerate(g_user_indices):
@@ -554,7 +554,7 @@ class FedGrad(Defense):
         #     for ind in topk_ind:
         #         trusted_models.append(ind)
         
-
+        print(f"trusted idx: {trusted_index}")
         scaler = MinMaxScaler()
         round_bias_pairwise = scaler.fit_transform(round_bias_pairwise)
         round_weight_pairwise = scaler.fit_transform(round_weight_pairwise)

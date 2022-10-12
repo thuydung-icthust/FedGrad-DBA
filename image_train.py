@@ -9,12 +9,11 @@ import copy
 import config
 
 
-def ImageTrain(helper, start_epoch, local_model, target_model, is_poison, agent_name_keys, adversary_idxs, device, centralized_attack=False, constrain=True):
+def ImageTrain(helper, start_epoch, local_model, target_model, is_poison, agent_name_keys, adversary_idxs, device, centralized_attack=False, constrain=True, g_epc=0):
 
     epochs_submit_update_dict = dict()
     num_samples_dict = dict()
     current_number_of_adversaries=0
-    # print(f"adversary_idxs: {adversary_idxs}")
     for temp_name in agent_name_keys:
         # if temp_name in adversary_idxs:
         if temp_name in adversary_idxs:
@@ -41,6 +40,7 @@ def ImageTrain(helper, start_epoch, local_model, target_model, is_poison, agent_
         model.train()
         adversarial_index = -1
         localmodel_poison_epochs = helper.params['poison_epochs']
+        # print(f"adversary_idxs: {adversary_idxs}")
         if is_poison and agent_name_key in adversary_idxs:
             for temp_index in range(0, len(adversary_idxs)):
                 if int(agent_name_key) == adversary_idxs[temp_index]:
@@ -60,7 +60,7 @@ def ImageTrain(helper, start_epoch, local_model, target_model, is_poison, agent_
             for name, param in target_model.named_parameters():
                 target_params_variables[name] = last_local_model[name].clone().detach().requires_grad_(False)
 
-            fixed_name_id = 45
+            # fixed_name_id = 45
             # if is_poison and agent_name_key in adversary_idxs and (epoch in localmodel_poison_epochs):
             if is_poison and agent_name_key in adversary_idxs: # --> poison every round
                 # dba.logger.info('poison_now')
@@ -161,24 +161,29 @@ def ImageTrain(helper, start_epoch, local_model, target_model, is_poison, agent_
 
                 if not helper.params['baseline'] or constrain:
                     dba.logger.info(f'will scale.')
-                    epoch_loss, epoch_acc, epoch_corret, epoch_total = test.Mytest(helper=helper, epoch=epoch,
-                                                                                   model=model, is_poison=False,
-                                                                                   visualize=False,
-                                                                                   agent_name_key=agent_name_key)
-                    csv_record.test_result.append(
-                        [agent_name_key, epoch, epoch_loss, epoch_acc, epoch_corret, epoch_total])
+                    # epoch_loss, epoch_acc, epoch_corret, epoch_total = test.Mytest(helper=helper, epoch=epoch,
+                    #                                                                model=model, is_poison=False,
+                    #                                                                visualize=False,
+                    #                                                                agent_name_key=agent_name_key)
+                    # csv_record.test_result.append(
+                    #     [agent_name_key, epoch, epoch_loss, epoch_acc, epoch_corret, epoch_total])
                     scale_flag = False
-                    if epoch_acc*100 >= 60:
+                    # if epoch_acc*100 >= 60:
+                    #     scale_flag = True
+                    
+                    print(f"g_epc: {g_epc}")
+                    if g_epc % 5 == 0:
                         scale_flag = True
-                    epoch_loss, epoch_acc, epoch_corret, epoch_total = test.Mytest_poison(helper=helper,
-                                                                                          epoch=epoch,
-                                                                                          model=model,
-                                                                                          is_poison=True,
-                                                                                          visualize=False,
-                                                                                          agent_name_key=agent_name_key,
-                                                                                          device=device)
-                    csv_record.posiontest_result.append(
-                        [agent_name_key, epoch, epoch_loss, epoch_acc, epoch_corret, epoch_total])
+                        
+                    # epoch_loss, epoch_acc, epoch_corret, epoch_total = test.Mytest_poison(helper=helper,
+                    #                                                                       epoch=epoch,
+                    #                                                                       model=model,
+                    #                                                                       is_poison=True,
+                    #                                                                       visualize=False,
+                    #                                                                       agent_name_key=agent_name_key,
+                    #                                                                       device=device)
+                    # csv_record.posiontest_result.append(
+                    #     [agent_name_key, epoch, epoch_loss, epoch_acc, epoch_corret, epoch_total])
 
                     clip_rate = helper.params['scale_weights_poison']/len(adversary_idxs)
                     if scale_flag:
@@ -284,10 +289,10 @@ def ImageTrain(helper, start_epoch, local_model, target_model, is_poison, agent_
                             f'Distance to the global model: {dis2global_list}. ')
 
                 # test local model after internal epoch finishing
-                epoch_loss, epoch_acc, epoch_corret, epoch_total = test.Mytest(helper=helper, epoch=epoch,
-                                                                               model=model, is_poison=False, visualize=True,
-                                                                               agent_name_key=agent_name_key)
-                csv_record.test_result.append([agent_name_key, epoch, epoch_loss, epoch_acc, epoch_corret, epoch_total])
+                # epoch_loss, epoch_acc, epoch_corret, epoch_total = test.Mytest(helper=helper, epoch=epoch,
+                #                                                                model=model, is_poison=False, visualize=True,
+                #                                                                agent_name_key=agent_name_key)
+                # csv_record.test_result.append([agent_name_key, epoch, epoch_loss, epoch_acc, epoch_corret, epoch_total])
 
             if is_poison:
                 if agent_name_key in adversary_idxs:
@@ -302,21 +307,21 @@ def ImageTrain(helper, start_epoch, local_model, target_model, is_poison, agent_
                         [agent_name_key, epoch, epoch_loss, epoch_acc, epoch_corret, epoch_total])
 
                 #  test on local triggers
-                if agent_name_key in adversary_idxs:
-                    # if helper.params['vis_trigger_split_test']:
-                    #     model.trigger_agent_test_vis(vis=main.vis, epoch=epoch, acc=epoch_acc, loss=None,
-                    #                                  eid=helper.params['environment_name'],
-                    #                                  name=str(agent_name_key)  + "_combine")
+                # if agent_name_key in adversary_idxs:
+                #     # if helper.params['vis_trigger_split_test']:
+                #     #     model.trigger_agent_test_vis(vis=main.vis, epoch=epoch, acc=epoch_acc, loss=None,
+                #     #                                  eid=helper.params['environment_name'],
+                #     #                                  name=str(agent_name_key)  + "_combine")
 
-                    epoch_loss, epoch_acc, epoch_corret, epoch_total = \
-                        test.Mytest_poison_agent_trigger(helper=helper, model=model, agent_name_key=agent_name_key, device=device)
-                    csv_record.poisontriggertest_result.append(
-                        [agent_name_key, str(agent_name_key) + "_trigger", "", epoch, epoch_loss,
-                         epoch_acc, epoch_corret, epoch_total])
-                    # if helper.params['vis_trigger_split_test']:
-                    #     model.trigger_agent_test_vis(vis=main.vis, epoch=epoch, acc=epoch_acc, loss=None,
-                    #                                  eid=helper.params['environment_name'],
-                    #                                  name=str(agent_name_key) + "_trigger")
+                #     epoch_loss, epoch_acc, epoch_corret, epoch_total = \
+                #         test.Mytest_poison_agent_trigger(helper=helper, model=model, agent_name_key=agent_name_key, device=device)
+                #     csv_record.poisontriggertest_result.append(
+                #         [agent_name_key, str(agent_name_key) + "_trigger", "", epoch, epoch_loss,
+                #          epoch_acc, epoch_corret, epoch_total])
+                #     # if helper.params['vis_trigger_split_test']:
+                #     #     model.trigger_agent_test_vis(vis=main.vis, epoch=epoch, acc=epoch_acc, loss=None,
+                #     #                                  eid=helper.params['environment_name'],
+                #     #                                  name=str(agent_name_key) + "_trigger")
 
             # update the model weight
             local_model_update_dict = dict()

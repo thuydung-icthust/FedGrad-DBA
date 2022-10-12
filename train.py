@@ -12,7 +12,7 @@ import image_train
 import config
 import random
 
-def train(helper, start_epoch, local_model, target_model, is_poison,agent_name_keys, adversary_idxs, device, centralized_attack=False, constrain=True):
+def train(helper, start_epoch, local_model, target_model, is_poison,agent_name_keys, adversary_idxs, device, centralized_attack=False, constrain=True, g_epc=0):
     epochs_submit_update_dict={}
     num_samples_dict={}
     if helper.params['type'] == config.TYPE_LOAN:
@@ -26,5 +26,6 @@ def train(helper, start_epoch, local_model, target_model, is_poison,agent_name_k
                                                                              adversary_idxs,
                                                                              device,
                                                                              centralized_attack,
-                                                                             constrain)
+                                                                             constrain,
+                                                                             g_epc)
     return epochs_submit_update_dict, num_samples_dict, net_list
