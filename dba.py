@@ -91,6 +91,8 @@ if __name__ == '__main__':
     part_nets_per_round = params_loaded['no_models']
     total_participants = params_loaded['number_of_total_participants']
     total_attackers = int(poison_ratio*total_participants)
+    adversary_idxs = np.random.choice(total_participants, total_attackers, replace=False)
+
 
     if params_loaded['type'] == config.TYPE_LOAN:
         helper = LoanHelper(current_time=current_time, params=params_loaded,
@@ -99,7 +101,8 @@ if __name__ == '__main__':
     elif params_loaded['type'] == config.TYPE_CIFAR:
         helper = ImageHelper(current_time=current_time, params=params_loaded,
                              name=params_loaded.get('name', 'cifar'),
-                             device=device, centralized_attack=centralized_attack)
+                             device=device, centralized_attack=centralized_attack,
+                             adversary_idxs=adversary_idxs)
         helper.load_data()
     elif params_loaded['type'] == config.TYPE_MNIST:
         helper = ImageHelper(current_time=current_time, params=params_loaded,
@@ -142,7 +145,6 @@ if __name__ == '__main__':
     num_no_progress = 0
     old_w_accumulator = weight_accumulator
     
-    adversary_idxs = np.random.choice(total_participants, total_attackers, replace=False)
     for epoch in range(helper.start_epoch, helper.params['epochs'] + 1, helper.params['aggr_epoch_interval']):
         start_time = time.time()
         t = time.time()

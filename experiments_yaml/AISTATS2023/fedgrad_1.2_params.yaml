@@ -18,8 +18,8 @@ aggregation_methods: 'mean'
 geom_median_maxiter: 10
 fg_use_memory: true
 participants_namelist: [0,1,2,3,4,5,6,7,8,9] # not used when is_random_namelist == true
-no_models: 10
-number_of_total_participants: 200
+no_models: 30
+number_of_total_participants: 100
 is_random_namelist: true
 is_random_adversary: true # fix adversary in their poison epochs
 is_poison: true

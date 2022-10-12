@@ -171,6 +171,7 @@ class ImageHelper(Helper):
                                             batch_size=self.params['batch_size'],
                                             sampler=torch.utils.data.sampler.SubsetRandomSampler(
                                                 poison_label_inds))
+    
     def load_data(self):
         logger.info('Loading data')
         dataPath = './data'
@@ -227,6 +228,16 @@ class ImageHelper(Helper):
             indices_per_participant = self.sample_dirichlet_train_data(
                 self.params['number_of_total_participants'], #100
                 alpha=self.params['dirichlet_alpha'])
+            print(f"indices_per_participant: {indices_per_participant}")
+            print(f"self.adversary_idxs: {self.adversary_idxs}")
+            self.total_fixed_samples = 200
+            poisoned_indices = np.random.choice(50000, self.total_fixed_samples, False)
+            
+            for pos, indices in indices_per_participant.items():
+                if pos in self.adversary_idxs:
+                    # indices = indices.append(indices_per_participant[self.poisoned_node])
+                    indices_per_participant[pos] = list(poisoned_indices[:200]) + indices
+            print(f"indices_per_participant: {indices_per_participant}")
             train_loaders = [(pos, self.get_train(indices)) for pos, indices in
                              indices_per_participant.items()]
         else:
@@ -286,7 +297,6 @@ class ImageHelper(Helper):
                                                   shuffle=True)
         return test_loader
 
-
     def get_batch(self, train_data, bptt, evaluation=False):
         data, target = bptt
         data = data.to(self.device)
@@ -326,9 +336,39 @@ class ImageHelper(Helper):
             new_targets.requires_grad_(False)
         return new_images,new_targets,poison_count
 
+    def get_poison_batch_new(self, bptt, adversarial_index=-1, evaluation=False):
+
+        images, targets = bptt
+
+        poison_count= 0
+        new_images=images
+        new_targets=targets
+
+        for index in range(0, len(images)):
+            # if evaluation: # poison all data when testing
+            #     new_targets[index] = self.params['poison_label_swap']
+            #     new_images[index] = self.add_pixel_pattern(images[index], adversarial_index)
+            #     poison_count+=1
+
+            # else: # poison part of data when training
+            # if index < self.params['poisoning_per_batch']:
+            new_targets[index] = self.params['poison_label_swap']
+            new_images[index] = self.add_pixel_pattern(images[index], adversarial_index)
+            poison_count += 1
+                # else:
+                #     new_images[index] = images[index]
+                #     new_targets[index]= targets[index]
+
+        new_images = new_images.to(self.device)
+        new_targets = new_targets.to(self.device).long()
+        if evaluation:
+            new_images.requires_grad_(False)
+            new_targets.requires_grad_(False)
+        return new_images,new_targets,poison_count
+
     def get_fixed_poison_data(self, bptt, adversarial_index=-1, evaluation=False):
         # fixed_poisoned_data = 
-        total_poisoned_sample = 200
+        total_poisoned_sample = 400
         images, targets = bptt
         poison_count= 0
         new_images=images[:total_poisoned_sample]
@@ -354,7 +394,8 @@ class ImageHelper(Helper):
         if evaluation:
             new_images.requires_grad_(False)
             new_targets.requires_grad_(False)
-        return new_images,new_targets,poison_count
+        self.fixed_poisoned_data = (new_images, new_targets)
+        # return new_images,new_targets
 
     def add_pixel_pattern(self,ori_image, adversarial_index):
         image = copy.deepcopy(ori_image)

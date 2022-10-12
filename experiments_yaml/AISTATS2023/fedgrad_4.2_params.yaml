@@ -18,14 +18,14 @@ aggregation_methods: 'mean'
 geom_median_maxiter: 10
 fg_use_memory: true
 participants_namelist: [0,1,2,3,4,5,6,7,8,9] # not used when is_random_namelist == true
-no_models: 10
+no_models: 30
 number_of_total_participants: 100
 is_random_namelist: true
 is_random_adversary: true # fix adversary in their poison epochs
 is_poison: true
 
 baseline: true
-scale_weights_poison: 100
+scale_weights_poison: 20
 eta: 1 # multi-shot 
 sampling_dirichlet: true
 dirichlet_alpha: 0.5
@@ -89,12 +89,12 @@ sigma: 0.01
 
 # DUNG's additional params
 wandb_group: NEW_AISTATS_DBA_Backdoor_Attack
-wandb_instance: fedgrad_mnist_4.2
+wandb_instance: fedgrad_cifar_4.2
 defense: fedgrad
 poison_ratio: 0.25
 device: cuda
-centralized_attack: true
-constrain: false
+centralized_attack: false
+constrain: true
 
 poison_epochs: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
                 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40,

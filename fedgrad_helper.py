@@ -471,7 +471,7 @@ class FedGrad(Defense):
         
         t_score = np.array(t_score)
         print(f"t_score: {t_score}")
-        threshold = min(0.5, np.median(t_score)) if model_name == "ResNet18" else min(0.5, np.median(t_score))
+        threshold = min(0.45, 0.9*np.median(t_score)) if model_name == "ResNet18" else min(0.5, np.median(t_score))
         
         participated_attackers = []
         for in_, id_ in enumerate(g_user_indices):

@@ -85,8 +85,12 @@ def ImageTrain(helper, start_epoch, local_model, target_model, is_poison, agent_
                     dataset_size = 0
                     dis2global_list=[]
                     for batch_id, batch in enumerate(data_iterator):
+                        if batch_id < helper.total_poisoned_batch:
                         # data, targets, poison_num = helper.get_poison_batch(batch, adversarial_index=adversarial_index,evaluation=False)
-                        data, targets, poison_num = helper.get_poison_batch(batch, adversarial_index=adversarial_index,evaluation=False)
+                            data, targets, poison_num = helper.get_poison_batch_new(batch, adversarial_index=adversarial_index,evaluation=False)
+                        else:
+                            data, targets = helper.get_batch(data_iterator, batch,evaluation=False)
+                            
                         data, targets = data.to(device), targets.to(device)
                         poison_optimizer.zero_grad()
                         dataset_size += len(data)
@@ -155,7 +159,7 @@ def ImageTrain(helper, start_epoch, local_model, target_model, is_poison, agent_
                 dba.logger.info(f'Norm before scaling: {helper.model_global_norm(model)}. '
                                  f'Distance: {helper.model_dist_norm(model, target_params_variables)}')
 
-                if not helper.params['baseline']:
+                if not helper.params['baseline'] or constrain:
                     dba.logger.info(f'will scale.')
                     epoch_loss, epoch_acc, epoch_corret, epoch_total = test.Mytest(helper=helper, epoch=epoch,
                                                                                    model=model, is_poison=False,
@@ -163,7 +167,9 @@ def ImageTrain(helper, start_epoch, local_model, target_model, is_poison, agent_
                                                                                    agent_name_key=agent_name_key)
                     csv_record.test_result.append(
                         [agent_name_key, epoch, epoch_loss, epoch_acc, epoch_corret, epoch_total])
-
+                    scale_flag = False
+                    if epoch_acc*100 >= 60:
+                        scale_flag = True
                     epoch_loss, epoch_acc, epoch_corret, epoch_total = test.Mytest_poison(helper=helper,
                                                                                           epoch=epoch,
                                                                                           model=model,
@@ -174,18 +180,20 @@ def ImageTrain(helper, start_epoch, local_model, target_model, is_poison, agent_
                     csv_record.posiontest_result.append(
                         [agent_name_key, epoch, epoch_loss, epoch_acc, epoch_corret, epoch_total])
 
-                    clip_rate = helper.params['scale_weights_poison']
-                    dba.logger.info(f"Scaling by  {clip_rate}")
-                    for key, value in model.state_dict().items():
-                        target_value  = last_local_model[key]
-                        new_value = target_value + (value - target_value) * clip_rate
-                        model.state_dict()[key].copy_(new_value)
+                    clip_rate = helper.params['scale_weights_poison']/len(adversary_idxs)
+                    if scale_flag:
+                        dba.logger.info(f"Scaling by  {clip_rate}")
+                        for key, value in model.state_dict().items():
+                            target_value  = last_local_model[key]
+                            new_value = target_value + (value - target_value) * clip_rate
+                            model.state_dict()[key].copy_(new_value)
                     distance = helper.model_dist_norm(model, target_params_variables)
                     dba.logger.info(
                         f'Scaled Norm after poisoning: '
                         f'{helper.model_global_norm(model)}, distance: {distance}')
                     csv_record.scale_temp_one_row.append(epoch)
                     csv_record.scale_temp_one_row.append(round(distance, 4))
+                    
                     # if helper.params["batch_track_distance"]:
                     #     temp_data_len = len(helper.train_data[agent_name_key][1])
                     #     model.track_distance_batch_vis(vis=main.vis, epoch=temp_local_epoch,
