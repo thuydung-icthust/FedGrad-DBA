@@ -85,12 +85,13 @@ def ImageTrain(helper, start_epoch, local_model, target_model, is_poison, agent_
                     dataset_size = 0
                     dis2global_list=[]
                     for batch_id, batch in enumerate(data_iterator):
-                        if batch_id < helper.total_poisoned_batch:
-                        # data, targets, poison_num = helper.get_poison_batch(batch, adversarial_index=adversarial_index,evaluation=False)
-                            data, targets, poison_num = helper.get_poison_batch_new(batch, adversarial_index=adversarial_index,evaluation=False)
-                        else:
-                            data, targets = helper.get_batch(data_iterator, batch,evaluation=False)
-                            
+                        # if not constrain and centralized_attack:
+                        data, targets, poison_num = helper.get_poison_batch(batch, adversarial_index=adversarial_index,evaluation=False)
+                        # else:
+                        #     if batch_id < helper.total_poisoned_batch:
+                        #         data, targets, poison_num = helper.get_poison_batch_new(batch, adversarial_index=adversarial_index,evaluation=False)
+                        #     else:
+                        #         data, targets = helper.get_batch(data_iterator, batch,evaluation=False)
                         data, targets = data.to(device), targets.to(device)
                         poison_optimizer.zero_grad()
                         dataset_size += len(data)
@@ -172,7 +173,7 @@ def ImageTrain(helper, start_epoch, local_model, target_model, is_poison, agent_
                     #     scale_flag = True
                     
                     print(f"g_epc: {g_epc}")
-                    if g_epc % 5 == 0:
+                    if g_epc % 5 == 1:
                         scale_flag = True
                         
                     # epoch_loss, epoch_acc, epoch_corret, epoch_total = test.Mytest_poison(helper=helper,

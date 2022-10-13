@@ -21,7 +21,7 @@ participants_namelist: [0,1,2,3,4,5,6,7,8,9] # not used when is_random_namelist 
 no_models: 20
 number_of_total_participants: 100
 is_random_namelist: true
-is_random_adversary: true # fix adversary in their poison epochs
+is_random_adversary: false # fix adversary in their poison epochs
 is_poison: true
 
 baseline: true
@@ -37,6 +37,7 @@ adversary_list: [17, 33, 77, 11]
 
 centralized_test_trigger: True
 trigger_num: 4
+pgd_attack: false
 
 # gap 3 size 1*6 base (0, 0)
 # 0_poison_pattern: [[0, 0], [0, 1], [0, 2], [0, 3], [0, 4], [0, 5]]
@@ -87,13 +88,14 @@ diff_privacy: false
 sigma: 0.01
 
 # DUNG's additional params
-wandb_group: TEST_AISTATS_DBA_Backdoor_Attack
+wandb_group: FIN_AISTATS_DBA_Backdoor_Attack
 wandb_instance: fedavg_cifar_4.2
 defense: no-defense
 poison_ratio: 0.25
 device: cuda
 centralized_attack: false
 constrain: true
+total_poisoned_batch: 3
 
 poison_epochs: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
                 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40,

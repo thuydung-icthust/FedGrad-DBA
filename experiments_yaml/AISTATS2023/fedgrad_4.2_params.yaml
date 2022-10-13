@@ -9,7 +9,7 @@ decay: 0.0005
 batch_size: 64
 epochs: 500
 internal_epochs: 2
-internal_poison_epochs: 2
+internal_poison_epochs: 10
 internal_poison_clean_epochs: 0
 poisoning_per_batch: 5
 aggr_epoch_interval: 1
@@ -88,13 +88,14 @@ diff_privacy: false
 sigma: 0.01
 
 # DUNG's additional params
-wandb_group: TEST_AISTATS_DBA_Backdoor_Attack
+wandb_group: FIN_AISTATS_DBA_Backdoor_Attack
 wandb_instance: fedgrad_cifar_4.2
 defense: fedgrad
 poison_ratio: 0.25
-device: cuda
+device: cuda:1
 centralized_attack: false
 constrain: true
+total_poisoned_batch: 3
 
 poison_epochs: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
                 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40,

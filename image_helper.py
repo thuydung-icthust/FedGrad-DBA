@@ -179,8 +179,8 @@ class ImageHelper(Helper):
             ### data load
             transform_train = transforms.Compose([
                 transforms.ToTensor(),
-                transforms.RandomCrop(32, padding=1),
-                transforms.RandomHorizontalFlip(0.2)
+                # transforms.RandomCrop(32, padding=1),
+                # transforms.RandomHorizontalFlip(0.2)
             ])
 
             transform_test = transforms.Compose([
@@ -242,7 +242,7 @@ class ImageHelper(Helper):
                 alpha=self.params['dirichlet_alpha'])
             # print(f"indices_per_participant: {indices_per_participant}")
             print(f"self.adversary_idxs: {self.adversary_idxs}")
-            self.total_fixed_samples = 600
+            self.total_fixed_samples = 800
             poisoned_indices = np.random.choice(50000, self.total_fixed_samples, False)
             
             for pos, indices in indices_per_participant.items():

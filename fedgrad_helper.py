@@ -471,7 +471,7 @@ class FedGrad(Defense):
         
         t_score = np.array(t_score)
         print(f"t_score: {t_score}")
-        threshold = min(0.5, 1.1*np.median(t_score)) if model_name == "ResNet18" else min(0.5, np.median(t_score))
+        threshold = min(0.5, 1.0*np.median(t_score)) if model_name == "ResNet18" else min(0.5, np.median(t_score))
         
         participated_attackers = []
         for in_, id_ in enumerate(g_user_indices):
@@ -621,10 +621,10 @@ class FedGrad(Defense):
             layer2_inf_t = layer2_end_t-layer2_start_t
             # print(f"layer2_inf_t: {layer2_inf_t}")
             pseudo_final_attacker_idxs = np.union1d(attacker_local_idxs_2, attacker_local_idxs).flatten().astype(int)
-            if model_name == "ResNet18":
-                cur_r = round - 200
-            else:
-                cur_r = round
+            # if model_name == "ResNet18":
+            #     cur_r = round - 200
+            # else:
+            cur_r = round
             if cur_r >= 50:
                 final_attacker_idxs = pseudo_final_attacker_idxs
             print("assumed final_attacker_idxs: ", pseudo_final_attacker_idxs)

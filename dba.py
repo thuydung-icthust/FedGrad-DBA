@@ -90,10 +90,12 @@ if __name__ == '__main__':
     poison_ratio = params_loaded['poison_ratio']
     part_nets_per_round = params_loaded['no_models']
     total_participants = params_loaded['number_of_total_participants']
+    # pdg_attack = params_loaded['pdg_attack']
     total_attackers = int(poison_ratio*total_participants)
     adversary_idxs = np.random.choice(total_participants, total_attackers, replace=False)
-
-
+    if not params_loaded['is_random_adversary']:
+        adversary_idxs = params_loaded['adversary_list']
+    print(f"adversary_idxs: {adversary_idxs}")
     if params_loaded['type'] == config.TYPE_LOAN:
         helper = LoanHelper(current_time=current_time, params=params_loaded,
                             name=params_loaded.get('name', 'loan'), device=device)
@@ -168,12 +170,16 @@ if __name__ == '__main__':
                         selected_adversary_idxs.append(_name_keys)
                         round_adversary_idxs.append(_id)
             else:  # must have advasarial if this epoch is in their poison epoch
-                ongoing_epochs = list(range(epoch, epoch + helper.params['aggr_epoch_interval']))
+                # ongoing_epochs = list(range(epoch, epoch + helper.params['aggr_epoch_interval']))
                 for idx in range(0, len(helper.params['adversary_list'])):
-                    for ongoing_epoch in ongoing_epochs:
-                        if ongoing_epoch in helper.params[str(idx) + '_poison_epochs']:
-                            if helper.params['adversary_list'][idx] not in adversarial_name_keys:
-                                adversarial_name_keys.append(helper.params['adversary_list'][idx])
+                    print(f"idx: {idx}")
+                    print(f"adversarial_name_keys: {adversarial_name_keys}")
+                    # for ongoing_epoch in ongoing_epochs:
+                    # if ongoing_epoch in helper.params[str(idx) + '_poison_epochs']:
+                    if helper.params['adversary_list'][idx] not in adversarial_name_keys:
+                        adversarial_name_keys.append(helper.params['adversary_list'][idx])
+                        selected_adversary_idxs.append(helper.params['adversary_list'][idx])
+                        round_adversary_idxs.append(idx)
 
                 nonattacker=[]
                 for adv in helper.params['adversary_list']:
@@ -199,7 +205,8 @@ if __name__ == '__main__':
                                                                   device=device,
                                                                   centralized_attack=centralized_attack,
                                                                   constrain=constrain,
-                                                                  g_epc=epoch)
+                                                                  g_epc=epoch
+                                                                  )
         logger.info(f'time spent on training: {time.time() - t}')
         print(f"Round adversary idxs for this epoch is: {round_adversary_idxs}.")
         cp_epochs_submit_update_dict = copy.deepcopy(epochs_submit_update_dict)
