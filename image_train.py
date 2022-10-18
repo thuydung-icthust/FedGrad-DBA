@@ -1,15 +1,13 @@
 import utils.csv_record as csv_record
 import torch
 import torch.nn as nn
-import torch.nn.functional as F
-import time
 import dba
 import test
 import copy
 import config
 
 
-def ImageTrain(helper, start_epoch, local_model, target_model, is_poison, agent_name_keys, adversary_idxs, device, centralized_attack=False, constrain=True, g_epc=0):
+def ImageTrain(helper, start_epoch, local_model, target_model, is_poison, agent_name_keys, adversary_idxs, device, centralized_attack=False, constrain=True, g_epc=0, num_triggers=4, scale_freq=5):
 
     epochs_submit_update_dict = dict()
     num_samples_dict = dict()
@@ -20,7 +18,6 @@ def ImageTrain(helper, start_epoch, local_model, target_model, is_poison, agent_
             current_number_of_adversaries+=1
     
     net_list = [copy.deepcopy(local_model) for _ in range(helper.params['no_models'])]
-    # print(f"adversary_idxs: {adversary_idxs}")
     
     for model_id, model in enumerate(net_list):
         epochs_local_update_list = []
@@ -39,12 +36,10 @@ def ImageTrain(helper, start_epoch, local_model, target_model, is_poison, agent_
                                     weight_decay=helper.params['decay'])
         model.train()
         adversarial_index = -1
-        localmodel_poison_epochs = helper.params['poison_epochs']
-        # print(f"adversary_idxs: {adversary_idxs}")
         if is_poison and agent_name_key in adversary_idxs:
             for temp_index in range(0, len(adversary_idxs)):
                 if int(agent_name_key) == adversary_idxs[temp_index]:
-                    adversarial_index = temp_index%4
+                    adversarial_index = temp_index%num_triggers
                     # localmodel_poison_epochs = helper.params[str(temp_index) + '_poison_epochs']
                     dba.logger.info(
                         f'\npoison local model {agent_name_key} index {adversarial_index} ')
@@ -86,12 +81,13 @@ def ImageTrain(helper, start_epoch, local_model, target_model, is_poison, agent_
                     dis2global_list=[]
                     for batch_id, batch in enumerate(data_iterator):
                         # if not constrain and centralized_attack:
-                        data, targets, poison_num = helper.get_poison_batch(batch, adversarial_index=adversarial_index,evaluation=False)
-                        # else:
-                        #     if batch_id < helper.total_poisoned_batch:
-                        #         data, targets, poison_num = helper.get_poison_batch_new(batch, adversarial_index=adversarial_index,evaluation=False)
-                        #     else:
-                        #         data, targets = helper.get_batch(data_iterator, batch,evaluation=False)
+                        if not constrain:
+                            data, targets, poison_num = helper.get_poison_batch(batch, adversarial_index=adversarial_index,evaluation=False)
+                        else:
+                            if batch_id < helper.total_poisoned_batch:
+                                data, targets, poison_num = helper.get_poison_by_batch(batch, adversarial_index=adversarial_index,evaluation=False)
+                            else:
+                                data, targets = helper.get_batch(data_iterator, batch,evaluation=False)
                         data, targets = data.to(device), targets.to(device)
                         poison_optimizer.zero_grad()
                         dataset_size += len(data)
@@ -171,9 +167,8 @@ def ImageTrain(helper, start_epoch, local_model, target_model, is_poison, agent_
                     scale_flag = False
                     # if epoch_acc*100 >= 60:
                     #     scale_flag = True
-                    
-                    print(f"g_epc: {g_epc}")
-                    if g_epc % 5 == 1:
+
+                    if g_epc % scale_freq == 1:
                         scale_flag = True
                         
                     # epoch_loss, epoch_acc, epoch_corret, epoch_total = test.Mytest_poison(helper=helper,
@@ -210,8 +205,8 @@ def ImageTrain(helper, start_epoch, local_model, target_model, is_poison, agent_
                     #                                    name=str(agent_name_key), is_poisoned=True)
 
                 distance = helper.model_dist_norm(model, target_params_variables)
-                dba.logger.info(f"Total norm for {current_number_of_adversaries} "
-                                 f"adversaries is: {helper.model_global_norm(model)}. distance: {distance}")
+                # dba.logger.info(f"Total norm for {current_number_of_adversaries} "
+                #                  f"adversaries is: {helper.model_global_norm(model)}. distance: {distance}")
 
             else:
                 temp_local_epoch = (epoch - 1) * helper.params['internal_epochs']
@@ -307,23 +302,6 @@ def ImageTrain(helper, start_epoch, local_model, target_model, is_poison, agent_
                     csv_record.posiontest_result.append(
                         [agent_name_key, epoch, epoch_loss, epoch_acc, epoch_corret, epoch_total])
 
-                #  test on local triggers
-                # if agent_name_key in adversary_idxs:
-                #     # if helper.params['vis_trigger_split_test']:
-                #     #     model.trigger_agent_test_vis(vis=main.vis, epoch=epoch, acc=epoch_acc, loss=None,
-                #     #                                  eid=helper.params['environment_name'],
-                #     #                                  name=str(agent_name_key)  + "_combine")
-
-                #     epoch_loss, epoch_acc, epoch_corret, epoch_total = \
-                #         test.Mytest_poison_agent_trigger(helper=helper, model=model, agent_name_key=agent_name_key, device=device)
-                #     csv_record.poisontriggertest_result.append(
-                #         [agent_name_key, str(agent_name_key) + "_trigger", "", epoch, epoch_loss,
-                #          epoch_acc, epoch_corret, epoch_total])
-                #     # if helper.params['vis_trigger_split_test']:
-                #     #     model.trigger_agent_test_vis(vis=main.vis, epoch=epoch, acc=epoch_acc, loss=None,
-                #     #                                  eid=helper.params['environment_name'],
-                #     #                                  name=str(agent_name_key) + "_trigger")
-
             # update the model weight
             local_model_update_dict = dict()
             for name, data in model.state_dict().items():
@@ -336,8 +314,6 @@ def ImageTrain(helper, start_epoch, local_model, target_model, is_poison, agent_
             else:
                 epochs_local_update_list.append(local_model_update_dict)
 
-        # net_list[model_id] = copy.deepcopy(model)
-        # print(f"net_list: {net_list[0]}")
         epochs_submit_update_dict[agent_name_key] = epochs_local_update_list
 
     return epochs_submit_update_dict, num_samples_dict, net_list
