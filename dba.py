@@ -84,7 +84,7 @@ if __name__ == '__main__':
     centralized_attack = params_loaded['centralized_attack'] # Centralized or distributed attack
     constrain = params_loaded['constrain'] and True
     wandb_ins = wandb.init(project="Backdoor attack in FL",
-                            entity="aiotlab",
+                            entity="yourentity",
                             name=instance_name,
                             group=group_name)
     poison_ratio = params_loaded['poison_ratio']

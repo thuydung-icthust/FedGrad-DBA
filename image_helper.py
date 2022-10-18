@@ -231,9 +231,8 @@ class ImageHelper(Helper):
                 self.params['number_of_total_participants'], #100
                 alpha=self.params['dirichlet_alpha'])
 
-            print(f"self.adversary_idxs: {self.adversary_idxs}")
             self.total_fixed_samples = 800 # TOTAL SAMPLES FOR AN MALICIOUS CLIENTS
-            poisoned_indices = np.random.choice(50000, self.total_fixed_samples, False)
+            poisoned_indices = np.random.choice(len(self.train_dataset), self.total_fixed_samples, False)
             
             for pos, indices in indices_per_participant.items():
                 if pos in self.adversary_idxs:
