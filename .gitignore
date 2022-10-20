@@ -12,3 +12,4 @@ jupyter_notebook/
 checkpoint/
 saved_models/
 .vscode
+__MACOSX__/
